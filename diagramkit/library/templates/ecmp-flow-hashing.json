@@ -1,0 +1,286 @@
+{
+  "version": "1.0",
+  "title": "ECMP hashes flows onto paths",
+  "subtitle": "Two large flows can select the same path while other equal-cost paths remain available.",
+  "description": "Two large flows can select the same path while other equal-cost paths remain available.",
+  "width": 1480,
+  "height": 720,
+  "groups": [
+    {
+      "id": "paths",
+      "x": 566,
+      "y": 141,
+      "w": 384,
+      "h": 492,
+      "title": "Four equal-cost next hops",
+      "caption": "The diagram separates physical reachability from traffic.",
+      "palette": "blue",
+      "style": "panel"
+    }
+  ],
+  "nodes": [
+    {
+      "id": "s",
+      "kind": "component",
+      "asset": "compute/rack-server",
+      "x": 45,
+      "y": 330,
+      "w": 190,
+      "h": 144,
+      "label": "Sending host",
+      "palette": "blue",
+      "detail": "Two independent flows"
+    },
+    {
+      "id": "r",
+      "kind": "component",
+      "asset": "compute/rack-server",
+      "x": 1224,
+      "y": 330,
+      "w": 190,
+      "h": 144,
+      "label": "Receiving host",
+      "palette": "blue"
+    },
+    {
+      "id": "pA",
+      "kind": "symbol",
+      "asset": "network/switch-l3",
+      "x": 650,
+      "y": 218,
+      "w": 140,
+      "h": 67,
+      "label": "",
+      "palette": "blue"
+    },
+    {
+      "id": "tA",
+      "kind": "text",
+      "x": 805,
+      "y": 206,
+      "w": 125,
+      "h": 29,
+      "label": "Path A",
+      "font_size": 16,
+      "weight": 600,
+      "align": "left"
+    },
+    {
+      "id": "pB",
+      "kind": "symbol",
+      "asset": "network/switch-l3",
+      "x": 650,
+      "y": 318,
+      "w": 140,
+      "h": 67,
+      "label": "",
+      "palette": "blue"
+    },
+    {
+      "id": "tB",
+      "kind": "text",
+      "x": 805,
+      "y": 306,
+      "w": 125,
+      "h": 29,
+      "label": "Path B",
+      "font_size": 16,
+      "weight": 600,
+      "align": "left"
+    },
+    {
+      "id": "pC",
+      "kind": "symbol",
+      "asset": "network/switch-l3",
+      "x": 650,
+      "y": 418,
+      "w": 140,
+      "h": 67,
+      "label": "",
+      "palette": "blue"
+    },
+    {
+      "id": "tC",
+      "kind": "text",
+      "x": 805,
+      "y": 406,
+      "w": 125,
+      "h": 29,
+      "label": "Path C",
+      "font_size": 16,
+      "weight": 600,
+      "align": "left"
+    },
+    {
+      "id": "pD",
+      "kind": "symbol",
+      "asset": "network/switch-l3",
+      "x": 650,
+      "y": 518,
+      "w": 140,
+      "h": 67,
+      "label": "",
+      "palette": "blue"
+    },
+    {
+      "id": "tD",
+      "kind": "text",
+      "x": 805,
+      "y": 576,
+      "w": 125,
+      "h": 29,
+      "label": "Path D",
+      "font_size": 16,
+      "weight": 600,
+      "align": "left"
+    }
+  ],
+  "edges": [
+    {
+      "id": "e1",
+      "source": "s",
+      "target": "pA",
+      "kind": "physical",
+      "palette": "slate",
+      "source_port": "e",
+      "target_port": "w",
+      "width": 1.2,
+      "route": "straight"
+    },
+    {
+      "id": "e2",
+      "source": "pA",
+      "target": "r",
+      "kind": "physical",
+      "palette": "slate",
+      "source_port": "e",
+      "target_port": "w",
+      "width": 1.2,
+      "route": "straight"
+    },
+    {
+      "id": "e3",
+      "source": "s",
+      "target": "pB",
+      "kind": "physical",
+      "palette": "slate",
+      "source_port": "e",
+      "target_port": "w",
+      "width": 1.2,
+      "route": "straight"
+    },
+    {
+      "id": "e4",
+      "source": "pB",
+      "target": "r",
+      "kind": "physical",
+      "palette": "slate",
+      "source_port": "e",
+      "target_port": "w",
+      "width": 1.2,
+      "route": "straight"
+    },
+    {
+      "id": "e5",
+      "source": "s",
+      "target": "pC",
+      "kind": "physical",
+      "palette": "slate",
+      "source_port": "e",
+      "target_port": "w",
+      "width": 1.2,
+      "route": "straight"
+    },
+    {
+      "id": "e6",
+      "source": "pC",
+      "target": "r",
+      "kind": "physical",
+      "palette": "slate",
+      "source_port": "e",
+      "target_port": "w",
+      "width": 1.2,
+      "route": "straight"
+    },
+    {
+      "id": "e7",
+      "source": "s",
+      "target": "pD",
+      "kind": "physical",
+      "palette": "slate",
+      "source_port": "e",
+      "target_port": "w",
+      "width": 1.2,
+      "route": "straight"
+    },
+    {
+      "id": "e8",
+      "source": "pD",
+      "target": "r",
+      "kind": "physical",
+      "palette": "slate",
+      "source_port": "e",
+      "target_port": "w",
+      "width": 1.2,
+      "route": "straight"
+    },
+    {
+      "id": "e9",
+      "source": "s",
+      "target": "pA",
+      "kind": "data",
+      "palette": "orange",
+      "label": "Flow A + Flow B",
+      "points": [
+        {
+          "x": 140,
+          "y": 264
+        },
+        {
+          "x": 431,
+          "y": 264
+        },
+        {
+          "x": 431,
+          "y": 251.5
+        }
+      ],
+      "source_port": "n",
+      "target_port": "w",
+      "label_x": 401,
+      "label_y": 252,
+      "width": 4
+    },
+    {
+      "id": "e10",
+      "source": "pA",
+      "target": "r",
+      "kind": "data",
+      "palette": "orange",
+      "points": [
+        {
+          "x": 1120,
+          "y": 251.5
+        },
+        {
+          "x": 1319,
+          "y": 251.5
+        }
+      ],
+      "source_port": "e",
+      "target_port": "n",
+      "width": 4
+    }
+  ],
+  "footer": "Illustrative architecture. Labels describe roles; generic symbols do not assert product compatibility.",
+  "legend": [
+    {
+      "label": "Available physical path",
+      "palette": "slate"
+    },
+    {
+      "label": "Two flows share path A",
+      "palette": "orange"
+    }
+  ]
+}

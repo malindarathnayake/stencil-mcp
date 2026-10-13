@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 144 112" width="144" height="112" role="img" aria-labelledby="title desc" font-family="Arial, Helvetica, sans-serif">
+  <title id="title">Wireless access point</title>
+  <desc id="desc">Generic wireless access point symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.</desc>
+  <g id="artwork" stroke-linecap="round" stroke-linejoin="round"><rect x="32" y="73" width="80" height="22" rx="6" fill="#EAF3FE" stroke="#132B50" stroke-width="2.5"/><circle cx="72" cy="63" r="4" fill="#1875D1" stroke="#1875D1" stroke-width="2.5"/><path d="M55 53 Q72 38 89 53 M42 42 Q72 14 102 42 M29 29 Q72 -4 115 29" fill="none" stroke="#1875D1" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></g>
+</svg>

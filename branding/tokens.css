@@ -1,0 +1,16 @@
+:root {
+  --stencil-navy: #0B1B4D;
+  --stencil-blue: #1677FF;
+  --stencil-sky: #4DAFFF;
+  --stencil-mint: #CFF7ED;
+  --stencil-teal: #0D9488;
+  --stencil-ice: #EAF4FF;
+  --stencil-panel: #F2F8FF;
+  --stencil-slate: #475569;
+  --stencil-white: #FFFFFF;
+  --stencil-success: #16A34A;
+  --stencil-warning: #F97316;
+  --stencil-error: #DC2626;
+  --stencil-purple: #8B5CF6;
+  --stencil-yellow: #EAB308;
+}

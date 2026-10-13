@@ -1,0 +1,186 @@
+{
+  "name": "Stencil",
+  "assets": [
+    {
+      "id": "brand/stencil-mark-primary",
+      "svg": "logos/stencil-mark-primary.svg",
+      "viewBox": [
+        0,
+        0,
+        256,
+        256
+      ],
+      "usage": "Primary standalone mark.",
+      "sha256": "15bcad73d256e8798bb41cfaa368fea996eceb4544e720a7a5957605250ee472",
+      "png": "logos/stencil-mark-primary.png"
+    },
+    {
+      "id": "brand/stencil-mark-navy",
+      "svg": "logos/stencil-mark-navy.svg",
+      "viewBox": [
+        0,
+        0,
+        256,
+        256
+      ],
+      "usage": "Single-color mark for light backgrounds.",
+      "sha256": "674e2c622b0509ef593b737af3f9d9252802237a81fb764f542b98e94c44d9cf",
+      "png": "logos/stencil-mark-navy.png"
+    },
+    {
+      "id": "brand/stencil-mark-white",
+      "svg": "logos/stencil-mark-white.svg",
+      "viewBox": [
+        0,
+        0,
+        256,
+        256
+      ],
+      "usage": "Single-color mark for dark backgrounds.",
+      "sha256": "b9292a0bb4cfcc7c2ad7225b79d3b259c18dfd5600d6c68bba3fe2efd56a15fd",
+      "png": "logos/stencil-mark-white.png"
+    },
+    {
+      "id": "brand/stencil-lockup-light",
+      "svg": "logos/stencil-lockup-light.svg",
+      "viewBox": [
+        0,
+        0,
+        720,
+        256
+      ],
+      "usage": "Horizontal logo; transparent background, outlined wordmark.",
+      "sha256": "84a09832341e1195fe5721d00f3755e2120911ad0f71fadc9a2918a3e4f5db58",
+      "png": "logos/stencil-lockup-light.png"
+    },
+    {
+      "id": "brand/stencil-lockup-dark",
+      "svg": "logos/stencil-lockup-dark.svg",
+      "viewBox": [
+        0,
+        0,
+        720,
+        256
+      ],
+      "usage": "Horizontal logo; transparent background, outlined wordmark.",
+      "sha256": "4892e477a04b41fbaaf8b371d123eb91c2f6235b91d33e68aa387a8581c6209f",
+      "png": "logos/stencil-lockup-dark.png"
+    },
+    {
+      "id": "brand/stencil-wordmark",
+      "svg": "logos/stencil-wordmark.svg",
+      "viewBox": [
+        0,
+        0,
+        620,
+        180
+      ],
+      "usage": "Wordmark alone; transparent, outlined SVG.",
+      "sha256": "0e3964c72796297148d6d336b3ce817e8e19a5b14f899d99351e7789863e53cf",
+      "png": "logos/stencil-wordmark.png"
+    },
+    {
+      "id": "brand/stencil-lockup-editable-text",
+      "svg": "logos/stencil-lockup-editable-text.svg",
+      "viewBox": [
+        0,
+        0,
+        720,
+        256
+      ],
+      "usage": "Editable live text variant. Appearance depends on the local font; use outlined logos for exact reproduction.",
+      "sha256": "56f9fdaf401e53d3cfe8894db390f5a17d3e13ef5378a169ae5517af18fc4bb4"
+    },
+    {
+      "id": "brand/stencil-avatar-mint",
+      "svg": "avatars/stencil-avatar-mint.svg",
+      "viewBox": [
+        0,
+        0,
+        512,
+        512
+      ],
+      "usage": "GitHub/avatar icon; safe central symbol for circular crops.",
+      "sha256": "b8a8092c25ab1a2c3b761c7fd529b0928e1c2570d8ffe4005a5a7c3d7946ebda",
+      "png": "avatars/stencil-avatar-mint.png"
+    },
+    {
+      "id": "brand/stencil-avatar-dark",
+      "svg": "avatars/stencil-avatar-dark.svg",
+      "viewBox": [
+        0,
+        0,
+        512,
+        512
+      ],
+      "usage": "GitHub/avatar icon; safe central symbol for circular crops.",
+      "sha256": "7865fbdf3d01e00ec45583d588c9348a10da76f938f9c075670bde8559be3765",
+      "png": "avatars/stencil-avatar-dark.png"
+    },
+    {
+      "id": "brand/stencil-avatar-light",
+      "svg": "avatars/stencil-avatar-light.svg",
+      "viewBox": [
+        0,
+        0,
+        512,
+        512
+      ],
+      "usage": "GitHub/avatar icon; safe central symbol for circular crops.",
+      "sha256": "0922f7c0c7fb483867b8e262aca899de6ffb86e6f188f568a3681bd5820e83ba",
+      "png": "avatars/stencil-avatar-light.png"
+    },
+    {
+      "id": "brand/stencil-favicon",
+      "svg": "avatars/stencil-favicon.svg",
+      "viewBox": [
+        0,
+        0,
+        256,
+        256
+      ],
+      "usage": "Small-site icon. Prefer the standalone three-layer symbol; no wordmark.",
+      "sha256": "d5c0f37b2a98d5405e13b1ac7b89040431491ab39b0e92a41c707fa2a590f01f",
+      "png": "avatars/stencil-favicon.png"
+    },
+    {
+      "id": "brand/stencil-readme-banner",
+      "svg": "banners/stencil-readme-banner.svg",
+      "viewBox": [
+        0,
+        0,
+        1600,
+        480
+      ],
+      "usage": "README header. Prefer PNG for a uniform display across renderers.",
+      "sha256": "d92100d6855f2c5a60b9879fcd5e0bda99e7102ff9ee0130af4f745fcb6a9b84",
+      "png": "banners/stencil-readme-banner.png"
+    },
+    {
+      "id": "brand/stencil-social-preview",
+      "svg": "banners/stencil-social-preview.svg",
+      "viewBox": [
+        0,
+        0,
+        1280,
+        640
+      ],
+      "usage": "Repository social/open-graph artwork.",
+      "sha256": "270555f479a26ae26e249eb6ba6090dd0c19bc98fd509b7cdd520370aad3609a",
+      "png": "banners/stencil-social-preview.png"
+    },
+    {
+      "id": "brand/stencil-brand-preview",
+      "svg": "stencil-brand-preview.svg",
+      "viewBox": [
+        0,
+        0,
+        1280,
+        940
+      ],
+      "usage": "Overview of the production brand pack.",
+      "sha256": "e3dc234572b6b240bd588181d0277d4c4d15481c962f77a0d1c52be2fc8318b6",
+      "png": "stencil-brand-preview.png"
+    }
+  ]
+}

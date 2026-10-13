@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 144 112" width="144" height="112" role="img" aria-labelledby="title desc" font-family="Arial, Helvetica, sans-serif">
+  <title id="title">Chat message</title>
+  <desc id="desc">Generic chat message symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.</desc>
+  <g id="artwork" stroke-linecap="round" stroke-linejoin="round"><path d="M32 20 H112 Q124 20 124 32 V68 Q124 80 112 80 H62 L38 98 L44 80 H32 Q20 80 20 68 V32 Q20 20 32 20 Z" fill="#E6F5F2" stroke="#132B50" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="50" cy="50" r="5" fill="#13857B" stroke="#13857B" stroke-width="1"/><circle cx="72" cy="50" r="5" fill="#13857B" stroke="#13857B" stroke-width="1"/><circle cx="94" cy="50" r="5" fill="#13857B" stroke="#13857B" stroke-width="1"/></g>
+</svg>

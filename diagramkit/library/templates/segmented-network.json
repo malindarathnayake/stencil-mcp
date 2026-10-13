@@ -1,0 +1,139 @@
+{
+  "version": "1.0",
+  "title": "Network segmentation",
+  "subtitle": "Show the enforcement points between trust zones and label the permitted application flows.",
+  "description": "Show the enforcement points between trust zones and label the permitted application flows.",
+  "width": 1720,
+  "height": 680,
+  "groups": [
+    {
+      "id": "external",
+      "x": 36,
+      "y": 156,
+      "w": 252,
+      "h": 414,
+      "title": "Untrusted",
+      "caption": "",
+      "palette": "slate",
+      "style": "boundary"
+    },
+    {
+      "id": "dmz",
+      "x": 358,
+      "y": 156,
+      "w": 308,
+      "h": 414,
+      "title": "DMZ",
+      "caption": "",
+      "palette": "orange",
+      "style": "boundary"
+    },
+    {
+      "id": "appzone",
+      "x": 754,
+      "y": 156,
+      "w": 389,
+      "h": 414,
+      "title": "Application zone",
+      "caption": "",
+      "palette": "blue",
+      "style": "boundary"
+    },
+    {
+      "id": "datazone",
+      "x": 1232,
+      "y": 156,
+      "w": 451,
+      "h": 414,
+      "title": "Data zone",
+      "caption": "",
+      "palette": "teal",
+      "style": "boundary"
+    }
+  ],
+  "nodes": [
+    {
+      "id": "client",
+      "kind": "component",
+      "asset": "network/internet",
+      "x": 69,
+      "y": 286,
+      "w": 182,
+      "h": 140,
+      "label": "External client",
+      "palette": "blue"
+    },
+    {
+      "id": "waf",
+      "kind": "component",
+      "asset": "security/waf",
+      "x": 413,
+      "y": 286,
+      "w": 198,
+      "h": 140,
+      "label": "WAF / ingress",
+      "palette": "red"
+    },
+    {
+      "id": "api",
+      "kind": "component",
+      "asset": "software/backend",
+      "x": 850,
+      "y": 286,
+      "w": 196,
+      "h": 140,
+      "label": "Application API",
+      "palette": "blue"
+    },
+    {
+      "id": "db",
+      "kind": "component",
+      "asset": "data/relational-db",
+      "x": 1374,
+      "y": 286,
+      "w": 204,
+      "h": 140,
+      "label": "Database",
+      "palette": "teal"
+    },
+    {
+      "id": "z-note",
+      "kind": "text",
+      "x": 399,
+      "y": 479,
+      "w": 1220,
+      "h": 44,
+      "label": "Dashed boxes show trust scope. Actual access is enforced by the named controls and workload/network policies.",
+      "font_size": 16,
+      "weight": 400,
+      "align": "left"
+    }
+  ],
+  "edges": [
+    {
+      "id": "e1",
+      "source": "client",
+      "target": "waf",
+      "kind": "data",
+      "palette": "blue",
+      "label": "HTTPS"
+    },
+    {
+      "id": "e2",
+      "source": "waf",
+      "target": "api",
+      "kind": "data",
+      "palette": "blue",
+      "label": "Approved requests"
+    },
+    {
+      "id": "e3",
+      "source": "api",
+      "target": "db",
+      "kind": "data",
+      "palette": "teal",
+      "label": "DB policy"
+    }
+  ],
+  "footer": "Illustrative architecture. Labels describe roles; generic symbols do not assert product compatibility."
+}

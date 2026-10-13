@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 144 112" width="144" height="112" role="img" aria-labelledby="title desc" font-family="Arial, Helvetica, sans-serif">
+  <title id="title">Legend</title>
+  <desc id="desc">Generic legend symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.</desc>
+  <g id="artwork" stroke-linecap="round" stroke-linejoin="round"><rect x="22" y="16" width="99" height="80" rx="6" fill="#EDF2F7" stroke="#132B50" stroke-width="2.5"/><circle cx="39" cy="36" r="5" fill="#526C8C" stroke="#526C8C" stroke-width="1"/><line x1="54" y1="36" x2="107" y2="36" stroke="#5B708B" stroke-width="2" stroke-linecap="round"/><circle cx="39" cy="56" r="5" fill="#526C8C" stroke="#526C8C" stroke-width="1"/><line x1="54" y1="56" x2="107" y2="56" stroke="#5B708B" stroke-width="2" stroke-linecap="round"/><circle cx="39" cy="77" r="5" fill="#526C8C" stroke="#526C8C" stroke-width="1"/><line x1="54" y1="77" x2="107" y2="77" stroke="#5B708B" stroke-width="2" stroke-linecap="round"/></g>
+</svg>

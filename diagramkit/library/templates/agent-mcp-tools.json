@@ -1,0 +1,229 @@
+{
+  "version": "1.0",
+  "title": "An agent with controlled tool access",
+  "subtitle": "Read-only data access and privileged actions have different tools, policies and approval paths.",
+  "description": "Read-only data access and privileged actions have different tools, policies and approval paths.",
+  "width": 1750,
+  "height": 845,
+  "groups": [
+    {
+      "id": "agentzone",
+      "x": 35,
+      "y": 145,
+      "w": 639,
+      "h": 622,
+      "title": "Agent runtime",
+      "caption": "",
+      "palette": "teal",
+      "style": "boundary"
+    },
+    {
+      "id": "tools",
+      "x": 720,
+      "y": 145,
+      "w": 986,
+      "h": 622,
+      "title": "Tool and data boundary",
+      "caption": "Tool access is explicit; the model does not get unrestricted database credentials.",
+      "palette": "purple",
+      "style": "boundary"
+    }
+  ],
+  "nodes": [
+    {
+      "id": "user",
+      "kind": "component",
+      "asset": "identity/user",
+      "x": 65,
+      "y": 316,
+      "w": 164,
+      "h": 136,
+      "label": "User",
+      "palette": "blue"
+    },
+    {
+      "id": "agent",
+      "kind": "component",
+      "asset": "ai/ai-agent",
+      "x": 376,
+      "y": 316,
+      "w": 223,
+      "h": 145,
+      "label": "Agent loop",
+      "palette": "teal"
+    },
+    {
+      "id": "model",
+      "kind": "component",
+      "asset": "ai/llm",
+      "x": 376,
+      "y": 568,
+      "w": 223,
+      "h": 145,
+      "label": "Reasoning model",
+      "palette": "teal"
+    },
+    {
+      "id": "mcp",
+      "kind": "component",
+      "asset": "ai/mcp-server",
+      "x": 776,
+      "y": 316,
+      "w": 215,
+      "h": 145,
+      "label": "MCP server",
+      "palette": "purple",
+      "detail": "Registered tool contracts"
+    },
+    {
+      "id": "db",
+      "kind": "component",
+      "asset": "data/relational-db",
+      "x": 1413,
+      "y": 225,
+      "w": 244,
+      "h": 145,
+      "label": "Database",
+      "palette": "orange",
+      "detail": "Read-only queries"
+    },
+    {
+      "id": "logs",
+      "kind": "component",
+      "asset": "observability/logs",
+      "x": 1413,
+      "y": 429,
+      "w": 244,
+      "h": 145,
+      "label": "Log system",
+      "palette": "orange",
+      "detail": "Bounded search"
+    },
+    {
+      "id": "approval",
+      "kind": "component",
+      "asset": "ai/human-approval",
+      "x": 1013,
+      "y": 593,
+      "w": 238,
+      "h": 145,
+      "label": "Human approval",
+      "palette": "red",
+      "detail": "Required for mutation"
+    },
+    {
+      "id": "action",
+      "kind": "component",
+      "asset": "ai/tool",
+      "x": 1413,
+      "y": 633,
+      "w": 244,
+      "h": 113,
+      "label": "Action tool",
+      "palette": "red"
+    }
+  ],
+  "edges": [
+    {
+      "id": "e1",
+      "source": "user",
+      "target": "agent",
+      "kind": "data",
+      "palette": "blue",
+      "label": "Task"
+    },
+    {
+      "id": "e2",
+      "source": "agent",
+      "target": "model",
+      "kind": "data",
+      "palette": "teal",
+      "label": "Inference",
+      "source_port": "s",
+      "target_port": "n",
+      "label_x": 546,
+      "label_y": 522
+    },
+    {
+      "id": "e3",
+      "source": "agent",
+      "target": "mcp",
+      "kind": "data",
+      "palette": "purple",
+      "label": "Tool call"
+    },
+    {
+      "id": "e4",
+      "source": "mcp",
+      "target": "db",
+      "kind": "data",
+      "palette": "orange",
+      "label": "Read",
+      "points": [
+        {
+          "x": 1216,
+          "y": 388.5
+        },
+        {
+          "x": 1216,
+          "y": 297.5
+        }
+      ],
+      "source_port": "e",
+      "target_port": "w"
+    },
+    {
+      "id": "e5",
+      "source": "mcp",
+      "target": "logs",
+      "kind": "data",
+      "palette": "orange",
+      "label": "Search",
+      "points": [
+        {
+          "x": 1190,
+          "y": 388.5
+        },
+        {
+          "x": 1190,
+          "y": 501.5
+        }
+      ],
+      "source_port": "e",
+      "target_port": "w"
+    },
+    {
+      "id": "e6",
+      "source": "mcp",
+      "target": "approval",
+      "kind": "control",
+      "palette": "red",
+      "label": "Request approval",
+      "points": [
+        {
+          "x": 883.5,
+          "y": 541
+        },
+        {
+          "x": 1132,
+          "y": 541
+        }
+      ],
+      "source_port": "s",
+      "target_port": "n",
+      "label_x": 1062,
+      "label_y": 541
+    },
+    {
+      "id": "e7",
+      "source": "approval",
+      "target": "action",
+      "kind": "data",
+      "palette": "red",
+      "label": "Approved action",
+      "label_x": 1332,
+      "label_y": 658
+    }
+  ],
+  "footer": "Illustrative architecture. Labels describe roles; generic symbols do not assert product compatibility."
+}

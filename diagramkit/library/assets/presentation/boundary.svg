@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 144 112" width="144" height="112" role="img" aria-labelledby="title desc" font-family="Arial, Helvetica, sans-serif">
+  <title id="title">System boundary</title>
+  <desc id="desc">Label ownership or trust scope. A boundary is not itself a firewall or an enforcement control.</desc>
+  <g id="artwork" stroke-linecap="round" stroke-linejoin="round"><rect x="17" y="18" width="110" height="76" rx="8" fill="#EDF2F7" stroke="#526C8C" stroke-width="2.5" stroke-dasharray="7 5"/></g>
+</svg>

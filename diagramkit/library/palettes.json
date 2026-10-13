@@ -1,0 +1,40 @@
+{
+  "ink": "#132B50",
+  "muted": "#5B708B",
+  "border": "#CAD8E8",
+  "background": "#FFFFFF",
+  "colors": {
+    "blue": {
+      "accent": "#1875D1",
+      "soft": "#EAF3FE"
+    },
+    "teal": {
+      "accent": "#13857B",
+      "soft": "#E6F5F2"
+    },
+    "purple": {
+      "accent": "#7855C5",
+      "soft": "#F0EBFC"
+    },
+    "orange": {
+      "accent": "#CC7628",
+      "soft": "#FFF2E3"
+    },
+    "red": {
+      "accent": "#C44552",
+      "soft": "#FCECEF"
+    },
+    "slate": {
+      "accent": "#526C8C",
+      "soft": "#EDF2F7"
+    },
+    "green": {
+      "accent": "#368454",
+      "soft": "#EAF6EF"
+    },
+    "yellow": {
+      "accent": "#AD8215",
+      "soft": "#FFF8D9"
+    }
+  }
+}

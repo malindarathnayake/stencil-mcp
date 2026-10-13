@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 144 112" width="144" height="112" role="img" aria-labelledby="title desc" font-family="Arial, Helvetica, sans-serif">
+  <title id="title">Warning</title>
+  <desc id="desc">Generic warning symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.</desc>
+  <g id="artwork" stroke-linecap="round" stroke-linejoin="round"><path d="M72 13 L125 96 H19 Z" fill="#FFF2E3" stroke="#CC7628" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><line x1="72" y1="39" x2="72" y2="65" stroke="#CC7628" stroke-width="5" stroke-linecap="round"/><circle cx="72" cy="80" r="2.5" fill="#CC7628" stroke="#CC7628" stroke-width="2.5"/></g>
+</svg>

@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 144 112" width="144" height="112" role="img" aria-labelledby="title desc" font-family="Arial, Helvetica, sans-serif">
+  <title id="title">Model router</title>
+  <desc id="desc">Generic model router symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.</desc>
+  <g id="artwork" stroke-linecap="round" stroke-linejoin="round"><path d="M72 9 L129 56 L72 103 L15 56 Z" fill="#E6F5F2" stroke="#132B50" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><text x="72" y="67" text-anchor="middle" font-size="31" font-weight="700" fill="#13857B">?</text><rect x="49.25" y="84" width="45.5" height="20" rx="5" fill="#FFFFFF" stroke="#13857B" stroke-width="1.6"/><text x="72" y="98" text-anchor="middle" font-size="9.5" font-weight="700" fill="#13857B">MODEL</text></g>
+</svg>

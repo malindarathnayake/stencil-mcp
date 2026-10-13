@@ -1,0 +1,352 @@
+{
+  "version": "1.0",
+  "title": "HR: employee onboarding",
+  "subtitle": "From an accepted offer to a 30-day check-in, with HR, the hiring manager and IT preparing in parallel.",
+  "description": "The new hire accepts the offer. HR sends the contract, the new hire signs it, and HR creates the personnel record. HR, the hiring manager and IT then prepare in parallel: orientation, a buddy, and accounts with a laptop. When all three are ready the new hire starts. After 30 days the manager holds a check-in and onboarding is complete.",
+  "width": 2698,
+  "height": 1214,
+  "groups": [
+    {
+      "id": "hire",
+      "x": 30,
+      "y": 124,
+      "w": 2638,
+      "h": 246,
+      "title": "New hire",
+      "caption": "",
+      "palette": "blue",
+      "style": "lane"
+    },
+    {
+      "id": "hr",
+      "x": 30,
+      "y": 380,
+      "w": 2638,
+      "h": 246,
+      "title": "HR",
+      "caption": "",
+      "palette": "purple",
+      "style": "lane"
+    },
+    {
+      "id": "mgr",
+      "x": 30,
+      "y": 636,
+      "w": 2638,
+      "h": 246,
+      "title": "Hiring manager",
+      "caption": "",
+      "palette": "teal",
+      "style": "lane"
+    },
+    {
+      "id": "it",
+      "x": 30,
+      "y": 892,
+      "w": 2638,
+      "h": 246,
+      "title": "IT",
+      "caption": "",
+      "palette": "slate",
+      "style": "lane"
+    }
+  ],
+  "nodes": [
+    {
+      "id": "start",
+      "kind": "symbol",
+      "asset": "presentation/start-end",
+      "x": 97.0,
+      "y": 197.0,
+      "w": 104,
+      "h": 100,
+      "label": "Offer accepted",
+      "caption": "Offer accepted",
+      "palette": "slate",
+      "group": "hire"
+    },
+    {
+      "id": "contract",
+      "kind": "component",
+      "asset": "business/contract",
+      "x": 304,
+      "y": 432,
+      "w": 170,
+      "h": 142,
+      "label": "Send contract",
+      "palette": "purple",
+      "detail": "E-signature",
+      "group": "hr"
+    },
+    {
+      "id": "sign",
+      "kind": "component",
+      "asset": "identity/user",
+      "x": 544,
+      "y": 176,
+      "w": 170,
+      "h": 142,
+      "label": "Sign contract",
+      "palette": "blue",
+      "detail": "Returns documents",
+      "group": "hire"
+    },
+    {
+      "id": "record",
+      "kind": "component",
+      "asset": "data/document-db",
+      "x": 784,
+      "y": 432,
+      "w": 170,
+      "h": 142,
+      "label": "Create HR record",
+      "palette": "purple",
+      "detail": "Personnel file",
+      "group": "hr"
+    },
+    {
+      "id": "split",
+      "kind": "symbol",
+      "asset": "business/gateway-parallel",
+      "x": 1047.0,
+      "y": 449.0,
+      "w": 124,
+      "h": 108,
+      "label": "Prepare in parallel",
+      "caption": "Prepare in parallel",
+      "palette": "blue",
+      "group": "hr"
+    },
+    {
+      "id": "orient",
+      "kind": "component",
+      "asset": "business/calendar",
+      "x": 1264,
+      "y": 432,
+      "w": 170,
+      "h": 142,
+      "label": "Schedule orientation",
+      "palette": "purple",
+      "detail": "Day-1 agenda",
+      "group": "hr"
+    },
+    {
+      "id": "buddy",
+      "kind": "component",
+      "asset": "identity/group",
+      "x": 1264,
+      "y": 688,
+      "w": 170,
+      "h": 142,
+      "label": "Assign a buddy",
+      "palette": "teal",
+      "detail": "Team introductions",
+      "group": "mgr"
+    },
+    {
+      "id": "itprep",
+      "kind": "component",
+      "asset": "business/ticket",
+      "x": 1264,
+      "y": 944,
+      "w": 170,
+      "h": 142,
+      "label": "IT onboarding",
+      "palette": "slate",
+      "detail": "Account + laptop",
+      "group": "it"
+    },
+    {
+      "id": "join",
+      "kind": "symbol",
+      "asset": "business/gateway-parallel",
+      "x": 1527.0,
+      "y": 449.0,
+      "w": 124,
+      "h": 108,
+      "label": "All ready",
+      "caption": "All ready",
+      "palette": "blue",
+      "group": "hr"
+    },
+    {
+      "id": "day1",
+      "kind": "component",
+      "asset": "compute/workstation",
+      "x": 1744,
+      "y": 176,
+      "w": 170,
+      "h": 142,
+      "label": "First day",
+      "palette": "blue",
+      "detail": "Desk, laptop, access",
+      "group": "hire"
+    },
+    {
+      "id": "wait",
+      "kind": "symbol",
+      "asset": "business/timer",
+      "x": 2007.0,
+      "y": 705.0,
+      "w": 124,
+      "h": 108,
+      "label": "After 30 days",
+      "caption": "After 30 days",
+      "palette": "teal",
+      "group": "mgr"
+    },
+    {
+      "id": "checkin",
+      "kind": "component",
+      "asset": "business/chat",
+      "x": 2224,
+      "y": 688,
+      "w": 170,
+      "h": 142,
+      "label": "30-day check-in",
+      "palette": "teal",
+      "detail": "Goals + feedback",
+      "group": "mgr"
+    },
+    {
+      "id": "done",
+      "kind": "symbol",
+      "asset": "presentation/start-end",
+      "x": 2497.0,
+      "y": 453.0,
+      "w": 104,
+      "h": 100,
+      "label": "Onboarded",
+      "caption": "Onboarded",
+      "palette": "slate",
+      "group": "hr"
+    }
+  ],
+  "edges": [
+    {
+      "id": "e1",
+      "source": "start",
+      "target": "contract",
+      "kind": "data",
+      "palette": "blue",
+      "source_port": "s",
+      "target_port": "w"
+    },
+    {
+      "id": "e2",
+      "source": "contract",
+      "target": "sign",
+      "kind": "data",
+      "palette": "blue",
+      "source_port": "n",
+      "target_port": "w"
+    },
+    {
+      "id": "e3",
+      "source": "sign",
+      "target": "record",
+      "kind": "data",
+      "palette": "blue",
+      "source_port": "s",
+      "target_port": "w"
+    },
+    {
+      "id": "e4",
+      "source": "record",
+      "target": "split",
+      "kind": "data",
+      "palette": "blue"
+    },
+    {
+      "id": "e5",
+      "source": "split",
+      "target": "orient",
+      "kind": "data",
+      "palette": "blue"
+    },
+    {
+      "id": "e6",
+      "source": "split",
+      "target": "buddy",
+      "kind": "data",
+      "palette": "blue",
+      "source_port": "s",
+      "target_port": "w"
+    },
+    {
+      "id": "e7",
+      "source": "split",
+      "target": "itprep",
+      "kind": "data",
+      "palette": "blue",
+      "source_port": "s",
+      "target_port": "w"
+    },
+    {
+      "id": "e8",
+      "source": "orient",
+      "target": "join",
+      "kind": "data",
+      "palette": "blue"
+    },
+    {
+      "id": "e9",
+      "source": "buddy",
+      "target": "join",
+      "kind": "data",
+      "palette": "blue",
+      "source_port": "e",
+      "target_port": "s"
+    },
+    {
+      "id": "e10",
+      "source": "itprep",
+      "target": "join",
+      "kind": "data",
+      "palette": "blue",
+      "source_port": "e",
+      "target_port": "s"
+    },
+    {
+      "id": "e11",
+      "source": "join",
+      "target": "day1",
+      "kind": "data",
+      "palette": "blue",
+      "source_port": "n",
+      "target_port": "w"
+    },
+    {
+      "id": "e12",
+      "source": "day1",
+      "target": "wait",
+      "kind": "data",
+      "palette": "blue",
+      "source_port": "e",
+      "target_port": "n"
+    },
+    {
+      "id": "e13",
+      "source": "wait",
+      "target": "checkin",
+      "kind": "data",
+      "palette": "blue"
+    },
+    {
+      "id": "e14",
+      "source": "checkin",
+      "target": "done",
+      "kind": "data",
+      "palette": "blue",
+      "source_port": "e",
+      "target_port": "s"
+    }
+  ],
+  "footer": "Illustrative process. Lanes are roles; steps, thresholds and timings are examples, not policy.",
+  "legend": [
+    {
+      "label": "Process flow",
+      "palette": "blue"
+    }
+  ]
+}

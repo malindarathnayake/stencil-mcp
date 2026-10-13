@@ -1,0 +1,178 @@
+{
+  "version": "1.0",
+  "title": "From telemetry to an actionable alert",
+  "subtitle": "Logs, metrics and traces are separate signals that can be correlated during investigation.",
+  "description": "Logs, metrics and traces are separate signals that can be correlated during investigation.",
+  "width": 1550,
+  "height": 820,
+  "groups": [
+    {
+      "id": "signals",
+      "x": 449,
+      "y": 145,
+      "w": 1057,
+      "h": 592,
+      "title": "Observability pipeline",
+      "caption": "",
+      "palette": "orange",
+      "style": "panel"
+    }
+  ],
+  "nodes": [
+    {
+      "id": "apps",
+      "kind": "component",
+      "asset": "software/backend",
+      "x": 49,
+      "y": 354,
+      "w": 220,
+      "h": 145,
+      "label": "Applications",
+      "palette": "blue"
+    },
+    {
+      "id": "logs",
+      "kind": "component",
+      "asset": "observability/logs",
+      "x": 509,
+      "y": 230,
+      "w": 168,
+      "h": 116,
+      "label": "Logs",
+      "palette": "orange"
+    },
+    {
+      "id": "metrics",
+      "kind": "component",
+      "asset": "observability/metrics",
+      "x": 509,
+      "y": 416,
+      "w": 168,
+      "h": 116,
+      "label": "Metrics",
+      "palette": "orange"
+    },
+    {
+      "id": "traces",
+      "kind": "component",
+      "asset": "observability/traces",
+      "x": 509,
+      "y": 602,
+      "w": 168,
+      "h": 116,
+      "label": "Traces",
+      "palette": "orange"
+    },
+    {
+      "id": "collector",
+      "kind": "component",
+      "asset": "observability/collector",
+      "x": 856,
+      "y": 416,
+      "w": 230,
+      "h": 145,
+      "label": "Collector / stores",
+      "palette": "orange"
+    },
+    {
+      "id": "dash",
+      "kind": "component",
+      "asset": "observability/dashboard",
+      "x": 1231,
+      "y": 237,
+      "w": 220,
+      "h": 145,
+      "label": "Dashboard",
+      "palette": "orange"
+    },
+    {
+      "id": "alert",
+      "kind": "component",
+      "asset": "observability/alert",
+      "x": 1231,
+      "y": 504,
+      "w": 220,
+      "h": 145,
+      "label": "Alert + response",
+      "palette": "red"
+    }
+  ],
+  "edges": [
+    {
+      "id": "e1",
+      "source": "apps",
+      "target": "logs",
+      "kind": "data",
+      "palette": "orange",
+      "source_port": "e",
+      "target_port": "w",
+      "route": "straight"
+    },
+    {
+      "id": "e2",
+      "source": "apps",
+      "target": "metrics",
+      "kind": "data",
+      "palette": "orange",
+      "source_port": "e",
+      "target_port": "w",
+      "route": "straight"
+    },
+    {
+      "id": "e3",
+      "source": "apps",
+      "target": "traces",
+      "kind": "data",
+      "palette": "orange",
+      "source_port": "e",
+      "target_port": "w",
+      "route": "straight"
+    },
+    {
+      "id": "e4",
+      "source": "logs",
+      "target": "collector",
+      "kind": "data",
+      "palette": "orange",
+      "source_port": "e",
+      "target_port": "w"
+    },
+    {
+      "id": "e5",
+      "source": "metrics",
+      "target": "collector",
+      "kind": "data",
+      "palette": "orange",
+      "source_port": "e",
+      "target_port": "w"
+    },
+    {
+      "id": "e6",
+      "source": "traces",
+      "target": "collector",
+      "kind": "data",
+      "palette": "orange",
+      "source_port": "e",
+      "target_port": "w"
+    },
+    {
+      "id": "e7",
+      "source": "collector",
+      "target": "dash",
+      "kind": "data",
+      "palette": "orange",
+      "source_port": "e",
+      "target_port": "w"
+    },
+    {
+      "id": "e8",
+      "source": "collector",
+      "target": "alert",
+      "kind": "data",
+      "palette": "red",
+      "source_port": "e",
+      "target_port": "w"
+    }
+  ],
+  "footer": "Illustrative architecture. Labels describe roles; generic symbols do not assert product compatibility."
+}

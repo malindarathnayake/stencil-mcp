@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 144 112" width="144" height="112" role="img" aria-labelledby="title desc" font-family="Arial, Helvetica, sans-serif">
+  <title id="title">Service map</title>
+  <desc id="desc">Generic service map symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.</desc>
+  <g id="artwork" stroke-linecap="round" stroke-linejoin="round"><path d="M32 31 L75 18 L117 54 L84 94 L26 82 Z M32 31 L84 94 M75 18 L26 82 M26 82 L117 54" fill="none" stroke="#CC7628" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="32" cy="31" r="10" fill="#FFF2E3" stroke="#132B50" stroke-width="2.5"/><circle cx="75" cy="18" r="10" fill="#FFF2E3" stroke="#132B50" stroke-width="2.5"/><circle cx="117" cy="54" r="10" fill="#FFF2E3" stroke="#132B50" stroke-width="2.5"/><circle cx="84" cy="94" r="10" fill="#FFF2E3" stroke="#132B50" stroke-width="2.5"/><circle cx="26" cy="82" r="10" fill="#FFF2E3" stroke="#132B50" stroke-width="2.5"/></g>
+</svg>

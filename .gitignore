@@ -1,0 +1,30 @@
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+.pytest_cache/
+*.egg-info/
+build/
+dist/
+
+# Diagram exports and local renders
+exports/
+out/
+*.tmp
+.diagram-*.tmp
+.*.lock
+
+# Machine-specific client config written by scripts/client_config.py
+config/local.*
+
+# Agent and tool working folders
+.claude/
+.playwright-mcp/
+
+# OS / editor
+.DS_Store
+Thumbs.db
+desktop.ini
+.vscode/
+.idea/

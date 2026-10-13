@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 144 112" width="144" height="112" role="img" aria-labelledby="title desc" font-family="Arial, Helvetica, sans-serif">
+  <title id="title">Connection junction</title>
+  <desc id="desc">Generic connection junction symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.</desc>
+  <g id="artwork" stroke-linecap="round" stroke-linejoin="round"><line x1="16" y1="56" x2="128" y2="56" stroke="#526C8C" stroke-width="3" stroke-linecap="round"/><line x1="72" y1="15" x2="72" y2="97" stroke="#526C8C" stroke-width="3" stroke-linecap="round"/><circle cx="72" cy="56" r="8" fill="#526C8C" stroke="#526C8C" stroke-width="2.5"/></g>
+</svg>

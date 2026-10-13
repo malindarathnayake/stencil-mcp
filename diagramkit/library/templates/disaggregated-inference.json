@@ -1,0 +1,128 @@
+{
+  "version": "1.0",
+  "title": "Prefill and decode workers",
+  "subtitle": "Move the prepared KV cache between workers, then continue token generation at the decode worker.",
+  "description": "Move the prepared KV cache between workers, then continue token generation at the decode worker.",
+  "width": 1660,
+  "height": 704,
+  "groups": [
+    {
+      "id": "serving",
+      "x": 331,
+      "y": 142,
+      "w": 1286,
+      "h": 479,
+      "title": "Inference serving boundary",
+      "caption": "",
+      "palette": "teal",
+      "style": "boundary"
+    }
+  ],
+  "nodes": [
+    {
+      "id": "request",
+      "kind": "component",
+      "asset": "software/browser",
+      "x": 45,
+      "y": 303,
+      "w": 209,
+      "h": 148,
+      "label": "Client request",
+      "palette": "blue"
+    },
+    {
+      "id": "router",
+      "kind": "component",
+      "asset": "ai/router",
+      "x": 399,
+      "y": 303,
+      "w": 212,
+      "h": 148,
+      "label": "Request router",
+      "palette": "teal"
+    },
+    {
+      "id": "prefill",
+      "kind": "component",
+      "asset": "ai/prefill-worker",
+      "x": 719,
+      "y": 303,
+      "w": 212,
+      "h": 148,
+      "label": "Prefill worker",
+      "palette": "teal",
+      "detail": "Process the prompt"
+    },
+    {
+      "id": "kv",
+      "kind": "component",
+      "asset": "ai/kv-cache",
+      "x": 1039,
+      "y": 303,
+      "w": 212,
+      "h": 148,
+      "label": "KV-cache transfer",
+      "palette": "purple",
+      "detail": "Transport depends on setup"
+    },
+    {
+      "id": "decode",
+      "kind": "component",
+      "asset": "ai/decode-worker",
+      "x": 1359,
+      "y": 303,
+      "w": 212,
+      "h": 148,
+      "label": "Decode worker",
+      "palette": "teal",
+      "detail": "Generate tokens"
+    },
+    {
+      "id": "kv-note",
+      "kind": "text",
+      "x": 401,
+      "y": 517,
+      "w": 1168,
+      "h": 48,
+      "label": "A transport example can expand the KV-cache transfer into sender NIC, multiple paths, receiver memory and recovery panels.",
+      "font_size": 17,
+      "weight": 400,
+      "align": "left"
+    }
+  ],
+  "edges": [
+    {
+      "id": "e1",
+      "source": "request",
+      "target": "router",
+      "kind": "data",
+      "palette": "blue",
+      "label": "Prompt"
+    },
+    {
+      "id": "e2",
+      "source": "router",
+      "target": "prefill",
+      "kind": "data",
+      "palette": "teal",
+      "label": "Assign"
+    },
+    {
+      "id": "e3",
+      "source": "prefill",
+      "target": "kv",
+      "kind": "data",
+      "palette": "purple",
+      "label": "Cache"
+    },
+    {
+      "id": "e4",
+      "source": "kv",
+      "target": "decode",
+      "kind": "data",
+      "palette": "purple",
+      "label": "Place"
+    }
+  ],
+  "footer": "Illustrative architecture. Labels describe roles; generic symbols do not assert product compatibility."
+}

@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 144 112" width="144" height="112" role="img" aria-labelledby="title desc" font-family="Arial, Helvetica, sans-serif">
+  <title id="title">ETL / ELT</title>
+  <desc id="desc">Generic etl / elt symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.</desc>
+  <g id="artwork" stroke-linecap="round" stroke-linejoin="round"><rect x="14" y="19" width="49" height="30" rx="6" fill="#FFF2E3" stroke="#132B50" stroke-width="2.5"/><rect x="81" y="66" width="49" height="30" rx="6" fill="#FFF2E3" stroke="#132B50" stroke-width="2.5"/><path d="M66 32 H103 V61 M96 54 L103 61 L110 54 M79 82 H42 V54 M35 61 L42 54 L49 61" fill="none" stroke="#CC7628" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><rect x="55.95" y="84" width="32.1" height="20" rx="5" fill="#FFFFFF" stroke="#CC7628" stroke-width="1.6"/><text x="72" y="98" text-anchor="middle" font-size="9.5" font-weight="700" fill="#CC7628">ETL</text></g>
+</svg>

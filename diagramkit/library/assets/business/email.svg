@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 144 112" width="144" height="112" role="img" aria-labelledby="title desc" font-family="Arial, Helvetica, sans-serif">
+  <title id="title">Email</title>
+  <desc id="desc">Generic email symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.</desc>
+  <g id="artwork" stroke-linecap="round" stroke-linejoin="round"><rect x="20" y="24" width="104" height="66" rx="6" fill="#E6F5F2" stroke="#132B50" stroke-width="2.5"/><path d="M20 30 L72 64 L124 30" fill="none" stroke="#13857B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><path d="M22 88 L58 58 M122 88 L86 58" fill="none" stroke="#13857B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></g>
+</svg>

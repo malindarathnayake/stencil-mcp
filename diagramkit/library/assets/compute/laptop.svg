@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 144 112" width="144" height="112" role="img" aria-labelledby="title desc" font-family="Arial, Helvetica, sans-serif">
+  <title id="title">Laptop</title>
+  <desc id="desc">Generic laptop symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.</desc>
+  <g id="artwork" stroke-linecap="round" stroke-linejoin="round"><rect x="31" y="17" width="82" height="63" rx="6" fill="#EAF3FE" stroke="#132B50" stroke-width="2.5"/><rect x="39" y="25" width="66" height="47" rx="3" fill="#FFFFFF" stroke="#1875D1" stroke-width="2.5"/><path d="M31 80 H113 L131 95 Q132 99 124 99 H20 Q12 99 13 95 Z" fill="#EAF3FE" stroke="#132B50" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><line x1="55" y1="91" x2="89" y2="91" stroke="#1875D1" stroke-width="2.5" stroke-linecap="round"/></g>
+</svg>

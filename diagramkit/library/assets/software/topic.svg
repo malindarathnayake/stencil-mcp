@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 144 112" width="144" height="112" role="img" aria-labelledby="title desc" font-family="Arial, Helvetica, sans-serif">
+  <title id="title">Topic</title>
+  <desc id="desc">Generic topic symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.</desc>
+  <g id="artwork" stroke-linecap="round" stroke-linejoin="round"><circle cx="37" cy="57" r="17" fill="#E6F5F2" stroke="#132B50" stroke-width="2.5"/><path d="M63 42 Q82 57 63 72 M77 29 Q111 57 77 85 M92 17 Q137 57 92 97" fill="none" stroke="#13857B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><rect x="49.25" y="84" width="45.5" height="20" rx="5" fill="#FFFFFF" stroke="#13857B" stroke-width="1.6"/><text x="72" y="98" text-anchor="middle" font-size="9.5" font-weight="700" fill="#13857B">TOPIC</text></g>
+</svg>

@@ -1,0 +1,334 @@
+{
+  "version": "1.0",
+  "title": "IT: new-hire access provisioning",
+  "subtitle": "From an HR-system ticket to a verified first login, with an extra approval for privileged roles.",
+  "description": "The HR system opens an onboarding ticket. The service desk validates it and returns incomplete requests. The identity admin creates the account and assigns role groups while the service desk provisions a laptop. Privileged roles need a time-bound approval from Security. The new hire enrols MFA and the service desk verifies the first login.",
+  "width": 2458,
+  "height": 1214,
+  "groups": [
+    {
+      "id": "hr",
+      "x": 30,
+      "y": 124,
+      "w": 2398,
+      "h": 246,
+      "title": "HR system",
+      "caption": "",
+      "palette": "slate",
+      "style": "lane"
+    },
+    {
+      "id": "desk",
+      "x": 30,
+      "y": 380,
+      "w": 2398,
+      "h": 246,
+      "title": "Service desk",
+      "caption": "",
+      "palette": "blue",
+      "style": "lane"
+    },
+    {
+      "id": "idm",
+      "x": 30,
+      "y": 636,
+      "w": 2398,
+      "h": 246,
+      "title": "Identity admin",
+      "caption": "",
+      "palette": "purple",
+      "style": "lane"
+    },
+    {
+      "id": "sec",
+      "x": 30,
+      "y": 892,
+      "w": 2398,
+      "h": 246,
+      "title": "Security",
+      "caption": "",
+      "palette": "red",
+      "style": "lane"
+    }
+  ],
+  "nodes": [
+    {
+      "id": "start",
+      "kind": "symbol",
+      "asset": "presentation/start-end",
+      "x": 97.0,
+      "y": 197.0,
+      "w": 104,
+      "h": 100,
+      "label": "New hire confirmed",
+      "caption": "New hire confirmed",
+      "palette": "slate",
+      "group": "hr"
+    },
+    {
+      "id": "ticket",
+      "kind": "component",
+      "asset": "business/ticket",
+      "x": 304,
+      "y": 176,
+      "w": 170,
+      "h": 142,
+      "label": "Create onboarding ticket",
+      "palette": "slate",
+      "detail": "From HRIS record",
+      "group": "hr"
+    },
+    {
+      "id": "validate",
+      "kind": "component",
+      "asset": "business/form",
+      "x": 544,
+      "y": 432,
+      "w": 170,
+      "h": 142,
+      "label": "Validate request",
+      "palette": "blue",
+      "detail": "Role, start date",
+      "group": "desk"
+    },
+    {
+      "id": "complete",
+      "kind": "symbol",
+      "asset": "presentation/decision",
+      "x": 807.0,
+      "y": 449.0,
+      "w": 124,
+      "h": 108,
+      "label": "Complete?",
+      "caption": "Complete?",
+      "palette": "blue",
+      "group": "desk"
+    },
+    {
+      "id": "account",
+      "kind": "component",
+      "asset": "identity/user",
+      "x": 1024,
+      "y": 688,
+      "w": 170,
+      "h": 142,
+      "label": "Create account",
+      "palette": "purple",
+      "detail": "Directory + mailbox",
+      "group": "idm"
+    },
+    {
+      "id": "laptop",
+      "kind": "component",
+      "asset": "compute/laptop",
+      "x": 1024,
+      "y": 432,
+      "w": 170,
+      "h": 142,
+      "label": "Provision laptop",
+      "palette": "blue",
+      "detail": "Imaged + encrypted",
+      "group": "desk"
+    },
+    {
+      "id": "groups",
+      "kind": "component",
+      "asset": "identity/group",
+      "x": 1264,
+      "y": 688,
+      "w": 170,
+      "h": 142,
+      "label": "Assign role groups",
+      "palette": "purple",
+      "detail": "Least privilege",
+      "group": "idm"
+    },
+    {
+      "id": "priv",
+      "kind": "symbol",
+      "asset": "presentation/decision",
+      "x": 1527.0,
+      "y": 705.0,
+      "w": 124,
+      "h": 108,
+      "label": "Privileged role?",
+      "caption": "Privileged role?",
+      "palette": "blue",
+      "group": "idm"
+    },
+    {
+      "id": "approve",
+      "kind": "component",
+      "asset": "identity/privileged-access",
+      "x": 1504,
+      "y": 944,
+      "w": 170,
+      "h": 142,
+      "label": "Approve privileged access",
+      "palette": "red",
+      "detail": "Time-bound",
+      "group": "sec"
+    },
+    {
+      "id": "mfa",
+      "kind": "component",
+      "asset": "identity/mfa",
+      "x": 1744,
+      "y": 432,
+      "w": 170,
+      "h": 142,
+      "label": "Enrol MFA",
+      "palette": "blue",
+      "detail": "Day-1 session",
+      "group": "desk"
+    },
+    {
+      "id": "verify",
+      "kind": "component",
+      "asset": "status/approved",
+      "x": 1984,
+      "y": 432,
+      "w": 170,
+      "h": 142,
+      "label": "Verify first login",
+      "palette": "blue",
+      "detail": "Close ticket",
+      "group": "desk"
+    },
+    {
+      "id": "live",
+      "kind": "symbol",
+      "asset": "presentation/start-end",
+      "x": 2257.0,
+      "y": 453.0,
+      "w": 104,
+      "h": 100,
+      "label": "Access live",
+      "caption": "Access live",
+      "palette": "slate",
+      "group": "desk"
+    }
+  ],
+  "edges": [
+    {
+      "id": "e1",
+      "source": "start",
+      "target": "ticket",
+      "kind": "data",
+      "palette": "blue"
+    },
+    {
+      "id": "e2",
+      "source": "ticket",
+      "target": "validate",
+      "kind": "data",
+      "palette": "blue"
+    },
+    {
+      "id": "e3",
+      "source": "validate",
+      "target": "complete",
+      "kind": "data",
+      "palette": "blue"
+    },
+    {
+      "id": "e4",
+      "source": "complete",
+      "target": "ticket",
+      "kind": "feedback",
+      "palette": "red",
+      "label": "Missing info",
+      "source_port": "n",
+      "target_port": "e"
+    },
+    {
+      "id": "e5",
+      "source": "complete",
+      "target": "account",
+      "kind": "data",
+      "palette": "blue",
+      "label": "Yes",
+      "source_port": "s",
+      "target_port": "w"
+    },
+    {
+      "id": "e6",
+      "source": "account",
+      "target": "laptop",
+      "kind": "data",
+      "palette": "blue"
+    },
+    {
+      "id": "e7",
+      "source": "account",
+      "target": "groups",
+      "kind": "data",
+      "palette": "blue"
+    },
+    {
+      "id": "e8",
+      "source": "groups",
+      "target": "priv",
+      "kind": "data",
+      "palette": "blue"
+    },
+    {
+      "id": "e9",
+      "source": "priv",
+      "target": "mfa",
+      "kind": "data",
+      "palette": "blue",
+      "label": "No"
+    },
+    {
+      "id": "e10",
+      "source": "priv",
+      "target": "approve",
+      "kind": "data",
+      "palette": "blue",
+      "label": "Yes"
+    },
+    {
+      "id": "e11",
+      "source": "approve",
+      "target": "mfa",
+      "kind": "data",
+      "palette": "blue",
+      "source_port": "e",
+      "target_port": "s"
+    },
+    {
+      "id": "e12",
+      "source": "laptop",
+      "target": "mfa",
+      "kind": "data",
+      "palette": "blue"
+    },
+    {
+      "id": "e13",
+      "source": "mfa",
+      "target": "verify",
+      "kind": "data",
+      "palette": "blue"
+    },
+    {
+      "id": "e14",
+      "source": "verify",
+      "target": "live",
+      "kind": "data",
+      "palette": "blue"
+    }
+  ],
+  "footer": "Illustrative process. Lanes are roles; steps, thresholds and timings are examples, not policy.",
+  "legend": [
+    {
+      "label": "Process flow",
+      "palette": "blue"
+    },
+    {
+      "label": "Rework or exception",
+      "palette": "red",
+      "dashed": true
+    }
+  ]
+}

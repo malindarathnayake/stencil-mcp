@@ -1,0 +1,406 @@
+{
+  "version": "1.0",
+  "title": "Fleet: dashcam event to driver coaching",
+  "subtitle": "A triggered video event is uploaded and scored; severe events alert a dispatcher, coachable events go to a safety review and a coaching session.",
+  "description": "Vehicle edge: a telematics trigger makes the dash camera save an event clip, which is uploaded and scored by an AI triage service and stored. A severe event alerts the dispatcher, who makes a welfare check with the driver. A safety reviewer reviews stored events; non-coachable events are dismissed. Coachable events are assigned to the fleet manager, who schedules a coaching session with the driver and records the outcome.",
+  "width": 2698,
+  "height": 1490,
+  "groups": [
+    {
+      "id": "disp",
+      "x": 30,
+      "y": 400,
+      "w": 2638,
+      "h": 246,
+      "title": "Dispatcher",
+      "caption": "",
+      "palette": "slate",
+      "style": "lane"
+    },
+    {
+      "id": "rev",
+      "x": 30,
+      "y": 656,
+      "w": 2638,
+      "h": 246,
+      "title": "Safety reviewer",
+      "caption": "",
+      "palette": "orange",
+      "style": "lane"
+    },
+    {
+      "id": "mgr",
+      "x": 30,
+      "y": 912,
+      "w": 2638,
+      "h": 246,
+      "title": "Fleet manager",
+      "caption": "",
+      "palette": "blue",
+      "style": "lane"
+    },
+    {
+      "id": "drv",
+      "x": 30,
+      "y": 1168,
+      "w": 2638,
+      "h": 246,
+      "title": "Driver",
+      "caption": "",
+      "palette": "teal",
+      "style": "lane"
+    },
+    {
+      "id": "platform",
+      "x": 30,
+      "y": 112,
+      "w": 2638,
+      "h": 272,
+      "title": "Vehicle edge and video platform",
+      "caption": "",
+      "palette": "orange",
+      "style": "panel"
+    }
+  ],
+  "nodes": [
+    {
+      "id": "vehicle",
+      "kind": "component",
+      "asset": "fleet/vehicle",
+      "x": 64,
+      "y": 160,
+      "w": 170,
+      "h": 142,
+      "label": "Fleet vehicle",
+      "palette": "orange",
+      "detail": "In service",
+      "group": "platform"
+    },
+    {
+      "id": "dashcam",
+      "kind": "component",
+      "asset": "fleet/dashcam",
+      "x": 304,
+      "y": 160,
+      "w": 170,
+      "h": 142,
+      "label": "Dash camera",
+      "palette": "orange",
+      "detail": "Road + driver facing",
+      "group": "platform"
+    },
+    {
+      "id": "clip",
+      "kind": "component",
+      "asset": "fleet/event-clip",
+      "x": 544,
+      "y": 160,
+      "w": 170,
+      "h": 142,
+      "label": "Event clip",
+      "palette": "orange",
+      "detail": "Video + sensor data",
+      "group": "platform"
+    },
+    {
+      "id": "triage",
+      "kind": "component",
+      "asset": "ai/vision-model",
+      "x": 784,
+      "y": 160,
+      "w": 170,
+      "h": 142,
+      "label": "AI event triage",
+      "palette": "teal",
+      "detail": "Scores severity",
+      "group": "platform"
+    },
+    {
+      "id": "store",
+      "kind": "component",
+      "asset": "data/document-db",
+      "x": 1024,
+      "y": 160,
+      "w": 170,
+      "h": 142,
+      "label": "Event store",
+      "palette": "orange",
+      "detail": "Clips + metadata",
+      "group": "platform"
+    },
+    {
+      "id": "gps",
+      "kind": "component",
+      "asset": "fleet/gps-fix",
+      "x": 1264,
+      "y": 160,
+      "w": 170,
+      "h": 142,
+      "label": "GPS + speed",
+      "palette": "orange",
+      "detail": "Event context",
+      "group": "platform"
+    },
+    {
+      "id": "welfare",
+      "kind": "component",
+      "asset": "fleet/dispatcher",
+      "x": 784,
+      "y": 452,
+      "w": 170,
+      "h": 142,
+      "label": "Check on driver",
+      "palette": "slate",
+      "detail": "Severe events only",
+      "group": "disp"
+    },
+    {
+      "id": "call",
+      "kind": "component",
+      "asset": "business/chat",
+      "x": 784,
+      "y": 1220,
+      "w": 170,
+      "h": 142,
+      "label": "Welfare check",
+      "palette": "teal",
+      "detail": "Driver confirms status",
+      "group": "drv"
+    },
+    {
+      "id": "review",
+      "kind": "component",
+      "asset": "fleet/event-clip",
+      "x": 1024,
+      "y": 708,
+      "w": 170,
+      "h": 142,
+      "label": "Review clip",
+      "palette": "orange",
+      "detail": "Confirm event",
+      "group": "rev"
+    },
+    {
+      "id": "coachable",
+      "kind": "symbol",
+      "asset": "presentation/decision",
+      "x": 1287.0,
+      "y": 725.0,
+      "w": 124,
+      "h": 108,
+      "label": "Coachable?",
+      "caption": "Coachable?",
+      "palette": "blue",
+      "group": "rev"
+    },
+    {
+      "id": "dismiss",
+      "kind": "symbol",
+      "asset": "presentation/start-end",
+      "x": 1537.0,
+      "y": 729.0,
+      "w": 104,
+      "h": 100,
+      "label": "No action",
+      "caption": "No action",
+      "palette": "slate",
+      "group": "rev"
+    },
+    {
+      "id": "assign",
+      "kind": "component",
+      "asset": "business/ticket",
+      "x": 1504,
+      "y": 964,
+      "w": 170,
+      "h": 142,
+      "label": "Assign coaching",
+      "palette": "blue",
+      "detail": "Driver record",
+      "group": "mgr"
+    },
+    {
+      "id": "schedule",
+      "kind": "component",
+      "asset": "business/calendar",
+      "x": 1744,
+      "y": 964,
+      "w": 170,
+      "h": 142,
+      "label": "Schedule session",
+      "palette": "blue",
+      "detail": "Within 7 days",
+      "group": "mgr"
+    },
+    {
+      "id": "session",
+      "kind": "component",
+      "asset": "fleet/coaching-session",
+      "x": 1984,
+      "y": 1220,
+      "w": 170,
+      "h": 142,
+      "label": "Coaching session",
+      "palette": "teal",
+      "detail": "Review clip together",
+      "group": "drv"
+    },
+    {
+      "id": "outcome",
+      "kind": "component",
+      "asset": "business/report",
+      "x": 2224,
+      "y": 964,
+      "w": 170,
+      "h": 142,
+      "label": "Record outcome",
+      "palette": "blue",
+      "detail": "Track score trend",
+      "group": "mgr"
+    },
+    {
+      "id": "closed",
+      "kind": "symbol",
+      "asset": "presentation/start-end",
+      "x": 2497.0,
+      "y": 985.0,
+      "w": 104,
+      "h": 100,
+      "label": "Closed",
+      "caption": "Closed",
+      "palette": "slate",
+      "group": "mgr"
+    }
+  ],
+  "edges": [
+    {
+      "id": "e1",
+      "source": "vehicle",
+      "target": "dashcam",
+      "kind": "data",
+      "palette": "blue",
+      "label": "Trigger"
+    },
+    {
+      "id": "e2",
+      "source": "dashcam",
+      "target": "clip",
+      "kind": "data",
+      "palette": "blue"
+    },
+    {
+      "id": "e3",
+      "source": "clip",
+      "target": "triage",
+      "kind": "data",
+      "palette": "blue",
+      "label": "Upload"
+    },
+    {
+      "id": "e4",
+      "source": "triage",
+      "target": "store",
+      "kind": "data",
+      "palette": "blue"
+    },
+    {
+      "id": "e5",
+      "source": "gps",
+      "target": "store",
+      "kind": "data",
+      "palette": "blue",
+      "label": "Context"
+    },
+    {
+      "id": "e6",
+      "source": "triage",
+      "target": "welfare",
+      "kind": "feedback",
+      "palette": "red",
+      "label": "Severe event"
+    },
+    {
+      "id": "e7",
+      "source": "welfare",
+      "target": "call",
+      "kind": "data",
+      "palette": "blue",
+      "label": "Call driver"
+    },
+    {
+      "id": "e8",
+      "source": "store",
+      "target": "review",
+      "kind": "data",
+      "palette": "blue",
+      "label": "Queued events"
+    },
+    {
+      "id": "e9",
+      "source": "review",
+      "target": "coachable",
+      "kind": "data",
+      "palette": "blue"
+    },
+    {
+      "id": "e10",
+      "source": "coachable",
+      "target": "dismiss",
+      "kind": "data",
+      "palette": "blue",
+      "label": "No"
+    },
+    {
+      "id": "e11",
+      "source": "coachable",
+      "target": "assign",
+      "kind": "data",
+      "palette": "blue",
+      "label": "Yes"
+    },
+    {
+      "id": "e12",
+      "source": "assign",
+      "target": "schedule",
+      "kind": "data",
+      "palette": "blue"
+    },
+    {
+      "id": "e13",
+      "source": "schedule",
+      "target": "session",
+      "kind": "data",
+      "palette": "blue",
+      "source_port": "s",
+      "target_port": "w"
+    },
+    {
+      "id": "e14",
+      "source": "session",
+      "target": "outcome",
+      "kind": "data",
+      "palette": "blue",
+      "source_port": "e",
+      "target_port": "s"
+    },
+    {
+      "id": "e15",
+      "source": "outcome",
+      "target": "closed",
+      "kind": "data",
+      "palette": "blue"
+    }
+  ],
+  "footer": "Illustrative, generic workflow. Lanes are roles; thresholds and timings are examples. Generic symbols do not assert product capabilities.",
+  "legend": [
+    {
+      "label": "Process or data flow",
+      "palette": "blue"
+    },
+    {
+      "label": "Urgent alert path",
+      "palette": "red",
+      "dashed": true
+    }
+  ]
+}

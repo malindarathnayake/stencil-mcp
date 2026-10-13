@@ -1,0 +1,156 @@
+{
+  "version": "1.0",
+  "title": "Event-driven processing",
+  "subtitle": "One published event can feed independent consumers. Delivery guarantees are application-specific.",
+  "description": "One published event can feed independent consumers. Delivery guarantees are application-specific.",
+  "width": 1520,
+  "height": 760,
+  "groups": [
+    {
+      "id": "domain",
+      "x": 37,
+      "y": 144,
+      "w": 337,
+      "h": 496,
+      "title": "Producer domain",
+      "caption": "",
+      "palette": "blue",
+      "style": "boundary"
+    },
+    {
+      "id": "buszone",
+      "x": 427,
+      "y": 144,
+      "w": 314,
+      "h": 496,
+      "title": "Messaging",
+      "caption": "",
+      "palette": "teal",
+      "style": "panel"
+    },
+    {
+      "id": "consumers",
+      "x": 795,
+      "y": 144,
+      "w": 687,
+      "h": 496,
+      "title": "Independent consumers",
+      "caption": "",
+      "palette": "purple",
+      "style": "panel"
+    }
+  ],
+  "nodes": [
+    {
+      "id": "producer",
+      "kind": "component",
+      "asset": "software/backend",
+      "x": 111,
+      "y": 336,
+      "w": 187,
+      "h": 146,
+      "label": "Producer",
+      "palette": "blue"
+    },
+    {
+      "id": "topic",
+      "kind": "component",
+      "asset": "software/topic",
+      "x": 485,
+      "y": 336,
+      "w": 192,
+      "h": 146,
+      "label": "Event topic",
+      "palette": "teal"
+    },
+    {
+      "id": "c1",
+      "kind": "component",
+      "asset": "software/background-worker",
+      "x": 843,
+      "y": 220,
+      "w": 195,
+      "h": 145,
+      "label": "Consumer A",
+      "palette": "purple"
+    },
+    {
+      "id": "c2",
+      "kind": "component",
+      "asset": "software/background-worker",
+      "x": 843,
+      "y": 440,
+      "w": 195,
+      "h": 145,
+      "label": "Consumer B",
+      "palette": "purple"
+    },
+    {
+      "id": "db1",
+      "kind": "component",
+      "asset": "data/relational-db",
+      "x": 1240,
+      "y": 220,
+      "w": 185,
+      "h": 145,
+      "label": "Store A",
+      "palette": "orange"
+    },
+    {
+      "id": "db2",
+      "kind": "component",
+      "asset": "data/document-db",
+      "x": 1240,
+      "y": 440,
+      "w": 185,
+      "h": 145,
+      "label": "Store B",
+      "palette": "orange"
+    }
+  ],
+  "edges": [
+    {
+      "id": "e1",
+      "source": "producer",
+      "target": "topic",
+      "kind": "data",
+      "palette": "teal",
+      "label": "Publish"
+    },
+    {
+      "id": "e2",
+      "source": "topic",
+      "target": "c1",
+      "kind": "data",
+      "palette": "purple",
+      "source_port": "e",
+      "target_port": "w"
+    },
+    {
+      "id": "e3",
+      "source": "topic",
+      "target": "c2",
+      "kind": "data",
+      "palette": "purple",
+      "source_port": "e",
+      "target_port": "w"
+    },
+    {
+      "id": "e4",
+      "source": "c1",
+      "target": "db1",
+      "kind": "data",
+      "palette": "orange",
+      "label": "Persist"
+    },
+    {
+      "id": "e5",
+      "source": "c2",
+      "target": "db2",
+      "kind": "data",
+      "palette": "orange",
+      "label": "Persist"
+    }
+  ],
+  "footer": "Illustrative architecture. Labels describe roles; generic symbols do not assert product compatibility."
+}
