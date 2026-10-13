@@ -56,10 +56,31 @@ verification) before any change was made.
 - CI runs the tests on Linux, Windows and macOS, checks that a rebuild leaves generated
   files unchanged, and builds and smoke-tests the wheel. A `v*` tag publishes a release.
 
+### Supply chain and CI/CD security
+
+- The wheel is built from a hash-locked toolchain (`requirements-build.txt`, installed
+  with `--require-hashes`) without build isolation, and is byte-reproducible; CI builds
+  it twice and fails on any difference.
+- Every GitHub Action is pinned to a full commit SHA. Dependabot updates actions and the
+  build toolchain after a cooldown. Tokens are read-only by default, checkout does not
+  persist credentials, and event data reaches shell only through `env`.
+- `security.yml` runs CodeQL (Python and workflows), gitleaks, zizmor and a Syft + Grype
+  SBOM scan that fails on high or critical findings. Scanners are checksum-verified
+  binaries at fixed versions, not third-party actions.
+- Releases repeat every gate on the tagged commit, then publish from a separate job in
+  the `release` environment with a signed SLSA build-provenance attestation, CycloneDX
+  and SPDX SBOMs and `SHA256SUMS`.
+- The renderer's active-content check now compares attribute local names, so a
+  namespaced `xlink:href` in a catalog asset is rejected. A regression test covers
+  scripts, event handlers, `href`, `style`, `url()` and unsupported elements.
+- Added `SECURITY.md` and `docs/SECURITY_POSTURE.md`.
+- `build_schema.py` and `build_brand.py` write LF bytes; the schema had been written
+  with CRLF on Windows.
+
 ### Not changed
 
 - Protocol version stays 2025-06-18. Answering with the one supported version is
   conformant negotiation.
 - No new node kinds, edge kinds or lane auto-layout; swimlanes use existing `lane` groups.
 
-Tests: 69 (1 optional CairoSVG test skipped).
+Tests: 70 (1 optional CairoSVG test skipped).

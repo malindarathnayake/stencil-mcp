@@ -1,0 +1,124 @@
+# Publishes a GitHub Release when a vX.Y.Z tag is pushed.
+#
+# A tag push can bypass a PR, so this workflow does not trust that ci.yml or
+# security.yml ran on the tagged commit: it repeats tests, the locked reproducible
+# build, the wheel smoke test and the vulnerability gate before anything is published.
+#
+# Two jobs, split by privilege. `build` runs the code under test with a read-only
+# token. `publish` never runs project code: it receives the built files, signs a SLSA
+# build-provenance attestation for them, and creates the release. Only `publish` holds
+# write scopes, and it runs in the `release` environment, which should require a
+# reviewer and only allow v* tags (see docs/SECURITY_POSTURE.md).
+name: Release
+
+on:
+  push:
+    tags: ["v*"]
+
+permissions: {}
+
+concurrency:
+  group: release-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  build:
+    name: Verify and build
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0
+        with:
+          python-version: "3.12"
+      # A published tag must be a stable vX.Y.Z equal to both version strings. The tag
+      # reaches the shell through env, never through expression interpolation.
+      - name: Check release tag
+        env:
+          TAG: ${{ github.ref_name }}
+        run: |
+          if ! printf '%s' "$TAG" | grep -Eq '^v[0-9]+\.[0-9]+\.[0-9]+$'; then
+            echo "::error::tag '$TAG' is not a stable vX.Y.Z release tag"; exit 1
+          fi
+          PYPROJECT="$(python -c "import tomllib;print(tomllib.load(open('pyproject.toml','rb'))['project']['version'])")"
+          PACKAGE="$(python -c "import diagramkit;print(diagramkit.__version__)")"
+          if [ "$TAG" != "v$PYPROJECT" ] || [ "$TAG" != "v$PACKAGE" ]; then
+            echo "::error::tag '$TAG' does not match pyproject $PYPROJECT / diagramkit $PACKAGE"; exit 1
+          fi
+      - name: Unit tests
+        run: python -m unittest discover -s tests -v
+      - name: Install locked build toolchain
+        run: |
+          python -m pip install --disable-pip-version-check --require-hashes --only-binary=:all: -r requirements-build.txt
+      - name: Build twice and require identical wheels
+        run: |
+          SOURCE_DATE_EPOCH="$(git log -1 --format=%ct)"
+          export SOURCE_DATE_EPOCH
+          python -m build --no-isolation --outdir dist
+          rm -rf build ./*.egg-info
+          python -m build --no-isolation --wheel --outdir rebuild
+          a="$(sha256sum dist/*.whl | cut -d' ' -f1)"
+          b="$(sha256sum rebuild/*.whl | cut -d' ' -f1)"
+          if [ "$a" != "$b" ]; then
+            echo "::error::Wheel is not reproducible ($a vs $b)"; exit 1
+          fi
+      - name: Smoke-test wheel in a clean environment
+        run: python scripts/smoke_wheel.py dist/*.whl
+      - name: Download Syft and Grype (pinned binaries)
+        run: |
+          curl -fsSL -o syft.tar.gz https://github.com/anchore/syft/releases/download/v1.52.0/syft_1.52.0_linux_amd64.tar.gz
+          curl -fsSL -o grype.tar.gz https://github.com/anchore/grype/releases/download/v0.119.0/grype_0.119.0_linux_amd64.tar.gz
+          printf '%s\n' \
+            "caeedb81fb0491615f1ebd1761e4145d41ee86dd2cc7bf80669f9f5ad9d6133d  syft.tar.gz" \
+            "3fa2dc4b924621ab65404cf08d0b8438d896d80ab949c9d5a4ca283c36004c9b  grype.tar.gz" | sha256sum -c -
+          tar -xzf syft.tar.gz syft
+          tar -xzf grype.tar.gz grype
+      - name: SBOM and vulnerability gate
+        run: |
+          python -m pip install --disable-pip-version-check --no-deps --target shipped dist/*.whl
+          ./syft scan dir:shipped -o cyclonedx-json=dist/stencil-mcp.cdx.json -o spdx-json=dist/stencil-mcp.spdx.json
+          ./grype sbom:dist/stencil-mcp.cdx.json --fail-on high
+      - name: Checksums
+        run: |
+          cp MANIFEST.sha256 dist/
+          (cd dist && sha256sum ./*.whl ./*.tar.gz ./*.json MANIFEST.sha256 > SHA256SUMS)
+      - uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+        with:
+          name: release-dist
+          path: dist/
+          if-no-files-found: error
+          retention-days: 7
+
+  publish:
+    name: Attest and publish
+    needs: build
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    environment: release
+    permissions:
+      contents: write      # create the release
+      id-token: write      # OIDC token for the Sigstore-signed attestation
+      attestations: write  # store the attestation on the repository
+    steps:
+      - uses: actions/download-artifact@3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c # v8.0.1
+        with:
+          name: release-dist
+          path: dist
+      # Users verify with: gh attestation verify <wheel> --repo malindarathnayake/stencil-mcp
+      - uses: actions/attest-build-provenance@4d101475d8b20a2381f78447822ac1eab6504dd8 # v4.2.2
+        with:
+          subject-path: |
+            dist/*.whl
+            dist/*.tar.gz
+      - name: Create GitHub Release
+        env:
+          GH_TOKEN: ${{ github.token }}
+          TAG: ${{ github.ref_name }}
+          REPO: ${{ github.repository }}
+        run: |
+          gh release create "$TAG" dist/* --repo "$REPO" --verify-tag \
+            --title "Stencil $TAG" --generate-notes

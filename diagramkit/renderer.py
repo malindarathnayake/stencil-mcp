@@ -41,7 +41,8 @@ def asset_art(asset_id):
     for el in root.iter():
         if el.tag.rsplit('}',1)[-1] not in allowed:raise ValueError('Unsupported SVG element in catalog asset.')
         for k,v in el.attrib.items():
-            if k.lower().startswith('on') or k in ('href','style') or 'url(' in v.lower():raise ValueError('Active or externally referenced SVG content is prohibited.')
+            k=k.rsplit('}',1)[-1].lower()  # compare local names, so xlink:href is caught too
+            if k.startswith('on') or k in ('href','style') or 'url(' in v.lower():raise ValueError('Active or externally referenced SVG content is prohibited.')
     g=next((ch for ch in root if ch.tag.endswith('}g')),None)
     if g is None:raise ValueError('Asset has no artwork group.')
     # Strip IDs from internal artwork; instance groups receive unique IDs in the scene.

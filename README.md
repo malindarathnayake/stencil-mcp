@@ -231,6 +231,9 @@ python -m diagramkit.cli render diagramkit/library/templates/support-escalation.
 - **Bounded input.** 1 MiB per message, at most 200 nodes and 400 edges per scene, 200 validation issues per report.
 - **Confined writes.** `export_diagram` accepts a filename stem only, writes only into the export folder, refuses symlinks and Windows device names, never overwrites unless asked, and stages both files before publishing them.
 - **Checked assets.** The renderer verifies each symbol's SHA-256 against the catalog and rejects active SVG content.
+- **Verifiable releases.** Each release wheel carries a signed build-provenance attestation and SBOMs. Check it before installing: `gh attestation verify <wheel> --repo malindarathnayake/stencil-mcp`.
+
+The full threat model, which maps these controls to the OWASP LLM and Agentic Top 10, is in [docs/SECURITY_POSTURE.md](docs/SECURITY_POSTURE.md). Report vulnerabilities privately; see [SECURITY.md](SECURITY.md).
 
 Validation checks structure and layout: ids, bounds, overlaps, text fit, edges crossing nodes. It cannot tell you that an architecture is secure, a protocol is drawn correctly, or a product supports a feature. Look at the rendered output. The layout helper is a first pass, not an obstacle-avoiding router; set ports and waypoints for clean edges. A shared HTTP deployment needs the official MCP SDK plus authentication and isolated storage; see [docs/MCP.md](docs/MCP.md).
 
@@ -245,10 +248,11 @@ python scripts/build_schema.py      # scene.schema.json
 python scripts/build_templates.py   # 24 templates and example SVGs
 python scripts/build_gallery.py     # previews/ and gallery.html (PNGs need CairoSVG)
 python scripts/build_release.py     # asset-packs.json, VALIDATION_REPORT.json, MANIFEST.sha256
-python -m pip wheel . --no-deps -w dist   # the release wheel
+python -m pip install --require-hashes --only-binary=:all: -r requirements-build.txt
+python -m build --no-isolation           # the release wheel and sdist, into dist/
 ```
 
-CI (`.github/workflows/ci.yml`) runs the tests on Linux, Windows and macOS, fails if a rebuild changes any committed generated file, and builds and smoke-tests the wheel. Pushing a `v*` tag publishes the wheel to a GitHub Release.
+The release wheel is built from a hash-locked toolchain (`requirements-build.txt`) with `python -m build --no-isolation`, and is byte-reproducible with `SOURCE_DATE_EPOCH` set. CI runs the tests on Linux, Windows and macOS, fails if a rebuild changes any committed generated file, and builds the wheel twice to prove it is reproducible. `security.yml` runs CodeQL, gitleaks, zizmor and a Syft/Grype SBOM scan. Pushing a `vX.Y.Z` tag publishes an attested release. Every action is pinned to a commit SHA and every scanner to a verified checksum; see [docs/SECURITY_POSTURE.md](docs/SECURITY_POSTURE.md).
 
 Builds are deterministic and write LF line endings on every OS, so a rebuild without source changes is byte-identical. Asset ids are public API: the original 300 symbols are pinned byte-for-byte by `tests/fixtures/legacy_sha256.json`, and new symbols are additive. Adding roles, shapes or a separately licensed vendor pack: [docs/EXTENDING.md](docs/EXTENDING.md).
 
@@ -263,6 +267,8 @@ Builds are deterministic and write LF line endings on every OS, so a rebuild wit
 | [docs/MCP.md](docs/MCP.md) | Tools, resources, transport and export policy |
 | [docs/EXTENDING.md](docs/EXTENDING.md) | Adding symbols, templates and packs |
 | [docs/PACK_COVERAGE.md](docs/PACK_COVERAGE.md) | What each pack covers and what is not implemented |
+| [docs/SECURITY_POSTURE.md](docs/SECURITY_POSTURE.md) | Threat model, build integrity, CI/CD hardening, scanning and release verification |
+| [SECURITY.md](SECURITY.md) | Reporting a vulnerability |
 | [CHANGELOG.md](CHANGELOG.md) | Release notes |
 | [branding/BRAND_GUIDE.md](branding/BRAND_GUIDE.md) | Logo and repository graphics |
 | [AGENTS.md](AGENTS.md) | Rules for coding agents working in this repo |

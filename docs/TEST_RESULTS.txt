@@ -10,6 +10,7 @@ test_search_category_pagination (test_kit.CatalogTests.test_search_category_pagi
 test_template_copy (test_kit.CatalogTests.test_template_copy) ... ok
 test_unique_ids (test_kit.CatalogTests.test_unique_ids) ... ok
 test_accessible_name_and_description_split (test_kit.HardeningTests.test_accessible_name_and_description_split) ... ok
+test_active_svg_content_rejected (test_kit.HardeningTests.test_active_svg_content_rejected) ... ok
 test_catalog_hashes_match_disk_bytes (test_kit.HardeningTests.test_catalog_hashes_match_disk_bytes) ... ok
 test_department_templates_use_lanes (test_kit.HardeningTests.test_department_templates_use_lanes) ... ok
 test_export_concurrent_writer_refused (test_kit.HardeningTests.test_export_concurrent_writer_refused) ... ok
@@ -69,6 +70,6 @@ test_valid_scene (test_kit.ValidationTests.test_valid_scene) ... ok
 test_waypoints (test_kit.ValidationTests.test_waypoints) ... ok
 
 ----------------------------------------------------------------------
-Ran 69 tests in 2.368s
+Ran 70 tests in 3.795s
 
 OK (skipped=1)

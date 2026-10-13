@@ -31,6 +31,10 @@ Development:
   `python scripts/build_release.py`. CI fails if a rebuild changes committed files.
 - Releases: bump the version in pyproject.toml and diagramkit/__init__.py, update
   CHANGELOG.md, then push a matching `v<version>` tag; CI builds and publishes the wheel.
+- CI/CD: pin every action to a full commit SHA and every downloaded tool to a verified
+  SHA-256; never use a mutable tag, `latest` or `curl | sh`. Pass event data to shell
+  through `env:`. Read docs/SECURITY_POSTURE.md before editing .github/ or
+  requirements-build.txt, and update its pin inventory with any pin change.
 - If an approved SVG is changed, rebuild the catalog/checksum coherently.
 
 Branding and source status:

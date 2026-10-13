@@ -184,6 +184,25 @@ class HardeningTests(unittest.TestCase):
         for aid,digest in frozen.items():
             with self.subTest(asset=aid):
                 self.assertEqual(digest,idx[aid]['sha256']);self.assertEqual(digest,hashlib.sha256((LIB/idx[aid]['file']).read_bytes()).hexdigest())
+    def test_active_svg_content_rejected(self):
+        # A tampered asset whose catalog checksum was updated to match must still be refused.
+        from unittest import mock
+        import diagramkit.renderer as r
+        ns='xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"'
+        bad={'script':f'<svg {ns}><g><script>alert(1)</script></g></svg>',
+             'onload':f'<svg {ns}><g><path d="M0 0" onload="x()"/></g></svg>',
+             'href':f'<svg {ns}><g><path d="M0 0" href="https://example.com"/></g></svg>',
+             'xlink_href':f'<svg {ns}><g><path d="M0 0" xlink:href="https://example.com"/></g></svg>',
+             'style':f'<svg {ns}><g><rect width="1" height="1" style="fill:red"/></g></svg>',
+             'url':f'<svg {ns}><g><rect width="1" height="1" fill="url(https://example.com/x)"/></g></svg>',
+             'foreign':f'<svg {ns}><g><foreignObject/></g></svg>'}
+        for case,svg in bad.items():
+            with self.subTest(case=case):
+                meta={'svg':svg,'sha256':hashlib.sha256(svg.encode()).hexdigest()}
+                r.asset_art.cache_clear()
+                with mock.patch.object(r,'asset_info',return_value=meta):
+                    with self.assertRaises(ValueError):r.asset_art('test/'+case)
+        r.asset_art.cache_clear()
     def test_catalog_hashes_match_disk_bytes(self):
         for a in catalog()['assets']:
             with self.subTest(a=a['id']):self.assertEqual(a['sha256'],hashlib.sha256((LIB/a['file']).read_bytes()).hexdigest())
