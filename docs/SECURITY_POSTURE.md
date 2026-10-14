@@ -4,7 +4,7 @@ This document records what Stencil does to keep the application, the build and t
 release pipeline trustworthy, why each control exists, and what is deliberately left
 out. It is the reference for anyone changing a workflow, a pin or a security control.
 
-Last reviewed: 2026-10-13 (0.2.2).
+Last reviewed: 2026-10-13 (0.2.3).
 
 ## Contents
 
@@ -157,7 +157,7 @@ Pushing a `vX.Y.Z` tag runs `release.yml`:
 Users verify before installing:
 
 ```bash
-gh attestation verify stencil_mcp-0.2.2-py3-none-any.whl --repo malindarathnayake/stencil-mcp
+gh attestation verify stencil_mcp-0.2.3-py3-none-any.whl --repo malindarathnayake/stencil-mcp
 sha256sum -c SHA256SUMS --ignore-missing
 ```
 

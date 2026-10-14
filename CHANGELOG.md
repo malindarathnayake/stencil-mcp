@@ -1,5 +1,19 @@
 # Changelog
 
+## 0.2.3 — 2026-10-13
+
+- The model is told to confirm the brief before drawing: list what the brief states
+  and what it leaves open, ask about any open fact that changes the topology (with
+  the default it would use), push back when the brief conflicts with how a
+  technology works, and not add components the user did not mention. The rule
+  reaches the model through the server `instructions`, the `diagram_brief` prompt,
+  the `library_info` workflow and a new section in the guidelines.
+- Guidelines add a topology rule: draw each physical link as its own line, use
+  `route: "straight"` for spine-leaf and mesh fan-out, and never let two links share
+  a segment. Validation does not detect shared segments or brief mismatches.
+
+Tests: 73 (1 optional CairoSVG test skipped).
+
 ## 0.2.2 — 2026-10-13
 
 - `preview_diagram` gives an actionable error when PNG previews are unavailable. A

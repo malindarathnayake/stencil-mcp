@@ -27,6 +27,7 @@ test_script_joiners_still_allowed (test_kit.HardeningTests.test_script_joiners_s
 test_source_has_no_hidden_characters (test_kit.HardeningTests.test_source_has_no_hidden_characters) ... ok
 test_symbol_caption_is_visible (test_kit.HardeningTests.test_symbol_caption_is_visible) ... ok
 test_warning_flood_is_capped (test_kit.HardeningTests.test_warning_flood_is_capped) ... ok
+test_confirm_brief_guidance_on_every_channel (test_kit.MCPTests.test_confirm_brief_guidance_on_every_channel) ... ok
 test_handshake_and_version_negotiation (test_kit.MCPTests.test_handshake_and_version_negotiation) ... ok
 test_invalid_id (test_kit.MCPTests.test_invalid_id) ... ok
 test_invalid_request (test_kit.MCPTests.test_invalid_request) ... ok
@@ -72,6 +73,6 @@ test_valid_scene (test_kit.ValidationTests.test_valid_scene) ... ok
 test_waypoints (test_kit.ValidationTests.test_waypoints) ... ok
 
 ----------------------------------------------------------------------
-Ran 72 tests in 2.339s
+Ran 73 tests in 2.657s
 
 OK (skipped=1)

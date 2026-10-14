@@ -32,7 +32,7 @@ Python 3.10 or newer. Stencil has no runtime dependencies. Install it from [PyPI
 uv tool install stencil-mcp
 # or: pipx install stencil-mcp
 # or the wheel from a GitHub release:
-# uv tool install https://github.com/malindarathnayake/stencil-mcp/releases/download/v0.2.2/stencil_mcp-0.2.2-py3-none-any.whl
+# uv tool install https://github.com/malindarathnayake/stencil-mcp/releases/download/v0.2.3/stencil_mcp-0.2.3-py3-none-any.whl
 ```
 
 Register it with Claude Code, then confirm the host sees it:

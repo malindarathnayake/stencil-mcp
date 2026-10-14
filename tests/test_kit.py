@@ -158,6 +158,15 @@ class MCPTests(unittest.TestCase):
     def test_handshake_and_version_negotiation(self):
         srv=Server();result=init(srv,'2026-07-28');self.assertEqual('2025-06-18',result['result']['protocolVersion'])
         self.assertIn('tools',result['result']['capabilities'])
+    def test_confirm_brief_guidance_on_every_channel(self):
+        # Models skip get_guidelines, so "ask before guessing" must reach them however they start.
+        from diagramkit.service import get_guidelines
+        srv=Server();result=init(srv)
+        self.assertIn('confirm the brief',result['result']['instructions'])
+        prompt=srv.dispatch(req('prompts/get',{'name':'diagram_brief','arguments':{'brief':'Two racks and a firewall'}}))
+        self.assertIn('Ask the user about every open fact',prompt['result']['messages'][0]['content']['text'])
+        self.assertTrue(library_info()['workflow'][0].startswith('confirm the brief'))
+        self.assertIn('## Confirm the brief before drawing',json.dumps(get_guidelines()))
     def test_preinit_guard(self):self.assertIn('error',Server().dispatch(req('tools/list')))
     def test_notifications_no_response(self):self.assertIsNone(Server().dispatch({'jsonrpc':'2.0','method':'notifications/anything'}))
     def test_invalid_request(self):self.assertEqual(-32600,Server().dispatch([])['error']['code'])

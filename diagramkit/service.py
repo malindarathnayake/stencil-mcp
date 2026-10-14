@@ -13,8 +13,8 @@ def library_info() -> dict:
     return {'name':'Stencil','version':__version__,'asset_count':len(c['assets']),
       'glyph_families':len({a['glyph_family'] for a in c['assets']}),'categories':c['categories'],
       'templates':len(list_templates()['templates']),'themes':['light','dark','monochrome'],
-      'scene_version':'1.0','workflow':['search_assets','get_asset','get_template or layout_diagram','validate_diagram','render_diagram or export_diagram'],
-      'notes':['All symbols are generic, original editable SVGs; no official vendor logos.','Variants may share a glyph family with different role badges.','Anchors refer to node bounds, not numbered physical NIC or switch ports.','Layout checks do not verify the technical truth of an architecture.','SVG and MCP work with Python standard library only; PNG preview needs optional CairoSVG.']}
+      'scene_version':'1.0','workflow':['confirm the brief: ask the user about open topology facts before composing','get_guidelines','search_assets','get_asset','get_template or layout_diagram','validate_diagram','render_diagram or export_diagram'],
+      'notes':['All symbols are generic, original editable SVGs; no official vendor logos.','Variants may share a glyph family with different role badges.','Anchors refer to node bounds, not numbered physical NIC or switch ports.','Layout checks do not verify the technical truth of an architecture or that it matches the brief.','SVG and MCP work with Python standard library only; PNG preview needs optional CairoSVG.']}
 
 
 def get_guidelines() -> dict:

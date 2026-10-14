@@ -11,16 +11,55 @@ Use generic symbols with explicit labels. Product terms are search aliases, not
 vendor endorsements or official logos. A GPU icon can be labelled with a real GPU
 model; the icon alone says nothing about memory capacity or supported software.
 
+## Confirm the brief before drawing
+
+A diagram can pass validation and still be wrong, because it answers a different
+question. The usual failure is a plausible stand-in: the brief leaves a fact open,
+and the drawing fills it with the common pattern instead of the user's design. Do
+not do that.
+
+Before placing anything, write two short lists: the facts the brief states, and
+the facts it leaves open. Ask the user about every open fact that would change the
+topology or the story:
+
+- which components exist, how many, and where they sit (rack, site, zone, lane);
+- which links exist, between what, and how many per device;
+- what runs over each link and how (routed or switched, ECMP or multipath,
+  replication, encryption);
+- what is redundant, and what is deliberately a single point of failure;
+- who owns each boundary, and what is in or out of scope.
+
+Ask in one round: a few numbered, concrete questions, each with the default you
+would otherwise use, so the user can answer "yes to all" or correct one. Do not ask
+about layout, colours or wording; decide those yourself.
+
+Push back when the brief conflicts with how a technology works. For example, iSCSI
+is not hashed over ECMP routes; it multipaths with MPIO across separate paths. Say
+what looks wrong and ask which the user means. Do not silently draw the request as
+written, and do not silently "correct" it either.
+
+Do not add components the user did not mention (management nodes, an extra
+firewall, a load balancer) because a typical design has them. If you think one is
+missing, ask.
+
+If the user says to proceed without answering, proceed, but list every assumption
+in your reply and keep the scene `description` consistent with them.
+
+Before exporting, reread the brief and check each stated fact against the rendered
+picture. Passing validation does not mean the diagram matches the brief.
+
 ## Agent workflow
 
-1. Call `library_info` and `get_guidelines` once.
-2. Search for roles using `search_assets`; retrieve metadata only for chosen IDs.
-3. Start with `get_template`, or use `layout_diagram` for initial graph positions.
-4. Keep the editable scene JSON. Change the scene, not arbitrary generated SVG text.
-5. Call `validate_diagram`; fix errors and inspect every warning.
-6. Render the SVG and visually inspect it at publication size. Use PNG preview
+1. Confirm the brief (section above). Ask before composing; do not guess.
+2. Call `library_info` and `get_guidelines` once.
+3. Search for roles using `search_assets`; retrieve metadata only for chosen IDs.
+4. Start with `get_template`, or use `layout_diagram` for initial graph positions.
+5. Keep the editable scene JSON. Change the scene, not arbitrary generated SVG text.
+6. Call `validate_diagram`; fix errors and inspect every warning.
+7. Render the SVG and visually inspect it at publication size. Use PNG preview
    when available. Check labels, arrows, crossings, groups and the technical story.
-7. Export both `.svg` and `.scene.json`. A repeatable source is part of the deliverable.
+8. Reread the brief and check every stated fact against the picture.
+9. Export both `.svg` and `.scene.json`. A repeatable source is part of the deliverable.
 
 Do not load all 300 SVGs into model context. Search returns compact metadata;
 `get_asset(include_svg=true)` is for individual asset bodies. The scene compositor
@@ -65,6 +104,12 @@ Ports may be explicit (`source_port`, `target_port`: `n/e/s/w`). `points` suppli
 ordered waypoints between endpoint anchors. The renderer does not provide a
 full obstacle-avoiding routing engine. Add waypoints when an edge crosses a card.
 Use `label_x` and `label_y` to move a connector label away from a busy crossing.
+
+For spine-leaf, mesh and dual-homed topologies, draw every physical link as its
+own line, and use `route: "straight"` so links fan out between rows. Never route
+two different links along the same segment: a shared line reads as one cable, bus
+or layer-2 segment, which is a different topology. Validation does not catch this;
+check it visually.
 
 ## Packet and failure explanations
 
@@ -131,6 +176,6 @@ canvas bounds, approximate text fit, node overlaps, edge-to-node crossings and
 connector-label overlaps. Density warnings account for split panels.
 
 It does not prove protocol semantics, product support, authorization safety,
-physical redundancy, flow reachability, line-to-line crossing clarity, or precise
-font metrics. Group-title/caption collisions and title/footer/legend fitting still
+physical redundancy, flow reachability, line-to-line crossing clarity, shared
+line segments, precise font metrics, or whether the diagram matches the brief. Group-title/caption collisions and title/footer/legend fitting still
 need visual review. Passing validation is not publication approval.

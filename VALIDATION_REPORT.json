@@ -1,8 +1,8 @@
 {
   "bundle": "Stencil",
-  "bundle_version": "0.2.2",
+  "bundle_version": "0.2.3",
   "core_asset_catalog_version": "0.2.0",
-  "generated_utc": "2026-10-14T02:10:17.110919+00:00",
+  "generated_utc": "2026-10-14T02:40:21.649037+00:00",
   "python": "3.12.10",
   "os": "Windows",
   "assets": 324,
@@ -11,8 +11,8 @@
   "mcp_tools": 12,
   "template_count": 24,
   "automated_tests": {
-    "run": 72,
-    "passed": 71,
+    "run": 73,
+    "passed": 72,
     "failed": 0,
     "skipped": 1,
     "details": "docs/TEST_RESULTS.txt"
