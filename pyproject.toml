@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "stencil-mcp"
-version = "0.2.2"
+version = "0.2.3"
 description = "Original SVG architecture assets, deterministic compositor, and local MCP server"
 requires-python = ">=3.10"
 license = "Apache-2.0"
@@ -35,4 +35,4 @@ packages = ["diagramkit"]
 include-package-data = true
 
 [tool.setuptools.package-data]
-diagramkit = ["library/*.json", "library/*.md", "library/assets/*/*.svg", "library/templates/*.json"]
+diagramkit = ["library/*.json", "library/*.md", "library/assets/*/*.svg", "library/templates/*.json", "library/guides/*.md"]

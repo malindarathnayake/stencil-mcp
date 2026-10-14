@@ -9,6 +9,11 @@ test_search (test_kit.CatalogTests.test_search) ... ok
 test_search_category_pagination (test_kit.CatalogTests.test_search_category_pagination) ... ok
 test_template_copy (test_kit.CatalogTests.test_template_copy) ... ok
 test_unique_ids (test_kit.CatalogTests.test_unique_ids) ... ok
+test_bundled_guides_are_well_formed_and_grounded (test_kit.GuideTests.test_bundled_guides_are_well_formed_and_grounded) ... ok
+test_guide_tool_and_resource_over_mcp (test_kit.GuideTests.test_guide_tool_and_resource_over_mcp) ... ok
+test_index_lists_core_topics (test_kit.GuideTests.test_index_lists_core_topics) ... ok
+test_invalid_and_unknown_topics (test_kit.GuideTests.test_invalid_and_unknown_topics) ... ok
+test_local_guide_dir_overrides_and_is_confined (test_kit.GuideTests.test_local_guide_dir_overrides_and_is_confined) ... ok
 test_accessible_name_and_description_split (test_kit.HardeningTests.test_accessible_name_and_description_split) ... ok
 test_active_svg_content_rejected (test_kit.HardeningTests.test_active_svg_content_rejected) ... ok
 test_catalog_hashes_match_disk_bytes (test_kit.HardeningTests.test_catalog_hashes_match_disk_bytes) ... ok
@@ -27,6 +32,7 @@ test_script_joiners_still_allowed (test_kit.HardeningTests.test_script_joiners_s
 test_source_has_no_hidden_characters (test_kit.HardeningTests.test_source_has_no_hidden_characters) ... ok
 test_symbol_caption_is_visible (test_kit.HardeningTests.test_symbol_caption_is_visible) ... ok
 test_warning_flood_is_capped (test_kit.HardeningTests.test_warning_flood_is_capped) ... ok
+test_confirm_brief_guidance_on_every_channel (test_kit.MCPTests.test_confirm_brief_guidance_on_every_channel) ... ok
 test_handshake_and_version_negotiation (test_kit.MCPTests.test_handshake_and_version_negotiation) ... ok
 test_invalid_id (test_kit.MCPTests.test_invalid_id) ... ok
 test_invalid_request (test_kit.MCPTests.test_invalid_request) ... ok
@@ -72,6 +78,6 @@ test_valid_scene (test_kit.ValidationTests.test_valid_scene) ... ok
 test_waypoints (test_kit.ValidationTests.test_waypoints) ... ok
 
 ----------------------------------------------------------------------
-Ran 72 tests in 2.339s
+Ran 78 tests in 2.821s
 
 OK (skipped=1)

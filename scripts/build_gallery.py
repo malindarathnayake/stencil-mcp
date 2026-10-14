@@ -47,7 +47,7 @@ SELECTION={
 def main():
     preview=ROOT/'previews';preview.mkdir(exist_ok=True)
     all_assets=catalog()['assets'];cats=catalog()['categories'];n_tpl=len(list_templates()['templates'])
-    counts=f'{len(all_assets)} editable SVG assets · {len(cats)} categories · {n_tpl} templates · 12 MCP tools'
+    counts=f'{len(all_assets)} editable SVG assets · {len(cats)} categories · {n_tpl} templates · 13 MCP tools'
     for cat in catalog()['categories']:
         ids=[a['id'] for a in all_assets if a['category']==cat['id']]
         raw=sheet(ids,cat['name'],f'{len(ids)} editable SVG assets · {cat["id"]} collection')

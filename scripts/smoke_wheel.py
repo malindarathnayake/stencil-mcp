@@ -18,6 +18,7 @@ def check_contents(wheel):
     for need in ('diagramkit/library/catalog.json','diagramkit/library/scene.schema.json','diagramkit/library/guidelines.md'):
         if need not in names:fail('missing '+need)
     if not licenses:fail('LICENSE not in wheel metadata')
+    if not any(n.startswith('diagramkit/library/guides/') and n.endswith('.md') for n in names):fail('no topic guides in wheel')
     return svgs,templates
 
 def main():
@@ -37,13 +38,16 @@ def main():
                              cwd=tmp,check=True,capture_output=True,text=True,encoding='utf-8').stdout
         msgs=[{'jsonrpc':'2.0','id':1,'method':'initialize','params':{'protocolVersion':'2025-06-18','capabilities':{},'clientInfo':{'name':'smoke','version':'1'}}},
               {'jsonrpc':'2.0','method':'notifications/initialized'},
-              {'jsonrpc':'2.0','id':2,'method':'tools/call','params':{'name':'render_diagram','arguments':{'scene':json.loads(scene)}}}]
+              {'jsonrpc':'2.0','id':2,'method':'tools/call','params':{'name':'render_diagram','arguments':{'scene':json.loads(scene)}}},
+              {'jsonrpc':'2.0','id':3,'method':'tools/call','params':{'name':'stencil_guide','arguments':{'topic':'network'}}}]
         out=subprocess.run([exe('stencil-mcp')],cwd=tmp,input=''.join(json.dumps(m)+'\n' for m in msgs),
                            capture_output=True,text=True,encoding='utf-8',timeout=60).stdout
         replies={r['id']:r for r in map(json.loads,out.splitlines())}
         if replies.get(1,{}).get('result',{}).get('protocolVersion')!='2025-06-18':fail('initialize failed: '+out[:300])
         render=replies.get(2,{}).get('result',{})
         if render.get('isError') or '<svg' not in json.dumps(render):fail('render failed: '+json.dumps(render)[:300])
-    print(f'smoke_wheel: OK {wheel.name}: {svgs} SVGs, {templates} templates, CLI and MCP render work')
+        guide=replies.get(3,{}).get('result',{})
+        if guide.get('isError') or 'Questions to ask first' not in json.dumps(guide):fail('stencil_guide failed: '+json.dumps(guide)[:300])
+    print(f'smoke_wheel: OK {wheel.name}: {svgs} SVGs, {templates} templates, CLI, MCP render and topic guides work')
 
 if __name__=='__main__':main()

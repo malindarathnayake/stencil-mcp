@@ -1,5 +1,33 @@
 # Changelog
 
+## 0.2.3 — 2026-10-14
+
+- New `stencil_guide` tool. Called with no topic it returns the confirm-the-brief rule
+  and an index; with a topic it returns that guide. 31 topic guides cover every
+  diagram family the catalog can draw: network, storage, compute, cloud, Kubernetes,
+  security architecture, threat models, security operations, data, AI, protocols,
+  observability, resilience, DevOps, business processes, flowcharts, sequences,
+  migrations and more. Each has the questions to ask first (with defaults), when to
+  push back, how to draw it, common mistakes and a template to start from. Guides are
+  also MCP resources (`infra-diagram://guide/{topic}`). `get_guidelines` is unchanged.
+- `STENCIL_GUIDE_DIR` (optional, operator-set) adds or overrides topics with house
+  conventions: `*.md` files directly in that folder only, lower-case hyphenated names,
+  at most 64 KiB each, no symlinks or subfolders.
+- A test fails if a guide cites an asset, template or guide that does not exist.
+  `docs/GUIDE_COVERAGE.md` lists the topics, the scenarios the catalog cannot draw
+  well yet, and open consistency items.
+- The model is told to confirm the brief before drawing: list what the brief states
+  and what it leaves open, ask about any open fact that changes the topology (with
+  the default it would use), push back when the brief conflicts with how a
+  technology works, and not add components the user did not mention. The rule
+  reaches the model through the server `instructions`, the `diagram_brief` prompt,
+  the `library_info` workflow and a new section in the guidelines.
+- Guidelines add a topology rule: draw each physical link as its own line, use
+  `route: "straight"` for spine-leaf and mesh fan-out, and never let two links share
+  a segment. Validation does not detect shared segments or brief mismatches.
+
+Tests: 78 (1 optional CairoSVG test skipped).
+
 ## 0.2.2 — 2026-10-13
 
 - `preview_diagram` gives an actionable error when PNG previews are unavailable. A
