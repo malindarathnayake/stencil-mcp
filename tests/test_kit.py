@@ -165,7 +165,8 @@ class MCPTests(unittest.TestCase):
         self.assertIn('confirm the brief',result['result']['instructions'])
         prompt=srv.dispatch(req('prompts/get',{'name':'diagram_brief','arguments':{'brief':'Two racks and a firewall'}}))
         self.assertIn('Ask the user about every open fact',prompt['result']['messages'][0]['content']['text'])
-        self.assertTrue(library_info()['workflow'][0].startswith('confirm the brief'))
+        workflow=library_info()['workflow'];self.assertTrue(workflow[0].startswith('stencil_guide'))
+        self.assertTrue(any('ask the user' in step for step in workflow))
         self.assertIn('## Confirm the brief before drawing',json.dumps(get_guidelines()))
     def test_preinit_guard(self):self.assertIn('error',Server().dispatch(req('tools/list')))
     def test_notifications_no_response(self):self.assertIsNone(Server().dispatch({'jsonrpc':'2.0','method':'notifications/anything'}))
@@ -173,7 +174,7 @@ class MCPTests(unittest.TestCase):
     def test_invalid_id(self):self.assertEqual(-32600,Server().dispatch(req('ping',id=[]))['error']['code'])
     def test_ping(self):self.assertEqual({},Server().dispatch(req('ping'))['result'])
     def test_tools_list(self):
-        srv=Server();init(srv);tools=srv.dispatch(req('tools/list'))['result']['tools'];self.assertEqual(12,len(tools));self.assertLess(len(json.dumps(tools)),15000)
+        srv=Server();init(srv);tools=srv.dispatch(req('tools/list'))['result']['tools'];self.assertEqual(13,len(tools));self.assertLess(len(json.dumps(tools)),15000)
     def test_tool_search(self):
         srv=Server();init(srv);r=srv.dispatch(req('tools/call',{'name':'search_assets','arguments':{'query':'firewall'}}))
         self.assertFalse(r['result']['isError']);self.assertGreater(r['result']['structuredContent']['total'],0)
@@ -199,6 +200,82 @@ class MCPTests(unittest.TestCase):
     def test_oversized_line(self):
         run=subprocess.run([sys.executable,str(ROOT/'server.py')],input='x'*1_048_578,text=True,capture_output=True,timeout=5)
         self.assertEqual(2,run.returncode);self.assertIn('exceeds',run.stdout)
+
+class GuideTests(unittest.TestCase):
+    SECTIONS=('## Questions to ask first','## Push back when','## How we draw it here','## Common mistakes','## Start from')
+    def setUp(self):
+        from unittest import mock
+        self.env=mock.patch.dict(os.environ,{},clear=False);self.env.start();os.environ.pop('STENCIL_GUIDE_DIR',None)
+    def tearDown(self):self.env.stop()
+    def test_index_lists_core_topics(self):
+        from diagramkit.guides import stencil_guide
+        out=stencil_guide();ids={t['id'] for t in out['topics']}
+        self.assertIn('confirm the brief',out['rule'])
+        for core in ('brief','style','network','storage','business-process'):self.assertIn(core,ids)
+    def test_bundled_guides_are_well_formed_and_grounded(self):
+        # Guides must only cite assets and templates that exist, so they cannot drift from the catalog.
+        import re
+        from diagramkit.guides import stencil_guide
+        ids={a['id'] for a in catalog()['assets']};cats={c['id'] for c in catalog()['categories']}
+        templates={t['id'] for t in list_templates()['templates']}
+        SCENE_WORDS=set()                       # schema terms, plus element ids inside templates
+        def walk(o):
+            if isinstance(o,dict):
+                SCENE_WORDS.update(o.get('properties',{}).keys());SCENE_WORDS.update(x for x in o.get('enum',[]) if isinstance(x,str))
+                for v in o.values():walk(v)
+            elif isinstance(o,list):
+                for v in o:walk(v)
+        walk(schema())
+        for t in templates:
+            scene_=get_template(t);SCENE_WORDS.update(e['id'] for k in ('nodes','edges','groups') for e in scene_.get(k,[]))
+        topics={t['id'] for t in stencil_guide()['topics']}
+        for topic in sorted(topics):
+            with self.subTest(topic=topic):
+                md=stencil_guide(topic)['markdown']
+                self.assertTrue(md.startswith('# '));self.assertIn('\n> ',md)
+                if topic not in ('brief','style'):
+                    for section in self.SECTIONS:self.assertIn(section,md)
+                    self.assertIn('(default:',md)
+                cited=re.findall(r'`([a-z]+/[a-z0-9-]+)`',md)
+                self.assertFalse([c for c in cited if c.split('/')[0] in cats and c not in ids],'unknown asset id')
+                # Every backticked name in "Start from" must be a template, a guide or scene vocabulary.
+                start=md.split('## Start from',1)[-1]
+                named=set(re.findall(r'`([a-z0-9][a-z0-9-]*)`',start))
+                self.assertFalse(sorted(named-templates-topics-SCENE_WORDS),'unknown template or guide')
+    def test_invalid_and_unknown_topics(self):
+        from diagramkit.guides import stencil_guide
+        for bad in ('../secrets','NETWORK','a/b','x'*41):
+            with self.subTest(bad=bad):
+                with self.assertRaises(ValueError):stencil_guide(bad)
+        with self.assertRaises(ValueError) as ctx:stencil_guide('no-such-topic')
+        self.assertIn('Available:',str(ctx.exception))
+    def test_local_guide_dir_overrides_and_is_confined(self):
+        from diagramkit.guides import stencil_guide, MAX_GUIDE_BYTES
+        with tempfile.TemporaryDirectory() as tmp:
+            d=Path(tmp)
+            (d/'network.md').write_text('# House network rules\n> Ours.\n',encoding='utf-8')
+            (d/'house-rack.md').write_text('# Rack elevations\n> How we draw racks.\n',encoding='utf-8')
+            (d/'Bad Name.md').write_text('# x\n',encoding='utf-8')
+            (d/'notes.txt').write_text('# x\n',encoding='utf-8')
+            (d/'huge.md').write_text('# x\n'+'a'*MAX_GUIDE_BYTES,encoding='utf-8')
+            (d/'sub').mkdir();(d/'sub'/'deep.md').write_text('# x\n',encoding='utf-8')
+            try:(d/'link.md').symlink_to(d/'network.md');linked=True
+            except OSError:linked=False
+            os.environ['STENCIL_GUIDE_DIR']=tmp
+            index={t['id']:t for t in stencil_guide()['topics']}
+            self.assertEqual('local',index['network']['source']);self.assertEqual('House network rules',index['network']['title'])
+            self.assertEqual('local',index['house-rack']['source'])
+            for absent in ('Bad Name','notes','huge','deep','sub')+(('link',) if linked else ()):self.assertNotIn(absent,index)
+            self.assertEqual('bundled',index['brief']['source'])
+    def test_guide_tool_and_resource_over_mcp(self):
+        srv=Server();init(srv)
+        r=srv.dispatch(req('tools/call',{'name':'stencil_guide','arguments':{'topic':'brief'}}))
+        self.assertFalse(r['result'].get('isError'))
+        templates=srv.dispatch(req('resources/templates/list'))['result']['resourceTemplates']
+        self.assertIn('infra-diagram://guide/{topic}',[t['uriTemplate'] for t in templates])
+        res=srv.dispatch(req('resources/read',{'uri':'infra-diagram://guide/network'}))
+        self.assertEqual('text/markdown',res['result']['contents'][0]['mimeType'])
+        self.assertEqual(-32002,srv.dispatch(req('resources/read',{'uri':'infra-diagram://guide/../x'}))['error']['code'])
 
 class HardeningTests(unittest.TestCase):
     """Regression tests for the 0.2.0 design-gauntlet findings."""

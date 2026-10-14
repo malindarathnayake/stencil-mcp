@@ -24,6 +24,8 @@ Development:
 - No external requests, shell execution or arbitrary file access in MCP tools.
 - Do not permit caller-provided SVG/XML/CSS or image URLs.
 - Exports stay within the operator-configured directory; names are stems only.
+- Topic guides are read only from the bundled guides folder and the operator-set
+  STENCIL_GUIDE_DIR, by validated topic name. Keep both read-only and bounded.
 - Do not print debugging output to stdout in the MCP process.
 - Run `python -m unittest discover -s tests -v` after changes.
 - Rebuild assets with `python scripts/build_library.py`; rebuild schema,

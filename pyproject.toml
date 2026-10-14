@@ -35,4 +35,4 @@ packages = ["diagramkit"]
 include-package-data = true
 
 [tool.setuptools.package-data]
-diagramkit = ["library/*.json", "library/*.md", "library/assets/*/*.svg", "library/templates/*.json"]
+diagramkit = ["library/*.json", "library/*.md", "library/assets/*/*.svg", "library/templates/*.json", "library/guides/*.md"]

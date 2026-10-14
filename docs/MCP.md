@@ -28,6 +28,7 @@ single-user starter, not a multi-tenant hosted service.
 | `get_asset` | Metadata, bounds, anchors; optional SVG body | No |
 | `list_templates` | Find reusable scene templates | No |
 | `get_template` | Copy a template's scene JSON | No |
+| `stencil_guide` | Start here: confirm-the-brief rule, guide index, and topic guides (questions to ask, how to draw, common mistakes) | No |
 | `get_guidelines` | Composition and technical-review checklist | No |
 | `get_scene_schema` | Full scene JSON Schema | No |
 | `layout_diagram` | Initial DAG layering or cycle/grid fallback | No |
@@ -68,6 +69,12 @@ files completely, then publishes them with atomic renames. A failed new export
 removes only the files that call created. Files are written with LF line endings.
 A machine compromised by another local process is outside this adapter's
 isolation model.
+
+`STENCIL_GUIDE_DIR` is an optional, operator-set folder of `.md` topic guides that add
+to or override the bundled ones with house conventions. Only regular `*.md` files
+directly in that folder, with a lower-case hyphenated name and at most 64 KiB, are
+read; symlinks and subfolders are ignored. The model chooses a topic name, never a
+path.
 
 There are no shell tools, arbitrary file reads, external image requests, network
 listeners, credentials, telemetry or third-party icon fetches. The catalog is

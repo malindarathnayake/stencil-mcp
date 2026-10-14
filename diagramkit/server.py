@@ -8,6 +8,7 @@ from __future__ import annotations
 import json, sys
 from . import __version__
 from .library import ROOT, asset_info, get_template
+from .guides import stencil_guide
 from .scene import structural_errors, schema
 from .service import tool_definitions, invoke, library_info, get_guidelines
 
@@ -58,7 +59,7 @@ class Server:
                 if self.initialized:raise RPCError(-32600,'Already initialized.')
                 if not isinstance(params.get('protocolVersion'),str) or not isinstance(params.get('capabilities'),dict) or not isinstance(params.get('clientInfo'),dict):raise RPCError(-32602,'Initialization requires protocolVersion, capabilities and clientInfo.')
                 self.initialized=True
-                result={'protocolVersion':PROTOCOL,'capabilities':{'tools':{'listChanged':False},'resources':{'subscribe':False,'listChanged':False},'prompts':{'listChanged':False}},'serverInfo':{'name':'stencil-mcp','version':__version__},'instructions':'Before composing, confirm the brief: ask the user about missing facts that change the topology (components, counts, placement, links, protocol behaviour) instead of filling them with a typical pattern, and push back when the brief conflicts with how a technology works. Then start with library_info and get_guidelines. Search existing assets; choose a template; validate and visually inspect the scene. SVG exports are editable. Export writes are confined to INFRA_DIAGRAM_OUTPUT_DIR. Physical links, traffic and feedback are different connector roles.'}
+                result={'protocolVersion':PROTOCOL,'capabilities':{'tools':{'listChanged':False},'resources':{'subscribe':False,'listChanged':False},'prompts':{'listChanged':False}},'serverInfo':{'name':'stencil-mcp','version':__version__},'instructions':'Before composing, confirm the brief: ask the user about missing facts that change the topology (components, counts, placement, links, protocol behaviour) instead of filling them with a typical pattern, and push back when the brief conflicts with how a technology works. Call stencil_guide first, then the guide for your diagram type. Search existing assets; choose a template; validate and visually inspect the scene. SVG exports are editable. Export writes are confined to INFRA_DIAGRAM_OUTPUT_DIR. Physical links, traffic and feedback are different connector roles.'}
             elif method=='ping':result={}
             elif not self.ready:raise RPCError(-32000,'Complete initialize and notifications/initialized first.')
             elif method=='tools/list':
@@ -77,7 +78,7 @@ class Server:
                 except (ValueError,KeyError,OSError,TypeError) as exc:
                     result={'content':[{'type':'text','text':str(exc)}],'isError':True}
             elif method=='resources/list':result={'resources':RESOURCES}
-            elif method=='resources/templates/list':result={'resourceTemplates':[{'uriTemplate':'infra-diagram://asset/{category}/{name}','name':'SVG asset','mimeType':'image/svg+xml'},{'uriTemplate':'infra-diagram://template/{name}','name':'Diagram scene','mimeType':'application/json'}]}
+            elif method=='resources/templates/list':result={'resourceTemplates':[{'uriTemplate':'infra-diagram://asset/{category}/{name}','name':'SVG asset','mimeType':'image/svg+xml'},{'uriTemplate':'infra-diagram://template/{name}','name':'Diagram scene','mimeType':'application/json'},{'uriTemplate':'infra-diagram://guide/{topic}','name':'Topic guide','mimeType':'text/markdown'}]}
             elif method=='resources/read':
                 uri=params.get('uri','');mime='application/json'
                 if not isinstance(uri,str):raise RPCError(-32602,'uri must be a string.')
@@ -89,6 +90,9 @@ class Server:
                     except ValueError as exc:raise RPCError(-32002,str(exc))
                 elif uri.startswith('infra-diagram://template/'):
                     try:data=json.dumps(get_template(uri[len('infra-diagram://template/'):]))
+                    except ValueError as exc:raise RPCError(-32002,str(exc))
+                elif uri.startswith('infra-diagram://guide/'):
+                    try:data=stencil_guide(uri[len('infra-diagram://guide/'):])['markdown'];mime='text/markdown'
                     except ValueError as exc:raise RPCError(-32002,str(exc))
                 else:raise RPCError(-32002,'Unknown registered resource.')
                 result={'contents':[{'uri':uri,'mimeType':mime,'text':data}]}

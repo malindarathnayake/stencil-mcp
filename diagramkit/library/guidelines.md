@@ -33,9 +33,10 @@ Ask in one round: a few numbered, concrete questions, each with the default you
 would otherwise use, so the user can answer "yes to all" or correct one. Do not ask
 about layout, colours or wording; decide those yourself.
 
-Push back when the brief conflicts with how a technology works. For example, iSCSI
-is not hashed over ECMP routes; it multipaths with MPIO across separate paths. Say
-what looks wrong and ask which the user means. Do not silently draw the request as
+Push back when the brief conflicts with how a technology works. For example, a
+brief may credit ECMP with storage path redundancy: iSCSI gets its redundancy from
+MPIO across separate sessions, and a dedicated layer-2 storage fabric never touches
+the ECMP layer at all. Say what looks wrong and ask which the user means. Do not silently draw the request as
 written, and do not silently "correct" it either.
 
 Do not add components the user did not mention (management nodes, an extra

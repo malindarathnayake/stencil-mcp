@@ -47,16 +47,17 @@ Stencil holds no credentials, talks to no other agent and takes no autonomous ac
 | Control | Where |
 | --- | --- |
 | stdio transport only: no listener, no outbound requests, no telemetry | `diagramkit/server.py` |
-| 1 MiB per JSON-RPC line; lone UTF-16 surrogates rejected with `-32600` | `diagramkit/server.py:15`, `:22` |
-| stdout reserved for protocol; stray prints from library code go to stderr | `diagramkit/server.py:114` |
+| 1 MiB per JSON-RPC line; lone UTF-16 surrogates rejected with `-32600` | `diagramkit/server.py:16`, `:23` |
+| stdout reserved for protocol; stray prints from library code go to stderr | `diagramkit/server.py:118` |
 | Scene schema with full-match identifier patterns, 200 nodes / 400 edges | `diagramkit/scene.py` |
 | Control, invisible, bidi-override and non-XML characters rejected; the pattern is pure ASCII escapes, and a test keeps hidden characters out of all source | `diagramkit/scene.py:12` |
-| Validation reports capped at 200 issues; oversized arrays stop traversal early | `diagramkit/scene.py:11`, `:44` |
+| Validation reports capped at 200 issues; oversized arrays stop traversal early | `diagramkit/scene.py:13`, `:46` |
 | All text XML-escaped; callers cannot supply SVG, HTML, CSS, scripts or image URLs | `diagramkit/renderer.py` |
 | Bundled asset checksum verified before use; element allowlist; `on*`, `href` (any namespace), `style` and `url()` rejected | `diagramkit/renderer.py:38-45` |
-| Export names are bare stems matching `[A-Za-z0-9][A-Za-z0-9_-]{0,79}`; Windows device names refused | `diagramkit/service.py:57-59` |
-| Export directory set by the operator, never by the caller; symlinks refused; no overwrite unless asked | `diagramkit/service.py:62-71` |
-| Per-name lock, staged writes, atomic publish, rollback of only this call's files | `diagramkit/service.py:45` |
+| Export names are bare stems matching `[A-Za-z0-9][A-Za-z0-9_-]{0,79}`; Windows device names refused | `diagramkit/service.py:67-69` |
+| Export directory set by the operator, never by the caller; symlinks refused; no overwrite unless asked | `diagramkit/service.py:72-81` |
+| Per-name lock, staged writes, atomic publish, rollback of only this call's files | `diagramkit/service.py:55` |
+| Topic guides: model passes a validated topic name, never a path; the optional `STENCIL_GUIDE_DIR` is read-only, `*.md` only, no symlinks or subfolders, 64 KiB per file, 100 files | `diagramkit/guides.py` |
 
 Regression tests for these live in `tests/test_kit.py` (`HardeningTests`). The
 active-SVG test was added during this review. It showed that a namespaced

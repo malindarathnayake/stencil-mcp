@@ -17,7 +17,7 @@ Stencil is a local MCP server and SVG symbol library for Claude Code, Codex and 
 
 It covers infrastructure, networking, security, Kubernetes, data, AI/agent systems and packet-level explanations, plus business-process swimlanes for engineering, security, IT, finance, HR, sales, IT change management and support.
 
-**324 SVG assets · 20 categories · 24 diagram templates · 12 MCP tools · Python standard library only**
+**324 SVG assets · 20 categories · 24 diagram templates · 13 MCP tools · Python standard library only**
 
 <p align="center">
   <img src="https://raw.githubusercontent.com/malindarathnayake/stencil-mcp/main/examples/it-change-approval.png" alt="IT: change approval" width="49%" />
@@ -75,6 +75,8 @@ INFRA_DIAGRAM_OUTPUT_DIR = "/ABSOLUTE/PATH/diagram-exports"
 
 Claude Desktop does not search your shell PATH reliably; use the full path that `which stencil-mcp` (or `where stencil-mcp` on Windows) prints as the `command` in its `mcpServers` entry. The Desktop setup has not been live-tested.
 
+To teach the model your own conventions, point `STENCIL_GUIDE_DIR` at a folder of `.md` guides. A file named `network.md` replaces the bundled network guide; a new name such as `rack-elevation.md` adds a topic. Copy a bundled guide from `diagramkit/library/guides/` as a starting point.
+
 `export_diagram` writes only into `INFRA_DIAGRAM_OUTPUT_DIR` (default `~/infra-diagram-exports`). Set it with `claude mcp add -e INFRA_DIAGRAM_OUTPUT_DIR=/path ...`. Point it at a local folder, not a synced or shared one, if your diagrams describe internal systems.
 
 </details>
@@ -96,6 +98,7 @@ python scripts/client_config.py           # prints registration commands for thi
 ## How the model uses it
 
 ```text
+stencil_guide                   start here: the ask-before-drawing rule, then a topic guide (network, business-process, ...)
 library_info / get_guidelines   learn the categories, connector meanings and composition rules
 search_assets                   find symbol ids by role ("firewall", "invoice", "dashcam"); metadata only
 get_template / list_templates   start from one of the 24 editable scenes
@@ -270,6 +273,7 @@ Builds are deterministic and write LF line endings on every OS, so a rebuild wit
 | [docs/MCP.md](https://github.com/malindarathnayake/stencil-mcp/blob/main/docs/MCP.md) | Tools, resources, transport and export policy |
 | [docs/EXTENDING.md](https://github.com/malindarathnayake/stencil-mcp/blob/main/docs/EXTENDING.md) | Adding symbols, templates and packs |
 | [docs/PACK_COVERAGE.md](https://github.com/malindarathnayake/stencil-mcp/blob/main/docs/PACK_COVERAGE.md) | What each pack covers and what is not implemented |
+| [docs/GUIDE_COVERAGE.md](https://github.com/malindarathnayake/stencil-mcp/blob/main/docs/GUIDE_COVERAGE.md) | Topic guides served by `stencil_guide`, and known coverage gaps |
 | [docs/SECURITY_POSTURE.md](https://github.com/malindarathnayake/stencil-mcp/blob/main/docs/SECURITY_POSTURE.md) | Threat model, build integrity, CI/CD hardening, scanning and release verification |
 | [SECURITY.md](https://github.com/malindarathnayake/stencil-mcp/blob/main/SECURITY.md) | Reporting a vulnerability |
 | [CHANGELOG.md](https://github.com/malindarathnayake/stencil-mcp/blob/main/CHANGELOG.md) | Release notes |
