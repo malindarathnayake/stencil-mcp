@@ -78,6 +78,10 @@ verification) before any change was made.
 - Added `SECURITY.md` and `docs/SECURITY_POSTURE.md`.
 - `build_schema.py` and `build_brand.py` write LF bytes; the schema had been written
   with CRLF on Windows.
+- The forbidden-character pattern in `scene.py` is written with ASCII escapes only. It
+  had contained literal bidi-override and zero-width characters, the Trojan Source
+  pattern, and CodeQL flagged its control-character range. It matches the same 2,224
+  code points. A test now fails if any source file contains hidden characters.
 - Text-width estimates use `math.fsum`. Python 3.12 changed float `sum()` to
   compensated summation, so one label rendered 0.01 px differently on 3.10 and 3.11.
   Renders are now byte-identical on 3.10 through 3.13.
@@ -88,4 +92,4 @@ verification) before any change was made.
   conformant negotiation.
 - No new node kinds, edge kinds or lane auto-layout; swimlanes use existing `lane` groups.
 
-Tests: 70 (1 optional CairoSVG test skipped).
+Tests: 71 (1 optional CairoSVG test skipped).

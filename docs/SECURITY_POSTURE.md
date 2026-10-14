@@ -31,7 +31,7 @@ the server only runs locally for one user.
 | Indirect prompt injection steering tool calls | A ticket tells the agent to embed a script in a diagram label | No caller-supplied markup; all text escaped; schema-validated scenes | OWASP LLM01, ASI01 · [CWE-79] |
 | Tool misuse and excessive agency | Agent asked to "export to `../../.ssh/authorized_keys`" | No shell, no network, no file reads; exports are bare names confined to one directory | OWASP LLM06, ASI02 · [CWE-22] |
 | Improper output handling | Generated SVG opened in a browser or embedded in a page | Renderer emits only static SVG elements; bundled assets are allowlisted and checksummed | OWASP LLM05 · [CWE-79] |
-| Hidden instructions in text | Bidi overrides or invisible characters smuggled into labels | Control, invisible, tag-block and bidi-override characters rejected | ASI06 · [CWE-451] |
+| Hidden instructions in text | Bidi overrides or invisible characters smuggled into labels, or into source (Trojan Source) | Control, invisible, tag-block and bidi-override characters rejected; source kept free of them by test | ASI06 · [CWE-451] |
 | Unbounded consumption | A 50 KB scene producing a 40 MB validation report | Size, count and issue caps (fixed in 0.2.0) | OWASP LLM10 · [CWE-400] |
 | Agentic supply chain | A hijacked GitHub Action or scanner release poisons the wheel | SHA pins, checksum-pinned binaries, hash-locked build tools, cooldowns, provenance | OWASP LLM03, ASI04 · [CWE-829] |
 | Tool or catalog poisoning | Tampered SVG asset or tool description | Tool definitions are static code; assets verified against catalog SHA-256 at render time | ASI04 · [CWE-494] |
@@ -50,7 +50,7 @@ Stencil holds no credentials, talks to no other agent and takes no autonomous ac
 | 1 MiB per JSON-RPC line; lone UTF-16 surrogates rejected with `-32600` | `diagramkit/server.py:15`, `:22` |
 | stdout reserved for protocol; stray prints from library code go to stderr | `diagramkit/server.py:114` |
 | Scene schema with full-match identifier patterns, 200 nodes / 400 edges | `diagramkit/scene.py` |
-| Control, invisible, bidi-override and non-XML characters rejected | `diagramkit/scene.py:10` |
+| Control, invisible, bidi-override and non-XML characters rejected; the pattern is pure ASCII escapes, and a test keeps hidden characters out of all source | `diagramkit/scene.py:12` |
 | Validation reports capped at 200 issues; oversized arrays stop traversal early | `diagramkit/scene.py:11`, `:44` |
 | All text XML-escaped; callers cannot supply SVG, HTML, CSS, scripts or image URLs | `diagramkit/renderer.py` |
 | Bundled asset checksum verified before use; element allowlist; `on*`, `href` (any namespace), `style` and `url()` rejected | `diagramkit/renderer.py:38-45` |
@@ -240,7 +240,8 @@ Run locally on 2026-10-13 against this tree:
 
 | Check | Result |
 | --- | --- |
-| Unit tests | 70 run, 69 passed, 1 skipped (optional CairoSVG) |
+| Unit tests | 71 run, 70 passed, 1 skipped (optional CairoSVG); also passing on Python 3.10 |
+| CodeQL on the first PR | One alert, `py/overly-large-range` at `scene.py:10`. The range was intended, but the line held literal bidi and zero-width characters (Trojan Source). Rewritten as escapes and verified identical over all 1,114,112 code points |
 | Hash-locked build in a clean venv | Built; `--require-hashes` rejected an unhashed transitive dependency until it was pinned |
 | Wheel reproducibility with `SOURCE_DATE_EPOCH` | Two builds byte-identical |
 | `scripts/smoke_wheel.py` | 324 SVGs, 24 templates, CLI and MCP render work |

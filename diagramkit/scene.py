@@ -7,7 +7,9 @@ from .library import ROOT, index
 # C0 controls (except tab/newline/CR), DEL, lone surrogates, XML non-characters, zero-width space,
 # word joiner, BOM, bidi overrides/isolates and the Unicode tag block. These break XML output,
 # spoof label direction or hide text from a human reviewer; ZWJ/ZWNJ/LRM/RLM stay legal for scripts.
-ILLEGAL_TEXT=re.compile('[\x00-\x08\x0b\x0c\x0e-\x1f\x7f\ud800-\udfff￾￿​⁠-⁤﻿‪-‮⁦-⁩\U000e0000-\U000e007f]')
+# Written with escapes only, so this source line carries no invisible or bidi characters.
+# U+000E-U+001F are listed one by one: as a range they trip CodeQL's py/overly-large-range.
+ILLEGAL_TEXT=re.compile(r'[\x00-\x08\x0b\x0c\x0e\x0f\x10\x11\x12\x13\x14\x15\x16\x17\x18\x19\x1a\x1b\x1c\x1d\x1e\x1f\x7f\ud800-\udfff\ufffe\uffff\u200b\u2060-\u2064\ufeff\u202a-\u202e\u2066-\u2069\U000e0000-\U000e007f]')
 MAX_ISSUES=200
 
 @lru_cache(maxsize=1)

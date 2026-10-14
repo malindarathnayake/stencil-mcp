@@ -203,6 +203,15 @@ class HardeningTests(unittest.TestCase):
                 with mock.patch.object(r,'asset_info',return_value=meta):
                     with self.assertRaises(ValueError):r.asset_art('test/'+case)
         r.asset_art.cache_clear()
+    def test_source_has_no_hidden_characters(self):
+        # Trojan Source (CVE-2021-42574): bidi overrides and zero-width characters make code
+        # read differently from how it runs. Patterns that block them must use escapes.
+        hidden=set(range(0x200b,0x2010))|set(range(0x202a,0x202f))|set(range(0x2066,0x206a))|{0xfeff}
+        files=[*ROOT.glob('diagramkit/*.py'),*ROOT.glob('scripts/*.py'),*ROOT.glob('tests/*.py'),*ROOT.glob('.github/**/*.yml'),ROOT/'server.py']
+        for path in files:
+            with self.subTest(file=path.name):
+                text=path.read_text(encoding='utf-8')
+                self.assertFalse([hex(ord(c)) for c in text if ord(c) in hidden])
     def test_catalog_hashes_match_disk_bytes(self):
         for a in catalog()['assets']:
             with self.subTest(a=a['id']):self.assertEqual(a['sha256'],hashlib.sha256((LIB/a['file']).read_bytes()).hexdigest())

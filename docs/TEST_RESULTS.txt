@@ -24,6 +24,7 @@ test_lone_surrogate_request_does_not_kill_server (test_kit.HardeningTests.test_l
 test_marker_states_select_matching_symbol (test_kit.HardeningTests.test_marker_states_select_matching_symbol) ... ok
 test_oversized_array_not_traversed (test_kit.HardeningTests.test_oversized_array_not_traversed) ... ok
 test_script_joiners_still_allowed (test_kit.HardeningTests.test_script_joiners_still_allowed) ... ok
+test_source_has_no_hidden_characters (test_kit.HardeningTests.test_source_has_no_hidden_characters) ... ok
 test_symbol_caption_is_visible (test_kit.HardeningTests.test_symbol_caption_is_visible) ... ok
 test_warning_flood_is_capped (test_kit.HardeningTests.test_warning_flood_is_capped) ... ok
 test_handshake_and_version_negotiation (test_kit.MCPTests.test_handshake_and_version_negotiation) ... ok
@@ -70,6 +71,6 @@ test_valid_scene (test_kit.ValidationTests.test_valid_scene) ... ok
 test_waypoints (test_kit.ValidationTests.test_waypoints) ... ok
 
 ----------------------------------------------------------------------
-Ran 70 tests in 1.938s
+Ran 71 tests in 1.888s
 
 OK (skipped=1)
