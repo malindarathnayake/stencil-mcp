@@ -135,9 +135,24 @@ class RendererTests(unittest.TestCase):
             self.assertEqual('unchanged',outside.read_text())
     def test_preview_optional(self):
         try:import cairosvg
-        except ImportError:self.skipTest('Optional preview renderer not installed.')
+        except (ImportError,OSError):self.skipTest('Optional preview renderer or native Cairo library not installed.')
         from diagramkit.service import preview_diagram
         out=preview_diagram(scene(),400);self.assertTrue(out['_image'].startswith('iVBOR'))
+    def test_preview_missing_dependency_messages(self):
+        # Both ways the optional extra can be unavailable must give an actionable ValueError.
+        import builtins
+        from unittest import mock
+        from diagramkit.service import preview_diagram
+        real=builtins.__import__
+        for exc,expect in ((ImportError('No module named cairosvg'),'stencil-mcp[preview]'),
+                           (OSError('no library called "cairo-2" was found'),'native Cairo library')):
+            with self.subTest(exc=type(exc).__name__):
+                def fake(name,*a,**k):
+                    if name=='cairosvg':raise exc
+                    return real(name,*a,**k)
+                with mock.patch.object(builtins,'__import__',fake):
+                    with self.assertRaises(ValueError) as ctx:preview_diagram(scene(),400)
+                self.assertIn(expect,str(ctx.exception))
 
 class MCPTests(unittest.TestCase):
     def test_handshake_and_version_negotiation(self):

@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "stencil-mcp"
-version = "0.2.1"
+version = "0.2.2"
 description = "Original SVG architecture assets, deterministic compositor, and local MCP server"
 requires-python = ">=3.10"
 license = "Apache-2.0"

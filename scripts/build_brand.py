@@ -14,7 +14,7 @@ C=json.loads((BRAND/'tokens.json').read_text(encoding='utf-8'))['colors']
 O=json.loads((BRAND/'source/wordmark-outline.json').read_text(encoding='utf-8'))
 try:
     import cairosvg
-except ImportError:
+except (ImportError,OSError):  # OSError: package present, native libcairo missing
     cairosvg=None
 
 TOP='M 128 26 Q 133 26 138 29 L 221 73 Q 234 80 221 88 L 138 132 Q 128 137 118 132 L 35 88 Q 22 80 35 73 L 118 29 Q 123 26 128 26 Z'
