@@ -49,7 +49,8 @@ test_export_paths_rejected (test_kit.RendererTests.test_export_paths_rejected) .
 test_export_symlink_rejected (test_kit.RendererTests.test_export_symlink_rejected) ... ok
 test_exports (test_kit.RendererTests.test_exports) ... ok
 test_invalid_render_refused (test_kit.RendererTests.test_invalid_render_refused) ... ok
-test_preview_optional (test_kit.RendererTests.test_preview_optional) ... skipped 'Optional preview renderer not installed.'
+test_preview_missing_dependency_messages (test_kit.RendererTests.test_preview_missing_dependency_messages) ... ok
+test_preview_optional (test_kit.RendererTests.test_preview_optional) ... skipped 'Optional preview renderer or native Cairo library not installed.'
 test_svg_xml_and_unique_ids (test_kit.RendererTests.test_svg_xml_and_unique_ids) ... ok
 test_themes (test_kit.RendererTests.test_themes) ... ok
 test_bad_asset (test_kit.ValidationTests.test_bad_asset) ... ok
@@ -71,6 +72,6 @@ test_valid_scene (test_kit.ValidationTests.test_valid_scene) ... ok
 test_waypoints (test_kit.ValidationTests.test_waypoints) ... ok
 
 ----------------------------------------------------------------------
-Ran 71 tests in 2.207s
+Ran 72 tests in 2.339s
 
 OK (skipped=1)

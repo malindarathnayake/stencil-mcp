@@ -32,7 +32,7 @@ Python 3.10 or newer. Stencil has no runtime dependencies. Install it from [PyPI
 uv tool install stencil-mcp
 # or: pipx install stencil-mcp
 # or the wheel from a GitHub release:
-# uv tool install https://github.com/malindarathnayake/stencil-mcp/releases/download/v0.2.1/stencil_mcp-0.2.1-py3-none-any.whl
+# uv tool install https://github.com/malindarathnayake/stencil-mcp/releases/download/v0.2.2/stencil_mcp-0.2.2-py3-none-any.whl
 ```
 
 Register it with Claude Code, then confirm the host sees it:
@@ -50,7 +50,9 @@ for a ransomware alert on a file server. Keep the lanes, validate, render, look
 at the result, and export it as ransomware-ir.
 ```
 
-The host starts `stencil-mcp` as a child process; there is no daemon to run. Upgrade with `uv tool upgrade stencil-mcp`. Without installing anything, `uvx stencil-mcp` also works as the server command.
+The host starts `stencil-mcp` as a child process; there is no daemon to run. **PNG previews (optional).** `preview_diagram` returns a PNG so the model can look at its own output. It needs the `preview` extra (CairoSVG) and the native Cairo library: `uv tool install "stencil-mcp[preview]"`, plus `apt install libcairo2`, `brew install cairo`, or the GTK3 runtime on Windows. Everything else works without it.
+
+Upgrade with `uv tool upgrade stencil-mcp`. Without installing anything, `uvx stencil-mcp` also works as the server command.
 
 <details>
 <summary><b>Codex, Claude Desktop, Windows, and the export folder</b></summary>

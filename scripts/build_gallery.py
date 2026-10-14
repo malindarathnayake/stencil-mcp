@@ -7,7 +7,7 @@ ROOT=Path(__file__).resolve().parents[1];sys.path.insert(0,str(ROOT))
 from diagramkit.library import catalog,asset_info,list_templates,get_template
 from diagramkit.renderer import symbol,text,rect,wrap,render
 try:import cairosvg
-except ImportError:cairosvg=None
+except (ImportError,OSError):cairosvg=None  # OSError: package present, native libcairo missing
 
 def sheet(ids,title,subtitle,cols=6,cardw=216,cardh=165):
     margin=30;gap=15;top=147;rows=math.ceil(len(ids)/cols);W=margin*2+cols*cardw+(cols-1)*gap;H=top+rows*(cardh+gap)+42

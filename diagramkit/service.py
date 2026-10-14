@@ -27,13 +27,22 @@ def render_diagram(scene:dict) -> dict:
     return {'mime_type':'image/svg+xml','svg':render(scene),'validation':report}
 
 
+PREVIEW_NOT_INSTALLED=('PNG previews need the optional preview extra; SVG rendering, validation and export work without it. '
+    'Reinstall with it: uv tool install --force "stencil-mcp[preview]" (or pipx install --force "stencil-mcp[preview]"; '
+    'from a clone: python -m pip install -e ".[preview]").')
+PREVIEW_NO_LIBCAIRO=('PNG previews need the native Cairo library, which is not installed. SVG rendering, validation and export work without it. '
+    'Install Cairo (Debian/Ubuntu: apt install libcairo2; macOS: brew install cairo; Windows: the GTK3 runtime), then restart the MCP server.')
+
 def preview_diagram(scene:dict,width:int=1400) -> dict:
     if not 400<=width<=1800:raise ValueError('Preview width must be 400–1800 pixels.')
     source=render(scene)
     height=max(1,round(width*scene['height']/scene['width']))
     if width*height>6_000_000:raise ValueError('Preview is too tall; reduce width or split the scene.')
+    # Optional extra. ImportError: the package is absent. OSError: cairocffi is installed but
+    # the native libcairo library is not, which is the usual case on Windows and macOS.
     try:import cairosvg
-    except ImportError as e:raise ValueError('PNG previews need CairoSVG. SVG rendering works without it. Run: python -m pip install cairosvg') from e
+    except ImportError as e:raise ValueError(PREVIEW_NOT_INSTALLED) from e
+    except OSError as e:raise ValueError(PREVIEW_NO_LIBCAIRO) from e
     png=cairosvg.svg2png(bytestring=source.encode('utf-8'),output_width=width,output_height=height)
     return {'width':width,'height':height,'validation':validate(scene),'_image':base64.b64encode(png).decode('ascii')}
 

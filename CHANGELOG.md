@@ -1,5 +1,18 @@
 # Changelog
 
+## 0.2.2 — 2026-10-13
+
+- `preview_diagram` gives an actionable error when PNG previews are unavailable. A
+  missing `preview` extra now points to `uv tool install "stencil-mcp[preview]"`
+  instead of a `pip install` that targets the wrong environment. A missing native
+  Cairo library, previously reported as cairocffi's raw `OSError`, now names the
+  package to install per platform.
+- The gallery and brand build scripts, and the optional preview test, treat a missing
+  native Cairo library like a missing package instead of crashing.
+- README documents the optional PNG preview setup.
+
+Tests: 72 (1 optional CairoSVG test skipped).
+
 ## 0.2.1 — 2026-10-13
 
 First published release. Version 0.2.0 was never released; its changes are included here.
