@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 144 112" width="144" height="112" role="img" aria-labelledby="title desc" font-family="Arial, Helvetica, sans-serif">
+  <title id="title">Annotation bracket</title>
+  <desc id="desc">Generic annotation bracket symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.</desc>
+  <g id="artwork" stroke-linecap="round" stroke-linejoin="round"><path d="M39 19 H27 V93 H39 M104 19 H116 V93 H104" fill="none" stroke="#526C8C" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></g>
+</svg>

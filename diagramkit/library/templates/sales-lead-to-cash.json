@@ -1,0 +1,344 @@
+{
+  "version": "1.0",
+  "title": "Sales: lead to cash",
+  "subtitle": "An inbound enquiry is qualified, quoted and negotiated; a won deal becomes an order, an invoice and recognised revenue.",
+  "description": "A customer enquiry reaches Sales, who qualify it; unqualified leads are closed. Sales sends a quote and negotiates with the customer. A lost deal is closed; a won deal becomes an order in sales operations. Finance invoices the customer, receives payment and reports the revenue.",
+  "width": 2698,
+  "height": 1214,
+  "groups": [
+    {
+      "id": "cust",
+      "x": 30,
+      "y": 124,
+      "w": 2638,
+      "h": 246,
+      "title": "Customer (external)",
+      "caption": "",
+      "palette": "orange",
+      "style": "lane"
+    },
+    {
+      "id": "sales",
+      "x": 30,
+      "y": 380,
+      "w": 2638,
+      "h": 246,
+      "title": "Sales",
+      "caption": "",
+      "palette": "blue",
+      "style": "lane"
+    },
+    {
+      "id": "ops",
+      "x": 30,
+      "y": 636,
+      "w": 2638,
+      "h": 246,
+      "title": "Sales operations",
+      "caption": "",
+      "palette": "purple",
+      "style": "lane"
+    },
+    {
+      "id": "fin",
+      "x": 30,
+      "y": 892,
+      "w": 2638,
+      "h": 246,
+      "title": "Finance",
+      "caption": "",
+      "palette": "teal",
+      "style": "lane"
+    }
+  ],
+  "nodes": [
+    {
+      "id": "start",
+      "kind": "symbol",
+      "asset": "presentation/start-end",
+      "x": 97.0,
+      "y": 197.0,
+      "w": 104,
+      "h": 100,
+      "label": "Enquiry",
+      "caption": "Enquiry",
+      "palette": "slate",
+      "group": "cust"
+    },
+    {
+      "id": "qualify",
+      "kind": "component",
+      "asset": "identity/user",
+      "x": 304,
+      "y": 432,
+      "w": 170,
+      "h": 142,
+      "label": "Qualify lead",
+      "palette": "blue",
+      "detail": "Need, budget, timing",
+      "group": "sales"
+    },
+    {
+      "id": "qualified",
+      "kind": "symbol",
+      "asset": "presentation/decision",
+      "x": 567.0,
+      "y": 449.0,
+      "w": 124,
+      "h": 108,
+      "label": "Qualified?",
+      "caption": "Qualified?",
+      "palette": "blue",
+      "group": "sales"
+    },
+    {
+      "id": "dq",
+      "kind": "symbol",
+      "asset": "presentation/start-end",
+      "x": 577.0,
+      "y": 709.0,
+      "w": 104,
+      "h": 100,
+      "label": "Disqualified",
+      "caption": "Disqualified",
+      "palette": "slate",
+      "group": "ops"
+    },
+    {
+      "id": "quote",
+      "kind": "component",
+      "asset": "business/contract",
+      "x": 784,
+      "y": 432,
+      "w": 170,
+      "h": 142,
+      "label": "Build quote",
+      "palette": "blue",
+      "detail": "Pricing + terms",
+      "group": "sales"
+    },
+    {
+      "id": "negotiate",
+      "kind": "component",
+      "asset": "business/chat",
+      "x": 1024,
+      "y": 176,
+      "w": 170,
+      "h": 142,
+      "label": "Review and negotiate",
+      "palette": "orange",
+      "detail": "Customer decision",
+      "group": "cust"
+    },
+    {
+      "id": "won",
+      "kind": "symbol",
+      "asset": "presentation/decision",
+      "x": 1287.0,
+      "y": 449.0,
+      "w": 124,
+      "h": 108,
+      "label": "Won?",
+      "caption": "Won?",
+      "palette": "blue",
+      "group": "sales"
+    },
+    {
+      "id": "lost",
+      "kind": "symbol",
+      "asset": "presentation/start-end",
+      "x": 1297.0,
+      "y": 709.0,
+      "w": 104,
+      "h": 100,
+      "label": "Closed-lost",
+      "caption": "Closed-lost",
+      "palette": "slate",
+      "group": "ops"
+    },
+    {
+      "id": "order",
+      "kind": "component",
+      "asset": "software/workflow",
+      "x": 1504,
+      "y": 688,
+      "w": 170,
+      "h": 142,
+      "label": "Create order",
+      "palette": "purple",
+      "detail": "CRM to ERP",
+      "group": "ops"
+    },
+    {
+      "id": "invoice",
+      "kind": "component",
+      "asset": "business/invoice",
+      "x": 1744,
+      "y": 944,
+      "w": 170,
+      "h": 142,
+      "label": "Invoice customer",
+      "palette": "teal",
+      "detail": "Billing terms",
+      "group": "fin"
+    },
+    {
+      "id": "pay",
+      "kind": "component",
+      "asset": "business/payment",
+      "x": 1984,
+      "y": 176,
+      "w": 170,
+      "h": 142,
+      "label": "Pay invoice",
+      "palette": "orange",
+      "detail": "Customer AP",
+      "group": "cust"
+    },
+    {
+      "id": "report",
+      "kind": "component",
+      "asset": "business/report",
+      "x": 2224,
+      "y": 944,
+      "w": 170,
+      "h": 142,
+      "label": "Recognise revenue",
+      "palette": "teal",
+      "detail": "Bookings to cash",
+      "group": "fin"
+    },
+    {
+      "id": "cash",
+      "kind": "symbol",
+      "asset": "presentation/start-end",
+      "x": 2497.0,
+      "y": 965.0,
+      "w": 104,
+      "h": 100,
+      "label": "Cash collected",
+      "caption": "Cash collected",
+      "palette": "slate",
+      "group": "fin"
+    }
+  ],
+  "edges": [
+    {
+      "id": "e1",
+      "source": "start",
+      "target": "qualify",
+      "kind": "control",
+      "palette": "orange",
+      "label": "Enquiry"
+    },
+    {
+      "id": "e2",
+      "source": "qualify",
+      "target": "qualified",
+      "kind": "data",
+      "palette": "blue"
+    },
+    {
+      "id": "e3",
+      "source": "qualified",
+      "target": "dq",
+      "kind": "data",
+      "palette": "blue",
+      "label": "No"
+    },
+    {
+      "id": "e4",
+      "source": "qualified",
+      "target": "quote",
+      "kind": "data",
+      "palette": "blue",
+      "label": "Yes"
+    },
+    {
+      "id": "e5",
+      "source": "quote",
+      "target": "negotiate",
+      "kind": "control",
+      "palette": "orange",
+      "label": "Quote",
+      "source_port": "n",
+      "target_port": "w"
+    },
+    {
+      "id": "e6",
+      "source": "negotiate",
+      "target": "won",
+      "kind": "control",
+      "palette": "orange",
+      "label": "Decision",
+      "source_port": "e",
+      "target_port": "n"
+    },
+    {
+      "id": "e7",
+      "source": "won",
+      "target": "lost",
+      "kind": "data",
+      "palette": "blue",
+      "label": "No"
+    },
+    {
+      "id": "e8",
+      "source": "won",
+      "target": "order",
+      "kind": "data",
+      "palette": "blue",
+      "label": "Yes",
+      "source_port": "e",
+      "target_port": "n"
+    },
+    {
+      "id": "e9",
+      "source": "order",
+      "target": "invoice",
+      "kind": "data",
+      "palette": "blue",
+      "source_port": "s",
+      "target_port": "w"
+    },
+    {
+      "id": "e10",
+      "source": "invoice",
+      "target": "pay",
+      "kind": "control",
+      "palette": "orange",
+      "label": "Invoice",
+      "source_port": "n",
+      "target_port": "w"
+    },
+    {
+      "id": "e11",
+      "source": "pay",
+      "target": "report",
+      "kind": "control",
+      "palette": "orange",
+      "label": "Payment",
+      "source_port": "e",
+      "target_port": "n"
+    },
+    {
+      "id": "e12",
+      "source": "report",
+      "target": "cash",
+      "kind": "data",
+      "palette": "blue"
+    }
+  ],
+  "footer": "Illustrative process. Lanes are roles; steps, thresholds and timings are examples, not policy.",
+  "legend": [
+    {
+      "label": "Process flow",
+      "palette": "blue"
+    },
+    {
+      "label": "Hand-off with an external party",
+      "palette": "orange",
+      "dashed": true
+    }
+  ]
+}

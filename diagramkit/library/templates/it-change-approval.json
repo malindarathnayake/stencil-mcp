@@ -1,0 +1,345 @@
+{
+  "version": "1.0",
+  "title": "IT: change approval",
+  "subtitle": "A change request is risk-assessed; standard changes are pre-approved, normal changes go to the change advisory board, and a failed verification is backed out.",
+  "description": "The change owner raises a request with scope, risk and a backout plan. The change manager assesses it. Standard changes are pre-approved and go straight to scheduling; normal changes go to the change advisory board, which approves them or sends them back for revision. The change manager schedules an approved change outside freeze periods. The implementer makes the change in its window and verifies it; a failed verification is backed out. The change manager reviews the result and closes the change.",
+  "width": 2698,
+  "height": 1214,
+  "groups": [
+    {
+      "id": "req",
+      "x": 30,
+      "y": 124,
+      "w": 2638,
+      "h": 246,
+      "title": "Change owner",
+      "caption": "",
+      "palette": "blue",
+      "style": "lane"
+    },
+    {
+      "id": "mgr",
+      "x": 30,
+      "y": 380,
+      "w": 2638,
+      "h": 246,
+      "title": "Change manager",
+      "caption": "",
+      "palette": "purple",
+      "style": "lane"
+    },
+    {
+      "id": "cab",
+      "x": 30,
+      "y": 636,
+      "w": 2638,
+      "h": 246,
+      "title": "Change advisory board",
+      "caption": "",
+      "palette": "slate",
+      "style": "lane"
+    },
+    {
+      "id": "ops",
+      "x": 30,
+      "y": 892,
+      "w": 2638,
+      "h": 246,
+      "title": "Implementer",
+      "caption": "",
+      "palette": "teal",
+      "style": "lane"
+    }
+  ],
+  "nodes": [
+    {
+      "id": "start",
+      "kind": "symbol",
+      "asset": "presentation/start-end",
+      "x": 97.0,
+      "y": 197.0,
+      "w": 104,
+      "h": 100,
+      "label": "Change needed",
+      "caption": "Change needed",
+      "palette": "slate",
+      "group": "req"
+    },
+    {
+      "id": "rfc",
+      "kind": "component",
+      "asset": "business/form",
+      "x": 304,
+      "y": 176,
+      "w": 170,
+      "h": 142,
+      "label": "Raise change request",
+      "palette": "blue",
+      "detail": "Scope, risk, backout",
+      "group": "req"
+    },
+    {
+      "id": "assess",
+      "kind": "component",
+      "asset": "security/security-review",
+      "x": 544,
+      "y": 432,
+      "w": 170,
+      "h": 142,
+      "label": "Assess risk",
+      "palette": "purple",
+      "detail": "Impact + category",
+      "group": "mgr"
+    },
+    {
+      "id": "standard",
+      "kind": "symbol",
+      "asset": "presentation/decision",
+      "x": 807.0,
+      "y": 449.0,
+      "w": 124,
+      "h": 108,
+      "label": "Standard change?",
+      "caption": "Standard change?",
+      "palette": "blue",
+      "group": "mgr"
+    },
+    {
+      "id": "cabreview",
+      "kind": "component",
+      "asset": "business/approval",
+      "x": 1024,
+      "y": 688,
+      "w": 170,
+      "h": 142,
+      "label": "CAB review",
+      "palette": "slate",
+      "detail": "Weekly meeting",
+      "group": "cab"
+    },
+    {
+      "id": "approved",
+      "kind": "symbol",
+      "asset": "presentation/decision",
+      "x": 1287.0,
+      "y": 705.0,
+      "w": 124,
+      "h": 108,
+      "label": "Approved?",
+      "caption": "Approved?",
+      "palette": "blue",
+      "group": "cab"
+    },
+    {
+      "id": "schedule",
+      "kind": "component",
+      "asset": "business/calendar",
+      "x": 1504,
+      "y": 432,
+      "w": 170,
+      "h": 142,
+      "label": "Schedule window",
+      "palette": "purple",
+      "detail": "Check freeze calendar",
+      "group": "mgr"
+    },
+    {
+      "id": "implement",
+      "kind": "component",
+      "asset": "devops/cd-release",
+      "x": 1744,
+      "y": 944,
+      "w": 170,
+      "h": 142,
+      "label": "Implement change",
+      "palette": "teal",
+      "detail": "In change window",
+      "group": "ops"
+    },
+    {
+      "id": "verified",
+      "kind": "symbol",
+      "asset": "presentation/decision",
+      "x": 2007.0,
+      "y": 961.0,
+      "w": 124,
+      "h": 108,
+      "label": "Verified?",
+      "caption": "Verified?",
+      "palette": "blue",
+      "group": "ops"
+    },
+    {
+      "id": "backout",
+      "kind": "component",
+      "asset": "devops/rollback",
+      "x": 2224,
+      "y": 944,
+      "w": 170,
+      "h": 142,
+      "label": "Back out",
+      "palette": "teal",
+      "detail": "Run backout plan",
+      "group": "ops"
+    },
+    {
+      "id": "review",
+      "kind": "component",
+      "asset": "business/report",
+      "x": 2224,
+      "y": 432,
+      "w": 170,
+      "h": 142,
+      "label": "Review and close",
+      "palette": "purple",
+      "detail": "Post-implementation",
+      "group": "mgr"
+    },
+    {
+      "id": "closed",
+      "kind": "symbol",
+      "asset": "presentation/start-end",
+      "x": 2497.0,
+      "y": 453.0,
+      "w": 104,
+      "h": 100,
+      "label": "Closed",
+      "caption": "Closed",
+      "palette": "slate",
+      "group": "mgr"
+    }
+  ],
+  "edges": [
+    {
+      "id": "e1",
+      "source": "start",
+      "target": "rfc",
+      "kind": "data",
+      "palette": "blue"
+    },
+    {
+      "id": "e2",
+      "source": "rfc",
+      "target": "assess",
+      "kind": "data",
+      "palette": "blue",
+      "source_port": "s",
+      "target_port": "w"
+    },
+    {
+      "id": "e3",
+      "source": "assess",
+      "target": "standard",
+      "kind": "data",
+      "palette": "blue"
+    },
+    {
+      "id": "e4",
+      "source": "standard",
+      "target": "schedule",
+      "kind": "data",
+      "palette": "blue",
+      "label": "Yes: pre-approved"
+    },
+    {
+      "id": "e5",
+      "source": "standard",
+      "target": "cabreview",
+      "kind": "data",
+      "palette": "blue",
+      "label": "No",
+      "source_port": "s",
+      "target_port": "w"
+    },
+    {
+      "id": "e6",
+      "source": "cabreview",
+      "target": "approved",
+      "kind": "data",
+      "palette": "blue"
+    },
+    {
+      "id": "e7",
+      "source": "approved",
+      "target": "rfc",
+      "kind": "feedback",
+      "palette": "red",
+      "label": "Revise",
+      "source_port": "n",
+      "target_port": "e"
+    },
+    {
+      "id": "e8",
+      "source": "approved",
+      "target": "schedule",
+      "kind": "data",
+      "palette": "blue",
+      "label": "Yes",
+      "source_port": "e",
+      "target_port": "s"
+    },
+    {
+      "id": "e9",
+      "source": "schedule",
+      "target": "implement",
+      "kind": "data",
+      "palette": "blue",
+      "source_port": "e",
+      "target_port": "n"
+    },
+    {
+      "id": "e10",
+      "source": "implement",
+      "target": "verified",
+      "kind": "data",
+      "palette": "blue"
+    },
+    {
+      "id": "e11",
+      "source": "verified",
+      "target": "review",
+      "kind": "data",
+      "palette": "blue",
+      "label": "Yes",
+      "source_port": "n",
+      "target_port": "w"
+    },
+    {
+      "id": "e12",
+      "source": "verified",
+      "target": "backout",
+      "kind": "feedback",
+      "palette": "red",
+      "label": "No"
+    },
+    {
+      "id": "e13",
+      "source": "backout",
+      "target": "review",
+      "kind": "data",
+      "palette": "blue",
+      "label": "Backed out",
+      "source_port": "n",
+      "target_port": "s"
+    },
+    {
+      "id": "e14",
+      "source": "review",
+      "target": "closed",
+      "kind": "data",
+      "palette": "blue"
+    }
+  ],
+  "footer": "Illustrative process. Lanes are roles; steps, thresholds and timings are examples, not policy.",
+  "legend": [
+    {
+      "label": "Process flow",
+      "palette": "blue"
+    },
+    {
+      "label": "Rework or exception",
+      "palette": "red",
+      "dashed": true
+    }
+  ]
+}

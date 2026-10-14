@@ -1,0 +1,354 @@
+{
+  "version": "1.0",
+  "title": "Security: incident response",
+  "subtitle": "An alert is triaged, declared, contained in parallel with evidence preservation and communications, then reviewed.",
+  "description": "Detection raises a correlated alert. The SOC analyst triages it; false positives are tuned and closed. A true positive is declared by the incident commander, who starts three parallel tracks: the engineer contains the host, the analyst preserves evidence, and the commander notifies stakeholders on a fixed update cadence. After eradication and recovery, a post-incident review closes the incident.",
+  "width": 2458,
+  "height": 1214,
+  "groups": [
+    {
+      "id": "det",
+      "x": 30,
+      "y": 124,
+      "w": 2398,
+      "h": 246,
+      "title": "Detection",
+      "caption": "",
+      "palette": "orange",
+      "style": "lane"
+    },
+    {
+      "id": "soc",
+      "x": 30,
+      "y": 380,
+      "w": 2398,
+      "h": 246,
+      "title": "SOC analyst",
+      "caption": "",
+      "palette": "red",
+      "style": "lane"
+    },
+    {
+      "id": "eng",
+      "x": 30,
+      "y": 636,
+      "w": 2398,
+      "h": 246,
+      "title": "On-call engineer",
+      "caption": "",
+      "palette": "blue",
+      "style": "lane"
+    },
+    {
+      "id": "ic",
+      "x": 30,
+      "y": 892,
+      "w": 2398,
+      "h": 246,
+      "title": "Incident commander",
+      "caption": "",
+      "palette": "slate",
+      "style": "lane"
+    }
+  ],
+  "nodes": [
+    {
+      "id": "alert",
+      "kind": "component",
+      "asset": "observability/alert",
+      "x": 64,
+      "y": 176,
+      "w": 170,
+      "h": 142,
+      "label": "SIEM alert",
+      "palette": "orange",
+      "detail": "Correlated detection",
+      "group": "det"
+    },
+    {
+      "id": "triage",
+      "kind": "component",
+      "asset": "observability/incident",
+      "x": 304,
+      "y": 432,
+      "w": 170,
+      "h": 142,
+      "label": "Triage alert",
+      "palette": "red",
+      "detail": "Enrich and scope",
+      "group": "soc"
+    },
+    {
+      "id": "tp",
+      "kind": "symbol",
+      "asset": "presentation/decision",
+      "x": 567.0,
+      "y": 449.0,
+      "w": 124,
+      "h": 108,
+      "label": "True positive?",
+      "caption": "True positive?",
+      "palette": "blue",
+      "group": "soc"
+    },
+    {
+      "id": "tune",
+      "kind": "component",
+      "asset": "security/siem",
+      "x": 784,
+      "y": 176,
+      "w": 170,
+      "h": 142,
+      "label": "Tune detection",
+      "palette": "orange",
+      "detail": "Suppress false positive",
+      "group": "det"
+    },
+    {
+      "id": "fp",
+      "kind": "symbol",
+      "asset": "presentation/start-end",
+      "x": 1057.0,
+      "y": 197.0,
+      "w": 104,
+      "h": 100,
+      "label": "Closed: false positive",
+      "caption": "Closed: false positive",
+      "palette": "slate",
+      "group": "det"
+    },
+    {
+      "id": "declare",
+      "kind": "component",
+      "asset": "business/ticket",
+      "x": 784,
+      "y": 944,
+      "w": 170,
+      "h": 142,
+      "label": "Declare incident",
+      "palette": "slate",
+      "detail": "Severity + owner",
+      "group": "ic"
+    },
+    {
+      "id": "par",
+      "kind": "symbol",
+      "asset": "business/gateway-parallel",
+      "x": 1047.0,
+      "y": 961.0,
+      "w": 124,
+      "h": 108,
+      "label": "Respond in parallel",
+      "caption": "Respond in parallel",
+      "palette": "blue",
+      "group": "ic"
+    },
+    {
+      "id": "contain",
+      "kind": "component",
+      "asset": "security/quarantine",
+      "x": 1264,
+      "y": 688,
+      "w": 170,
+      "h": 142,
+      "label": "Contain host",
+      "palette": "blue",
+      "detail": "Isolate endpoint",
+      "group": "eng"
+    },
+    {
+      "id": "evidence",
+      "kind": "component",
+      "asset": "observability/audit-log",
+      "x": 1264,
+      "y": 432,
+      "w": 170,
+      "h": 142,
+      "label": "Preserve evidence",
+      "palette": "red",
+      "detail": "Chain of custody",
+      "group": "soc"
+    },
+    {
+      "id": "notify",
+      "kind": "component",
+      "asset": "business/email",
+      "x": 1264,
+      "y": 944,
+      "w": 170,
+      "h": 142,
+      "label": "Notify stakeholders",
+      "palette": "slate",
+      "detail": "Legal, leadership",
+      "group": "ic"
+    },
+    {
+      "id": "cadence",
+      "kind": "symbol",
+      "asset": "business/timer",
+      "x": 1527.0,
+      "y": 961.0,
+      "w": 124,
+      "h": 108,
+      "label": "Update every 4 h",
+      "caption": "Update every 4 h",
+      "palette": "slate",
+      "group": "ic"
+    },
+    {
+      "id": "recover",
+      "kind": "component",
+      "asset": "security/edr",
+      "x": 1504,
+      "y": 688,
+      "w": 170,
+      "h": 142,
+      "label": "Eradicate and recover",
+      "palette": "blue",
+      "detail": "Patch, rotate secrets",
+      "group": "eng"
+    },
+    {
+      "id": "pir",
+      "kind": "component",
+      "asset": "presentation/note",
+      "x": 1984,
+      "y": 944,
+      "w": 170,
+      "h": 142,
+      "label": "Post-incident review",
+      "palette": "slate",
+      "detail": "Lessons + actions",
+      "group": "ic"
+    },
+    {
+      "id": "closed",
+      "kind": "symbol",
+      "asset": "presentation/start-end",
+      "x": 2257.0,
+      "y": 965.0,
+      "w": 104,
+      "h": 100,
+      "label": "Closed",
+      "caption": "Closed",
+      "palette": "slate",
+      "group": "ic"
+    }
+  ],
+  "edges": [
+    {
+      "id": "e1",
+      "source": "alert",
+      "target": "triage",
+      "kind": "data",
+      "palette": "blue"
+    },
+    {
+      "id": "e2",
+      "source": "triage",
+      "target": "tp",
+      "kind": "data",
+      "palette": "blue"
+    },
+    {
+      "id": "e3",
+      "source": "tp",
+      "target": "tune",
+      "kind": "data",
+      "palette": "blue",
+      "label": "No"
+    },
+    {
+      "id": "e4",
+      "source": "tune",
+      "target": "fp",
+      "kind": "data",
+      "palette": "blue"
+    },
+    {
+      "id": "e5",
+      "source": "tp",
+      "target": "declare",
+      "kind": "data",
+      "palette": "blue",
+      "label": "Yes",
+      "source_port": "s",
+      "target_port": "w"
+    },
+    {
+      "id": "e6",
+      "source": "declare",
+      "target": "par",
+      "kind": "data",
+      "palette": "blue"
+    },
+    {
+      "id": "e7",
+      "source": "par",
+      "target": "contain",
+      "kind": "data",
+      "palette": "blue"
+    },
+    {
+      "id": "e8",
+      "source": "par",
+      "target": "evidence",
+      "kind": "data",
+      "palette": "blue",
+      "source_port": "n",
+      "target_port": "w"
+    },
+    {
+      "id": "e9",
+      "source": "par",
+      "target": "notify",
+      "kind": "data",
+      "palette": "blue"
+    },
+    {
+      "id": "e10",
+      "source": "notify",
+      "target": "cadence",
+      "kind": "data",
+      "palette": "blue"
+    },
+    {
+      "id": "e11",
+      "source": "contain",
+      "target": "recover",
+      "kind": "data",
+      "palette": "blue"
+    },
+    {
+      "id": "e12",
+      "source": "recover",
+      "target": "pir",
+      "kind": "data",
+      "palette": "blue"
+    },
+    {
+      "id": "e13",
+      "source": "evidence",
+      "target": "pir",
+      "kind": "data",
+      "palette": "blue",
+      "label": "Evidence",
+      "source_port": "e",
+      "target_port": "n"
+    },
+    {
+      "id": "e14",
+      "source": "pir",
+      "target": "closed",
+      "kind": "data",
+      "palette": "blue"
+    }
+  ],
+  "footer": "Illustrative process. Lanes are roles; steps, thresholds and timings are examples, not policy.",
+  "legend": [
+    {
+      "label": "Process flow",
+      "palette": "blue"
+    }
+  ]
+}

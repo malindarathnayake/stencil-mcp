@@ -1,0 +1,174 @@
+{
+  "version": "1.0",
+  "title": "Hybrid-cloud connectivity",
+  "subtitle": "On-premises and cloud networks connected through private circuits, with a separate Internet edge.",
+  "description": "On-premises and cloud networks connected through private circuits, with a separate Internet edge.",
+  "width": 1540,
+  "height": 750,
+  "groups": [
+    {
+      "id": "onprem",
+      "x": 35,
+      "y": 140,
+      "w": 432,
+      "h": 550,
+      "title": "On-premises datacenter",
+      "caption": "",
+      "palette": "blue",
+      "style": "boundary"
+    },
+    {
+      "id": "wan",
+      "x": 517,
+      "y": 140,
+      "w": 489,
+      "h": 550,
+      "title": "Provider networks",
+      "caption": "",
+      "palette": "slate",
+      "style": "panel"
+    },
+    {
+      "id": "cloud",
+      "x": 1056,
+      "y": 140,
+      "w": 449,
+      "h": 550,
+      "title": "Cloud environment",
+      "caption": "",
+      "palette": "blue",
+      "style": "boundary"
+    }
+  ],
+  "nodes": [
+    {
+      "id": "hosts",
+      "kind": "component",
+      "asset": "compute/compute-cluster",
+      "x": 61,
+      "y": 251,
+      "w": 170,
+      "h": 140,
+      "label": "Application hosts",
+      "palette": "blue"
+    },
+    {
+      "id": "edge",
+      "kind": "component",
+      "asset": "network/border-router",
+      "x": 267,
+      "y": 251,
+      "w": 175,
+      "h": 140,
+      "label": "Border router",
+      "palette": "blue",
+      "detail": "BGP adjacency"
+    },
+    {
+      "id": "circuit",
+      "kind": "component",
+      "asset": "cloud/dedicated-circuit",
+      "x": 666,
+      "y": 250,
+      "w": 190,
+      "h": 144,
+      "label": "Private circuits",
+      "palette": "blue",
+      "detail": "Provider-managed transport"
+    },
+    {
+      "id": "cgw",
+      "kind": "component",
+      "asset": "network/router",
+      "x": 1080,
+      "y": 251,
+      "w": 175,
+      "h": 140,
+      "label": "Cloud gateway",
+      "palette": "blue"
+    },
+    {
+      "id": "apps",
+      "kind": "component",
+      "asset": "cloud/vpc",
+      "x": 1291,
+      "y": 251,
+      "w": 175,
+      "h": 140,
+      "label": "Application VPC",
+      "palette": "blue"
+    },
+    {
+      "id": "fw",
+      "kind": "component",
+      "asset": "security/firewall",
+      "x": 264,
+      "y": 481,
+      "w": 175,
+      "h": 140,
+      "label": "Internet edge",
+      "palette": "red"
+    },
+    {
+      "id": "inet",
+      "kind": "component",
+      "asset": "network/internet",
+      "x": 666,
+      "y": 481,
+      "w": 190,
+      "h": 140,
+      "label": "Internet",
+      "palette": "blue"
+    }
+  ],
+  "edges": [
+    {
+      "id": "e1",
+      "source": "hosts",
+      "target": "edge",
+      "kind": "physical",
+      "palette": "blue",
+      "label": "LAN"
+    },
+    {
+      "id": "e2",
+      "source": "edge",
+      "target": "circuit",
+      "kind": "physical",
+      "palette": "blue",
+      "label": "Circuit"
+    },
+    {
+      "id": "e3",
+      "source": "circuit",
+      "target": "cgw",
+      "kind": "physical",
+      "palette": "blue",
+      "label": "Circuit"
+    },
+    {
+      "id": "e4",
+      "source": "cgw",
+      "target": "apps",
+      "kind": "physical",
+      "palette": "blue"
+    },
+    {
+      "id": "e5",
+      "source": "edge",
+      "target": "fw",
+      "kind": "physical",
+      "palette": "blue",
+      "source_port": "s",
+      "target_port": "n"
+    },
+    {
+      "id": "e6",
+      "source": "fw",
+      "target": "inet",
+      "kind": "physical",
+      "palette": "slate"
+    }
+  ],
+  "footer": "Illustrative architecture. Labels describe roles; generic symbols do not assert product compatibility."
+}

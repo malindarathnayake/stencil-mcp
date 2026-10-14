@@ -1,0 +1,154 @@
+{
+  "version": "1.0",
+  "title": "Application overview",
+  "subtitle": "Keep the main request path separate from asynchronous work and persistent data.",
+  "description": "Keep the main request path separate from asynchronous work and persistent data.",
+  "width": 1600,
+  "height": 780,
+  "groups": [
+    {
+      "id": "app",
+      "x": 341,
+      "y": 142,
+      "w": 922,
+      "h": 573,
+      "title": "Application boundary",
+      "caption": "",
+      "palette": "blue",
+      "style": "boundary"
+    }
+  ],
+  "nodes": [
+    {
+      "id": "user",
+      "kind": "component",
+      "asset": "software/browser",
+      "x": 43,
+      "y": 284,
+      "w": 199,
+      "h": 144,
+      "label": "Web client",
+      "palette": "blue"
+    },
+    {
+      "id": "web",
+      "kind": "component",
+      "asset": "software/frontend",
+      "x": 402,
+      "y": 284,
+      "w": 203,
+      "h": 144,
+      "label": "Frontend",
+      "palette": "blue"
+    },
+    {
+      "id": "api",
+      "kind": "component",
+      "asset": "software/rest-api",
+      "x": 747,
+      "y": 284,
+      "w": 204,
+      "h": 144,
+      "label": "Application API",
+      "palette": "blue"
+    },
+    {
+      "id": "db",
+      "kind": "component",
+      "asset": "data/relational-db",
+      "x": 1340,
+      "y": 284,
+      "w": 210,
+      "h": 144,
+      "label": "Database",
+      "palette": "orange"
+    },
+    {
+      "id": "queue",
+      "kind": "component",
+      "asset": "software/message-queue",
+      "x": 747,
+      "y": 535,
+      "w": 204,
+      "h": 144,
+      "label": "Job queue",
+      "palette": "teal"
+    },
+    {
+      "id": "worker",
+      "kind": "component",
+      "asset": "software/background-worker",
+      "x": 1020,
+      "y": 535,
+      "w": 204,
+      "h": 144,
+      "label": "Worker",
+      "palette": "teal"
+    }
+  ],
+  "edges": [
+    {
+      "id": "e1",
+      "source": "user",
+      "target": "web",
+      "kind": "data",
+      "palette": "blue",
+      "label": "HTTPS"
+    },
+    {
+      "id": "e2",
+      "source": "web",
+      "target": "api",
+      "kind": "data",
+      "palette": "blue",
+      "label": "Request"
+    },
+    {
+      "id": "e3",
+      "source": "api",
+      "target": "db",
+      "kind": "data",
+      "palette": "orange",
+      "label": "SQL"
+    },
+    {
+      "id": "e4",
+      "source": "api",
+      "target": "queue",
+      "kind": "data",
+      "palette": "teal",
+      "label": "Enqueue",
+      "source_port": "s",
+      "target_port": "n",
+      "label_x": 897,
+      "label_y": 490
+    },
+    {
+      "id": "e5",
+      "source": "queue",
+      "target": "worker",
+      "kind": "data",
+      "palette": "teal",
+      "label": "Consume"
+    },
+    {
+      "id": "e6",
+      "source": "worker",
+      "target": "db",
+      "kind": "data",
+      "palette": "orange",
+      "label": "Write result",
+      "points": [
+        {
+          "x": 1445,
+          "y": 607
+        }
+      ],
+      "source_port": "e",
+      "target_port": "s",
+      "label_x": 1326,
+      "label_y": 595
+    }
+  ],
+  "footer": "Illustrative architecture. Labels describe roles; generic symbols do not assert product compatibility."
+}

@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 144 112" width="144" height="112" role="img" aria-labelledby="title desc" font-family="Arial, Helvetica, sans-serif">
+  <title id="title">Honeypot</title>
+  <desc id="desc">Generic honeypot symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.</desc>
+  <g id="artwork" stroke-linecap="round" stroke-linejoin="round"><path d="M37 44 H107 L119 94 H25 Z" fill="#FCECEF" stroke="#132B50" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><ellipse cx="72" cy="43" rx="35" ry="9" fill="#FFFFFF" stroke="#132B50" stroke-width="2.5"/><path d="M51 14 Q36 24 59 31 M84 8 Q67 20 91 29" fill="none" stroke="#C44552" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></g>
+</svg>

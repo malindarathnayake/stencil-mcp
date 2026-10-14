@@ -1,0 +1,236 @@
+{
+  "source": "Files supplied/generated in this conversation",
+  "files": [
+    {
+      "original_filename": "infra-diagram-kit-v0.1.0.zip",
+      "file": "references/original-package/infra-diagram-kit-v0.1.0.zip",
+      "status": "original-package",
+      "note": "Unmodified original working library/MCP package.",
+      "sha256": "d0840ccf37e1551b6f0b2e04beb30cd24f180fb63e46cc09b3fcf5289ceb209a"
+    },
+    {
+      "original_filename": "infra-diagram-kit-README.md",
+      "file": "references/original-package/README-original.md",
+      "status": "original-package",
+      "note": "Setup guide from the original package.",
+      "sha256": "6ac5c5fde4ba7ead7d80d2c4513f79843e3d79882b7ff7f28c07d8e77f917c82"
+    },
+    {
+      "original_filename": "infra-diagram-kit-preview.png",
+      "file": "references/original-package/catalog-preview-original.png",
+      "status": "original-package",
+      "note": "Original vector-library preview.",
+      "sha256": "517adb00a5a261abc218a412ea3ef4019858d3706be927cce4eb515100a25066"
+    },
+    {
+      "original_filename": "mrc-library-example.svg",
+      "file": "references/original-package/mrc-library-example.svg",
+      "status": "original-package",
+      "note": "Original working-library example; current equivalent is examples/mrc-loss-recovery.svg.",
+      "sha256": "42a6365eaee4c6e305769021e5d7cfe71a6e21b8d35624921876396eab38a3be"
+    },
+    {
+      "original_filename": "a_clean_flat_modern_vector_style_brand_concept_b.png",
+      "file": "references/branding/logo-concepts-original.png",
+      "status": "approved-direction",
+      "note": "User selected option C: Stencil, the stacked-layer mark; other names are not approved.",
+      "sha256": "3c876072a29e8480d29cce2b105a0c5559d8270a1fca82d73495282f6e169e66"
+    },
+    {
+      "original_filename": "infrastructure_assets_icon_library.png",
+      "file": "references/icon-concepts/initial/infrastructure_assets_icon_library.png",
+      "status": "reference",
+      "note": "Raster concept sheet, not individually editable vector artwork.",
+      "sha256": "23e0409ea9d5117dc81cc254fabad7283ecadd5e9390d1908bdf5560454520db"
+    },
+    {
+      "original_filename": "security_assets_icon_sheet.png",
+      "file": "references/icon-concepts/initial/security_assets_icon_sheet.png",
+      "status": "reference",
+      "note": "Raster concept sheet, not individually editable vector artwork.",
+      "sha256": "d5a36c73534c6a2f08ca0f3e8e76e5f042ea77b791e0b8f5a0b2bbf1aaf748c2"
+    },
+    {
+      "original_filename": "networking_routing_assets_icon_library.png",
+      "file": "references/icon-concepts/initial/networking_routing_assets_icon_library.png",
+      "status": "reference",
+      "note": "Raster concept sheet, not individually editable vector artwork.",
+      "sha256": "5e5102691b7e4b6f66f340668a5a2eada8ba65280183845500383d7f2a7bb8f8"
+    },
+    {
+      "original_filename": "software_development_assets_icon_sheet.png",
+      "file": "references/icon-concepts/initial/software_development_assets_icon_sheet.png",
+      "status": "reference",
+      "note": "Raster concept sheet, not individually editable vector artwork.",
+      "sha256": "7d7faf0676efb3c1844233e665850ce0aa562245ca39df52d68f0de927743d5a"
+    },
+    {
+      "original_filename": "diagram_primitives_library_sheet.png",
+      "file": "references/icon-concepts/initial/diagram_primitives_library_sheet.png",
+      "status": "reference",
+      "note": "Raster concept sheet, not individually editable vector artwork.",
+      "sha256": "41474e3c9a8be4c35c150b7f6c63812c2f010b4475b86d4c0b101e0944f47951"
+    },
+    {
+      "original_filename": "zones_status_overview_elements.png",
+      "file": "references/icon-concepts/initial/zones_status_overview_elements.png",
+      "status": "reference",
+      "note": "Raster concept sheet, not individually editable vector artwork.",
+      "sha256": "e0813a2072e5fffe572379f0c4eb47ddd1fafae93fc0264c1aa8b4505ef6f420"
+    },
+    {
+      "original_filename": "routing_protocol_path_assets.png",
+      "file": "references/icon-concepts/initial/routing_protocol_path_assets.png",
+      "status": "reference",
+      "note": "Raster concept sheet, not individually editable vector artwork.",
+      "sha256": "f7d0584259e62ccdd04be32076cbff6c4d248cb1afc5a9e21bc10c4a24b47a1a"
+    },
+    {
+      "original_filename": "switching_and_vlan_asset_diagram.png",
+      "file": "references/icon-concepts/initial/switching_and_vlan_asset_diagram.png",
+      "status": "reference",
+      "note": "Raster concept sheet, not individually editable vector artwork.",
+      "sha256": "e0767e7113cc854c5a91b451c2589ba16d3b94bd26c1cd05db7b556ba6197685"
+    },
+    {
+      "original_filename": "mrc_diagram_design_system_infographic.png",
+      "file": "references/icon-concepts/addressable-id-boards/mrc_diagram_design_system_infographic.png",
+      "status": "reference",
+      "note": "Raster concept board. Printed INF/SWV/RTE/MRC IDs are reference notation; runtime asset IDs are in catalog.json.",
+      "sha256": "f6ba840c30faa54814bf54d5e14f2e78f4dfaedf83a146199d057fc6d6e61bd9"
+    },
+    {
+      "original_filename": "infrastructure_compute_asset_set.png",
+      "file": "references/icon-concepts/addressable-id-boards/infrastructure_compute_asset_set.png",
+      "status": "reference",
+      "note": "Raster concept board. Printed INF/SWV/RTE/MRC IDs are reference notation; runtime asset IDs are in catalog.json.",
+      "sha256": "6a034b367a873d9428cf0866d04ff80aecd5e8e549caf135160aa04516c42b3f"
+    },
+    {
+      "original_filename": "switching_vlan_trunk_asset_set.png",
+      "file": "references/icon-concepts/addressable-id-boards/switching_vlan_trunk_asset_set.png",
+      "status": "reference",
+      "note": "Raster concept board. Printed INF/SWV/RTE/MRC IDs are reference notation; runtime asset IDs are in catalog.json.",
+      "sha256": "a968222a49b160b345cdbc33c4c78f4ed0da4550b0518762c912a568af3261c9"
+    },
+    {
+      "original_filename": "routing_path_asset_set.png",
+      "file": "references/icon-concepts/addressable-id-boards/routing_path_asset_set.png",
+      "status": "reference",
+      "note": "Raster concept board. Printed INF/SWV/RTE/MRC IDs are reference notation; runtime asset IDs are in catalog.json.",
+      "sha256": "dc1c899b57333691d85417be42b78ff9db4326ac751c2f480128eea80d054172"
+    },
+    {
+      "original_filename": "security_trust_asset_set.png",
+      "file": "references/icon-concepts/addressable-id-boards/security_trust_asset_set.png",
+      "status": "reference",
+      "note": "Raster concept board. Printed INF/SWV/RTE/MRC IDs are reference notation; runtime asset IDs are in catalog.json.",
+      "sha256": "9f9f7a3d5a9e129eed19f66d6f6fca335a340157eb0b786dc3e48acb7d2b3905"
+    },
+    {
+      "original_filename": "software_platform_asset_set.png",
+      "file": "references/icon-concepts/addressable-id-boards/software_platform_asset_set.png",
+      "status": "reference",
+      "note": "Raster concept board. Printed INF/SWV/RTE/MRC IDs are reference notation; runtime asset IDs are in catalog.json.",
+      "sha256": "30fe92f33ac370e98826d34813573d839ac56bb5760c1b9b36eedce3e3fc88c9"
+    },
+    {
+      "original_filename": "mrc_transport_packet_flow_asset_sheet.png",
+      "file": "references/icon-concepts/addressable-id-boards/mrc_transport_packet_flow_asset_sheet.png",
+      "status": "reference",
+      "note": "Raster concept board. Printed INF/SWV/RTE/MRC IDs are reference notation; runtime asset IDs are in catalog.json.",
+      "sha256": "3394a81532ae77ce27f6ea33ac394005e14fb171379edf22b22f1d8624e6cb5f"
+    },
+    {
+      "original_filename": "diagram_primitives_catalog_grid.png",
+      "file": "references/icon-concepts/addressable-id-boards/diagram_primitives_catalog_grid.png",
+      "status": "reference",
+      "note": "Raster concept board. Printed INF/SWV/RTE/MRC IDs are reference notation; runtime asset IDs are in catalog.json.",
+      "sha256": "d970175dbe79ab32af4a5370ef6e92fad3d884971abb76eef9935e04d7227cb3"
+    },
+    {
+      "original_filename": "zones_roles_status_asset_set.png",
+      "file": "references/icon-concepts/addressable-id-boards/zones_roles_status_asset_set.png",
+      "status": "reference",
+      "note": "Raster concept board. Printed INF/SWV/RTE/MRC IDs are reference notation; runtime asset IDs are in catalog.json.",
+      "sha256": "7cf7235e59899797ac83aaea091c35920596d40b1a6f056e37d900a40317c9c7"
+    },
+    {
+      "original_filename": "wide_infographic_diagram_on_a_white_background_wit.png",
+      "file": "references/mrc/mrc-approved-reference.png",
+      "status": "approved-reference",
+      "note": "Last approved MRC raster: consistent sender-left/receiver-right labels, RDMA connection A.",
+      "sha256": "6ecad9b3503572db9f134ca76c121ee1c243bc837f18da026ce15e25da19e45e"
+    },
+    {
+      "original_filename": "image(2).png",
+      "file": "references/mrc/history/01-original-diagram.png",
+      "status": "historical",
+      "note": "Historical draft. May contain errors corrected later; do not use as the canonical protocol/layout source.",
+      "sha256": "34fe169bfd18bcee5c3dbbe71a27049aca5f6d586db6d7343b45e3555ddea793"
+    },
+    {
+      "original_filename": "how_mrc_uses_multiple_paths.svg",
+      "file": "references/mrc/history/02-early-svg-source.svg",
+      "status": "historical",
+      "note": "Historical draft. May contain errors corrected later; do not use as the canonical protocol/layout source.",
+      "sha256": "0f74024f669b23f8f6ee7376491a2364fb9fef033e9653987e37bb7ad1bcd83f"
+    },
+    {
+      "original_filename": "a_clean_infographic_with_a_white_background_and_bl.png",
+      "file": "references/mrc/history/03-two-panel-draft.png",
+      "status": "historical",
+      "note": "Historical draft. May contain errors corrected later; do not use as the canonical protocol/layout source.",
+      "sha256": "c1fd680d3ba56a158fcb2764c86714277d6f00c72d1fc5ec98b1a9ce9e699016"
+    },
+    {
+      "original_filename": "wide_infographic_diagram_with_clean_modern_flat_ve.png",
+      "file": "references/mrc/history/04-three-panel-draft.png",
+      "status": "historical",
+      "note": "Historical draft. May contain errors corrected later; do not use as the canonical protocol/layout source.",
+      "sha256": "86db8a2f368e42ca2bcb19902c8eb38ee8023dfb4c7020480fa101c07743708e"
+    },
+    {
+      "original_filename": "wide_infographic_with_clean_modern_flat_vector_sty.png",
+      "file": "references/mrc/history/05-combined-draft.png",
+      "status": "historical",
+      "note": "Historical draft. May contain errors corrected later; do not use as the canonical protocol/layout source.",
+      "sha256": "38785ca76bc407169b8ecc1b2bf74b25b49316fe85b0d4543cacf654fb07e06a"
+    },
+    {
+      "original_filename": "how_mrc_uses_multiple_paths.png",
+      "file": "references/mrc/history/06-subtitle-revision.png",
+      "status": "historical",
+      "note": "Historical draft. May contain errors corrected later; do not use as the canonical protocol/layout source.",
+      "sha256": "d5f309fc7f3bd82c8f571f6e21f9e68b42b3f3efc230db3e38e6cebac17dc391"
+    },
+    {
+      "original_filename": "image(3).png",
+      "file": "references/mrc/history/07-endpoint-flip-issue.png",
+      "status": "historical",
+      "note": "Historical draft. May contain errors corrected later; do not use as the canonical protocol/layout source.",
+      "sha256": "2a1841e48186c8e33a190ec713f950f7eff3d68c162a2c7fed6acca447a1048f"
+    },
+    {
+      "original_filename": "mrc-two-panels.png",
+      "file": "references/mrc/history/mrc-two-panels.png",
+      "status": "historical",
+      "note": "Historical intermediate preview; retained for completeness.",
+      "sha256": "634ffe76ebf35a883935cd286895293d75b132f9e4b22099fccb80b285e5d742"
+    },
+    {
+      "original_filename": "mrc_source_preview.png",
+      "file": "references/mrc/history/mrc_source_preview.png",
+      "status": "historical",
+      "note": "Historical intermediate preview; retained for completeness.",
+      "sha256": "7797679f6554248820a61703f400e00b861f21a2136945eaa71826171a6c36c2"
+    },
+    {
+      "original_filename": "mrc-multipath-corrected-preview.png",
+      "file": "references/mrc/history/mrc-multipath-corrected-preview.png",
+      "status": "historical",
+      "note": "Historical intermediate preview; retained for completeness.",
+      "sha256": "750a0770feb1ce660ae7ae3e2fb4585011c7d6992905e2c16535785f571b2934"
+    }
+  ]
+}

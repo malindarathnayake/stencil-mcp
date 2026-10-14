@@ -1,0 +1,18 @@
+# Gitleaks config. Extends the default ruleset; the allowlist below is the ONLY
+# sanctioned place to suppress a finding.
+#
+# Allowlist policy: entries are exact files or exact strings, never patterns broad
+# enough to mask a real credential. Every entry says what the file is and why it trips
+# a rule. Scanned 2026-10-13: the only findings were the file below.
+
+[extend]
+useDefault = true
+
+[allowlist]
+description = "checksum fixture only - see policy header"
+paths = [
+  # Frozen SHA-256 digests of the original 300 symbols, keyed by asset id. Ids such
+  # as "secrets-vault", "access-token" and "rest-api" next to a 64-char hex value
+  # trip generic-api-key (11 findings). Content hashes, never configuration.
+  '''^tests[/\\]fixtures[/\\]legacy_sha256\.json$''',
+]

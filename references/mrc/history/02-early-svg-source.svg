@@ -1,0 +1,182 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1680 960" width="1680" height="960" font-family="Segoe UI, Helvetica, Arial, sans-serif" xmlns:c2pa="http://c2pa.org/manifest"><metadata><c2pa:manifest>AAAWgmp1bWIAAAAeanVtZGMycGEAEQAQgAAAqgA4m3EDYzJwYQAAABZcanVtYgAAAEdqdW1kYzJtYQARABCAAACqADibcQN1cm46YzJwYTpiNjk0NTNiMy1hYzUwLTQ5ZTItODhlZS0xNjNlYzhmYmM3ZWEAAAADl2p1bWIAAAApanVtZGMyYXMAEQAQgAAAqgA4m3EDYzJwYS5hc3NlcnRpb25zAAAAALxqdW1iAAAARGp1bWRjYm9yABEAEIAAAKoAOJtxE2MycGEuaW5ncmVkaWVudC52MwAAAAAYYzJzaAOmoKKy+kVqXrdvtw0cEFkAAABwY2JvcqNpZGM6Zm9ybWF0bWltYWdlL3N2Zyt4bWxqaW5zdGFuY2VJRHgseG1wOmlpZDpkZTg4MmVhOS0yNjU1LTQxODUtYjNmOS1lZWU2Nzc1ZmZhZWFscmVsYXRpb25zaGlwaHBhcmVudE9mAAAB4mp1bWIAAABBanVtZGNib3IAEQAQgAAAqgA4m3ETYzJwYS5hY3Rpb25zLnYyAAAAABhjMnNoGw6jNNNopwBQyhdDVlGTqwAAAZljYm9yomdhY3Rpb25zgqJmYWN0aW9ua2MycGEub3BlbmVkanBhcmFtZXRlcnOha2luZ3JlZGllbnRzgaJjdXJseC1zZWxmI2p1bWJmPWMycGEuYXNzZXJ0aW9ucy9jMnBhLmluZ3JlZGllbnQudjNkaGFzaFgg3w9kAr2R96w4uQ4ee8aZ3Qk/FzkadNqemJOoOWGrrpCkZmFjdGlvbngdY29tLmFudGhyb3BpYy5jbGF1ZGUucHJvdmlkZWRqcGFyYW1ldGVyc6F4H2NvbS5hbnRocm9waWMub3JpZ2luLWNvbmZpZGVuY2VndW5rbm93bmtkZXNjcmlwdGlvbnhmQ2xhdWRlIHByb3ZpZGVkIHRoaXMgZmlsZSBhdCB0aGUgcmVxdWVzdCBvZiBhIHVzZXIgYW5kIG1heSBoYXZlIGNyZWF0ZWQgb3IgbW9kaWZpZWQgdGhlIGZpbGUgY29udGVudHMubXNvZnR3YXJlQWdlbnShZG5hbWVmQ2xhdWRlcmFsbEFjdGlvbnNJbmNsdWRlZPUAAADIanVtYgAAAEBqdW1kY2JvcgARABCAAACqADibcRNjMnBhLmhhc2guZGF0YQAAAAAYYzJzaNyb0VDng/m+lD+kmISGhp8AAACAY2JvcqVjYWxnZnNoYTI1NmNwYWRNAAAAAAAAAAAAAAAAAGRoYXNoWCDwHIgP9valSvNT5WSeVyO+YSh0W+bDPQjTfhKab8Qzw2RuYW1lbmp1bWJmIG1hbmlmZXN0amV4Y2x1c2lvbnOBomVzdGFydBjNZmxlbmd0aBkeBAAAAj5qdW1iAAAAJ2p1bWRjMmNsABEAEIAAAKoAOJtxA2MycGEuY2xhaW0udjIAAAACD2Nib3KlY2FsZ2ZzaGEyNTZpc2lnbmF0dXJleE1zZWxmI2p1bWJmPS9jMnBhL3VybjpjMnBhOmI2OTQ1M2IzLWFjNTAtNDllMi04OGVlLTE2M2VjOGZiYzdlYS9jMnBhLnNpZ25hdHVyZWppbnN0YW5jZUlEeCx4bXA6aWlkOjQwMGUwZjdhLTE1MGQtNGE4ZC1hZTFlLWRlYTM4NmE4ZGJkOXJjcmVhdGVkX2Fzc2VydGlvbnODomN1cmx4LXNlbGYjanVtYmY9YzJwYS5hc3NlcnRpb25zL2MycGEuaW5ncmVkaWVudC52M2RoYXNoWCDfD2QCvZH3rDi5Dh57xpndCT8XORp02p6Yk6g5YauukKJjdXJseCpzZWxmI2p1bWJmPWMycGEuYXNzZXJ0aW9ucy9jMnBhLmFjdGlvbnMudjJkaGFzaFggcJRM5pvzDGfWsZLN45Lo6GM8a6/27awCvds6BU+PrRKiY3VybHgpc2VsZiNqdW1iZj1jMnBhLmFzc2VydGlvbnMvYzJwYS5oYXNoLmRhdGFkaGFzaFggmGB+zY+AR6Brq81e5j//zzYYljae1fqrpogvn1dUknp0Y2xhaW1fZ2VuZXJhdG9yX2luZm+jZG5hbWVvQW50aHJvcGljIEZpbGVzZ3ZlcnNpb25lMS4wLjBrc3BlY1ZlcnNpb25lMi40LjAAABA4anVtYgAAAChqdW1kYzJjcwARABCAAACqADibcQNjMnBhLnNpZ25hdHVyZQAAABAIY2JvctKEWQISogEmGCFZAgowggIGMIIBjaADAgECAhRA5aAK7sI50L64g/oGQgU9Z1UTADAKBggqhkjOPQQDAzBJMRcwFQYDVQQKEw5BbnRocm9waWMsIFBCQzEuMCwGA1UEAxMlQW50aHJvcGljIENvbnRlbnQgQ3JlZGVudGlhbHMgUm9vdCBDQTAeFw0yNjA4MDcxODQzNTZaFw0yODA4MDYxOTQzNTZaMEQxFzAVBgNVBAoTDkFudGhyb3BpYywgUEJDMSkwJwYDVQQDEyBBbnRocm9waWMgQ2xhdWRlIENvbnRlbnQgU2lnbmluZzBZMBMGByqGSM49AgEGCCqGSM49AwEHA0IABJh6CmvLUBgFFNU0vUKlOVtE6djd17L5SuwX0LemFisBM3dkd/3cyjxFA3Qo5S46fX0/ihY0VZ7mfb9KF703t5OjWDBWMA4GA1UdDwEB/wQEAwIHgDAVBgNVHSUEDjAMBgorBgEEAYPoXgIBMAwGA1UdEwEB/wQCMAAwHwYDVR0jBBgwFoAUzlHiBIFOZFsj+OPEz5o+nMHXXMIwCgYIKoZIzj0EAwMDZwAwZAIwMXMdFJ4BetLLVY7ORuE9noqbbAZOZn/aArXyTwFAZfKrPzxF2vPoJNf1+UCdg1XGAjBwX1zd9WGqYkqmL5SFqw1QySjr1zJfpJM9+1rdDwSPLMOPOjKuiXjoU/pUUeG9RwmhY3BhZFkNngAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPZYQNmmGikwNtuAVEHF5gTxHM7L8Xzpld4SatPjpDQPQTHV38yc5erL86E2NKPa84UeMm3oInWmEWIPE1RwmZTY+/4=</c2pa:manifest></metadata>
+  <defs>
+    <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="context-stroke"/>
+    </marker>
+    <marker id="arrO" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#f28c38"/></marker>
+    <marker id="arrB" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#2f80ed"/></marker>
+    <marker id="arrG" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#27ae60"/></marker>
+    <marker id="arrP" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#8e44ad"/></marker>
+    <marker id="arrY" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#e0b400"/></marker>
+    <marker id="arrD" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#3b4a6b"/></marker>
+  </defs>
+
+  <rect width="1680" height="960" fill="#f7f8fa"/>
+
+  <!-- Title -->
+  <text x="840" y="62" text-anchor="middle" font-size="46" font-weight="700" fill="#1d2a4d">How MRC uses multiple paths</text>
+  <text x="840" y="104" text-anchor="middle" font-size="22" fill="#5a6478">MRC sprays packets from one RDMA connection across multiple ECMP paths and places them directly into memory at the receiver.</text>
+
+  <!-- Sender NIC -->
+  <rect x="30" y="215" width="270" height="290" rx="12" fill="#e9f0fb"/>
+  <text x="165" y="255" text-anchor="middle" font-size="24" font-weight="700" fill="#1d2a4d">Sender NIC</text>
+  <rect x="60" y="300" width="210" height="110" rx="8" fill="#2f4f3f" stroke="#1b2e24" stroke-width="2"/>
+  <text x="165" y="347" text-anchor="middle" font-size="22" font-weight="600" fill="#ffffff">One RDMA</text>
+  <text x="165" y="377" text-anchor="middle" font-size="22" font-weight="600" fill="#ffffff">connection</text>
+
+  <!-- Packet boxes -->
+  <g font-size="16">
+    <rect x="340" y="240" width="145" height="48" rx="6" fill="#fde2c8"/>
+    <text x="352" y="259" font-weight="700" fill="#1d2a4d">Packet 1</text><text x="352" y="279" fill="#3b4a6b">src port: 50001</text>
+    <rect x="340" y="296" width="145" height="48" rx="6" fill="#d4e6fb"/>
+    <text x="352" y="315" font-weight="700" fill="#1d2a4d">Packet 2</text><text x="352" y="335" fill="#3b4a6b">src port: 50002</text>
+    <rect x="340" y="352" width="145" height="48" rx="6" fill="#d5f0dd"/>
+    <text x="352" y="371" font-weight="700" fill="#1d2a4d">Packet 3</text><text x="352" y="391" fill="#3b4a6b">src port: 50003</text>
+    <rect x="340" y="408" width="145" height="48" rx="6" fill="#e6d9f5"/>
+    <text x="352" y="427" font-weight="700" fill="#1d2a4d">Packet 4</text><text x="352" y="447" fill="#3b4a6b">src port: 50004</text>
+    <rect x="340" y="464" width="145" height="48" rx="6" fill="#fbf0b8"/>
+    <text x="352" y="483" font-weight="700" fill="#1d2a4d">Packet 5</text><text x="352" y="503" fill="#3b4a6b">src port: 50005</text>
+  </g>
+
+  <!-- NIC to packets -->
+  <g fill="none" stroke-width="3">
+    <path d="M270,330 L340,264" stroke="#f28c38" marker-end="url(#arrO)"/>
+    <path d="M270,345 L340,320" stroke="#2f80ed" marker-end="url(#arrB)"/>
+    <path d="M270,360 L340,376" stroke="#27ae60" marker-end="url(#arrG)"/>
+    <path d="M270,375 L340,432" stroke="#8e44ad" marker-end="url(#arrP)"/>
+    <path d="M270,390 L340,488" stroke="#e0b400" marker-end="url(#arrY)"/>
+  </g>
+
+  <!-- Cloud -->
+  <ellipse cx="840" cy="370" rx="330" ry="175" fill="#e4edf9"/>
+  <text x="840" y="190" text-anchor="middle" font-size="20" font-weight="700" fill="#1d2a4d">Routed Ethernet Network</text>
+  <text x="840" y="214" text-anchor="middle" font-size="18" fill="#3b4a6b">(ECMP)</text>
+
+  <!-- Spines -->
+  <g font-size="16" fill="#3b4a6b" text-anchor="middle">
+    <rect x="745" y="232" width="190" height="36" rx="6" fill="#2b3447"/><text x="840" y="290">Path A via Spine 1</text>
+    <rect x="745" y="310" width="190" height="36" rx="6" fill="#2b3447"/><text x="840" y="368">Path B via Spine 2</text>
+    <rect x="745" y="388" width="190" height="36" rx="6" fill="#2b3447"/><text x="840" y="446">Path C via Spine 3</text>
+    <rect x="745" y="466" width="190" height="36" rx="6" fill="#2b3447"/><text x="840" y="524">Path D via Spine 4</text>
+  </g>
+  <g fill="#9fb0cc" font-size="18" text-anchor="middle">
+    <text x="840" y="257">▦ ▦ ▦ ▦ ▦ ▦ ▦ ▦</text><text x="840" y="335">▦ ▦ ▦ ▦ ▦ ▦ ▦ ▦</text>
+    <text x="840" y="413">▦ ▦ ▦ ▦ ▦ ▦ ▦ ▦</text><text x="840" y="491">▦ ▦ ▦ ▦ ▦ ▦ ▦ ▦</text>
+  </g>
+
+  <!-- Packets to spines -->
+  <g fill="none" stroke-width="3">
+    <path d="M485,264 C600,264 640,250 745,250" stroke="#f28c38" marker-end="url(#arrO)"/>
+    <path d="M485,320 C600,320 640,328 745,328" stroke="#2f80ed" marker-end="url(#arrB)"/>
+    <path d="M485,376 C600,376 640,406 745,406" stroke="#27ae60" marker-end="url(#arrG)"/>
+    <path d="M485,432 C600,432 640,484 745,484" stroke="#8e44ad" marker-end="url(#arrP)"/>
+    <path d="M485,488 C600,488 640,490 745,490" stroke="#e0b400" marker-end="url(#arrY)"/>
+  </g>
+  <!-- Spines to receiver -->
+  <g fill="none" stroke-width="3">
+    <path d="M935,250 C1100,250 1200,350 1380,350" stroke="#f28c38" marker-end="url(#arrO)"/>
+    <path d="M935,328 C1100,328 1200,366 1380,366" stroke="#2f80ed" marker-end="url(#arrB)"/>
+    <path d="M935,406 C1100,406 1200,382 1380,382" stroke="#27ae60" marker-end="url(#arrG)"/>
+    <path d="M935,484 C1100,484 1200,398 1380,398" stroke="#8e44ad" marker-end="url(#arrP)"/>
+    <path d="M935,490 C1100,490 1200,414 1380,414" stroke="#e0b400" marker-end="url(#arrY)"/>
+  </g>
+
+  <!-- Callout -->
+  <rect x="1080" y="160" width="395" height="68" rx="10" fill="#fdf1e4"/>
+  <rect x="1100" y="177" width="44" height="34" rx="5" fill="#2b3447"/>
+  <text x="1122" y="200" text-anchor="middle" font-size="16" font-weight="700" fill="#cfd8e8">x</text>
+  <text x="1160" y="188" font-size="17" font-weight="700" fill="#1d2a4d">To the switches: different flows</text>
+  <text x="1160" y="212" font-size="16" fill="#5a6478">To the endpoints: one RDMA connection</text>
+  <path d="M1080,194 C1040,194 1020,215 1000,230" fill="none" stroke="#b8c2d6" stroke-width="2"/>
+
+  <!-- Receiver NIC -->
+  <rect x="1375" y="245" width="275" height="230" rx="12" fill="#e9f0fb"/>
+  <text x="1512" y="290" text-anchor="middle" font-size="24" font-weight="700" fill="#1d2a4d">Receiver NIC</text>
+  <rect x="1410" y="330" width="205" height="110" rx="8" fill="#2f4f3f" stroke="#1b2e24" stroke-width="2"/>
+  <text x="1512" y="372" text-anchor="middle" font-size="22" font-weight="600" fill="#ffffff">Same RDMA</text>
+  <text x="1512" y="402" text-anchor="middle" font-size="22" font-weight="600" fill="#ffffff">connection</text>
+
+  <line x1="30" y1="555" x2="1650" y2="555" stroke="#d6dce6" stroke-width="2"/>
+  <line x1="560" y1="580" x2="560" y2="930" stroke="#d6dce6" stroke-width="2"/>
+  <line x1="1100" y1="580" x2="1100" y2="930" stroke="#d6dce6" stroke-width="2"/>
+
+  <!-- Panel 1 -->
+  <circle cx="75" cy="612" r="26" fill="#2f80ed"/><text x="75" y="623" text-anchor="middle" font-size="28" font-weight="700" fill="#fff">1</text>
+  <text x="120" y="608" font-size="22" font-weight="700" fill="#1d2a4d">Vary the UDP source port</text>
+  <text x="120" y="636" font-size="17" fill="#5a6478">The sender changes the hash input</text>
+  <text x="120" y="660" font-size="17" fill="#5a6478">from packet to packet.</text>
+  <rect x="55" y="735" width="175" height="95" rx="8" fill="#2f4f3f" stroke="#1b2e24" stroke-width="2"/>
+  <text x="142" y="775" text-anchor="middle" font-size="18" font-weight="600" fill="#fff">One RDMA</text>
+  <text x="142" y="800" text-anchor="middle" font-size="18" font-weight="600" fill="#fff">connection</text>
+  <g font-size="15" fill="#1d2a4d">
+    <rect x="310" y="690" width="150" height="30" rx="6" fill="#fde2c8"/><text x="325" y="711">src port: 50001</text>
+    <rect x="310" y="730" width="150" height="30" rx="6" fill="#d4e6fb"/><text x="325" y="751">src port: 50002</text>
+    <rect x="310" y="770" width="150" height="30" rx="6" fill="#d5f0dd"/><text x="325" y="791">src port: 50003</text>
+    <rect x="310" y="810" width="150" height="30" rx="6" fill="#e6d9f5"/><text x="325" y="831">src port: 50004</text>
+    <rect x="310" y="850" width="150" height="30" rx="6" fill="#fbf0b8"/><text x="325" y="871">src port: 50005</text>
+  </g>
+  <g fill="none" stroke-width="2.5">
+    <path d="M230,760 L310,705" stroke="#f28c38" marker-end="url(#arrO)"/>
+    <path d="M230,772 L310,745" stroke="#2f80ed" marker-end="url(#arrB)"/>
+    <path d="M230,784 L310,785" stroke="#27ae60" marker-end="url(#arrG)"/>
+    <path d="M230,796 L310,825" stroke="#8e44ad" marker-end="url(#arrP)"/>
+    <path d="M230,808 L310,865" stroke="#e0b400" marker-end="url(#arrY)"/>
+  </g>
+
+  <!-- Panel 2 -->
+  <circle cx="625" cy="612" r="26" fill="#2f80ed"/><text x="625" y="623" text-anchor="middle" font-size="28" font-weight="700" fill="#fff">2</text>
+  <text x="670" y="608" font-size="22" font-weight="700" fill="#1d2a4d">Packets can arrive out of order</text>
+  <text x="670" y="636" font-size="17" fill="#5a6478">The receiver places each packet directly</text>
+  <text x="670" y="660" font-size="17" fill="#5a6478">into the right memory location. No reordering.</text>
+  <text x="600" y="708" font-size="16" fill="#3b4a6b">Arrival order</text>
+  <g font-size="18" font-weight="700" fill="#1d2a4d" text-anchor="middle">
+    <rect x="760" y="686" width="54" height="34" rx="6" fill="#fde2c8"/><text x="787" y="710">1</text>
+    <rect x="822" y="686" width="54" height="34" rx="6" fill="#d5f0dd"/><text x="849" y="710">3</text>
+    <rect x="884" y="686" width="54" height="34" rx="6" fill="#fbf0b8"/><text x="911" y="710">5</text>
+    <rect x="946" y="686" width="54" height="34" rx="6" fill="#d4e6fb"/><text x="973" y="710">2</text>
+    <rect x="1008" y="686" width="54" height="34" rx="6" fill="#f1f1f1" stroke="#c9c9c9" stroke-dasharray="4 3"/><text x="1035" y="710" fill="#999">4?</text>
+  </g>
+  <path d="M911,724 L911,748" stroke="#3b4a6b" stroke-width="2" marker-end="url(#arrD)" fill="none"/>
+  <text x="600" y="770" font-size="15" fill="#3b4a6b">Receiver memory</text>
+  <text x="600" y="790" font-size="13" fill="#5a6478">(as packets arrive)</text>
+  <g font-size="18" font-weight="700" fill="#1d2a4d" text-anchor="middle">
+    <rect x="760" y="758" width="54" height="40" rx="6" fill="#fde2c8"/><text x="787" y="785">A</text>
+    <rect x="822" y="758" width="54" height="40" rx="6" fill="#d4e6fb"/><text x="849" y="785">B</text>
+    <rect x="884" y="758" width="54" height="40" rx="6" fill="#d5f0dd"/><text x="911" y="785">C</text>
+    <rect x="946" y="758" width="54" height="40" rx="6" fill="#f1f1f1" stroke="#c9c9c9"/><text x="973" y="785" fill="#999">–</text>
+    <rect x="1008" y="758" width="54" height="40" rx="6" fill="#fbf0b8"/><text x="1035" y="785">E</text>
+  </g>
+  <path d="M911,802 L911,826" stroke="#3b4a6b" stroke-width="2" marker-end="url(#arrD)" fill="none"/>
+  <text x="600" y="858" font-size="15" fill="#3b4a6b">After packet 4</text>
+  <text x="600" y="878" font-size="13" fill="#5a6478">is retransmitted</text>
+  <g font-size="18" font-weight="700" fill="#1d2a4d" text-anchor="middle">
+    <rect x="760" y="838" width="54" height="40" rx="6" fill="#fde2c8"/><text x="787" y="865">A</text>
+    <rect x="822" y="838" width="54" height="40" rx="6" fill="#d4e6fb"/><text x="849" y="865">B</text>
+    <rect x="884" y="838" width="54" height="40" rx="6" fill="#d5f0dd"/><text x="911" y="865">C</text>
+    <rect x="946" y="838" width="54" height="40" rx="6" fill="#e6d9f5"/><text x="973" y="865">D</text>
+    <rect x="1008" y="838" width="54" height="40" rx="6" fill="#fbf0b8"/><text x="1035" y="865">E</text>
+  </g>
+
+  <!-- Panel 3 -->
+  <circle cx="1165" cy="612" r="26" fill="#2f80ed"/><text x="1165" y="623" text-anchor="middle" font-size="28" font-weight="700" fill="#fff">3</text>
+  <text x="1210" y="608" font-size="22" font-weight="700" fill="#1d2a4d">Use selective acknowledgements</text>
+  <text x="1210" y="636" font-size="17" fill="#5a6478">Packet 4 was dropped in the network.</text>
+  <text x="1210" y="660" font-size="17" fill="#5a6478">Only the missing packet is resent.</text>
+  <text x="1200" y="722" text-anchor="middle" font-size="16" font-weight="700" fill="#1d2a4d">Receiver NIC</text>
+  <text x="1560" y="722" text-anchor="middle" font-size="16" font-weight="700" fill="#1d2a4d">Sender NIC</text>
+  <rect x="1130" y="740" width="140" height="90" rx="8" fill="#2f4f3f" stroke="#1b2e24" stroke-width="2"/>
+  <text x="1200" y="778" text-anchor="middle" font-size="15" font-weight="600" fill="#fff">Same RDMA</text>
+  <text x="1200" y="800" text-anchor="middle" font-size="15" font-weight="600" fill="#fff">connection</text>
+  <rect x="1490" y="740" width="140" height="90" rx="8" fill="#2f4f3f" stroke="#1b2e24" stroke-width="2"/>
+  <text x="1560" y="778" text-anchor="middle" font-size="15" font-weight="600" fill="#fff">Same RDMA</text>
+  <text x="1560" y="800" text-anchor="middle" font-size="15" font-weight="600" fill="#fff">connection</text>
+  <path d="M1272,765 L1485,765" stroke="#3b4a6b" stroke-width="2.5" marker-end="url(#arrD)" fill="none"/>
+  <rect x="1300" y="745" width="160" height="40" rx="6" fill="#e9eef7" stroke="#c9d2e3"/>
+  <text x="1380" y="762" text-anchor="middle" font-size="12" font-weight="700" fill="#1d2a4d">SACK</text>
+  <text x="1380" y="778" text-anchor="middle" font-size="12" fill="#3b4a6b">have 1, 2, 3, 5 · missing 4</text>
+  <path d="M1488,810 L1275,810" stroke="#8e44ad" stroke-width="2.5" marker-end="url(#arrP)" fill="none"/>
+  <rect x="1318" y="795" width="124" height="30" rx="6" fill="#e6d9f5"/>
+  <text x="1380" y="815" text-anchor="middle" font-size="14" font-weight="600" fill="#1d2a4d">Retransmit 4 only</text>
+  <text x="1380" y="870" text-anchor="middle" font-size="14" fill="#5a6478">Packets 1, 2, 3 and 5 are never resent.</text>
+  <text x="1380" y="892" text-anchor="middle" font-size="14" fill="#5a6478">A late packet that still shows up is just placed, not resent.</text>
+</svg>

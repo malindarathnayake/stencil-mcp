@@ -1,0 +1,95 @@
+# Tests, generated-file drift and the locked wheel build on every push and PR.
+# Releases live in release.yml and repeat these gates on the tagged commit, because a
+# tag push can bypass a PR. Security scans live in security.yml.
+#
+# Supply-chain rules for every workflow here (see docs/SECURITY_POSTURE.md):
+#  - actions are pinned to full commit SHAs with a `# vX.Y.Z` comment; Dependabot
+#    bumps them after a cooldown. Mutable tags are how the 2026 trivy-action
+#    compromise spread [CWE-829].
+#  - the default token is read-only; a job asks for more only when it needs it.
+#  - checkout never persists the token into .git/config.
+#  - untrusted values reach shell through env, never `${{ }}` inside `run:` [CWE-78].
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  test:
+    name: Test (${{ matrix.os }}, Python ${{ matrix.python }})
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 15
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest, macos-latest]
+        python: ["3.10", "3.13"]
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0
+        with:
+          python-version: ${{ matrix.python }}
+      # The runtime has no third-party dependencies, so nothing is installed here.
+      - name: Unit tests
+        run: python -m unittest discover -s tests -v
+      # Catches a hand-edited generated file or a source change committed without a
+      # rebuild. Release metadata (build_release.py) records timestamps and PNGs need
+      # CairoSVG, so neither is regenerated here. Runs on Windows too: CRLF writes were
+      # the bug class this repo kept hitting.
+      - name: Generated files match a rebuild
+        shell: bash
+        run: |
+          python scripts/build_library.py
+          python scripts/build_schema.py
+          python scripts/build_templates.py
+          python scripts/build_gallery.py
+          if [ -n "$(git status --porcelain)" ]; then
+            echo "::error::A rebuild changed committed files. Run the build scripts and commit the result."
+            git status --porcelain
+            exit 1
+          fi
+
+  package:
+    name: Locked, reproducible wheel
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    needs: test
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0
+        with:
+          python-version: "3.12"
+      # Hash-locked toolchain; --no-isolation stops pip resolving an unpinned
+      # setuptools from PyPI behind our back.
+      - name: Install locked build toolchain
+        run: |
+          python -m pip install --disable-pip-version-check --require-hashes --only-binary=:all: -r requirements-build.txt
+      - name: Build twice and require identical wheels
+        run: |
+          SOURCE_DATE_EPOCH="$(git log -1 --format=%ct)"
+          export SOURCE_DATE_EPOCH
+          python -m build --no-isolation --outdir dist
+          rm -rf build ./*.egg-info
+          python -m build --no-isolation --wheel --outdir rebuild
+          a="$(sha256sum dist/*.whl | cut -d' ' -f1)"
+          b="$(sha256sum rebuild/*.whl | cut -d' ' -f1)"
+          if [ "$a" != "$b" ]; then
+            echo "::error::Wheel is not reproducible ($a vs $b)"; exit 1
+          fi
+          echo "Reproducible wheel sha256: $a"
+      - name: Smoke-test wheel in a clean environment
+        run: python scripts/smoke_wheel.py dist/*.whl

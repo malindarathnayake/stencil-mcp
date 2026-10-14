@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 144 112" width="144" height="112" role="img" aria-labelledby="title desc" font-family="Arial, Helvetica, sans-serif">
+  <title id="title">Flow hash</title>
+  <desc id="desc">Generic flow hash symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.</desc>
+  <g id="artwork" stroke-linecap="round" stroke-linejoin="round"><rect x="32" y="16" width="80" height="82" rx="6" fill="#F0EBFC" stroke="#132B50" stroke-width="2.5"/><path d="M57 34 L50 78 M84 34 L77 78 M43 47 H94 M39 65 H90" fill="none" stroke="#7855C5" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><rect x="52.6" y="84" width="38.8" height="20" rx="5" fill="#FFFFFF" stroke="#7855C5" stroke-width="1.6"/><text x="72" y="98" text-anchor="middle" font-size="9.5" font-weight="700" fill="#7855C5">HASH</text></g>
+</svg>

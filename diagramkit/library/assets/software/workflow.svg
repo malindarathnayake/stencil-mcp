@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 144 112" width="144" height="112" role="img" aria-labelledby="title desc" font-family="Arial, Helvetica, sans-serif">
+  <title id="title">Workflow</title>
+  <desc id="desc">Generic workflow symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.</desc>
+  <g id="artwork" stroke-linecap="round" stroke-linejoin="round"><rect x="13" y="14" width="34" height="26" rx="6" fill="#E6F5F2" stroke="#132B50" stroke-width="2.5"/><rect x="96" y="14" width="34" height="26" rx="6" fill="#E6F5F2" stroke="#132B50" stroke-width="2.5"/><rect x="54" y="77" width="36" height="25" rx="6" fill="#E6F5F2" stroke="#132B50" stroke-width="2.5"/><path d="M47 27 H96 M112 40 V59 H72 V77 M30 40 V59 H72" fill="none" stroke="#13857B" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></g>
+</svg>

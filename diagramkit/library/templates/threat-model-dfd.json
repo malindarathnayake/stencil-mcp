@@ -1,0 +1,120 @@
+{
+  "version": "1.0",
+  "title": "Threat-model data flows",
+  "subtitle": "Track which data crosses each trust boundary and which component is responsible for checking it.",
+  "description": "Track which data crosses each trust boundary and which component is responsible for checking it.",
+  "width": 1580,
+  "height": 718,
+  "groups": [
+    {
+      "id": "browser-zone",
+      "x": 36,
+      "y": 150,
+      "w": 311,
+      "h": 455,
+      "title": "User-controlled context",
+      "caption": "",
+      "palette": "slate",
+      "style": "boundary"
+    },
+    {
+      "id": "app-zone",
+      "x": 423,
+      "y": 150,
+      "w": 1116,
+      "h": 455,
+      "title": "Application trust boundary",
+      "caption": "",
+      "palette": "blue",
+      "style": "boundary"
+    }
+  ],
+  "nodes": [
+    {
+      "id": "actor",
+      "kind": "component",
+      "asset": "identity/user",
+      "x": 96,
+      "y": 292,
+      "w": 192,
+      "h": 148,
+      "label": "External actor",
+      "palette": "blue"
+    },
+    {
+      "id": "api",
+      "kind": "component",
+      "asset": "presentation/process",
+      "x": 492,
+      "y": 292,
+      "w": 237,
+      "h": 148,
+      "label": "Request handler",
+      "palette": "blue",
+      "detail": "Process: validate / authorize"
+    },
+    {
+      "id": "policy",
+      "kind": "component",
+      "asset": "security/policy-engine",
+      "x": 880,
+      "y": 292,
+      "w": 237,
+      "h": 148,
+      "label": "Policy decision",
+      "palette": "red",
+      "detail": "Context and authorization"
+    },
+    {
+      "id": "store",
+      "kind": "component",
+      "asset": "presentation/data-store",
+      "x": 1255,
+      "y": 292,
+      "w": 237,
+      "h": 148,
+      "label": "Sensitive store",
+      "palette": "orange",
+      "detail": "Data classification applies"
+    },
+    {
+      "id": "dfd-note",
+      "kind": "text",
+      "x": 482,
+      "y": 509,
+      "w": 991,
+      "h": 62,
+      "label": "For every crossing: identify the data, caller identity, validation, authorization, logging and failure behavior. Boundaries do not enforce policy by themselves.",
+      "font_size": 16,
+      "weight": 400,
+      "align": "left"
+    }
+  ],
+  "edges": [
+    {
+      "id": "e1",
+      "source": "actor",
+      "target": "api",
+      "kind": "data",
+      "palette": "blue",
+      "label": "Untrusted input"
+    },
+    {
+      "id": "e2",
+      "source": "api",
+      "target": "policy",
+      "kind": "data",
+      "palette": "red",
+      "label": "Request context"
+    },
+    {
+      "id": "e3",
+      "source": "policy",
+      "target": "store",
+      "kind": "data",
+      "palette": "orange",
+      "label": "Authorized access"
+    }
+  ],
+  "footer": "Illustrative architecture. Labels describe roles; generic symbols do not assert product compatibility."
+}

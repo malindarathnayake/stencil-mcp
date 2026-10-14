@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 144 112" width="144" height="112" role="img" aria-labelledby="title desc" font-family="Arial, Helvetica, sans-serif">
+  <title id="title">Packet</title>
+  <desc id="desc">Generic packet symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.</desc>
+  <g id="artwork" stroke-linecap="round" stroke-linejoin="round"><rect x="16" y="26" width="112" height="60" rx="5" fill="#F0EBFC" stroke="#132B50" stroke-width="2.5"/><rect x="16" y="26" width="32" height="60" rx="5" fill="#FFFFFF" stroke="#132B50" stroke-width="2.5"/><line x1="25" y1="42" x2="39" y2="42" stroke="#7855C5" stroke-width="2" stroke-linecap="round"/><line x1="25" y1="53" x2="39" y2="53" stroke="#7855C5" stroke-width="2" stroke-linecap="round"/><line x1="59" y1="44" x2="115" y2="44" stroke="#7855C5" stroke-width="2" stroke-linecap="round"/><line x1="59" y1="57" x2="109" y2="57" stroke="#5B708B" stroke-width="2" stroke-linecap="round"/><line x1="59" y1="70" x2="95" y2="70" stroke="#5B708B" stroke-width="2" stroke-linecap="round"/></g>
+</svg>

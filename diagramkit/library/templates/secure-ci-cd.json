@@ -1,0 +1,170 @@
+{
+  "version": "1.0",
+  "title": "Build, verify and deploy",
+  "subtitle": "Separate build and verification from the human approval gate and production deployment.",
+  "description": "Separate build and verification from the human approval gate and production deployment.",
+  "width": 1670,
+  "height": 775,
+  "groups": [
+    {
+      "id": "delivery",
+      "x": 35,
+      "y": 142,
+      "w": 1600,
+      "h": 547,
+      "title": "Software delivery pipeline",
+      "caption": "",
+      "palette": "purple",
+      "style": "panel"
+    }
+  ],
+  "nodes": [
+    {
+      "id": "n0",
+      "kind": "component",
+      "asset": "devops/git-repository",
+      "x": 63,
+      "y": 253,
+      "w": 239,
+      "h": 150,
+      "label": "Source repository",
+      "palette": "purple",
+      "detail": "Reviewable changes"
+    },
+    {
+      "id": "n1",
+      "kind": "component",
+      "asset": "devops/ci-build",
+      "x": 381,
+      "y": 253,
+      "w": 239,
+      "h": 150,
+      "label": "Build + tests",
+      "palette": "purple",
+      "detail": "Repeatable CI job"
+    },
+    {
+      "id": "n2",
+      "kind": "component",
+      "asset": "devops/sca",
+      "x": 699,
+      "y": 253,
+      "w": 239,
+      "h": 150,
+      "label": "Security checks",
+      "palette": "purple",
+      "detail": "SAST / SCA / policy"
+    },
+    {
+      "id": "n3",
+      "kind": "component",
+      "asset": "devops/release-approval",
+      "x": 1017,
+      "y": 253,
+      "w": 239,
+      "h": 150,
+      "label": "Release approval",
+      "palette": "purple",
+      "detail": "Explicit human gate"
+    },
+    {
+      "id": "n4",
+      "kind": "component",
+      "asset": "devops/cd-release",
+      "x": 1335,
+      "y": 253,
+      "w": 239,
+      "h": 150,
+      "label": "Deploy",
+      "palette": "purple",
+      "detail": "Versioned release"
+    },
+    {
+      "id": "registry",
+      "kind": "component",
+      "asset": "devops/artifact-registry",
+      "x": 381,
+      "y": 508,
+      "w": 239,
+      "h": 145,
+      "label": "Artifact registry",
+      "palette": "teal",
+      "detail": "Immutable version / digest"
+    },
+    {
+      "id": "rollback",
+      "kind": "component",
+      "asset": "devops/rollback",
+      "x": 1017,
+      "y": 508,
+      "w": 239,
+      "h": 145,
+      "label": "Rollback",
+      "palette": "orange",
+      "detail": "Known-good version"
+    }
+  ],
+  "edges": [
+    {
+      "id": "e1",
+      "source": "n0",
+      "target": "n1",
+      "kind": "data",
+      "palette": "purple",
+      "label": "Commit"
+    },
+    {
+      "id": "e2",
+      "source": "n1",
+      "target": "n2",
+      "kind": "data",
+      "palette": "purple",
+      "label": "Artifact"
+    },
+    {
+      "id": "e3",
+      "source": "n2",
+      "target": "n3",
+      "kind": "data",
+      "palette": "purple",
+      "label": "Pass"
+    },
+    {
+      "id": "e4",
+      "source": "n3",
+      "target": "n4",
+      "kind": "data",
+      "palette": "purple",
+      "label": "Approve"
+    },
+    {
+      "id": "e5",
+      "source": "n1",
+      "target": "registry",
+      "kind": "data",
+      "palette": "teal",
+      "label": "Store",
+      "source_port": "s",
+      "target_port": "n",
+      "label_x": 542,
+      "label_y": 459
+    },
+    {
+      "id": "e6",
+      "source": "n4",
+      "target": "rollback",
+      "kind": "data",
+      "palette": "orange",
+      "label": "Restore",
+      "points": [
+        {
+          "x": 1454.5,
+          "y": 580.5
+        }
+      ],
+      "source_port": "s",
+      "target_port": "e"
+    }
+  ],
+  "footer": "Illustrative architecture. Labels describe roles; generic symbols do not assert product compatibility."
+}

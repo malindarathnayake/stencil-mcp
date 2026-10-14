@@ -1,0 +1,195 @@
+{
+  "version": "1.0",
+  "title": "Kubernetes application traffic",
+  "subtitle": "A logical request path through a gateway, service and application pods; storage and control are distinct.",
+  "description": "A logical request path through a gateway, service and application pods; storage and control are distinct.",
+  "width": 1600,
+  "height": 800,
+  "groups": [
+    {
+      "id": "k8s",
+      "x": 350,
+      "y": 136,
+      "w": 1209,
+      "h": 591,
+      "title": "Kubernetes cluster",
+      "caption": "Namespace boundaries are logical scope, not automatic security enforcement.",
+      "palette": "blue",
+      "style": "boundary"
+    }
+  ],
+  "nodes": [
+    {
+      "id": "client",
+      "kind": "component",
+      "asset": "software/browser",
+      "x": 50,
+      "y": 292,
+      "w": 191,
+      "h": 140,
+      "label": "Client",
+      "palette": "blue"
+    },
+    {
+      "id": "gw",
+      "kind": "component",
+      "asset": "kubernetes/gateway-api",
+      "x": 411,
+      "y": 292,
+      "w": 199,
+      "h": 140,
+      "label": "Gateway / ingress",
+      "palette": "blue"
+    },
+    {
+      "id": "svc",
+      "kind": "component",
+      "asset": "kubernetes/service",
+      "x": 724,
+      "y": 292,
+      "w": 184,
+      "h": 140,
+      "label": "Service",
+      "palette": "blue"
+    },
+    {
+      "id": "pod1",
+      "kind": "component",
+      "asset": "kubernetes/pod",
+      "x": 1044,
+      "y": 236,
+      "w": 166,
+      "h": 127,
+      "label": "Pod 1",
+      "palette": "blue"
+    },
+    {
+      "id": "pod2",
+      "kind": "component",
+      "asset": "kubernetes/pod",
+      "x": 1044,
+      "y": 460,
+      "w": 166,
+      "h": 127,
+      "label": "Pod 2",
+      "palette": "blue"
+    },
+    {
+      "id": "db",
+      "kind": "component",
+      "asset": "data/relational-db",
+      "x": 1327,
+      "y": 341,
+      "w": 182,
+      "h": 144,
+      "label": "Database",
+      "palette": "teal"
+    },
+    {
+      "id": "ctrl",
+      "kind": "component",
+      "asset": "kubernetes/control-plane",
+      "x": 496,
+      "y": 529,
+      "w": 244,
+      "h": 143,
+      "label": "Control plane",
+      "palette": "slate"
+    }
+  ],
+  "edges": [
+    {
+      "id": "e1",
+      "source": "client",
+      "target": "gw",
+      "kind": "data",
+      "palette": "blue",
+      "label": "HTTPS"
+    },
+    {
+      "id": "e2",
+      "source": "gw",
+      "target": "svc",
+      "kind": "data",
+      "palette": "blue",
+      "label": "Route"
+    },
+    {
+      "id": "e3",
+      "source": "svc",
+      "target": "pod1",
+      "kind": "data",
+      "palette": "blue",
+      "source_port": "e",
+      "target_port": "w"
+    },
+    {
+      "id": "e4",
+      "source": "svc",
+      "target": "pod2",
+      "kind": "data",
+      "palette": "blue",
+      "points": [
+        {
+          "x": 816,
+          "y": 523.5
+        }
+      ],
+      "source_port": "s",
+      "target_port": "w"
+    },
+    {
+      "id": "e5",
+      "source": "pod1",
+      "target": "db",
+      "kind": "data",
+      "palette": "teal",
+      "points": [
+        {
+          "x": 1418,
+          "y": 299.5
+        }
+      ],
+      "source_port": "e",
+      "target_port": "n"
+    },
+    {
+      "id": "e6",
+      "source": "pod2",
+      "target": "db",
+      "kind": "data",
+      "palette": "teal",
+      "points": [
+        {
+          "x": 1418,
+          "y": 523.5
+        }
+      ],
+      "source_port": "e",
+      "target_port": "s"
+    },
+    {
+      "id": "e7",
+      "source": "ctrl",
+      "target": "svc",
+      "kind": "control",
+      "palette": "slate",
+      "label": "Control",
+      "points": [
+        {
+          "x": 618,
+          "y": 487
+        },
+        {
+          "x": 816,
+          "y": 487
+        }
+      ],
+      "source_port": "n",
+      "target_port": "s",
+      "label_x": 738,
+      "label_y": 486
+    }
+  ],
+  "footer": "Illustrative architecture. Labels describe roles; generic symbols do not assert product compatibility."
+}

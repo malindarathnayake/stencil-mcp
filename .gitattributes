@@ -1,0 +1,38 @@
+# Auto-detect text files and normalize line endings
+* text=auto eol=lf
+
+# Source and generated text. Asset SVGs, catalog.json and templates are
+# SHA-256 checksummed, so they must keep LF bytes on every OS.
+*.py text eol=lf
+*.json text eol=lf
+*.jsonl text eol=lf
+*.svg text eol=lf
+*.md text eol=lf
+*.html text eol=lf
+*.css text eol=lf
+*.toml text eol=lf
+*.yml text eol=lf
+*.yaml text eol=lf
+*.txt text eol=lf
+*.sha256 text eol=lf
+
+# Binary assets
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.ico binary
+*.zip binary
+
+# Linguist overrides — keep GitHub language stats accurate
+diagramkit/library/assets/** linguist-generated
+diagramkit/library/catalog.json linguist-generated
+diagramkit/library/scene.schema.json linguist-generated
+diagramkit/library/templates/** linguist-generated
+examples/** linguist-generated
+previews/** linguist-generated
+gallery.html linguist-generated
+asset-packs.json linguist-generated
+MANIFEST.sha256 linguist-generated
+VALIDATION_REPORT.json linguist-generated
+references/** linguist-vendored
+branding/** linguist-documentation

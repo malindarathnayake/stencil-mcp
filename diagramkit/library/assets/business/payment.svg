@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 144 112" width="144" height="112" role="img" aria-labelledby="title desc" font-family="Arial, Helvetica, sans-serif">
+  <title id="title">Payment</title>
+  <desc id="desc">Generic payment symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.</desc>
+  <g id="artwork" stroke-linecap="round" stroke-linejoin="round"><rect x="18" y="24" width="108" height="68" rx="8" fill="#E6F5F2" stroke="#132B50" stroke-width="2.5"/><rect x="18" y="38" width="108" height="14" fill="#13857B"/><rect x="30" y="62" width="22" height="16" rx="3" fill="#FFFFFF" stroke="#132B50" stroke-width="2"/><line x1="64" y1="72" x2="110" y2="72" stroke="#5B708B" stroke-width="2" stroke-linecap="round"/><line x1="64" y1="82" x2="96" y2="82" stroke="#5B708B" stroke-width="2" stroke-linecap="round"/></g>
+</svg>

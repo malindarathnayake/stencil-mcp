@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 144 112" width="144" height="112" role="img" aria-labelledby="title desc" font-family="Arial, Helvetica, sans-serif">
+  <title id="title">Approved</title>
+  <desc id="desc">Generic approved symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.</desc>
+  <g id="artwork" stroke-linecap="round" stroke-linejoin="round"><circle cx="72" cy="56" r="39" fill="#EAF6EF" stroke="#368454" stroke-width="2.5"/><path d="M49 56 L65 73 L98 36" fill="none" stroke="#368454" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/></g>
+</svg>
