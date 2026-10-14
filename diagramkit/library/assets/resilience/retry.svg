@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 144 112" width="144" height="112" role="img" aria-labelledby="title desc" font-family="Arial, Helvetica, sans-serif">
+  <title id="title">Retry policy</title>
+  <desc id="desc">Generic retry policy symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.</desc>
+  <g id="artwork" stroke-linecap="round" stroke-linejoin="round"><path d="M112 40 A43 39 0 1 0 113 73 M112 40 L91 37 M112 40 L115 19" fill="none" stroke="#368454" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><path d="M72 35 V58 L88 66" fill="none" stroke="#132B50" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></g>
+</svg>

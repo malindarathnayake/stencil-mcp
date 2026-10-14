@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 144 112" width="144" height="112" role="img" aria-labelledby="title desc" font-family="Arial, Helvetica, sans-serif">
+  <title id="title">Border router</title>
+  <desc id="desc">Generic border router symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.</desc>
+  <g id="artwork" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="72" cy="57" rx="48" ry="37" fill="#EAF3FE" stroke="#132B50" stroke-width="2.5"/><path d="M72 50 V29 M65 37 L72 29 L79 37 M79 57 H111 M103 50 L111 57 L103 64 M72 64 V85 M65 77 L72 85 L79 77 M65 57 H33 M41 50 L33 57 L41 64" fill="none" stroke="#1875D1" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><rect x="52.6" y="84" width="38.8" height="20" rx="5" fill="#FFFFFF" stroke="#1875D1" stroke-width="1.6"/><text x="72" y="98" text-anchor="middle" font-size="9.5" font-weight="700" fill="#1875D1">EDGE</text></g>
+</svg>

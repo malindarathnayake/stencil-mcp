@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 144 112" width="144" height="112" role="img" aria-labelledby="title desc" font-family="Arial, Helvetica, sans-serif">
+  <title id="title">Data store notation</title>
+  <desc id="desc">Generic data store notation symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.</desc>
+  <g id="artwork" stroke-linecap="round" stroke-linejoin="round"><line x1="25" y1="27" x2="119" y2="27" stroke="#526C8C" stroke-width="3" stroke-linecap="round"/><line x1="25" y1="85" x2="119" y2="85" stroke="#526C8C" stroke-width="3" stroke-linecap="round"/><line x1="25" y1="27" x2="25" y2="85" stroke="#526C8C" stroke-width="3" stroke-linecap="round"/></g>
+</svg>

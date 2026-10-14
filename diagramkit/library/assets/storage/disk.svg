@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 144 112" width="144" height="112" role="img" aria-labelledby="title desc" font-family="Arial, Helvetica, sans-serif">
+  <title id="title">Disk drive</title>
+  <desc id="desc">Generic disk drive symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.</desc>
+  <g id="artwork" stroke-linecap="round" stroke-linejoin="round"><rect x="31" y="13" width="82" height="88" rx="6" fill="#E6F5F2" stroke="#132B50" stroke-width="2.5"/><circle cx="72" cy="54" r="27" fill="#FFFFFF" stroke="#13857B" stroke-width="2.5"/><circle cx="72" cy="54" r="7" fill="#E6F5F2" stroke="#13857B" stroke-width="2.5"/><path d="M92 77 L75 55 L81 52 L102 69" fill="#E6F5F2" stroke="#132B50" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="44" cy="89" r="2" fill="#13857B" stroke="#13857B" stroke-width="1"/></g>
+</svg>

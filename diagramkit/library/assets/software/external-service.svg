@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 144 112" width="144" height="112" role="img" aria-labelledby="title desc" font-family="Arial, Helvetica, sans-serif">
+  <title id="title">External service</title>
+  <desc id="desc">Generic external service symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.</desc>
+  <g id="artwork" stroke-linecap="round" stroke-linejoin="round"><path d="M34 85 C9 85 7 55 28 47 C21 18 66 7 82 29 C103 13 132 35 123 57 C145 73 124 89 107 85 Z" fill="#E6F5F2" stroke="#132B50" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M49 65 L63 51 L75 64 L94 44" fill="none" stroke="#13857B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><rect x="55.95" y="84" width="32.1" height="20" rx="5" fill="#FFFFFF" stroke="#13857B" stroke-width="1.6"/><text x="72" y="98" text-anchor="middle" font-size="9.5" font-weight="700" fill="#13857B">EXT</text></g>
+</svg>

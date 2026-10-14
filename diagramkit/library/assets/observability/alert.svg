@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 144 112" width="144" height="112" role="img" aria-labelledby="title desc" font-family="Arial, Helvetica, sans-serif">
+  <title id="title">Alert</title>
+  <desc id="desc">Generic alert symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.</desc>
+  <g id="artwork" stroke-linecap="round" stroke-linejoin="round"><path d="M30 80 Q43 65 43 42 Q43 16 72 16 Q101 16 101 42 Q101 65 114 80 Z" fill="#FFF2E3" stroke="#132B50" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M59 92 Q72 106 85 92" fill="none" stroke="#CC7628" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><line x1="72" y1="8" x2="72" y2="16" stroke="#CC7628" stroke-width="2.5" stroke-linecap="round"/></g>
+</svg>

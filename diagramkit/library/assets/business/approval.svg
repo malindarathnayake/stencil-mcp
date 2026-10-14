@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 144 112" width="144" height="112" role="img" aria-labelledby="title desc" font-family="Arial, Helvetica, sans-serif">
+  <title id="title">Approval</title>
+  <desc id="desc">Generic approval symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.</desc>
+  <g id="artwork" stroke-linecap="round" stroke-linejoin="round"><circle cx="72" cy="22" r="12" fill="#E6F5F2" stroke="#132B50" stroke-width="2.5"/><rect x="64" y="32" width="16" height="20" rx="3" fill="#E6F5F2" stroke="#132B50" stroke-width="2.5"/><rect x="34" y="52" width="76" height="18" rx="4" fill="#E6F5F2" stroke="#132B50" stroke-width="2.5"/><rect x="30" y="76" width="84" height="26" rx="4" fill="#FFFFFF" stroke="#13857B" stroke-width="2"/><path d="M56 89 L67 98 L90 80" fill="none" stroke="#13857B" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/></g>
+</svg>

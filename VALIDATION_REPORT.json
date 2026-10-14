@@ -1,0 +1,178 @@
+{
+  "bundle": "Stencil",
+  "bundle_version": "0.2.1",
+  "core_asset_catalog_version": "0.2.0",
+  "generated_utc": "2026-10-14T01:37:35.399071+00:00",
+  "python": "3.12.10",
+  "os": "Windows",
+  "assets": 324,
+  "categories": 20,
+  "base_glyph_families": 128,
+  "mcp_tools": 12,
+  "template_count": 24,
+  "automated_tests": {
+    "run": 71,
+    "passed": 70,
+    "failed": 0,
+    "skipped": 1,
+    "details": "docs/TEST_RESULTS.txt"
+  },
+  "package_checks": {
+    "all_asset_hashes_match_catalog": true,
+    "legacy_300_asset_svgs_byte_identical": true,
+    "all_template_svgs_repeatable": true,
+    "server_identifies_as": "stencil-mcp"
+  },
+  "template_validation": [
+    {
+      "template": "agent-mcp-tools",
+      "valid": true,
+      "warnings": 0,
+      "deterministic_svg": true
+    },
+    {
+      "template": "backup-dr",
+      "valid": true,
+      "warnings": 0,
+      "deterministic_svg": true
+    },
+    {
+      "template": "disaggregated-inference",
+      "valid": true,
+      "warnings": 0,
+      "deterministic_svg": true
+    },
+    {
+      "template": "ecmp-flow-hashing",
+      "valid": true,
+      "warnings": 0,
+      "deterministic_svg": true
+    },
+    {
+      "template": "eng-platform-delivery",
+      "valid": true,
+      "warnings": 0,
+      "deterministic_svg": true
+    },
+    {
+      "template": "event-driven",
+      "valid": true,
+      "warnings": 0,
+      "deterministic_svg": true
+    },
+    {
+      "template": "fin-procurement-approval",
+      "valid": true,
+      "warnings": 0,
+      "deterministic_svg": true
+    },
+    {
+      "template": "hr-employee-onboarding",
+      "valid": true,
+      "warnings": 0,
+      "deterministic_svg": true
+    },
+    {
+      "template": "hybrid-cloud",
+      "valid": true,
+      "warnings": 0,
+      "deterministic_svg": true
+    },
+    {
+      "template": "it-change-approval",
+      "valid": true,
+      "warnings": 0,
+      "deterministic_svg": true
+    },
+    {
+      "template": "it-onboarding-access",
+      "valid": true,
+      "warnings": 0,
+      "deterministic_svg": true
+    },
+    {
+      "template": "kubernetes-ingress",
+      "valid": true,
+      "warnings": 0,
+      "deterministic_svg": true
+    },
+    {
+      "template": "leaf-spine",
+      "valid": true,
+      "warnings": 0,
+      "deterministic_svg": true
+    },
+    {
+      "template": "mrc-loss-recovery",
+      "valid": true,
+      "warnings": 0,
+      "deterministic_svg": true
+    },
+    {
+      "template": "observability-pipeline",
+      "valid": true,
+      "warnings": 0,
+      "deterministic_svg": true
+    },
+    {
+      "template": "sales-lead-to-cash",
+      "valid": true,
+      "warnings": 0,
+      "deterministic_svg": true
+    },
+    {
+      "template": "sec-incident-response",
+      "valid": true,
+      "warnings": 0,
+      "deterministic_svg": true
+    },
+    {
+      "template": "secure-ci-cd",
+      "valid": true,
+      "warnings": 0,
+      "deterministic_svg": true
+    },
+    {
+      "template": "segmented-network",
+      "valid": true,
+      "warnings": 0,
+      "deterministic_svg": true
+    },
+    {
+      "template": "sequence-request",
+      "valid": true,
+      "warnings": 0,
+      "deterministic_svg": true
+    },
+    {
+      "template": "software-overview",
+      "valid": true,
+      "warnings": 0,
+      "deterministic_svg": true
+    },
+    {
+      "template": "support-escalation",
+      "valid": true,
+      "warnings": 0,
+      "deterministic_svg": true
+    },
+    {
+      "template": "threat-model-dfd",
+      "valid": true,
+      "warnings": 0,
+      "deterministic_svg": true
+    },
+    {
+      "template": "zero-trust-access",
+      "valid": true,
+      "warnings": 0,
+      "deterministic_svg": true
+    }
+  ],
+  "limits": [
+    "No live test against the user's installed Codex or Claude clients.",
+    "Concept-sheet PNGs are visual references, not vector source or runtime asset IDs.",
+    "Department process templates are illustrative; they are BPMN-lite flowcharts, not BPMN-conformant models.",
+    "Protocol semantics, legal name availability and all possible diagram compositions were not verified."
+  ]
+}

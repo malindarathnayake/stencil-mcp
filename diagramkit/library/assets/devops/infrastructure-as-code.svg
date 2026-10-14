@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 144 112" width="144" height="112" role="img" aria-labelledby="title desc" font-family="Arial, Helvetica, sans-serif">
+  <title id="title">Infrastructure as code</title>
+  <desc id="desc">Generic infrastructure as code symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.</desc>
+  <g id="artwork" stroke-linecap="round" stroke-linejoin="round"><rect x="18" y="19" width="108" height="77" rx="6" fill="#F0EBFC" stroke="#132B50" stroke-width="2.5"/><line x1="18" y1="35" x2="126" y2="35" stroke="#132B50" stroke-width="2.5" stroke-linecap="round"/><path d="M47 49 L35 64 L47 80 M96 49 L108 64 L96 80 M79 46 L65 83" fill="none" stroke="#7855C5" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><rect x="55.95" y="84" width="32.1" height="20" rx="5" fill="#FFFFFF" stroke="#7855C5" stroke-width="1.6"/><text x="72" y="98" text-anchor="middle" font-size="9.5" font-weight="700" fill="#7855C5">IaC</text></g>
+</svg>

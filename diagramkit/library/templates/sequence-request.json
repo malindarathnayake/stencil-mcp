@@ -1,0 +1,293 @@
+{
+  "version": "1.0",
+  "title": "Request, work and response",
+  "subtitle": "A sequence view: horizontal arrows are messages and time progresses downward.",
+  "description": "Logical message sequence with example steps only; no protocol handshake or timing guarantee is implied.",
+  "width": 1380,
+  "height": 820,
+  "groups": [],
+  "nodes": [
+    {
+      "id": "head0",
+      "kind": "component",
+      "asset": "software/browser",
+      "x": 82,
+      "y": 148,
+      "w": 186,
+      "h": 126,
+      "label": "Client",
+      "palette": "blue"
+    },
+    {
+      "id": "end0",
+      "kind": "text",
+      "x": 173,
+      "y": 725,
+      "w": 4,
+      "h": 4,
+      "label": ""
+    },
+    {
+      "id": "head1",
+      "kind": "component",
+      "asset": "network/api-gateway",
+      "x": 423,
+      "y": 148,
+      "w": 186,
+      "h": 126,
+      "label": "Gateway",
+      "palette": "blue"
+    },
+    {
+      "id": "end1",
+      "kind": "text",
+      "x": 514,
+      "y": 725,
+      "w": 4,
+      "h": 4,
+      "label": ""
+    },
+    {
+      "id": "head2",
+      "kind": "component",
+      "asset": "software/backend",
+      "x": 764,
+      "y": 148,
+      "w": 186,
+      "h": 126,
+      "label": "Service",
+      "palette": "blue"
+    },
+    {
+      "id": "end2",
+      "kind": "text",
+      "x": 855,
+      "y": 725,
+      "w": 4,
+      "h": 4,
+      "label": ""
+    },
+    {
+      "id": "head3",
+      "kind": "component",
+      "asset": "data/relational-db",
+      "x": 1105,
+      "y": 148,
+      "w": 186,
+      "h": 126,
+      "label": "Database",
+      "palette": "blue"
+    },
+    {
+      "id": "end3",
+      "kind": "text",
+      "x": 1196,
+      "y": 725,
+      "w": 4,
+      "h": 4,
+      "label": ""
+    },
+    {
+      "id": "m0a",
+      "kind": "text",
+      "x": 175,
+      "y": 337,
+      "w": 1,
+      "h": 1,
+      "label": ""
+    },
+    {
+      "id": "m0b",
+      "kind": "text",
+      "x": 516,
+      "y": 337,
+      "w": 1,
+      "h": 1,
+      "label": ""
+    },
+    {
+      "id": "m1a",
+      "kind": "text",
+      "x": 516,
+      "y": 420,
+      "w": 1,
+      "h": 1,
+      "label": ""
+    },
+    {
+      "id": "m1b",
+      "kind": "text",
+      "x": 857,
+      "y": 420,
+      "w": 1,
+      "h": 1,
+      "label": ""
+    },
+    {
+      "id": "m2a",
+      "kind": "text",
+      "x": 857,
+      "y": 503,
+      "w": 1,
+      "h": 1,
+      "label": ""
+    },
+    {
+      "id": "m2b",
+      "kind": "text",
+      "x": 1198,
+      "y": 503,
+      "w": 1,
+      "h": 1,
+      "label": ""
+    },
+    {
+      "id": "m3a",
+      "kind": "text",
+      "x": 1198,
+      "y": 589,
+      "w": 1,
+      "h": 1,
+      "label": ""
+    },
+    {
+      "id": "m3b",
+      "kind": "text",
+      "x": 857,
+      "y": 589,
+      "w": 1,
+      "h": 1,
+      "label": ""
+    },
+    {
+      "id": "m4a",
+      "kind": "text",
+      "x": 857,
+      "y": 679,
+      "w": 1,
+      "h": 1,
+      "label": ""
+    },
+    {
+      "id": "m4b",
+      "kind": "text",
+      "x": 175,
+      "y": 679,
+      "w": 1,
+      "h": 1,
+      "label": ""
+    }
+  ],
+  "edges": [
+    {
+      "id": "e1",
+      "source": "head0",
+      "target": "end0",
+      "kind": "control",
+      "palette": "slate",
+      "source_port": "s",
+      "target_port": "n",
+      "arrow": "none",
+      "width": 1
+    },
+    {
+      "id": "e2",
+      "source": "head1",
+      "target": "end1",
+      "kind": "control",
+      "palette": "slate",
+      "source_port": "s",
+      "target_port": "n",
+      "arrow": "none",
+      "width": 1
+    },
+    {
+      "id": "e3",
+      "source": "head2",
+      "target": "end2",
+      "kind": "control",
+      "palette": "slate",
+      "source_port": "s",
+      "target_port": "n",
+      "arrow": "none",
+      "width": 1
+    },
+    {
+      "id": "e4",
+      "source": "head3",
+      "target": "end3",
+      "kind": "control",
+      "palette": "slate",
+      "source_port": "s",
+      "target_port": "n",
+      "arrow": "none",
+      "width": 1
+    },
+    {
+      "id": "e5",
+      "source": "m0a",
+      "target": "m0b",
+      "kind": "data",
+      "palette": "blue",
+      "label": "1. HTTPS request",
+      "source_port": "e",
+      "target_port": "w",
+      "route": "straight",
+      "label_x": 345.5,
+      "label_y": 323
+    },
+    {
+      "id": "e6",
+      "source": "m1a",
+      "target": "m1b",
+      "kind": "data",
+      "palette": "blue",
+      "label": "2. Validated request",
+      "source_port": "e",
+      "target_port": "w",
+      "route": "straight",
+      "label_x": 686.5,
+      "label_y": 406
+    },
+    {
+      "id": "e7",
+      "source": "m2a",
+      "target": "m2b",
+      "kind": "data",
+      "palette": "orange",
+      "label": "3. Query",
+      "source_port": "e",
+      "target_port": "w",
+      "route": "straight",
+      "label_x": 1027.5,
+      "label_y": 489
+    },
+    {
+      "id": "e8",
+      "source": "m3a",
+      "target": "m3b",
+      "kind": "feedback",
+      "palette": "orange",
+      "label": "4. Results",
+      "source_port": "w",
+      "target_port": "e",
+      "route": "straight",
+      "label_x": 1027.5,
+      "label_y": 575
+    },
+    {
+      "id": "e9",
+      "source": "m4a",
+      "target": "m4b",
+      "kind": "feedback",
+      "palette": "teal",
+      "label": "5. Response",
+      "source_port": "w",
+      "target_port": "e",
+      "route": "straight",
+      "label_x": 516.0,
+      "label_y": 665
+    }
+  ],
+  "footer": "Illustrative architecture. Labels describe roles; generic symbols do not assert product compatibility."
+}

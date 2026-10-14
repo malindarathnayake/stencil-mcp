@@ -1,0 +1,207 @@
+{
+  "version": "1.0",
+  "title": "Identity-aware access",
+  "subtitle": "Identity and policy decisions are separate from the component that enforces access.",
+  "description": "Identity and policy decisions are separate from the component that enforces access.",
+  "width": 1530,
+  "height": 790,
+  "groups": [
+    {
+      "id": "userzone",
+      "x": 35,
+      "y": 145,
+      "w": 273,
+      "h": 518,
+      "title": "User / device",
+      "caption": "",
+      "palette": "slate",
+      "style": "boundary"
+    },
+    {
+      "id": "control",
+      "x": 355,
+      "y": 145,
+      "w": 1138,
+      "h": 253,
+      "title": "Identity and policy",
+      "caption": "",
+      "palette": "purple",
+      "style": "panel"
+    },
+    {
+      "id": "protected",
+      "x": 355,
+      "y": 438,
+      "w": 1138,
+      "h": 285,
+      "title": "Protected application path",
+      "caption": "",
+      "palette": "teal",
+      "style": "boundary"
+    }
+  ],
+  "nodes": [
+    {
+      "id": "u",
+      "kind": "component",
+      "asset": "identity/user",
+      "x": 71,
+      "y": 336,
+      "w": 196,
+      "h": 145,
+      "label": "User + device",
+      "palette": "blue"
+    },
+    {
+      "id": "idp",
+      "kind": "component",
+      "asset": "identity/identity-provider",
+      "x": 427,
+      "y": 220,
+      "w": 219,
+      "h": 145,
+      "label": "Identity provider",
+      "palette": "purple",
+      "detail": "Authentication / MFA"
+    },
+    {
+      "id": "pol",
+      "kind": "component",
+      "asset": "security/policy-engine",
+      "x": 764,
+      "y": 220,
+      "w": 219,
+      "h": 145,
+      "label": "Policy engine",
+      "palette": "purple",
+      "detail": "Identity + device + context"
+    },
+    {
+      "id": "audit",
+      "kind": "component",
+      "asset": "observability/audit-log",
+      "x": 1165,
+      "y": 220,
+      "w": 219,
+      "h": 145,
+      "label": "Audit events",
+      "palette": "orange"
+    },
+    {
+      "id": "pep",
+      "kind": "component",
+      "asset": "security/security-gateway",
+      "x": 427,
+      "y": 524,
+      "w": 219,
+      "h": 145,
+      "label": "Access proxy",
+      "palette": "red",
+      "detail": "Policy enforcement"
+    },
+    {
+      "id": "svc",
+      "kind": "component",
+      "asset": "software/backend",
+      "x": 990,
+      "y": 524,
+      "w": 248,
+      "h": 145,
+      "label": "Internal application",
+      "palette": "teal"
+    }
+  ],
+  "edges": [
+    {
+      "id": "e1",
+      "source": "u",
+      "target": "idp",
+      "kind": "data",
+      "palette": "purple",
+      "label": "Sign in",
+      "points": [
+        {
+          "x": 169,
+          "y": 292
+        }
+      ],
+      "source_port": "n",
+      "target_port": "w"
+    },
+    {
+      "id": "e2",
+      "source": "idp",
+      "target": "pol",
+      "kind": "control",
+      "palette": "purple",
+      "label": "Identity"
+    },
+    {
+      "id": "e3",
+      "source": "u",
+      "target": "pep",
+      "kind": "data",
+      "palette": "blue",
+      "label": "Request",
+      "points": [
+        {
+          "x": 169,
+          "y": 596.5
+        }
+      ],
+      "source_port": "s",
+      "target_port": "w",
+      "label_x": 327,
+      "label_y": 582
+    },
+    {
+      "id": "e4",
+      "source": "pep",
+      "target": "pol",
+      "kind": "control",
+      "palette": "purple",
+      "label": "Decision request",
+      "points": [
+        {
+          "x": 536.5,
+          "y": 416
+        },
+        {
+          "x": 873.5,
+          "y": 416
+        }
+      ],
+      "source_port": "n",
+      "target_port": "s",
+      "label_x": 731,
+      "label_y": 416
+    },
+    {
+      "id": "e5",
+      "source": "pep",
+      "target": "svc",
+      "kind": "data",
+      "palette": "teal",
+      "label": "Allow only when authorized"
+    },
+    {
+      "id": "e6",
+      "source": "svc",
+      "target": "audit",
+      "kind": "control",
+      "palette": "orange",
+      "label": "Record",
+      "points": [
+        {
+          "x": 1274.5,
+          "y": 596.5
+        }
+      ],
+      "source_port": "e",
+      "target_port": "s",
+      "label_x": 1335,
+      "label_y": 481
+    }
+  ],
+  "footer": "Illustrative architecture. Labels describe roles; generic symbols do not assert product compatibility."
+}

@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 144 112" width="144" height="112" role="img" aria-labelledby="title desc" font-family="Arial, Helvetica, sans-serif">
+  <title id="title">Decision</title>
+  <desc id="desc">Generic decision symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.</desc>
+  <g id="artwork" stroke-linecap="round" stroke-linejoin="round"><path d="M72 9 L129 56 L72 103 L15 56 Z" fill="#EDF2F7" stroke="#132B50" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><text x="72" y="67" text-anchor="middle" font-size="31" font-weight="700" fill="#526C8C">?</text></g>
+</svg>

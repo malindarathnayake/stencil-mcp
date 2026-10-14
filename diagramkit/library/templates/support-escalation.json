@@ -1,0 +1,344 @@
+{
+  "version": "1.0",
+  "title": "Customer support: tiered escalation",
+  "subtitle": "A customer issue is handled at L1, escalated to L2 when unresolved, and to engineering for product defects.",
+  "description": "The customer reports an issue and L1 creates a ticket and troubleshoots it with a runbook. Issues resolved at L1 are confirmed with the customer. Unresolved issues escalate to L2 under a response SLA. L2 investigates; product defects go to engineering for a fix and release, other issues get a workaround. The customer confirms the resolution and the ticket closes.",
+  "width": 2458,
+  "height": 1214,
+  "groups": [
+    {
+      "id": "cust",
+      "x": 30,
+      "y": 124,
+      "w": 2398,
+      "h": 246,
+      "title": "Customer (external)",
+      "caption": "",
+      "palette": "orange",
+      "style": "lane"
+    },
+    {
+      "id": "l1",
+      "x": 30,
+      "y": 380,
+      "w": 2398,
+      "h": 246,
+      "title": "L1 support",
+      "caption": "",
+      "palette": "blue",
+      "style": "lane"
+    },
+    {
+      "id": "l2",
+      "x": 30,
+      "y": 636,
+      "w": 2398,
+      "h": 246,
+      "title": "L2 support",
+      "caption": "",
+      "palette": "purple",
+      "style": "lane"
+    },
+    {
+      "id": "eng",
+      "x": 30,
+      "y": 892,
+      "w": 2398,
+      "h": 246,
+      "title": "Engineering",
+      "caption": "",
+      "palette": "slate",
+      "style": "lane"
+    }
+  ],
+  "nodes": [
+    {
+      "id": "start",
+      "kind": "symbol",
+      "asset": "presentation/start-end",
+      "x": 97.0,
+      "y": 197.0,
+      "w": 104,
+      "h": 100,
+      "label": "Issue noticed",
+      "caption": "Issue noticed",
+      "palette": "slate",
+      "group": "cust"
+    },
+    {
+      "id": "ticket",
+      "kind": "component",
+      "asset": "business/ticket",
+      "x": 304,
+      "y": 432,
+      "w": 170,
+      "h": 142,
+      "label": "Create ticket",
+      "palette": "blue",
+      "detail": "Email, chat or portal",
+      "group": "l1"
+    },
+    {
+      "id": "trouble",
+      "kind": "component",
+      "asset": "identity/user",
+      "x": 544,
+      "y": 432,
+      "w": 170,
+      "h": 142,
+      "label": "Troubleshoot",
+      "palette": "blue",
+      "detail": "Known-issue runbook",
+      "group": "l1"
+    },
+    {
+      "id": "res1",
+      "kind": "symbol",
+      "asset": "presentation/decision",
+      "x": 807.0,
+      "y": 449.0,
+      "w": 124,
+      "h": 108,
+      "label": "Resolved?",
+      "caption": "Resolved?",
+      "palette": "blue",
+      "group": "l1"
+    },
+    {
+      "id": "sla",
+      "kind": "symbol",
+      "asset": "business/timer",
+      "x": 807.0,
+      "y": 705.0,
+      "w": 124,
+      "h": 108,
+      "label": "Respond within 8 h",
+      "caption": "Respond within 8 h",
+      "palette": "purple",
+      "group": "l2"
+    },
+    {
+      "id": "investigate",
+      "kind": "component",
+      "asset": "observability/logs",
+      "x": 1024,
+      "y": 688,
+      "w": 170,
+      "h": 142,
+      "label": "Investigate",
+      "palette": "purple",
+      "detail": "Logs + reproduce",
+      "group": "l2"
+    },
+    {
+      "id": "defect",
+      "kind": "symbol",
+      "asset": "presentation/decision",
+      "x": 1287.0,
+      "y": 705.0,
+      "w": 124,
+      "h": 108,
+      "label": "Product defect?",
+      "caption": "Product defect?",
+      "palette": "blue",
+      "group": "l2"
+    },
+    {
+      "id": "workaround",
+      "kind": "component",
+      "asset": "presentation/note",
+      "x": 1504,
+      "y": 688,
+      "w": 170,
+      "h": 142,
+      "label": "Apply workaround",
+      "palette": "purple",
+      "detail": "Document in KB",
+      "group": "l2"
+    },
+    {
+      "id": "fix",
+      "kind": "component",
+      "asset": "devops/pull-request",
+      "x": 1504,
+      "y": 944,
+      "w": 170,
+      "h": 142,
+      "label": "Fix defect",
+      "palette": "slate",
+      "detail": "Linked to ticket",
+      "group": "eng"
+    },
+    {
+      "id": "ship",
+      "kind": "component",
+      "asset": "devops/cd-release",
+      "x": 1744,
+      "y": 944,
+      "w": 170,
+      "h": 142,
+      "label": "Ship fix",
+      "palette": "slate",
+      "detail": "Hotfix release",
+      "group": "eng"
+    },
+    {
+      "id": "confirm",
+      "kind": "component",
+      "asset": "business/email",
+      "x": 1984,
+      "y": 176,
+      "w": 170,
+      "h": 142,
+      "label": "Confirm resolution",
+      "palette": "orange",
+      "detail": "Customer reply",
+      "group": "cust"
+    },
+    {
+      "id": "closed",
+      "kind": "symbol",
+      "asset": "presentation/start-end",
+      "x": 2257.0,
+      "y": 197.0,
+      "w": 104,
+      "h": 100,
+      "label": "Ticket closed",
+      "caption": "Ticket closed",
+      "palette": "slate",
+      "group": "cust"
+    }
+  ],
+  "edges": [
+    {
+      "id": "e1",
+      "source": "start",
+      "target": "ticket",
+      "kind": "control",
+      "palette": "orange",
+      "label": "Report issue"
+    },
+    {
+      "id": "e2",
+      "source": "ticket",
+      "target": "trouble",
+      "kind": "data",
+      "palette": "blue"
+    },
+    {
+      "id": "e3",
+      "source": "trouble",
+      "target": "res1",
+      "kind": "data",
+      "palette": "blue"
+    },
+    {
+      "id": "e4",
+      "source": "res1",
+      "target": "confirm",
+      "kind": "control",
+      "palette": "orange",
+      "label": "Yes: solution sent",
+      "points": [
+        {
+          "x": 869.0,
+          "y": 164
+        },
+        {
+          "x": 1944,
+          "y": 164
+        },
+        {
+          "x": 1944,
+          "y": 247.0
+        }
+      ],
+      "source_port": "n",
+      "target_port": "w"
+    },
+    {
+      "id": "e5",
+      "source": "res1",
+      "target": "investigate",
+      "kind": "data",
+      "palette": "blue",
+      "label": "No"
+    },
+    {
+      "id": "e6",
+      "source": "sla",
+      "target": "investigate",
+      "kind": "data",
+      "palette": "blue"
+    },
+    {
+      "id": "e7",
+      "source": "investigate",
+      "target": "defect",
+      "kind": "data",
+      "palette": "blue"
+    },
+    {
+      "id": "e8",
+      "source": "defect",
+      "target": "workaround",
+      "kind": "data",
+      "palette": "blue",
+      "label": "No"
+    },
+    {
+      "id": "e9",
+      "source": "defect",
+      "target": "fix",
+      "kind": "data",
+      "palette": "blue",
+      "label": "Yes"
+    },
+    {
+      "id": "e10",
+      "source": "fix",
+      "target": "ship",
+      "kind": "data",
+      "palette": "blue"
+    },
+    {
+      "id": "e11",
+      "source": "workaround",
+      "target": "confirm",
+      "kind": "control",
+      "palette": "orange",
+      "label": "Workaround",
+      "source_port": "n",
+      "target_port": "s"
+    },
+    {
+      "id": "e12",
+      "source": "ship",
+      "target": "confirm",
+      "kind": "control",
+      "palette": "orange",
+      "label": "Fix released",
+      "source_port": "e",
+      "target_port": "s"
+    },
+    {
+      "id": "e13",
+      "source": "confirm",
+      "target": "closed",
+      "kind": "data",
+      "palette": "blue"
+    }
+  ],
+  "footer": "Illustrative process. Lanes are roles; steps, thresholds and timings are examples, not policy.",
+  "legend": [
+    {
+      "label": "Process flow",
+      "palette": "blue"
+    },
+    {
+      "label": "Hand-off with an external party",
+      "palette": "orange",
+      "dashed": true
+    }
+  ]
+}

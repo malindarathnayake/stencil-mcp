@@ -1,0 +1,281 @@
+{
+  "version": "1.0",
+  "title": "Engineering: from pull request to production",
+  "subtitle": "A change moves through peer review, automated checks and a release gate; an unhealthy deploy rolls back.",
+  "description": "Developer opens a pull request. Reviewer approves or requests changes, which return to the developer. Approved changes are built, tested and scanned by CI/CD. The platform team approves the release and deploys it; a failed health check rolls back to the previous release.",
+  "width": 2458,
+  "height": 1214,
+  "groups": [
+    {
+      "id": "dev",
+      "x": 30,
+      "y": 124,
+      "w": 2398,
+      "h": 246,
+      "title": "Developer",
+      "caption": "",
+      "palette": "blue",
+      "style": "lane"
+    },
+    {
+      "id": "rev",
+      "x": 30,
+      "y": 380,
+      "w": 2398,
+      "h": 246,
+      "title": "Reviewer",
+      "caption": "",
+      "palette": "purple",
+      "style": "lane"
+    },
+    {
+      "id": "ci",
+      "x": 30,
+      "y": 636,
+      "w": 2398,
+      "h": 246,
+      "title": "CI/CD pipeline",
+      "caption": "",
+      "palette": "teal",
+      "style": "lane"
+    },
+    {
+      "id": "ops",
+      "x": 30,
+      "y": 892,
+      "w": 2398,
+      "h": 246,
+      "title": "Platform team",
+      "caption": "",
+      "palette": "slate",
+      "style": "lane"
+    }
+  ],
+  "nodes": [
+    {
+      "id": "start",
+      "kind": "symbol",
+      "asset": "presentation/start-end",
+      "x": 97.0,
+      "y": 197.0,
+      "w": 104,
+      "h": 100,
+      "label": "Change ready",
+      "caption": "Change ready",
+      "palette": "slate",
+      "group": "dev"
+    },
+    {
+      "id": "pr",
+      "kind": "component",
+      "asset": "devops/pull-request",
+      "x": 304,
+      "y": 176,
+      "w": 170,
+      "h": 142,
+      "label": "Open pull request",
+      "palette": "blue",
+      "detail": "Branch + description",
+      "group": "dev"
+    },
+    {
+      "id": "review",
+      "kind": "component",
+      "asset": "devops/code-review",
+      "x": 544,
+      "y": 432,
+      "w": 170,
+      "h": 142,
+      "label": "Review changes",
+      "palette": "blue",
+      "detail": "Code owners",
+      "group": "rev"
+    },
+    {
+      "id": "approved",
+      "kind": "symbol",
+      "asset": "presentation/decision",
+      "x": 807.0,
+      "y": 449.0,
+      "w": 124,
+      "h": 108,
+      "label": "Approved?",
+      "caption": "Approved?",
+      "palette": "blue",
+      "group": "rev"
+    },
+    {
+      "id": "build",
+      "kind": "component",
+      "asset": "devops/ci-build",
+      "x": 1024,
+      "y": 688,
+      "w": 170,
+      "h": 142,
+      "label": "Build and test",
+      "palette": "blue",
+      "detail": "Unit + integration",
+      "group": "ci"
+    },
+    {
+      "id": "scan",
+      "kind": "component",
+      "asset": "devops/sast",
+      "x": 1264,
+      "y": 688,
+      "w": 170,
+      "h": 142,
+      "label": "Security scan",
+      "palette": "blue",
+      "detail": "SAST / SCA / SBOM",
+      "group": "ci"
+    },
+    {
+      "id": "release",
+      "kind": "component",
+      "asset": "devops/release-approval",
+      "x": 1504,
+      "y": 944,
+      "w": 170,
+      "h": 142,
+      "label": "Release approval",
+      "palette": "blue",
+      "detail": "Change window",
+      "group": "ops"
+    },
+    {
+      "id": "deploy",
+      "kind": "component",
+      "asset": "devops/cd-release",
+      "x": 1744,
+      "y": 944,
+      "w": 170,
+      "h": 142,
+      "label": "Deploy",
+      "palette": "blue",
+      "detail": "Progressive rollout",
+      "group": "ops"
+    },
+    {
+      "id": "rollback",
+      "kind": "component",
+      "asset": "devops/rollback",
+      "x": 1984,
+      "y": 688,
+      "w": 170,
+      "h": 142,
+      "label": "Roll back",
+      "palette": "blue",
+      "detail": "Previous release",
+      "group": "ci"
+    },
+    {
+      "id": "done",
+      "kind": "symbol",
+      "asset": "presentation/start-end",
+      "x": 2257.0,
+      "y": 965.0,
+      "w": 104,
+      "h": 100,
+      "label": "Released",
+      "caption": "Released",
+      "palette": "slate",
+      "group": "ops"
+    }
+  ],
+  "edges": [
+    {
+      "id": "e1",
+      "source": "start",
+      "target": "pr",
+      "kind": "data",
+      "palette": "blue"
+    },
+    {
+      "id": "e2",
+      "source": "pr",
+      "target": "review",
+      "kind": "data",
+      "palette": "blue",
+      "label": "Ready"
+    },
+    {
+      "id": "e3",
+      "source": "review",
+      "target": "approved",
+      "kind": "data",
+      "palette": "blue"
+    },
+    {
+      "id": "e4",
+      "source": "approved",
+      "target": "build",
+      "kind": "data",
+      "palette": "blue",
+      "label": "Yes"
+    },
+    {
+      "id": "e5",
+      "source": "approved",
+      "target": "pr",
+      "kind": "feedback",
+      "palette": "red",
+      "label": "Changes requested",
+      "source_port": "n",
+      "target_port": "e"
+    },
+    {
+      "id": "e6",
+      "source": "build",
+      "target": "scan",
+      "kind": "data",
+      "palette": "blue"
+    },
+    {
+      "id": "e7",
+      "source": "scan",
+      "target": "release",
+      "kind": "data",
+      "palette": "blue",
+      "label": "Pass"
+    },
+    {
+      "id": "e8",
+      "source": "release",
+      "target": "deploy",
+      "kind": "data",
+      "palette": "blue",
+      "label": "Go"
+    },
+    {
+      "id": "e9",
+      "source": "deploy",
+      "target": "done",
+      "kind": "data",
+      "palette": "blue",
+      "label": "Healthy"
+    },
+    {
+      "id": "e10",
+      "source": "deploy",
+      "target": "rollback",
+      "kind": "feedback",
+      "palette": "red",
+      "label": "Unhealthy",
+      "source_port": "n",
+      "target_port": "w"
+    }
+  ],
+  "footer": "Illustrative process. Lanes are roles; steps, thresholds and timings are examples, not policy.",
+  "legend": [
+    {
+      "label": "Process flow",
+      "palette": "blue"
+    },
+    {
+      "label": "Rework or exception",
+      "palette": "red",
+      "dashed": true
+    }
+  ]
+}

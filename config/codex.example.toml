@@ -1,0 +1,6 @@
+# Run scripts/client_config.py to generate paths for your own machine.
+[mcp_servers.stencil]
+command = "python3"
+args = ["/ABSOLUTE/PATH/stencil-mcp/server.py"]
+startup_timeout_sec = 10
+tool_timeout_sec = 30

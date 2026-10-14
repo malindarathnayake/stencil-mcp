@@ -1,0 +1,2111 @@
+{
+  "name": "Stencil",
+  "catalog": "diagramkit/library/catalog.json",
+  "guidelines": "diagramkit/library/guidelines.md",
+  "packs": [
+    {
+      "id": "compute",
+      "name": "Compute & virtualization",
+      "count": 15,
+      "preview": "previews/compute.svg",
+      "assets": [
+        {
+          "id": "compute/rack-server",
+          "name": "Rack server",
+          "description": "Generic rack server symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.",
+          "file": "diagramkit/library/assets/compute/rack-server.svg"
+        },
+        {
+          "id": "compute/blade-server",
+          "name": "Blade server",
+          "description": "Generic blade server symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.",
+          "file": "diagramkit/library/assets/compute/blade-server.svg"
+        },
+        {
+          "id": "compute/server-rack",
+          "name": "Server rack",
+          "description": "Generic server rack symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.",
+          "file": "diagramkit/library/assets/compute/server-rack.svg"
+        },
+        {
+          "id": "compute/baremetal",
+          "name": "Bare-metal host",
+          "description": "Generic bare-metal host symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.",
+          "file": "diagramkit/library/assets/compute/baremetal.svg"
+        },
+        {
+          "id": "compute/hypervisor",
+          "name": "Hypervisor",
+          "description": "Generic hypervisor symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.",
+          "file": "diagramkit/library/assets/compute/hypervisor.svg"
+        },
+        {
+          "id": "compute/virtual-machine",
+          "name": "Virtual machine",
+          "description": "Generic virtual machine symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.",
+          "file": "diagramkit/library/assets/compute/virtual-machine.svg"
+        },
+        {
+          "id": "compute/hci-node",
+          "name": "HCI node",
+          "description": "Generic hci node symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.",
+          "file": "diagramkit/library/assets/compute/hci-node.svg"
+        },
+        {
+          "id": "compute/compute-cluster",
+          "name": "Compute cluster",
+          "description": "Generic compute cluster symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.",
+          "file": "diagramkit/library/assets/compute/compute-cluster.svg"
+        },
+        {
+          "id": "compute/workstation",
+          "name": "Workstation",
+          "description": "Generic workstation symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.",
+          "file": "diagramkit/library/assets/compute/workstation.svg"
+        },
+        {
+          "id": "compute/laptop",
+          "name": "Laptop",
+          "description": "Generic laptop symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.",
+          "file": "diagramkit/library/assets/compute/laptop.svg"
+        },
+        {
+          "id": "compute/mobile",
+          "name": "Mobile device",
+          "description": "Generic mobile device symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.",
+          "file": "diagramkit/library/assets/compute/mobile.svg"
+        },
+        {
+          "id": "compute/edge-server",
+          "name": "Edge server",
+          "description": "Generic edge server symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.",
+          "file": "diagramkit/library/assets/compute/edge-server.svg"
+        },
+        {
+          "id": "compute/bastion-host",
+          "name": "Bastion host",
+          "description": "Generic bastion host symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.",
+          "file": "diagramkit/library/assets/compute/bastion-host.svg"
+        },
+        {
+          "id": "compute/management-controller",
+          "name": "Management controller",
+          "description": "Generic management controller symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.",
+          "file": "diagramkit/library/assets/compute/management-controller.svg"
+        },
+        {
+          "id": "compute/tower-server",
+          "name": "Tower server",
+          "description": "Generic tower server symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.",
+          "file": "diagramkit/library/assets/compute/tower-server.svg"
+        }
+      ]
+    },
+    {
+      "id": "hardware",
+      "name": "Hardware & accelerators",
+      "count": 14,
+      "preview": "previews/hardware.svg",
+      "assets": [
+        {
+          "id": "hardware/cpu",
+          "name": "CPU",
+          "description": "Generic cpu symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.",
+          "file": "diagramkit/library/assets/hardware/cpu.svg"
+        },
+        {
+          "id": "hardware/gpu",
+          "name": "GPU",
+          "description": "Generic gpu symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.",
+          "file": "diagramkit/library/assets/hardware/gpu.svg"
+        },
+        {
+          "id": "hardware/dpu",
+          "name": "DPU",
+          "description": "Generic dpu symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.",
+          "file": "diagramkit/library/assets/hardware/dpu.svg"
+        },
+        {
+          "id": "hardware/nic",
+          "name": "Network interface card",
+          "description": "Generic network interface card symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.",
+          "file": "diagramkit/library/assets/hardware/nic.svg"
+        },
+        {
+          "id": "hardware/rdma-nic",
+          "name": "RDMA-capable NIC",
+          "description": "Generic RDMA NIC icon. Label MRC-capable only when the depicted endpoint actually supports MRC; the icon does not assert product compatibility.",
+          "file": "diagramkit/library/assets/hardware/rdma-nic.svg"
+        },
+        {
+          "id": "hardware/smartnic",
+          "name": "SmartNIC",
+          "description": "Generic smartnic symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.",
+          "file": "diagramkit/library/assets/hardware/smartnic.svg"
+        },
+        {
+          "id": "hardware/fpga",
+          "name": "FPGA accelerator",
+          "description": "Generic fpga accelerator symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.",
+          "file": "diagramkit/library/assets/hardware/fpga.svg"
+        },
+        {
+          "id": "hardware/video-accelerator",
+          "name": "Video accelerator",
+          "description": "Generic video accelerator symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.",
+          "file": "diagramkit/library/assets/hardware/video-accelerator.svg"
+        },
+        {
+          "id": "hardware/memory",
+          "name": "Memory module",
+          "description": "Generic memory module symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.",
+          "file": "diagramkit/library/assets/hardware/memory.svg"
+        },
+        {
+          "id": "hardware/pcie",
+          "name": "PCIe bus",
+          "description": "Generic pcie bus symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.",
+          "file": "diagramkit/library/assets/hardware/pcie.svg"
+        },
+        {
+          "id": "hardware/nvme-device",
+          "name": "NVMe device",
+          "description": "Generic nvme device symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.",
+          "file": "diagramkit/library/assets/hardware/nvme-device.svg"
+        },
+        {
+          "id": "hardware/hsm-device",
+          "name": "Hardware security module",
+          "description": "Generic hardware security module symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.",
+          "file": "diagramkit/library/assets/hardware/hsm-device.svg"
+        },
+        {
+          "id": "hardware/tpm",
+          "name": "Trusted platform module",
+          "description": "Generic trusted platform module symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.",
+          "file": "diagramkit/library/assets/hardware/tpm.svg"
+        },
+        {
+          "id": "hardware/optical-transceiver",
+          "name": "Optical transceiver",
+          "description": "Generic optical transceiver symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.",
+          "file": "diagramkit/library/assets/hardware/optical-transceiver.svg"
+        }
+      ]
+    },
+    {
+      "id": "network",
+      "name": "Network devices",
+      "count": 20,
+      "preview": "previews/network.svg",
+      "assets": [
+        {
+          "id": "network/switch-l2",
+          "name": "Layer 2 switch",
+          "description": "Generic layer 2 switch symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.",
+          "file": "diagramkit/library/assets/network/switch-l2.svg"
+        },
+        {
+          "id": "network/switch-l3",
+          "name": "Layer 3 switch",
+          "description": "Generic layer 3 switch symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.",
+          "file": "diagramkit/library/assets/network/switch-l3.svg"
+        },
+        {
+          "id": "network/router",
+          "name": "Router",
+          "description": "Generic router symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.",
+          "file": "diagramkit/library/assets/network/router.svg"
+        },
+        {
+          "id": "network/leaf-switch",
+          "name": "Leaf switch",
+          "description": "Generic leaf switch symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.",
+          "file": "diagramkit/library/assets/network/leaf-switch.svg"
+        },
+        {
+          "id": "network/spine-switch",
+          "name": "Spine switch",
+          "description": "Generic spine switch symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.",
+          "file": "diagramkit/library/assets/network/spine-switch.svg"
+        },
+        {
+          "id": "network/border-router",
+          "name": "Border router",
+          "description": "Generic border router symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.",
+          "file": "diagramkit/library/assets/network/border-router.svg"
+        },
+        {
+          "id": "network/route-reflector",
+          "name": "Route reflector",
+          "description": "Generic route reflector symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.",
+          "file": "diagramkit/library/assets/network/route-reflector.svg"
+        },
+        {
+          "id": "network/chassis-switch",
+          "name": "Chassis switch",
+          "description": "Generic chassis switch symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.",
+          "file": "diagramkit/library/assets/network/chassis-switch.svg"
+        },
+        {
+          "id": "network/load-balancer",
+          "name": "Load balancer",
+          "description": "Generic load balancer symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.",
+          "file": "diagramkit/library/assets/network/load-balancer.svg"
+        },
+        {
+          "id": "network/reverse-proxy",
+          "name": "Reverse proxy",
+          "description": "Generic reverse proxy symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.",
+          "file": "diagramkit/library/assets/network/reverse-proxy.svg"
+        },
+        {
+          "id": "network/api-gateway",
+          "name": "API gateway",
+          "description": "Generic api gateway symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.",
+          "file": "diagramkit/library/assets/network/api-gateway.svg"
+        },
+        {
+          "id": "network/vpn-gateway",
+          "name": "VPN gateway",
+          "description": "Generic vpn gateway symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.",
+          "file": "diagramkit/library/assets/network/vpn-gateway.svg"
+        },
+        {
+          "id": "network/sdwan-edge",
+          "name": "SD-WAN edge",
+          "description": "Generic sd-wan edge symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.",
+          "file": "diagramkit/library/assets/network/sdwan-edge.svg"
+        },
+        {
+          "id": "network/wireless-ap",
+          "name": "Wireless access point",
+          "description": "Generic wireless access point symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.",
+          "file": "diagramkit/library/assets/network/wireless-ap.svg"
+        },
+        {
+          "id": "network/wireless-controller",
+          "name": "Wireless controller",
+          "description": "Generic wireless controller symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.",
+          "file": "diagramkit/library/assets/network/wireless-controller.svg"
+        },
+        {
+          "id": "network/modem",
+          "name": "Modem / CPE",
+          "description": "Generic modem / cpe symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.",
+          "file": "diagramkit/library/assets/network/modem.svg"
+        },
+        {
+          "id": "network/patch-panel",
+          "name": "Patch panel",
+          "description": "Generic patch panel symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.",
+          "file": "diagramkit/library/assets/network/patch-panel.svg"
+        },
+        {
+          "id": "network/network-tap",
+          "name": "Network TAP",
+          "description": "Generic network tap symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.",
+          "file": "diagramkit/library/assets/network/network-tap.svg"
+        },
+        {
+          "id": "network/wan-provider",
+          "name": "WAN provider",
+          "description": "Generic wan provider symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.",
+          "file": "diagramkit/library/assets/network/wan-provider.svg"
+        },
+        {
+          "id": "network/internet",
+          "name": "Internet",
+          "description": "Generic internet symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.",
+          "file": "diagramkit/library/assets/network/internet.svg"
+        }
+      ]
+    },
+    {
+      "id": "routing",
+      "name": "Routing & overlays",
+      "count": 19,
+      "preview": "previews/routing.svg",
+      "assets": [
+        {
+          "id": "routing/ecmp",
+          "name": "ECMP group",
+          "description": "Show the underlying paths separately from traffic overlays. Hashing can map different inputs to the same next hop; do not imply perfect balancing.",
+          "file": "diagramkit/library/assets/routing/ecmp.svg"
+        },
+        {
+          "id": "routing/flow-hash",
+          "name": "Flow hash",
+          "description": "Generic flow hash symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.",
+          "file": "diagramkit/library/assets/routing/flow-hash.svg"
+        },
+        {
+          "id": "routing/bgp",
+          "name": "BGP routing",
+          "description": "Generic bgp routing symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.",
+          "file": "diagramkit/library/assets/routing/bgp.svg"
+        },
+        {
+          "id": "routing/ospf",
+          "name": "OSPF routing",
+          "description": "Generic ospf routing symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.",
+          "file": "diagramkit/library/assets/routing/ospf.svg"
+        },
+        {
+          "id": "routing/isis",
+          "name": "IS-IS routing",
+          "description": "Generic is-is routing symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.",
+          "file": "diagramkit/library/assets/routing/isis.svg"
+        },
+        {
+          "id": "routing/vrf",
+          "name": "VRF",
+          "description": "Generic vrf symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.",
+          "file": "diagramkit/library/assets/routing/vrf.svg"
+        },
+        {
+          "id": "routing/vlan",
+          "name": "VLAN",
+          "description": "Generic vlan symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.",
+          "file": "diagramkit/library/assets/routing/vlan.svg"
+        },
+        {
+          "id": "routing/vxlan",
+          "name": "VXLAN tunnel",
+          "description": "Generic vxlan tunnel symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.",
+          "file": "diagramkit/library/assets/routing/vxlan.svg"
+        },
+        {
+          "id": "routing/evpn",
+          "name": "EVPN control plane",
+          "description": "Generic evpn control plane symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.",
+          "file": "diagramkit/library/assets/routing/evpn.svg"
+        },
+        {
+          "id": "routing/vtep",
+          "name": "VXLAN tunnel endpoint",
+          "description": "Generic vxlan tunnel endpoint symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.",
+          "file": "diagramkit/library/assets/routing/vtep.svg"
+        },
+        {
+          "id": "routing/nat",
+          "name": "NAT translation",
+          "description": "Generic nat translation symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.",
+          "file": "diagramkit/library/assets/routing/nat.svg"
+        },
+        {
+          "id": "routing/route-table",
+          "name": "Routing table",
+          "description": "Generic routing table symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.",
+          "file": "diagramkit/library/assets/routing/route-table.svg"
+        },
+        {
+          "id": "routing/qos",
+          "name": "QoS scheduler",
+          "description": "Generic qos scheduler symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.",
+          "file": "diagramkit/library/assets/routing/qos.svg"
+        },
+        {
+          "id": "routing/lag",
+          "name": "Link aggregation",
+          "description": "Generic link aggregation symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.",
+          "file": "diagramkit/library/assets/routing/lag.svg"
+        },
+        {
+          "id": "routing/mpls",
+          "name": "MPLS forwarding",
+          "description": "Generic mpls forwarding symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.",
+          "file": "diagramkit/library/assets/routing/mpls.svg"
+        },
+        {
+          "id": "routing/srv6",
+          "name": "SRv6 path",
+          "description": "Generic srv6 path symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.",
+          "file": "diagramkit/library/assets/routing/srv6.svg"
+        },
+        {
+          "id": "routing/bfd",
+          "name": "BFD session",
+          "description": "Generic bfd session symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.",
+          "file": "diagramkit/library/assets/routing/bfd.svg"
+        },
+        {
+          "id": "routing/rpki",
+          "name": "RPKI validation",
+          "description": "Generic rpki validation symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.",
+          "file": "diagramkit/library/assets/routing/rpki.svg"
+        },
+        {
+          "id": "routing/peering",
+          "name": "Network peering",
+          "description": "Generic network peering symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.",
+          "file": "diagramkit/library/assets/routing/peering.svg"
+        }
+      ]
+    },
+    {
+      "id": "security",
+      "name": "Security controls",
+      "count": 24,
+      "preview": "previews/security.svg",
+      "assets": [
+        {
+          "id": "security/firewall",
+          "name": "Firewall",
+          "description": "Generic firewall symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.",
+          "file": "diagramkit/library/assets/security/firewall.svg"
+        },
+        {
+          "id": "security/waf",
+          "name": "Web application firewall",
+          "description": "Generic web application firewall symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.",
+          "file": "diagramkit/library/assets/security/waf.svg"
+        },
+        {
+          "id": "security/ids",
+          "name": "Intrusion detection",
+          "description": "Generic intrusion detection symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.",
+          "file": "diagramkit/library/assets/security/ids.svg"
+        },
+        {
+          "id": "security/ips",
+          "name": "Intrusion prevention",
+          "description": "Generic intrusion prevention symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.",
+          "file": "diagramkit/library/assets/security/ips.svg"
+        },
+        {
+          "id": "security/security-gateway",
+          "name": "Security gateway",
+          "description": "Generic security gateway symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.",
+          "file": "diagramkit/library/assets/security/security-gateway.svg"
+        },
+        {
+          "id": "security/acl",
+          "name": "Access control list",
+          "description": "Generic access control list symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.",
+          "file": "diagramkit/library/assets/security/acl.svg"
+        },
+        {
+          "id": "security/security-group",
+          "name": "Security group",
+          "description": "Generic security group symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.",
+          "file": "diagramkit/library/assets/security/security-group.svg"
+        },
+        {
+          "id": "security/nac",
+          "name": "Network access control",
+          "description": "Generic network access control symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.",
+          "file": "diagramkit/library/assets/security/nac.svg"
+        },
+        {
+          "id": "security/microsegmentation",
+          "name": "Microsegmentation",
+          "description": "Generic microsegmentation symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.",
+          "file": "diagramkit/library/assets/security/microsegmentation.svg"
+        },
+        {
+          "id": "security/ddos-protection",
+          "name": "DDoS protection",
+          "description": "Generic ddos protection symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.",
+          "file": "diagramkit/library/assets/security/ddos-protection.svg"
+        },
+        {
+          "id": "security/sandbox",
+          "name": "Sandbox",
+          "description": "Generic sandbox symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.",
+          "file": "diagramkit/library/assets/security/sandbox.svg"
+        },
+        {
+          "id": "security/honeypot",
+          "name": "Honeypot",
+          "description": "Generic honeypot symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.",
+          "file": "diagramkit/library/assets/security/honeypot.svg"
+        },
+        {
+          "id": "security/siem",
+          "name": "SIEM",
+          "description": "Generic siem symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.",
+          "file": "diagramkit/library/assets/security/siem.svg"
+        },
+        {
+          "id": "security/soar",
+          "name": "SOAR",
+          "description": "Generic soar symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.",
+          "file": "diagramkit/library/assets/security/soar.svg"
+        },
+        {
+          "id": "security/edr",
+          "name": "Endpoint detection",
+          "description": "Generic endpoint detection symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.",
+          "file": "diagramkit/library/assets/security/edr.svg"
+        },
+        {
+          "id": "security/vulnerability-scanner",
+          "name": "Vulnerability scanner",
+          "description": "Generic vulnerability scanner symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.",
+          "file": "diagramkit/library/assets/security/vulnerability-scanner.svg"
+        },
+        {
+          "id": "security/dlp",
+          "name": "Data loss prevention",
+          "description": "Generic data loss prevention symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.",
+          "file": "diagramkit/library/assets/security/dlp.svg"
+        },
+        {
+          "id": "security/casb",
+          "name": "Cloud access broker",
+          "description": "Generic cloud access broker symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.",
+          "file": "diagramkit/library/assets/security/casb.svg"
+        },
+        {
+          "id": "security/zero-trust",
+          "name": "Zero-trust policy",
+          "description": "Use with explicit policy decision, identity, and enforcement components; do not imply a perimeter icon alone implements zero trust.",
+          "file": "diagramkit/library/assets/security/zero-trust.svg"
+        },
+        {
+          "id": "security/policy-engine",
+          "name": "Policy engine",
+          "description": "Generic policy engine symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.",
+          "file": "diagramkit/library/assets/security/policy-engine.svg"
+        },
+        {
+          "id": "security/secure-boot",
+          "name": "Secure boot",
+          "description": "Generic secure boot symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.",
+          "file": "diagramkit/library/assets/security/secure-boot.svg"
+        },
+        {
+          "id": "security/quarantine",
+          "name": "Quarantine zone",
+          "description": "Generic quarantine zone symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.",
+          "file": "diagramkit/library/assets/security/quarantine.svg"
+        },
+        {
+          "id": "security/threat-actor",
+          "name": "Threat actor",
+          "description": "Generic threat actor symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.",
+          "file": "diagramkit/library/assets/security/threat-actor.svg"
+        },
+        {
+          "id": "security/security-review",
+          "name": "Security review",
+          "description": "Generic security review symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.",
+          "file": "diagramkit/library/assets/security/security-review.svg"
+        }
+      ]
+    },
+    {
+      "id": "identity",
+      "name": "Identity & cryptography",
+      "count": 14,
+      "preview": "previews/identity.svg",
+      "assets": [
+        {
+          "id": "identity/user",
+          "name": "User",
+          "description": "Generic user symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.",
+          "file": "diagramkit/library/assets/identity/user.svg"
+        },
+        {
+          "id": "identity/admin",
+          "name": "Administrator",
+          "description": "Generic administrator symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.",
+          "file": "diagramkit/library/assets/identity/admin.svg"
+        },
+        {
+          "id": "identity/group",
+          "name": "User group",
+          "description": "Generic user group symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.",
+          "file": "diagramkit/library/assets/identity/group.svg"
+        },
+        {
+          "id": "identity/service-account",
+          "name": "Service account",
+          "description": "Generic service account symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.",
+          "file": "diagramkit/library/assets/identity/service-account.svg"
+        },
+        {
+          "id": "identity/identity-provider",
+          "name": "Identity provider",
+          "description": "Generic identity provider symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.",
+          "file": "diagramkit/library/assets/identity/identity-provider.svg"
+        },
+        {
+          "id": "identity/mfa",
+          "name": "Multi-factor authentication",
+          "description": "Generic multi-factor authentication symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.",
+          "file": "diagramkit/library/assets/identity/mfa.svg"
+        },
+        {
+          "id": "identity/passkey",
+          "name": "Passkey",
+          "description": "Generic passkey symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.",
+          "file": "diagramkit/library/assets/identity/passkey.svg"
+        },
+        {
+          "id": "identity/certificate",
+          "name": "Certificate",
+          "description": "Generic certificate symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.",
+          "file": "diagramkit/library/assets/identity/certificate.svg"
+        },
+        {
+          "id": "identity/certificate-authority",
+          "name": "Certificate authority",
+          "description": "Generic certificate authority symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.",
+          "file": "diagramkit/library/assets/identity/certificate-authority.svg"
+        },
+        {
+          "id": "identity/key",
+          "name": "Cryptographic key",
+          "description": "Generic cryptographic key symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.",
+          "file": "diagramkit/library/assets/identity/key.svg"
+        },
+        {
+          "id": "identity/secrets-vault",
+          "name": "Secrets vault",
+          "description": "Generic secrets vault symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.",
+          "file": "diagramkit/library/assets/identity/secrets-vault.svg"
+        },
+        {
+          "id": "identity/access-token",
+          "name": "Access token",
+          "description": "Generic access token symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.",
+          "file": "diagramkit/library/assets/identity/access-token.svg"
+        },
+        {
+          "id": "identity/federation",
+          "name": "Identity federation",
+          "description": "Generic identity federation symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.",
+          "file": "diagramkit/library/assets/identity/federation.svg"
+        },
+        {
+          "id": "identity/privileged-access",
+          "name": "Privileged access",
+          "description": "Generic privileged access symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.",
+          "file": "diagramkit/library/assets/identity/privileged-access.svg"
+        }
+      ]
+    },
+    {
+      "id": "storage",
+      "name": "Storage & continuity",
+      "count": 13,
+      "preview": "previews/storage.svg",
+      "assets": [
+        {
+          "id": "storage/disk",
+          "name": "Disk drive",
+          "description": "Generic disk drive symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.",
+          "file": "diagramkit/library/assets/storage/disk.svg"
+        },
+        {
+          "id": "storage/storage-array",
+          "name": "Storage array",
+          "description": "Generic storage array symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.",
+          "file": "diagramkit/library/assets/storage/storage-array.svg"
+        },
+        {
+          "id": "storage/nas",
+          "name": "Network attached storage",
+          "description": "Generic network attached storage symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.",
+          "file": "diagramkit/library/assets/storage/nas.svg"
+        },
+        {
+          "id": "storage/san",
+          "name": "Storage area network",
+          "description": "Generic storage area network symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.",
+          "file": "diagramkit/library/assets/storage/san.svg"
+        },
+        {
+          "id": "storage/object-store",
+          "name": "Object storage",
+          "description": "Generic object storage symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.",
+          "file": "diagramkit/library/assets/storage/object-store.svg"
+        },
+        {
+          "id": "storage/file-share",
+          "name": "File share",
+          "description": "Generic file share symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.",
+          "file": "diagramkit/library/assets/storage/file-share.svg"
+        },
+        {
+          "id": "storage/block-volume",
+          "name": "Block volume",
+          "description": "Generic block volume symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.",
+          "file": "diagramkit/library/assets/storage/block-volume.svg"
+        },
+        {
+          "id": "storage/distributed-storage",
+          "name": "Distributed storage",
+          "description": "Generic distributed storage symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.",
+          "file": "diagramkit/library/assets/storage/distributed-storage.svg"
+        },
+        {
+          "id": "storage/snapshot",
+          "name": "Snapshot",
+          "description": "Generic snapshot symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.",
+          "file": "diagramkit/library/assets/storage/snapshot.svg"
+        },
+        {
+          "id": "storage/backup",
+          "name": "Backup repository",
+          "description": "Generic backup repository symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.",
+          "file": "diagramkit/library/assets/storage/backup.svg"
+        },
+        {
+          "id": "storage/immutable-backup",
+          "name": "Immutable backup",
+          "description": "Generic immutable backup symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.",
+          "file": "diagramkit/library/assets/storage/immutable-backup.svg"
+        },
+        {
+          "id": "storage/tape-library",
+          "name": "Tape library",
+          "description": "Generic tape library symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.",
+          "file": "diagramkit/library/assets/storage/tape-library.svg"
+        },
+        {
+          "id": "storage/disk-raid",
+          "name": "RAID group",
+          "description": "Generic raid group symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.",
+          "file": "diagramkit/library/assets/storage/disk-raid.svg"
+        }
+      ]
+    },
+    {
+      "id": "cloud",
+      "name": "Cloud & locations",
+      "count": 14,
+      "preview": "previews/cloud.svg",
+      "assets": [
+        {
+          "id": "cloud/public-cloud",
+          "name": "Public cloud",
+          "description": "Generic public cloud symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.",
+          "file": "diagramkit/library/assets/cloud/public-cloud.svg"
+        },
+        {
+          "id": "cloud/private-cloud",
+          "name": "Private cloud",
+          "description": "Generic private cloud symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.",
+          "file": "diagramkit/library/assets/cloud/private-cloud.svg"
+        },
+        {
+          "id": "cloud/hybrid-cloud",
+          "name": "Hybrid cloud",
+          "description": "Generic hybrid cloud symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.",
+          "file": "diagramkit/library/assets/cloud/hybrid-cloud.svg"
+        },
+        {
+          "id": "cloud/cloud-region",
+          "name": "Cloud region",
+          "description": "Generic cloud region symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.",
+          "file": "diagramkit/library/assets/cloud/cloud-region.svg"
+        },
+        {
+          "id": "cloud/availability-zone",
+          "name": "Availability zone",
+          "description": "Generic availability zone symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.",
+          "file": "diagramkit/library/assets/cloud/availability-zone.svg"
+        },
+        {
+          "id": "cloud/datacenter",
+          "name": "Datacenter",
+          "description": "Generic datacenter symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.",
+          "file": "diagramkit/library/assets/cloud/datacenter.svg"
+        },
+        {
+          "id": "cloud/branch-office",
+          "name": "Branch office",
+          "description": "Generic branch office symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.",
+          "file": "diagramkit/library/assets/cloud/branch-office.svg"
+        },
+        {
+          "id": "cloud/vpc",
+          "name": "Virtual network",
+          "description": "Generic virtual network symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.",
+          "file": "diagramkit/library/assets/cloud/vpc.svg"
+        },
+        {
+          "id": "cloud/subnet",
+          "name": "Subnet",
+          "description": "Generic subnet symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.",
+          "file": "diagramkit/library/assets/cloud/subnet.svg"
+        },
+        {
+          "id": "cloud/cloud-peering",
+          "name": "Cloud peering",
+          "description": "Generic cloud peering symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.",
+          "file": "diagramkit/library/assets/cloud/cloud-peering.svg"
+        },
+        {
+          "id": "cloud/dedicated-circuit",
+          "name": "Dedicated cloud circuit",
+          "description": "Generic dedicated cloud circuit symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.",
+          "file": "diagramkit/library/assets/cloud/dedicated-circuit.svg"
+        },
+        {
+          "id": "cloud/saas",
+          "name": "SaaS application",
+          "description": "Generic saas application symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.",
+          "file": "diagramkit/library/assets/cloud/saas.svg"
+        },
+        {
+          "id": "cloud/edge-location",
+          "name": "Edge location",
+          "description": "Generic edge location symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.",
+          "file": "diagramkit/library/assets/cloud/edge-location.svg"
+        },
+        {
+          "id": "cloud/cloud-function",
+          "name": "Cloud function",
+          "description": "Generic cloud function symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.",
+          "file": "diagramkit/library/assets/cloud/cloud-function.svg"
+        }
+      ]
+    },
+    {
+      "id": "kubernetes",
+      "name": "Kubernetes & containers",
+      "count": 21,
+      "preview": "previews/kubernetes.svg",
+      "assets": [
+        {
+          "id": "kubernetes/cluster",
+          "name": "Kubernetes cluster",
+          "description": "Generic kubernetes cluster symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.",
+          "file": "diagramkit/library/assets/kubernetes/cluster.svg"
+        },
+        {
+          "id": "kubernetes/control-plane",
+          "name": "Control plane",
+          "description": "Generic control plane symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.",
+          "file": "diagramkit/library/assets/kubernetes/control-plane.svg"
+        },
+        {
+          "id": "kubernetes/worker-node",
+          "name": "Worker node",
+          "description": "Generic worker node symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.",
+          "file": "diagramkit/library/assets/kubernetes/worker-node.svg"
+        },
+        {
+          "id": "kubernetes/pod",
+          "name": "Pod",
+          "description": "Generic pod symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.",
+          "file": "diagramkit/library/assets/kubernetes/pod.svg"
+        },
+        {
+          "id": "kubernetes/container",
+          "name": "Container",
+          "description": "Generic container symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.",
+          "file": "diagramkit/library/assets/kubernetes/container.svg"
+        },
+        {
+          "id": "kubernetes/service",
+          "name": "Service",
+          "description": "Generic service symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.",
+          "file": "diagramkit/library/assets/kubernetes/service.svg"
+        },
+        {
+          "id": "kubernetes/ingress",
+          "name": "Ingress",
+          "description": "Generic ingress symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.",
+          "file": "diagramkit/library/assets/kubernetes/ingress.svg"
+        },
+        {
+          "id": "kubernetes/gateway-api",
+          "name": "Gateway API",
+          "description": "Generic gateway api symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.",
+          "file": "diagramkit/library/assets/kubernetes/gateway-api.svg"
+        },
+        {
+          "id": "kubernetes/namespace",
+          "name": "Namespace",
+          "description": "Generic namespace symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.",
+          "file": "diagramkit/library/assets/kubernetes/namespace.svg"
+        },
+        {
+          "id": "kubernetes/deployment",
+          "name": "Deployment",
+          "description": "Generic deployment symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.",
+          "file": "diagramkit/library/assets/kubernetes/deployment.svg"
+        },
+        {
+          "id": "kubernetes/statefulset",
+          "name": "StatefulSet",
+          "description": "Generic statefulset symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.",
+          "file": "diagramkit/library/assets/kubernetes/statefulset.svg"
+        },
+        {
+          "id": "kubernetes/daemonset",
+          "name": "DaemonSet",
+          "description": "Generic daemonset symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.",
+          "file": "diagramkit/library/assets/kubernetes/daemonset.svg"
+        },
+        {
+          "id": "kubernetes/job",
+          "name": "Job",
+          "description": "Generic job symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.",
+          "file": "diagramkit/library/assets/kubernetes/job.svg"
+        },
+        {
+          "id": "kubernetes/cronjob",
+          "name": "CronJob",
+          "description": "Generic cronjob symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.",
+          "file": "diagramkit/library/assets/kubernetes/cronjob.svg"
+        },
+        {
+          "id": "kubernetes/configmap",
+          "name": "ConfigMap",
+          "description": "Generic configmap symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.",
+          "file": "diagramkit/library/assets/kubernetes/configmap.svg"
+        },
+        {
+          "id": "kubernetes/secret",
+          "name": "Secret",
+          "description": "Generic secret symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.",
+          "file": "diagramkit/library/assets/kubernetes/secret.svg"
+        },
+        {
+          "id": "kubernetes/persistent-volume",
+          "name": "Persistent volume",
+          "description": "Generic persistent volume symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.",
+          "file": "diagramkit/library/assets/kubernetes/persistent-volume.svg"
+        },
+        {
+          "id": "kubernetes/helm-chart",
+          "name": "Helm chart",
+          "description": "Generic helm chart symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.",
+          "file": "diagramkit/library/assets/kubernetes/helm-chart.svg"
+        },
+        {
+          "id": "kubernetes/operator",
+          "name": "Operator",
+          "description": "Generic operator symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.",
+          "file": "diagramkit/library/assets/kubernetes/operator.svg"
+        },
+        {
+          "id": "kubernetes/cni",
+          "name": "CNI networking",
+          "description": "Generic cni networking symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.",
+          "file": "diagramkit/library/assets/kubernetes/cni.svg"
+        },
+        {
+          "id": "kubernetes/csi",
+          "name": "CSI storage",
+          "description": "Generic csi storage symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.",
+          "file": "diagramkit/library/assets/kubernetes/csi.svg"
+        }
+      ]
+    },
+    {
+      "id": "software",
+      "name": "Software & integration",
+      "count": 19,
+      "preview": "previews/software.svg",
+      "assets": [
+        {
+          "id": "software/browser",
+          "name": "Browser",
+          "description": "Generic browser symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.",
+          "file": "diagramkit/library/assets/software/browser.svg"
+        },
+        {
+          "id": "software/frontend",
+          "name": "Frontend",
+          "description": "Generic frontend symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.",
+          "file": "diagramkit/library/assets/software/frontend.svg"
+        },
+        {
+          "id": "software/backend",
+          "name": "Backend service",
+          "description": "Generic backend service symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.",
+          "file": "diagramkit/library/assets/software/backend.svg"
+        },
+        {
+          "id": "software/rest-api",
+          "name": "REST API",
+          "description": "Generic rest api symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.",
+          "file": "diagramkit/library/assets/software/rest-api.svg"
+        },
+        {
+          "id": "software/grpc-api",
+          "name": "gRPC API",
+          "description": "Generic grpc api symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.",
+          "file": "diagramkit/library/assets/software/grpc-api.svg"
+        },
+        {
+          "id": "software/microservice",
+          "name": "Microservice",
+          "description": "Generic microservice symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.",
+          "file": "diagramkit/library/assets/software/microservice.svg"
+        },
+        {
+          "id": "software/function",
+          "name": "Function",
+          "description": "Generic function symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.",
+          "file": "diagramkit/library/assets/software/function.svg"
+        },
+        {
+          "id": "software/background-worker",
+          "name": "Background worker",
+          "description": "Generic background worker symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.",
+          "file": "diagramkit/library/assets/software/background-worker.svg"
+        },
+        {
+          "id": "software/message-queue",
+          "name": "Message queue",
+          "description": "Generic message queue symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.",
+          "file": "diagramkit/library/assets/software/message-queue.svg"
+        },
+        {
+          "id": "software/message-broker",
+          "name": "Message broker",
+          "description": "Generic message broker symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.",
+          "file": "diagramkit/library/assets/software/message-broker.svg"
+        },
+        {
+          "id": "software/event-bus",
+          "name": "Event bus",
+          "description": "Generic event bus symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.",
+          "file": "diagramkit/library/assets/software/event-bus.svg"
+        },
+        {
+          "id": "software/topic",
+          "name": "Topic",
+          "description": "Generic topic symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.",
+          "file": "diagramkit/library/assets/software/topic.svg"
+        },
+        {
+          "id": "software/scheduler",
+          "name": "Scheduler",
+          "description": "Generic scheduler symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.",
+          "file": "diagramkit/library/assets/software/scheduler.svg"
+        },
+        {
+          "id": "software/batch-job",
+          "name": "Batch job",
+          "description": "Generic batch job symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.",
+          "file": "diagramkit/library/assets/software/batch-job.svg"
+        },
+        {
+          "id": "software/websocket",
+          "name": "WebSocket",
+          "description": "Generic websocket symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.",
+          "file": "diagramkit/library/assets/software/websocket.svg"
+        },
+        {
+          "id": "software/webhook",
+          "name": "Webhook",
+          "description": "Generic webhook symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.",
+          "file": "diagramkit/library/assets/software/webhook.svg"
+        },
+        {
+          "id": "software/external-service",
+          "name": "External service",
+          "description": "Generic external service symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.",
+          "file": "diagramkit/library/assets/software/external-service.svg"
+        },
+        {
+          "id": "software/monolith",
+          "name": "Application monolith",
+          "description": "Generic application monolith symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.",
+          "file": "diagramkit/library/assets/software/monolith.svg"
+        },
+        {
+          "id": "software/workflow",
+          "name": "Workflow",
+          "description": "Generic workflow symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.",
+          "file": "diagramkit/library/assets/software/workflow.svg"
+        }
+      ]
+    },
+    {
+      "id": "data",
+      "name": "Data systems",
+      "count": 14,
+      "preview": "previews/data.svg",
+      "assets": [
+        {
+          "id": "data/relational-db",
+          "name": "Relational database",
+          "description": "Generic relational database symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.",
+          "file": "diagramkit/library/assets/data/relational-db.svg"
+        },
+        {
+          "id": "data/document-db",
+          "name": "Document database",
+          "description": "Generic document database symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.",
+          "file": "diagramkit/library/assets/data/document-db.svg"
+        },
+        {
+          "id": "data/key-value-db",
+          "name": "Key-value database",
+          "description": "Generic key-value database symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.",
+          "file": "diagramkit/library/assets/data/key-value-db.svg"
+        },
+        {
+          "id": "data/graph-db",
+          "name": "Graph database",
+          "description": "Generic graph database symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.",
+          "file": "diagramkit/library/assets/data/graph-db.svg"
+        },
+        {
+          "id": "data/vector-db",
+          "name": "Vector database",
+          "description": "Generic vector database symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.",
+          "file": "diagramkit/library/assets/data/vector-db.svg"
+        },
+        {
+          "id": "data/time-series-db",
+          "name": "Time-series database",
+          "description": "Generic time-series database symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.",
+          "file": "diagramkit/library/assets/data/time-series-db.svg"
+        },
+        {
+          "id": "data/cache",
+          "name": "Cache",
+          "description": "Generic cache symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.",
+          "file": "diagramkit/library/assets/data/cache.svg"
+        },
+        {
+          "id": "data/data-warehouse",
+          "name": "Data warehouse",
+          "description": "Generic data warehouse symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.",
+          "file": "diagramkit/library/assets/data/data-warehouse.svg"
+        },
+        {
+          "id": "data/data-lake",
+          "name": "Data lake",
+          "description": "Generic data lake symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.",
+          "file": "diagramkit/library/assets/data/data-lake.svg"
+        },
+        {
+          "id": "data/stream-processor",
+          "name": "Stream processor",
+          "description": "Generic stream processor symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.",
+          "file": "diagramkit/library/assets/data/stream-processor.svg"
+        },
+        {
+          "id": "data/etl",
+          "name": "ETL / ELT",
+          "description": "Generic etl / elt symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.",
+          "file": "diagramkit/library/assets/data/etl.svg"
+        },
+        {
+          "id": "data/dataset",
+          "name": "Dataset",
+          "description": "Generic dataset symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.",
+          "file": "diagramkit/library/assets/data/dataset.svg"
+        },
+        {
+          "id": "data/database-replica",
+          "name": "Database replica",
+          "description": "Generic database replica symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.",
+          "file": "diagramkit/library/assets/data/database-replica.svg"
+        },
+        {
+          "id": "data/search-index",
+          "name": "Search index",
+          "description": "Generic search index symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.",
+          "file": "diagramkit/library/assets/data/search-index.svg"
+        }
+      ]
+    },
+    {
+      "id": "devops",
+      "name": "Development & delivery",
+      "count": 20,
+      "preview": "previews/devops.svg",
+      "assets": [
+        {
+          "id": "devops/source-code",
+          "name": "Source code",
+          "description": "Generic source code symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.",
+          "file": "diagramkit/library/assets/devops/source-code.svg"
+        },
+        {
+          "id": "devops/git-repository",
+          "name": "Git repository",
+          "description": "Generic git repository symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.",
+          "file": "diagramkit/library/assets/devops/git-repository.svg"
+        },
+        {
+          "id": "devops/branch",
+          "name": "Branch",
+          "description": "Generic branch symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.",
+          "file": "diagramkit/library/assets/devops/branch.svg"
+        },
+        {
+          "id": "devops/pull-request",
+          "name": "Pull request",
+          "description": "Generic pull request symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.",
+          "file": "diagramkit/library/assets/devops/pull-request.svg"
+        },
+        {
+          "id": "devops/code-review",
+          "name": "Code review",
+          "description": "Generic code review symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.",
+          "file": "diagramkit/library/assets/devops/code-review.svg"
+        },
+        {
+          "id": "devops/ci-build",
+          "name": "CI build",
+          "description": "Generic ci build symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.",
+          "file": "diagramkit/library/assets/devops/ci-build.svg"
+        },
+        {
+          "id": "devops/cd-release",
+          "name": "CD release",
+          "description": "Generic cd release symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.",
+          "file": "diagramkit/library/assets/devops/cd-release.svg"
+        },
+        {
+          "id": "devops/artifact-registry",
+          "name": "Artifact registry",
+          "description": "Generic artifact registry symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.",
+          "file": "diagramkit/library/assets/devops/artifact-registry.svg"
+        },
+        {
+          "id": "devops/container-image",
+          "name": "Container image",
+          "description": "Generic container image symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.",
+          "file": "diagramkit/library/assets/devops/container-image.svg"
+        },
+        {
+          "id": "devops/unit-tests",
+          "name": "Unit tests",
+          "description": "Generic unit tests symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.",
+          "file": "diagramkit/library/assets/devops/unit-tests.svg"
+        },
+        {
+          "id": "devops/integration-tests",
+          "name": "Integration tests",
+          "description": "Generic integration tests symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.",
+          "file": "diagramkit/library/assets/devops/integration-tests.svg"
+        },
+        {
+          "id": "devops/end-to-end-tests",
+          "name": "End-to-end tests",
+          "description": "Generic end-to-end tests symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.",
+          "file": "diagramkit/library/assets/devops/end-to-end-tests.svg"
+        },
+        {
+          "id": "devops/infrastructure-as-code",
+          "name": "Infrastructure as code",
+          "description": "Generic infrastructure as code symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.",
+          "file": "diagramkit/library/assets/devops/infrastructure-as-code.svg"
+        },
+        {
+          "id": "devops/policy-as-code",
+          "name": "Policy as code",
+          "description": "Generic policy as code symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.",
+          "file": "diagramkit/library/assets/devops/policy-as-code.svg"
+        },
+        {
+          "id": "devops/sbom",
+          "name": "Software bill of materials",
+          "description": "Generic software bill of materials symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.",
+          "file": "diagramkit/library/assets/devops/sbom.svg"
+        },
+        {
+          "id": "devops/sast",
+          "name": "Static analysis",
+          "description": "Generic static analysis symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.",
+          "file": "diagramkit/library/assets/devops/sast.svg"
+        },
+        {
+          "id": "devops/sca",
+          "name": "Dependency analysis",
+          "description": "Generic dependency analysis symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.",
+          "file": "diagramkit/library/assets/devops/sca.svg"
+        },
+        {
+          "id": "devops/dast",
+          "name": "Dynamic analysis",
+          "description": "Generic dynamic analysis symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.",
+          "file": "diagramkit/library/assets/devops/dast.svg"
+        },
+        {
+          "id": "devops/release-approval",
+          "name": "Release approval",
+          "description": "Generic release approval symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.",
+          "file": "diagramkit/library/assets/devops/release-approval.svg"
+        },
+        {
+          "id": "devops/rollback",
+          "name": "Rollback",
+          "description": "Generic rollback symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.",
+          "file": "diagramkit/library/assets/devops/rollback.svg"
+        }
+      ]
+    },
+    {
+      "id": "observability",
+      "name": "Observability & operations",
+      "count": 12,
+      "preview": "previews/observability.svg",
+      "assets": [
+        {
+          "id": "observability/metrics",
+          "name": "Metrics",
+          "description": "Generic metrics symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.",
+          "file": "diagramkit/library/assets/observability/metrics.svg"
+        },
+        {
+          "id": "observability/logs",
+          "name": "Logs",
+          "description": "Generic logs symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.",
+          "file": "diagramkit/library/assets/observability/logs.svg"
+        },
+        {
+          "id": "observability/traces",
+          "name": "Distributed traces",
+          "description": "Generic distributed traces symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.",
+          "file": "diagramkit/library/assets/observability/traces.svg"
+        },
+        {
+          "id": "observability/dashboard",
+          "name": "Dashboard",
+          "description": "Generic dashboard symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.",
+          "file": "diagramkit/library/assets/observability/dashboard.svg"
+        },
+        {
+          "id": "observability/alert",
+          "name": "Alert",
+          "description": "Generic alert symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.",
+          "file": "diagramkit/library/assets/observability/alert.svg"
+        },
+        {
+          "id": "observability/health-probe",
+          "name": "Health probe",
+          "description": "Generic health probe symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.",
+          "file": "diagramkit/library/assets/observability/health-probe.svg"
+        },
+        {
+          "id": "observability/collector",
+          "name": "Telemetry collector",
+          "description": "Generic telemetry collector symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.",
+          "file": "diagramkit/library/assets/observability/collector.svg"
+        },
+        {
+          "id": "observability/netflow",
+          "name": "Network flow telemetry",
+          "description": "Generic network flow telemetry symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.",
+          "file": "diagramkit/library/assets/observability/netflow.svg"
+        },
+        {
+          "id": "observability/packet-capture",
+          "name": "Packet capture",
+          "description": "Generic packet capture symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.",
+          "file": "diagramkit/library/assets/observability/packet-capture.svg"
+        },
+        {
+          "id": "observability/audit-log",
+          "name": "Audit log",
+          "description": "Generic audit log symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.",
+          "file": "diagramkit/library/assets/observability/audit-log.svg"
+        },
+        {
+          "id": "observability/incident",
+          "name": "Incident",
+          "description": "Generic incident symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.",
+          "file": "diagramkit/library/assets/observability/incident.svg"
+        },
+        {
+          "id": "observability/service-map",
+          "name": "Service map",
+          "description": "Generic service map symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.",
+          "file": "diagramkit/library/assets/observability/service-map.svg"
+        }
+      ]
+    },
+    {
+      "id": "ai",
+      "name": "AI & agent systems",
+      "count": 20,
+      "preview": "previews/ai.svg",
+      "assets": [
+        {
+          "id": "ai/llm",
+          "name": "Language model",
+          "description": "Generic language model symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.",
+          "file": "diagramkit/library/assets/ai/llm.svg"
+        },
+        {
+          "id": "ai/vision-model",
+          "name": "Vision model",
+          "description": "Generic vision model symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.",
+          "file": "diagramkit/library/assets/ai/vision-model.svg"
+        },
+        {
+          "id": "ai/embedding-model",
+          "name": "Embedding model",
+          "description": "Generic embedding model symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.",
+          "file": "diagramkit/library/assets/ai/embedding-model.svg"
+        },
+        {
+          "id": "ai/reranker",
+          "name": "Reranker",
+          "description": "Generic reranker symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.",
+          "file": "diagramkit/library/assets/ai/reranker.svg"
+        },
+        {
+          "id": "ai/model-server",
+          "name": "Model server",
+          "description": "Generic model server symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.",
+          "file": "diagramkit/library/assets/ai/model-server.svg"
+        },
+        {
+          "id": "ai/model-registry",
+          "name": "Model registry",
+          "description": "Generic model registry symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.",
+          "file": "diagramkit/library/assets/ai/model-registry.svg"
+        },
+        {
+          "id": "ai/ai-agent",
+          "name": "AI agent",
+          "description": "Generic ai agent symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.",
+          "file": "diagramkit/library/assets/ai/ai-agent.svg"
+        },
+        {
+          "id": "ai/mcp-server",
+          "name": "MCP server",
+          "description": "A tool/data provider boundary. Distinguish read-only tools, mutation tools, and approval paths.",
+          "file": "diagramkit/library/assets/ai/mcp-server.svg"
+        },
+        {
+          "id": "ai/mcp-client",
+          "name": "MCP client",
+          "description": "Generic mcp client symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.",
+          "file": "diagramkit/library/assets/ai/mcp-client.svg"
+        },
+        {
+          "id": "ai/tool",
+          "name": "Tool function",
+          "description": "Generic tool function symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.",
+          "file": "diagramkit/library/assets/ai/tool.svg"
+        },
+        {
+          "id": "ai/guardrail",
+          "name": "Guardrail",
+          "description": "Generic guardrail symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.",
+          "file": "diagramkit/library/assets/ai/guardrail.svg"
+        },
+        {
+          "id": "ai/human-approval",
+          "name": "Human approval",
+          "description": "Generic human approval symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.",
+          "file": "diagramkit/library/assets/ai/human-approval.svg"
+        },
+        {
+          "id": "ai/prompt",
+          "name": "Prompt / instructions",
+          "description": "Generic prompt / instructions symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.",
+          "file": "diagramkit/library/assets/ai/prompt.svg"
+        },
+        {
+          "id": "ai/context-window",
+          "name": "Context window",
+          "description": "Generic context window symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.",
+          "file": "diagramkit/library/assets/ai/context-window.svg"
+        },
+        {
+          "id": "ai/kv-cache",
+          "name": "KV cache",
+          "description": "Generic kv cache symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.",
+          "file": "diagramkit/library/assets/ai/kv-cache.svg"
+        },
+        {
+          "id": "ai/prefill-worker",
+          "name": "Prefill worker",
+          "description": "Generic prefill worker symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.",
+          "file": "diagramkit/library/assets/ai/prefill-worker.svg"
+        },
+        {
+          "id": "ai/decode-worker",
+          "name": "Decode worker",
+          "description": "Generic decode worker symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.",
+          "file": "diagramkit/library/assets/ai/decode-worker.svg"
+        },
+        {
+          "id": "ai/training-job",
+          "name": "Training job",
+          "description": "Generic training job symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.",
+          "file": "diagramkit/library/assets/ai/training-job.svg"
+        },
+        {
+          "id": "ai/rag-retriever",
+          "name": "RAG retriever",
+          "description": "Generic rag retriever symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.",
+          "file": "diagramkit/library/assets/ai/rag-retriever.svg"
+        },
+        {
+          "id": "ai/router",
+          "name": "Model router",
+          "description": "Generic model router symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.",
+          "file": "diagramkit/library/assets/ai/router.svg"
+        }
+      ]
+    },
+    {
+      "id": "resilience",
+      "name": "Resilience & traffic policy",
+      "count": 10,
+      "preview": "previews/resilience.svg",
+      "assets": [
+        {
+          "id": "resilience/replication",
+          "name": "Replication",
+          "description": "Generic replication symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.",
+          "file": "diagramkit/library/assets/resilience/replication.svg"
+        },
+        {
+          "id": "resilience/failover",
+          "name": "Failover",
+          "description": "Generic failover symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.",
+          "file": "diagramkit/library/assets/resilience/failover.svg"
+        },
+        {
+          "id": "resilience/active-active",
+          "name": "Active-active pair",
+          "description": "Generic active-active pair symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.",
+          "file": "diagramkit/library/assets/resilience/active-active.svg"
+        },
+        {
+          "id": "resilience/active-passive",
+          "name": "Active-passive pair",
+          "description": "Generic active-passive pair symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.",
+          "file": "diagramkit/library/assets/resilience/active-passive.svg"
+        },
+        {
+          "id": "resilience/disaster-recovery",
+          "name": "Disaster recovery",
+          "description": "Generic disaster recovery symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.",
+          "file": "diagramkit/library/assets/resilience/disaster-recovery.svg"
+        },
+        {
+          "id": "resilience/circuit-breaker",
+          "name": "Circuit breaker",
+          "description": "Generic circuit breaker symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.",
+          "file": "diagramkit/library/assets/resilience/circuit-breaker.svg"
+        },
+        {
+          "id": "resilience/retry",
+          "name": "Retry policy",
+          "description": "Generic retry policy symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.",
+          "file": "diagramkit/library/assets/resilience/retry.svg"
+        },
+        {
+          "id": "resilience/rate-limiter",
+          "name": "Rate limiter",
+          "description": "Generic rate limiter symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.",
+          "file": "diagramkit/library/assets/resilience/rate-limiter.svg"
+        },
+        {
+          "id": "resilience/autoscaler",
+          "name": "Autoscaler",
+          "description": "Generic autoscaler symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.",
+          "file": "diagramkit/library/assets/resilience/autoscaler.svg"
+        },
+        {
+          "id": "resilience/timeout",
+          "name": "Timeout",
+          "description": "Generic timeout symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.",
+          "file": "diagramkit/library/assets/resilience/timeout.svg"
+        }
+      ]
+    },
+    {
+      "id": "protocol",
+      "name": "Packets & transport",
+      "count": 21,
+      "preview": "previews/protocol.svg",
+      "assets": [
+        {
+          "id": "protocol/packet",
+          "name": "Packet",
+          "description": "Generic packet symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.",
+          "file": "diagramkit/library/assets/protocol/packet.svg"
+        },
+        {
+          "id": "protocol/ethernet-frame",
+          "name": "Ethernet frame",
+          "description": "Generic ethernet frame symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.",
+          "file": "diagramkit/library/assets/protocol/ethernet-frame.svg"
+        },
+        {
+          "id": "protocol/ip-packet",
+          "name": "IP packet",
+          "description": "Generic ip packet symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.",
+          "file": "diagramkit/library/assets/protocol/ip-packet.svg"
+        },
+        {
+          "id": "protocol/tcp-segment",
+          "name": "TCP segment",
+          "description": "Generic tcp segment symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.",
+          "file": "diagramkit/library/assets/protocol/tcp-segment.svg"
+        },
+        {
+          "id": "protocol/udp-datagram",
+          "name": "UDP datagram",
+          "description": "Generic udp datagram symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.",
+          "file": "diagramkit/library/assets/protocol/udp-datagram.svg"
+        },
+        {
+          "id": "protocol/rdma-operation",
+          "name": "RDMA operation",
+          "description": "Generic rdma operation symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.",
+          "file": "diagramkit/library/assets/protocol/rdma-operation.svg"
+        },
+        {
+          "id": "protocol/queue-pair",
+          "name": "Queue pair",
+          "description": "Generic queue pair symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.",
+          "file": "diagramkit/library/assets/protocol/queue-pair.svg"
+        },
+        {
+          "id": "protocol/sequence-number",
+          "name": "Sequence number",
+          "description": "Generic sequence number symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.",
+          "file": "diagramkit/library/assets/protocol/sequence-number.svg"
+        },
+        {
+          "id": "protocol/ack",
+          "name": "Acknowledgement",
+          "description": "Generic acknowledgement symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.",
+          "file": "diagramkit/library/assets/protocol/ack.svg"
+        },
+        {
+          "id": "protocol/sack",
+          "name": "Selective acknowledgement",
+          "description": "Use human-readable received / missing state. A gap is not proof of loss; distinguish a delayed packet from a confirmed illustrative drop. Feedback travels receiver to sender.",
+          "file": "diagramkit/library/assets/protocol/sack.svg"
+        },
+        {
+          "id": "protocol/nack",
+          "name": "Negative acknowledgement",
+          "description": "Generic negative acknowledgement symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.",
+          "file": "diagramkit/library/assets/protocol/nack.svg"
+        },
+        {
+          "id": "protocol/receive-window",
+          "name": "Receive window",
+          "description": "Generic receive window symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.",
+          "file": "diagramkit/library/assets/protocol/receive-window.svg"
+        },
+        {
+          "id": "protocol/memory-buffer",
+          "name": "Memory buffer",
+          "description": "Generic memory buffer symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.",
+          "file": "diagramkit/library/assets/protocol/memory-buffer.svg"
+        },
+        {
+          "id": "protocol/queue-buffer",
+          "name": "Queue buffer",
+          "description": "Generic queue buffer symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.",
+          "file": "diagramkit/library/assets/protocol/queue-buffer.svg"
+        },
+        {
+          "id": "protocol/dropped-packet",
+          "name": "Dropped packet",
+          "description": "The original transmission does not reach the receiver. Stop its arrow at a visible loss marker. Show any successful retransmission separately.",
+          "file": "diagramkit/library/assets/protocol/dropped-packet.svg"
+        },
+        {
+          "id": "protocol/out-of-order",
+          "name": "Out-of-order arrival",
+          "description": "Generic out-of-order arrival symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.",
+          "file": "diagramkit/library/assets/protocol/out-of-order.svg"
+        },
+        {
+          "id": "protocol/congestion",
+          "name": "Congestion",
+          "description": "Generic congestion symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.",
+          "file": "diagramkit/library/assets/protocol/congestion.svg"
+        },
+        {
+          "id": "protocol/ecn",
+          "name": "ECN mark",
+          "description": "Generic ecn mark symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.",
+          "file": "diagramkit/library/assets/protocol/ecn.svg"
+        },
+        {
+          "id": "protocol/pfc-pause",
+          "name": "PFC pause",
+          "description": "Generic pfc pause symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.",
+          "file": "diagramkit/library/assets/protocol/pfc-pause.svg"
+        },
+        {
+          "id": "protocol/rtt",
+          "name": "Round-trip time",
+          "description": "Generic round-trip time symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.",
+          "file": "diagramkit/library/assets/protocol/rtt.svg"
+        },
+        {
+          "id": "protocol/retransmission",
+          "name": "Retransmission",
+          "description": "Generic retransmission symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.",
+          "file": "diagramkit/library/assets/protocol/retransmission.svg"
+        }
+      ]
+    },
+    {
+      "id": "presentation",
+      "name": "Diagram notation",
+      "count": 20,
+      "preview": "previews/presentation.svg",
+      "assets": [
+        {
+          "id": "presentation/boundary",
+          "name": "System boundary",
+          "description": "Label ownership or trust scope. A boundary is not itself a firewall or an enforcement control.",
+          "file": "diagramkit/library/assets/presentation/boundary.svg"
+        },
+        {
+          "id": "presentation/panel",
+          "name": "Panel",
+          "description": "Generic panel symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.",
+          "file": "diagramkit/library/assets/presentation/panel.svg"
+        },
+        {
+          "id": "presentation/swimlane",
+          "name": "Swimlane",
+          "description": "Generic swimlane symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.",
+          "file": "diagramkit/library/assets/presentation/swimlane.svg"
+        },
+        {
+          "id": "presentation/callout",
+          "name": "Callout",
+          "description": "Generic callout symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.",
+          "file": "diagramkit/library/assets/presentation/callout.svg"
+        },
+        {
+          "id": "presentation/note",
+          "name": "Note",
+          "description": "Generic note symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.",
+          "file": "diagramkit/library/assets/presentation/note.svg"
+        },
+        {
+          "id": "presentation/step",
+          "name": "Numbered step",
+          "description": "Generic numbered step symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.",
+          "file": "diagramkit/library/assets/presentation/step.svg"
+        },
+        {
+          "id": "presentation/decision",
+          "name": "Decision",
+          "description": "Generic decision symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.",
+          "file": "diagramkit/library/assets/presentation/decision.svg"
+        },
+        {
+          "id": "presentation/process",
+          "name": "Process",
+          "description": "Generic process symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.",
+          "file": "diagramkit/library/assets/presentation/process.svg"
+        },
+        {
+          "id": "presentation/external-entity",
+          "name": "External entity",
+          "description": "Generic external entity symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.",
+          "file": "diagramkit/library/assets/presentation/external-entity.svg"
+        },
+        {
+          "id": "presentation/data-store",
+          "name": "Data store notation",
+          "description": "Generic data store notation symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.",
+          "file": "diagramkit/library/assets/presentation/data-store.svg"
+        },
+        {
+          "id": "presentation/start-end",
+          "name": "Start / end",
+          "description": "Generic start / end symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.",
+          "file": "diagramkit/library/assets/presentation/start-end.svg"
+        },
+        {
+          "id": "presentation/legend",
+          "name": "Legend",
+          "description": "Generic legend symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.",
+          "file": "diagramkit/library/assets/presentation/legend.svg"
+        },
+        {
+          "id": "presentation/connector-junction",
+          "name": "Connection junction",
+          "description": "Generic connection junction symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.",
+          "file": "diagramkit/library/assets/presentation/connector-junction.svg"
+        },
+        {
+          "id": "presentation/link-break",
+          "name": "Broken link",
+          "description": "Generic broken link symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.",
+          "file": "diagramkit/library/assets/presentation/link-break.svg"
+        },
+        {
+          "id": "presentation/fan-out",
+          "name": "Fan-out",
+          "description": "Generic fan-out symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.",
+          "file": "diagramkit/library/assets/presentation/fan-out.svg"
+        },
+        {
+          "id": "presentation/fan-in",
+          "name": "Fan-in",
+          "description": "Generic fan-in symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.",
+          "file": "diagramkit/library/assets/presentation/fan-in.svg"
+        },
+        {
+          "id": "presentation/sequence-lifeline",
+          "name": "Sequence lifeline",
+          "description": "Generic sequence lifeline symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.",
+          "file": "diagramkit/library/assets/presentation/sequence-lifeline.svg"
+        },
+        {
+          "id": "presentation/annotation-bracket",
+          "name": "Annotation bracket",
+          "description": "Generic annotation bracket symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.",
+          "file": "diagramkit/library/assets/presentation/annotation-bracket.svg"
+        },
+        {
+          "id": "presentation/physical-link",
+          "name": "Physical link",
+          "description": "Generic physical link symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.",
+          "file": "diagramkit/library/assets/presentation/physical-link.svg"
+        },
+        {
+          "id": "presentation/tunnel",
+          "name": "Logical tunnel",
+          "description": "Generic logical tunnel symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.",
+          "file": "diagramkit/library/assets/presentation/tunnel.svg"
+        }
+      ]
+    },
+    {
+      "id": "status",
+      "name": "State markers",
+      "count": 10,
+      "preview": "previews/status.svg",
+      "assets": [
+        {
+          "id": "status/healthy",
+          "name": "Healthy",
+          "description": "Generic healthy symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.",
+          "file": "diagramkit/library/assets/status/healthy.svg"
+        },
+        {
+          "id": "status/warning",
+          "name": "Warning",
+          "description": "Generic warning symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.",
+          "file": "diagramkit/library/assets/status/warning.svg"
+        },
+        {
+          "id": "status/down",
+          "name": "Down / failed",
+          "description": "Generic down / failed symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.",
+          "file": "diagramkit/library/assets/status/down.svg"
+        },
+        {
+          "id": "status/pending",
+          "name": "Pending",
+          "description": "Generic pending symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.",
+          "file": "diagramkit/library/assets/status/pending.svg"
+        },
+        {
+          "id": "status/blocked",
+          "name": "Blocked",
+          "description": "Generic blocked symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.",
+          "file": "diagramkit/library/assets/status/blocked.svg"
+        },
+        {
+          "id": "status/locked",
+          "name": "Locked",
+          "description": "Generic locked symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.",
+          "file": "diagramkit/library/assets/status/locked.svg"
+        },
+        {
+          "id": "status/unlocked",
+          "name": "Unlocked",
+          "description": "Generic unlocked symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.",
+          "file": "diagramkit/library/assets/status/unlocked.svg"
+        },
+        {
+          "id": "status/unknown",
+          "name": "Unknown",
+          "description": "Generic unknown symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.",
+          "file": "diagramkit/library/assets/status/unknown.svg"
+        },
+        {
+          "id": "status/approved",
+          "name": "Approved",
+          "description": "Generic approved symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.",
+          "file": "diagramkit/library/assets/status/approved.svg"
+        },
+        {
+          "id": "status/expired",
+          "name": "Expired",
+          "description": "Generic expired symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.",
+          "file": "diagramkit/library/assets/status/expired.svg"
+        }
+      ]
+    },
+    {
+      "id": "business",
+      "name": "Business process",
+      "count": 15,
+      "preview": "previews/business.svg",
+      "assets": [
+        {
+          "id": "business/form",
+          "name": "Form",
+          "description": "Generic form symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.",
+          "file": "diagramkit/library/assets/business/form.svg"
+        },
+        {
+          "id": "business/invoice",
+          "name": "Invoice",
+          "description": "Generic invoice symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.",
+          "file": "diagramkit/library/assets/business/invoice.svg"
+        },
+        {
+          "id": "business/purchase-order",
+          "name": "Purchase order",
+          "description": "Generic purchase order symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.",
+          "file": "diagramkit/library/assets/business/purchase-order.svg"
+        },
+        {
+          "id": "business/contract",
+          "name": "Contract",
+          "description": "Generic contract symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.",
+          "file": "diagramkit/library/assets/business/contract.svg"
+        },
+        {
+          "id": "business/email",
+          "name": "Email",
+          "description": "Generic email symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.",
+          "file": "diagramkit/library/assets/business/email.svg"
+        },
+        {
+          "id": "business/calendar",
+          "name": "Calendar event",
+          "description": "Generic calendar event symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.",
+          "file": "diagramkit/library/assets/business/calendar.svg"
+        },
+        {
+          "id": "business/ticket",
+          "name": "Ticket",
+          "description": "Generic ticket symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.",
+          "file": "diagramkit/library/assets/business/ticket.svg"
+        },
+        {
+          "id": "business/approval",
+          "name": "Approval",
+          "description": "Generic approval symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.",
+          "file": "diagramkit/library/assets/business/approval.svg"
+        },
+        {
+          "id": "business/rejection",
+          "name": "Rejection",
+          "description": "Generic rejection symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.",
+          "file": "diagramkit/library/assets/business/rejection.svg"
+        },
+        {
+          "id": "business/gateway-parallel",
+          "name": "Parallel gateway",
+          "description": "Generic parallel gateway symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.",
+          "file": "diagramkit/library/assets/business/gateway-parallel.svg"
+        },
+        {
+          "id": "business/timer",
+          "name": "Timer",
+          "description": "Generic timer symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.",
+          "file": "diagramkit/library/assets/business/timer.svg"
+        },
+        {
+          "id": "business/payment",
+          "name": "Payment",
+          "description": "Generic payment symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.",
+          "file": "diagramkit/library/assets/business/payment.svg"
+        },
+        {
+          "id": "business/report",
+          "name": "Report",
+          "description": "Generic report symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.",
+          "file": "diagramkit/library/assets/business/report.svg"
+        },
+        {
+          "id": "business/vendor",
+          "name": "Vendor",
+          "description": "Generic vendor symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.",
+          "file": "diagramkit/library/assets/business/vendor.svg"
+        },
+        {
+          "id": "business/chat",
+          "name": "Chat message",
+          "description": "Generic chat message symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.",
+          "file": "diagramkit/library/assets/business/chat.svg"
+        }
+      ]
+    },
+    {
+      "id": "fleet",
+      "name": "Fleet telematics",
+      "count": 9,
+      "preview": "previews/fleet.svg",
+      "assets": [
+        {
+          "id": "fleet/vehicle",
+          "name": "Fleet vehicle",
+          "description": "Generic fleet vehicle symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.",
+          "file": "diagramkit/library/assets/fleet/vehicle.svg"
+        },
+        {
+          "id": "fleet/dashcam",
+          "name": "Dash camera",
+          "description": "Generic dash camera symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.",
+          "file": "diagramkit/library/assets/fleet/dashcam.svg"
+        },
+        {
+          "id": "fleet/telematics-unit",
+          "name": "Telematics unit",
+          "description": "Generic telematics unit symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.",
+          "file": "diagramkit/library/assets/fleet/telematics-unit.svg"
+        },
+        {
+          "id": "fleet/gps-fix",
+          "name": "GPS position",
+          "description": "Generic gps position symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.",
+          "file": "diagramkit/library/assets/fleet/gps-fix.svg"
+        },
+        {
+          "id": "fleet/geofence",
+          "name": "Geofence",
+          "description": "Generic geofence symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.",
+          "file": "diagramkit/library/assets/fleet/geofence.svg"
+        },
+        {
+          "id": "fleet/event-clip",
+          "name": "Event clip",
+          "description": "Generic event clip symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.",
+          "file": "diagramkit/library/assets/fleet/event-clip.svg"
+        },
+        {
+          "id": "fleet/dispatcher",
+          "name": "Dispatcher",
+          "description": "Generic dispatcher symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.",
+          "file": "diagramkit/library/assets/fleet/dispatcher.svg"
+        },
+        {
+          "id": "fleet/coaching-session",
+          "name": "Coaching session",
+          "description": "Generic coaching session symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.",
+          "file": "diagramkit/library/assets/fleet/coaching-session.svg"
+        },
+        {
+          "id": "fleet/maintenance-bay",
+          "name": "Maintenance bay",
+          "description": "Generic maintenance bay symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.",
+          "file": "diagramkit/library/assets/fleet/maintenance-bay.svg"
+        }
+      ]
+    }
+  ]
+}

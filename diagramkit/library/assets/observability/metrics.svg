@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 144 112" width="144" height="112" role="img" aria-labelledby="title desc" font-family="Arial, Helvetica, sans-serif">
+  <title id="title">Metrics</title>
+  <desc id="desc">Generic metrics symbol for architecture and technical explanation diagrams. Add explicit labels and relationships for the intended system.</desc>
+  <g id="artwork" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="19" x2="22" y2="95" stroke="#132B50" stroke-width="2.5" stroke-linecap="round"/><line x1="22" y1="95" x2="126" y2="95" stroke="#132B50" stroke-width="2.5" stroke-linecap="round"/><rect x="34" y="63" width="17" height="32" rx="2" fill="#FFF2E3" stroke="#CC7628" stroke-width="2.5"/><rect x="61" y="44" width="17" height="51" rx="2" fill="#FFF2E3" stroke="#CC7628" stroke-width="2.5"/><rect x="88" y="25" width="17" height="70" rx="2" fill="#FFF2E3" stroke="#CC7628" stroke-width="2.5"/></g>
+</svg>

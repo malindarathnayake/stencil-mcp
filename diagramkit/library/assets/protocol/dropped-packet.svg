@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 144 112" width="144" height="112" role="img" aria-labelledby="title desc" font-family="Arial, Helvetica, sans-serif">
+  <title id="title">Dropped packet</title>
+  <desc id="desc">The original transmission does not reach the receiver. Stop its arrow at a visible loss marker. Show any successful retransmission separately.</desc>
+  <g id="artwork" stroke-linecap="round" stroke-linejoin="round"><rect x="24" y="23" width="95" height="67" rx="6" fill="#F0EBFC" stroke="#C44552" stroke-width="2.5"/><path d="M49 37 L96 79 M96 37 L49 79" fill="none" stroke="#C44552" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/></g>
+</svg>

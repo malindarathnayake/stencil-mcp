@@ -1,0 +1,40 @@
+from pathlib import Path
+import json
+P=Path(__file__).resolve().parents[1]/'diagramkit'/'library'/'scene.schema.json'
+color={'type':'string','enum':['blue','teal','purple','orange','red','slate','green','yellow']}
+s={'type':'string','maxLength':240}
+coord={'type':'number','minimum':0,'maximum':6000}
+size={'type':'number','minimum':1,'maximum':6000}
+id_={'type':'string','pattern':'^[A-Za-z][A-Za-z0-9_-]{0,63}$'}
+point={'type':'object','properties':{'x':coord,'y':coord},'required':['x','y'],'additionalProperties':False}
+node={'type':'object','properties':{
+ 'id':id_,'kind':{'type':'string','enum':['component','symbol','packet','memory','text','marker']},
+ 'x':coord,'y':coord,'w':size,'h':size,'asset':{'type':'string','maxLength':100},
+ 'label':{'type':'string','maxLength':800},'detail':s,'caption':{'type':'string','maxLength':120},'palette':color,'group':id_,
+ 'font_size':{'type':'number','minimum':10,'maximum':64},'weight':{'type':'integer','enum':[400,500,600,700]},
+ 'align':{'type':'string','enum':['left','center','right']},
+ 'state':{'type':'string','enum':['normal','missing','dropped','received','pending','down','blocked']},
+ 'cells':{'type':'array','minItems':1,'maxItems':32,'items':{'type':'object','properties':{
+    'value':{'type':'string','maxLength':30},'palette':color,
+    'state':{'type':'string','enum':['normal','missing','received','dropped','pending']}},'required':['value'],'additionalProperties':False}}
+ },'required':['id','kind','x','y'],'additionalProperties':False}
+edge={'type':'object','properties':{
+ 'id':id_,'source':id_,'target':id_,
+ 'source_port':{'type':'string','enum':['n','e','s','w']},'target_port':{'type':'string','enum':['n','e','s','w']},
+ 'kind':{'type':'string','enum':['data','control','physical','feedback','dependency','tunnel','replication']},
+ 'palette':color,'label':{'type':'string','maxLength':160},'label_x':coord,'label_y':coord,
+ 'arrow':{'type':'string','enum':['forward','both','none']},
+ 'route':{'type':'string','enum':['orthogonal','straight']},
+ 'points':{'type':'array','maxItems':32,'items':point},
+ 'width':{'type':'number','minimum':1,'maximum':8}},'required':['id','source','target'],'additionalProperties':False}
+group={'type':'object','properties':{'id':id_,'x':coord,'y':coord,'w':size,'h':size,'title':s,'caption':s,'palette':color,'style':{'type':'string','enum':['panel','boundary','lane']}},'required':['id','x','y','w','h','title'],'additionalProperties':False}
+schema={'$schema':'https://json-schema.org/draft/2020-12/schema','title':'Stencil scene v1','type':'object','properties':{
+ 'version':{'type':'string','const':'1.0'},'title':{'type':'string','maxLength':160},'subtitle':{'type':'string','maxLength':300},
+ 'description':{'type':'string','maxLength':1600},'footer':{'type':'string','maxLength':500},
+ 'width':{'type':'integer','minimum':480,'maximum':6000},'height':{'type':'integer','minimum':240,'maximum':6000},
+ 'theme':{'type':'string','enum':['light','dark','monochrome']},
+ 'groups':{'type':'array','maxItems':40,'items':group},'nodes':{'type':'array','maxItems':200,'items':node},
+ 'edges':{'type':'array','maxItems':400,'items':edge},
+ 'legend':{'type':'array','maxItems':12,'items':{'type':'object','properties':{'label':s,'palette':color,'dashed':{'type':'boolean'}},'required':['label','palette'],'additionalProperties':False}}},
+ 'required':['version','title','width','height','nodes','edges'],'additionalProperties':False}
+P.write_bytes((json.dumps(schema,indent=2)+'\n').encode('utf-8'))

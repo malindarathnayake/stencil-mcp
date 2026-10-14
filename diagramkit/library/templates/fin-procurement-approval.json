@@ -1,0 +1,388 @@
+{
+  "version": "1.0",
+  "title": "Finance: procure to pay",
+  "subtitle": "A requisition is approved by the budget owner, escalated to the CFO above a threshold, ordered, matched and paid.",
+  "description": "The requester submits a requisition. The manager approves or rejects it. Finance routes requests above the threshold to the CFO, then issues a purchase order to the vendor. The vendor delivers and invoices. Finance performs a three-way match of order, receipt and invoice; a mismatch is disputed with the vendor, and a match is paid.",
+  "width": 2698,
+  "height": 1470,
+  "groups": [
+    {
+      "id": "req",
+      "x": 30,
+      "y": 124,
+      "w": 2638,
+      "h": 246,
+      "title": "Requester",
+      "caption": "",
+      "palette": "blue",
+      "style": "lane"
+    },
+    {
+      "id": "mgr",
+      "x": 30,
+      "y": 380,
+      "w": 2638,
+      "h": 246,
+      "title": "Manager",
+      "caption": "",
+      "palette": "purple",
+      "style": "lane"
+    },
+    {
+      "id": "fin",
+      "x": 30,
+      "y": 636,
+      "w": 2638,
+      "h": 246,
+      "title": "Finance",
+      "caption": "",
+      "palette": "teal",
+      "style": "lane"
+    },
+    {
+      "id": "cfo",
+      "x": 30,
+      "y": 892,
+      "w": 2638,
+      "h": 246,
+      "title": "CFO",
+      "caption": "",
+      "palette": "slate",
+      "style": "lane"
+    },
+    {
+      "id": "ven",
+      "x": 30,
+      "y": 1148,
+      "w": 2638,
+      "h": 246,
+      "title": "Vendor (external)",
+      "caption": "",
+      "palette": "orange",
+      "style": "lane"
+    }
+  ],
+  "nodes": [
+    {
+      "id": "start",
+      "kind": "symbol",
+      "asset": "presentation/start-end",
+      "x": 97.0,
+      "y": 197.0,
+      "w": 104,
+      "h": 100,
+      "label": "Need identified",
+      "caption": "Need identified",
+      "palette": "slate",
+      "group": "req"
+    },
+    {
+      "id": "submit",
+      "kind": "component",
+      "asset": "business/form",
+      "x": 304,
+      "y": 176,
+      "w": 170,
+      "h": 142,
+      "label": "Submit requisition",
+      "palette": "blue",
+      "detail": "Item, cost, budget",
+      "group": "req"
+    },
+    {
+      "id": "mreview",
+      "kind": "component",
+      "asset": "business/approval",
+      "x": 544,
+      "y": 432,
+      "w": 170,
+      "h": 142,
+      "label": "Manager review",
+      "palette": "purple",
+      "detail": "Budget owner",
+      "group": "mgr"
+    },
+    {
+      "id": "mok",
+      "kind": "symbol",
+      "asset": "presentation/decision",
+      "x": 807.0,
+      "y": 449.0,
+      "w": 124,
+      "h": 108,
+      "label": "Approved?",
+      "caption": "Approved?",
+      "palette": "blue",
+      "group": "mgr"
+    },
+    {
+      "id": "rejected",
+      "kind": "symbol",
+      "asset": "presentation/start-end",
+      "x": 817.0,
+      "y": 197.0,
+      "w": 104,
+      "h": 100,
+      "label": "Rejected",
+      "caption": "Rejected",
+      "palette": "slate",
+      "group": "req"
+    },
+    {
+      "id": "threshold",
+      "kind": "symbol",
+      "asset": "presentation/decision",
+      "x": 1047.0,
+      "y": 705.0,
+      "w": 124,
+      "h": 108,
+      "label": "Over $5k?",
+      "caption": "Over $5k?",
+      "palette": "blue",
+      "group": "fin"
+    },
+    {
+      "id": "cfoapprove",
+      "kind": "component",
+      "asset": "business/approval",
+      "x": 1264,
+      "y": 944,
+      "w": 170,
+      "h": 142,
+      "label": "CFO approval",
+      "palette": "slate",
+      "detail": "Spend policy",
+      "group": "cfo"
+    },
+    {
+      "id": "po",
+      "kind": "component",
+      "asset": "business/purchase-order",
+      "x": 1504,
+      "y": 688,
+      "w": 170,
+      "h": 142,
+      "label": "Issue purchase order",
+      "palette": "teal",
+      "detail": "ERP",
+      "group": "fin"
+    },
+    {
+      "id": "deliver",
+      "kind": "component",
+      "asset": "business/vendor",
+      "x": 1744,
+      "y": 1200,
+      "w": 170,
+      "h": 142,
+      "label": "Deliver goods",
+      "palette": "orange",
+      "detail": "Fulfil order",
+      "group": "ven"
+    },
+    {
+      "id": "invoice",
+      "kind": "component",
+      "asset": "business/invoice",
+      "x": 1984,
+      "y": 1200,
+      "w": 170,
+      "h": 142,
+      "label": "Send invoice",
+      "palette": "orange",
+      "detail": "References PO",
+      "group": "ven"
+    },
+    {
+      "id": "match",
+      "kind": "component",
+      "asset": "observability/audit-log",
+      "x": 1984,
+      "y": 688,
+      "w": 170,
+      "h": 142,
+      "label": "Three-way match",
+      "palette": "teal",
+      "detail": "PO, receipt, invoice",
+      "group": "fin"
+    },
+    {
+      "id": "matched",
+      "kind": "symbol",
+      "asset": "presentation/decision",
+      "x": 2247.0,
+      "y": 705.0,
+      "w": 124,
+      "h": 108,
+      "label": "Match?",
+      "caption": "Match?",
+      "palette": "blue",
+      "group": "fin"
+    },
+    {
+      "id": "pay",
+      "kind": "component",
+      "asset": "business/payment",
+      "x": 2464,
+      "y": 688,
+      "w": 170,
+      "h": 142,
+      "label": "Pay vendor",
+      "palette": "teal",
+      "detail": "Payment run",
+      "group": "fin"
+    },
+    {
+      "id": "paid",
+      "kind": "symbol",
+      "asset": "presentation/start-end",
+      "x": 2497.0,
+      "y": 1221.0,
+      "w": 104,
+      "h": 100,
+      "label": "Paid",
+      "caption": "Paid",
+      "palette": "slate",
+      "group": "ven"
+    }
+  ],
+  "edges": [
+    {
+      "id": "e1",
+      "source": "start",
+      "target": "submit",
+      "kind": "data",
+      "palette": "blue"
+    },
+    {
+      "id": "e2",
+      "source": "submit",
+      "target": "mreview",
+      "kind": "data",
+      "palette": "blue"
+    },
+    {
+      "id": "e3",
+      "source": "mreview",
+      "target": "mok",
+      "kind": "data",
+      "palette": "blue"
+    },
+    {
+      "id": "e4",
+      "source": "mok",
+      "target": "rejected",
+      "kind": "data",
+      "palette": "blue",
+      "label": "No"
+    },
+    {
+      "id": "e5",
+      "source": "mok",
+      "target": "threshold",
+      "kind": "data",
+      "palette": "blue",
+      "label": "Yes"
+    },
+    {
+      "id": "e6",
+      "source": "threshold",
+      "target": "cfoapprove",
+      "kind": "data",
+      "palette": "blue",
+      "label": "Yes"
+    },
+    {
+      "id": "e7",
+      "source": "threshold",
+      "target": "po",
+      "kind": "data",
+      "palette": "blue",
+      "label": "No"
+    },
+    {
+      "id": "e8",
+      "source": "cfoapprove",
+      "target": "po",
+      "kind": "data",
+      "palette": "blue",
+      "source_port": "e",
+      "target_port": "s"
+    },
+    {
+      "id": "e9",
+      "source": "po",
+      "target": "deliver",
+      "kind": "control",
+      "palette": "orange",
+      "label": "Purchase order",
+      "source_port": "e",
+      "target_port": "n"
+    },
+    {
+      "id": "e10",
+      "source": "deliver",
+      "target": "invoice",
+      "kind": "data",
+      "palette": "blue"
+    },
+    {
+      "id": "e11",
+      "source": "invoice",
+      "target": "match",
+      "kind": "control",
+      "palette": "orange",
+      "label": "Invoice"
+    },
+    {
+      "id": "e12",
+      "source": "match",
+      "target": "matched",
+      "kind": "data",
+      "palette": "blue"
+    },
+    {
+      "id": "e13",
+      "source": "matched",
+      "target": "invoice",
+      "kind": "feedback",
+      "palette": "red",
+      "label": "Dispute",
+      "source_port": "s",
+      "target_port": "e"
+    },
+    {
+      "id": "e14",
+      "source": "matched",
+      "target": "pay",
+      "kind": "data",
+      "palette": "blue",
+      "label": "Yes"
+    },
+    {
+      "id": "e15",
+      "source": "pay",
+      "target": "paid",
+      "kind": "control",
+      "palette": "orange",
+      "label": "Remittance"
+    }
+  ],
+  "footer": "Illustrative process. Lanes are roles; steps, thresholds and timings are examples, not policy.",
+  "legend": [
+    {
+      "label": "Process flow",
+      "palette": "blue"
+    },
+    {
+      "label": "Hand-off with an external party",
+      "palette": "orange",
+      "dashed": true
+    },
+    {
+      "label": "Rework or exception",
+      "palette": "red",
+      "dashed": true
+    }
+  ]
+}

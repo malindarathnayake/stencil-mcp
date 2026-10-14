@@ -1,0 +1,144 @@
+{
+  "version": "1.0",
+  "title": "Replication and recoverable backups",
+  "subtitle": "Replication, backup retention and restore testing answer different recovery needs.",
+  "description": "Replication, backup retention and restore testing answer different recovery needs.",
+  "width": 1500,
+  "height": 779,
+  "groups": [
+    {
+      "id": "primaryzone",
+      "x": 36,
+      "y": 144,
+      "w": 417,
+      "h": 515,
+      "title": "Primary site",
+      "caption": "",
+      "palette": "blue",
+      "style": "boundary"
+    },
+    {
+      "id": "secondary",
+      "x": 523,
+      "y": 144,
+      "w": 418,
+      "h": 515,
+      "title": "Recovery site",
+      "caption": "",
+      "palette": "teal",
+      "style": "boundary"
+    },
+    {
+      "id": "backupzone",
+      "x": 1011,
+      "y": 144,
+      "w": 452,
+      "h": 515,
+      "title": "Backup boundary",
+      "caption": "",
+      "palette": "purple",
+      "style": "boundary"
+    }
+  ],
+  "nodes": [
+    {
+      "id": "primary",
+      "kind": "component",
+      "asset": "data/relational-db",
+      "x": 119,
+      "y": 267,
+      "w": 246,
+      "h": 145,
+      "label": "Primary database",
+      "palette": "orange"
+    },
+    {
+      "id": "replica",
+      "kind": "component",
+      "asset": "data/database-replica",
+      "x": 611,
+      "y": 267,
+      "w": 242,
+      "h": 145,
+      "label": "Replica",
+      "palette": "teal"
+    },
+    {
+      "id": "immutable",
+      "kind": "component",
+      "asset": "storage/immutable-backup",
+      "x": 1108,
+      "y": 267,
+      "w": 251,
+      "h": 145,
+      "label": "Immutable backup",
+      "palette": "purple"
+    },
+    {
+      "id": "test",
+      "kind": "component",
+      "asset": "storage/backup",
+      "x": 1108,
+      "y": 472,
+      "w": 251,
+      "h": 145,
+      "label": "Restore test",
+      "palette": "green",
+      "detail": "Verify recovery procedure"
+    },
+    {
+      "id": "rpo",
+      "kind": "text",
+      "x": 91,
+      "y": 508,
+      "w": 785,
+      "h": 69,
+      "label": "Define RPO and RTO per workload. A successful replication link or backup job is not proof that a restore will work.",
+      "font_size": 18,
+      "weight": 400,
+      "align": "left"
+    }
+  ],
+  "edges": [
+    {
+      "id": "e1",
+      "source": "primary",
+      "target": "replica",
+      "kind": "replication",
+      "palette": "teal",
+      "label": "Replicate"
+    },
+    {
+      "id": "e2",
+      "source": "primary",
+      "target": "immutable",
+      "kind": "data",
+      "palette": "purple",
+      "label": "Scheduled backup",
+      "points": [
+        {
+          "x": 242,
+          "y": 223
+        },
+        {
+          "x": 1233.5,
+          "y": 223
+        }
+      ],
+      "source_port": "n",
+      "target_port": "n",
+      "label_x": 737,
+      "label_y": 222
+    },
+    {
+      "id": "e3",
+      "source": "immutable",
+      "target": "test",
+      "kind": "data",
+      "palette": "green",
+      "source_port": "s",
+      "target_port": "n"
+    }
+  ],
+  "footer": "Illustrative architecture. Labels describe roles; generic symbols do not assert product compatibility."
+}

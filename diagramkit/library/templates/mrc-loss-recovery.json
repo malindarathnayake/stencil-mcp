@@ -1,0 +1,690 @@
+{
+  "version": "1.0",
+  "title": "How MRC uses multiple paths",
+  "subtitle": "MRC sprays one connection’s packets across ECMP paths, handles loss at the endpoints, and only resends what’s missing.",
+  "description": "MRC sprays one connection’s packets across ECMP paths, handles loss at the endpoints, and only resends what’s missing.",
+  "width": 1800,
+  "height": 1030,
+  "groups": [
+    {
+      "id": "fabric",
+      "x": 605,
+      "y": 136,
+      "w": 590,
+      "h": 449,
+      "title": "ECMP forwarding",
+      "caption": "Changing the hash input allows one connection to use several paths.",
+      "palette": "blue",
+      "style": "panel"
+    },
+    {
+      "id": "arrival",
+      "x": 36,
+      "y": 622,
+      "w": 850,
+      "h": 352,
+      "title": "1  Arrivals and receiver memory",
+      "caption": "Packet 2 is delayed. Packet 4 is lost.",
+      "palette": "blue",
+      "style": "panel"
+    },
+    {
+      "id": "recovery",
+      "x": 910,
+      "y": 622,
+      "w": 854,
+      "h": 352,
+      "title": "2  Recover only the missing packet",
+      "caption": "Feedback and loss-recovery timing guide the retransmission.",
+      "palette": "teal",
+      "style": "panel"
+    }
+  ],
+  "nodes": [
+    {
+      "id": "sender",
+      "kind": "component",
+      "asset": "hardware/rdma-nic",
+      "x": 42,
+      "y": 310,
+      "w": 214,
+      "h": 158,
+      "label": "Sender NIC",
+      "palette": "teal",
+      "detail": "One MRC connection"
+    },
+    {
+      "id": "receiver",
+      "kind": "component",
+      "asset": "hardware/rdma-nic",
+      "x": 1542,
+      "y": 310,
+      "w": 216,
+      "h": 158,
+      "label": "Receiver NIC",
+      "palette": "teal",
+      "detail": "Received: 1, 2, 3, 5"
+    },
+    {
+      "id": "p1",
+      "kind": "packet",
+      "x": 326,
+      "y": 175,
+      "w": 185,
+      "h": 60,
+      "label": "Packet 1",
+      "detail": "UDP source port: 50001",
+      "palette": "orange",
+      "state": "normal"
+    },
+    {
+      "id": "p2",
+      "kind": "packet",
+      "x": 326,
+      "y": 251,
+      "w": 185,
+      "h": 60,
+      "label": "Packet 2",
+      "detail": "UDP source port: 50002",
+      "palette": "blue",
+      "state": "normal"
+    },
+    {
+      "id": "p3",
+      "kind": "packet",
+      "x": 326,
+      "y": 327,
+      "w": 185,
+      "h": 60,
+      "label": "Packet 3",
+      "detail": "UDP source port: 50003",
+      "palette": "green",
+      "state": "normal"
+    },
+    {
+      "id": "p4",
+      "kind": "packet",
+      "x": 326,
+      "y": 403,
+      "w": 185,
+      "h": 60,
+      "label": "Packet 4",
+      "detail": "UDP source port: 50004",
+      "palette": "purple",
+      "state": "normal"
+    },
+    {
+      "id": "p5",
+      "kind": "packet",
+      "x": 326,
+      "y": 479,
+      "w": 185,
+      "h": 60,
+      "label": "Packet 5",
+      "detail": "UDP source port: 50005",
+      "palette": "yellow",
+      "state": "normal"
+    },
+    {
+      "id": "pathA",
+      "kind": "symbol",
+      "asset": "network/switch-l3",
+      "x": 806,
+      "y": 194,
+      "w": 160,
+      "h": 70,
+      "label": "",
+      "palette": "blue"
+    },
+    {
+      "id": "labelA",
+      "kind": "text",
+      "x": 987,
+      "y": 199,
+      "w": 183,
+      "h": 26,
+      "label": "ECMP path A",
+      "font_size": 16,
+      "weight": 600,
+      "align": "left"
+    },
+    {
+      "id": "pathB",
+      "kind": "symbol",
+      "asset": "network/switch-l3",
+      "x": 806,
+      "y": 292,
+      "w": 160,
+      "h": 70,
+      "label": "",
+      "palette": "blue"
+    },
+    {
+      "id": "labelB",
+      "kind": "text",
+      "x": 987,
+      "y": 297,
+      "w": 183,
+      "h": 26,
+      "label": "ECMP path B",
+      "font_size": 16,
+      "weight": 600,
+      "align": "left"
+    },
+    {
+      "id": "pathC",
+      "kind": "symbol",
+      "asset": "network/switch-l3",
+      "x": 806,
+      "y": 390,
+      "w": 160,
+      "h": 70,
+      "label": "",
+      "palette": "blue"
+    },
+    {
+      "id": "labelC",
+      "kind": "text",
+      "x": 987,
+      "y": 395,
+      "w": 183,
+      "h": 26,
+      "label": "ECMP path C",
+      "font_size": 16,
+      "weight": 600,
+      "align": "left"
+    },
+    {
+      "id": "pathD",
+      "kind": "symbol",
+      "asset": "network/switch-l3",
+      "x": 806,
+      "y": 488,
+      "w": 160,
+      "h": 70,
+      "label": "",
+      "palette": "blue"
+    },
+    {
+      "id": "labelD",
+      "kind": "text",
+      "x": 987,
+      "y": 493,
+      "w": 183,
+      "h": 26,
+      "label": "ECMP path D",
+      "font_size": 16,
+      "weight": 600,
+      "align": "left"
+    },
+    {
+      "id": "loss",
+      "kind": "marker",
+      "x": 1304,
+      "y": 435,
+      "w": 44,
+      "h": 44,
+      "state": "dropped"
+    },
+    {
+      "id": "lost-note",
+      "kind": "text",
+      "x": 1263,
+      "y": 491,
+      "w": 236,
+      "h": 44,
+      "label": "Packet 4 is dropped.\nThe original never arrives.",
+      "font_size": 15,
+      "weight": 400,
+      "align": "left"
+    },
+    {
+      "id": "arrival-label",
+      "kind": "text",
+      "x": 70,
+      "y": 699,
+      "w": 325,
+      "h": 28,
+      "label": "Arrival order at the receiver",
+      "font_size": 15,
+      "weight": 600,
+      "align": "left"
+    },
+    {
+      "id": "a1",
+      "kind": "packet",
+      "x": 70,
+      "y": 742,
+      "w": 63,
+      "h": 46,
+      "label": "1",
+      "detail": "",
+      "palette": "orange",
+      "state": "normal"
+    },
+    {
+      "id": "a3",
+      "kind": "packet",
+      "x": 152,
+      "y": 742,
+      "w": 63,
+      "h": 46,
+      "label": "3",
+      "detail": "",
+      "palette": "green",
+      "state": "normal"
+    },
+    {
+      "id": "a5",
+      "kind": "packet",
+      "x": 234,
+      "y": 742,
+      "w": 63,
+      "h": 46,
+      "label": "5",
+      "detail": "",
+      "palette": "yellow",
+      "state": "normal"
+    },
+    {
+      "id": "a2",
+      "kind": "packet",
+      "x": 316,
+      "y": 742,
+      "w": 63,
+      "h": 46,
+      "label": "2",
+      "detail": "",
+      "palette": "blue",
+      "state": "normal"
+    },
+    {
+      "id": "rx-before",
+      "kind": "memory",
+      "x": 70,
+      "y": 820,
+      "w": 445,
+      "h": 85,
+      "label": "Direct placement into receiver memory",
+      "cells": [
+        {
+          "value": "1",
+          "palette": "orange"
+        },
+        {
+          "value": "2",
+          "palette": "blue"
+        },
+        {
+          "value": "3",
+          "palette": "green"
+        },
+        {
+          "value": "—",
+          "palette": "purple",
+          "state": "missing"
+        },
+        {
+          "value": "5",
+          "palette": "yellow"
+        }
+      ]
+    },
+    {
+      "id": "sack-note",
+      "kind": "text",
+      "x": 570,
+      "y": 738,
+      "w": 274,
+      "h": 110,
+      "label": "Receiver state:\nHave 1, 2, 3, 5 — missing 4",
+      "font_size": 18,
+      "weight": 600,
+      "align": "left"
+    },
+    {
+      "id": "slot-note",
+      "kind": "text",
+      "x": 570,
+      "y": 872,
+      "w": 274,
+      "h": 59,
+      "label": "Slot 4 stays empty until the retransmitted packet arrives.",
+      "font_size": 15,
+      "weight": 400,
+      "align": "left"
+    },
+    {
+      "id": "retry-sender",
+      "kind": "component",
+      "asset": "hardware/rdma-nic",
+      "x": 946,
+      "y": 734,
+      "w": 173,
+      "h": 126,
+      "label": "Sender NIC",
+      "palette": "teal"
+    },
+    {
+      "id": "retry-receiver",
+      "kind": "component",
+      "asset": "hardware/rdma-nic",
+      "x": 1553,
+      "y": 734,
+      "w": 173,
+      "h": 126,
+      "label": "Receiver NIC",
+      "palette": "teal"
+    },
+    {
+      "id": "retry4",
+      "kind": "packet",
+      "x": 1249,
+      "y": 782,
+      "w": 150,
+      "h": 56,
+      "label": "4",
+      "detail": "Retransmitted packet",
+      "palette": "purple",
+      "state": "normal"
+    },
+    {
+      "id": "retry-note",
+      "kind": "text",
+      "x": 1162,
+      "y": 740,
+      "w": 334,
+      "h": 29,
+      "label": "Only packet 4 is resent",
+      "font_size": 16,
+      "weight": 600,
+      "align": "center"
+    },
+    {
+      "id": "rx-after",
+      "kind": "memory",
+      "x": 1024,
+      "y": 885,
+      "w": 618,
+      "h": 69,
+      "label": "Receiver memory after recovery",
+      "cells": [
+        {
+          "value": "1",
+          "palette": "orange"
+        },
+        {
+          "value": "2",
+          "palette": "blue"
+        },
+        {
+          "value": "3",
+          "palette": "green"
+        },
+        {
+          "value": "4",
+          "palette": "purple"
+        },
+        {
+          "value": "5",
+          "palette": "yellow"
+        }
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "id": "e1",
+      "source": "sender",
+      "target": "p1",
+      "kind": "data",
+      "palette": "orange",
+      "route": "straight"
+    },
+    {
+      "id": "e2",
+      "source": "sender",
+      "target": "p2",
+      "kind": "data",
+      "palette": "blue",
+      "route": "straight"
+    },
+    {
+      "id": "e3",
+      "source": "sender",
+      "target": "p3",
+      "kind": "data",
+      "palette": "green",
+      "route": "straight"
+    },
+    {
+      "id": "e4",
+      "source": "sender",
+      "target": "p4",
+      "kind": "data",
+      "palette": "purple",
+      "route": "straight"
+    },
+    {
+      "id": "e5",
+      "source": "sender",
+      "target": "p5",
+      "kind": "data",
+      "palette": "yellow",
+      "route": "straight"
+    },
+    {
+      "id": "e6",
+      "source": "p1",
+      "target": "pathA",
+      "kind": "data",
+      "palette": "orange",
+      "source_port": "e",
+      "target_port": "w"
+    },
+    {
+      "id": "e7",
+      "source": "p2",
+      "target": "pathB",
+      "kind": "data",
+      "palette": "blue",
+      "source_port": "e",
+      "target_port": "w"
+    },
+    {
+      "id": "e8",
+      "source": "p3",
+      "target": "pathC",
+      "kind": "data",
+      "palette": "green",
+      "source_port": "e",
+      "target_port": "w"
+    },
+    {
+      "id": "e9",
+      "source": "p4",
+      "target": "pathD",
+      "kind": "data",
+      "palette": "purple",
+      "source_port": "e",
+      "target_port": "w"
+    },
+    {
+      "id": "e10",
+      "source": "p5",
+      "target": "pathD",
+      "kind": "data",
+      "palette": "yellow",
+      "source_port": "e",
+      "target_port": "w"
+    },
+    {
+      "id": "e11",
+      "source": "pathA",
+      "target": "receiver",
+      "kind": "data",
+      "palette": "orange",
+      "points": [
+        {
+          "x": 1218,
+          "y": 229
+        },
+        {
+          "x": 1430,
+          "y": 250
+        },
+        {
+          "x": 1498,
+          "y": 250
+        },
+        {
+          "x": 1498,
+          "y": 389
+        }
+      ],
+      "source_port": "e",
+      "target_port": "w"
+    },
+    {
+      "id": "e12",
+      "source": "pathB",
+      "target": "receiver",
+      "kind": "data",
+      "palette": "blue",
+      "points": [
+        {
+          "x": 1218,
+          "y": 327
+        },
+        {
+          "x": 1430,
+          "y": 294
+        },
+        {
+          "x": 1498,
+          "y": 294
+        },
+        {
+          "x": 1498,
+          "y": 389
+        }
+      ],
+      "source_port": "e",
+      "target_port": "w"
+    },
+    {
+      "id": "e13",
+      "source": "pathC",
+      "target": "receiver",
+      "kind": "data",
+      "palette": "green",
+      "points": [
+        {
+          "x": 1218,
+          "y": 425
+        },
+        {
+          "x": 1430,
+          "y": 340
+        },
+        {
+          "x": 1498,
+          "y": 340
+        },
+        {
+          "x": 1498,
+          "y": 389
+        }
+      ],
+      "source_port": "e",
+      "target_port": "w"
+    },
+    {
+      "id": "e14",
+      "source": "pathD",
+      "target": "loss",
+      "kind": "data",
+      "palette": "purple",
+      "points": [
+        {
+          "x": 1230,
+          "y": 523
+        },
+        {
+          "x": 1230,
+          "y": 457
+        }
+      ],
+      "source_port": "e",
+      "target_port": "w"
+    },
+    {
+      "id": "e15",
+      "source": "pathD",
+      "target": "receiver",
+      "kind": "data",
+      "palette": "yellow",
+      "points": [
+        {
+          "x": 1208,
+          "y": 523
+        },
+        {
+          "x": 1208,
+          "y": 565
+        },
+        {
+          "x": 1504,
+          "y": 565
+        },
+        {
+          "x": 1504,
+          "y": 389
+        }
+      ],
+      "source_port": "e",
+      "target_port": "w"
+    },
+    {
+      "id": "e16",
+      "source": "retry-receiver",
+      "target": "retry-sender",
+      "kind": "feedback",
+      "palette": "slate",
+      "label": "SACK: have 1, 2, 3, 5 — missing 4",
+      "points": [
+        {
+          "x": 1639.5,
+          "y": 706
+        },
+        {
+          "x": 1032.5,
+          "y": 706
+        }
+      ],
+      "source_port": "n",
+      "target_port": "n",
+      "label_x": 1335,
+      "label_y": 708
+    },
+    {
+      "id": "e17",
+      "source": "retry-sender",
+      "target": "retry4",
+      "kind": "data",
+      "palette": "purple",
+      "source_port": "e",
+      "target_port": "w"
+    },
+    {
+      "id": "e18",
+      "source": "retry4",
+      "target": "retry-receiver",
+      "kind": "data",
+      "palette": "purple",
+      "source_port": "e",
+      "target_port": "w"
+    }
+  ],
+  "footer": "Illustrative packet numbers and UDP ports. SACK text summarizes receive state; it is not a literal wire-format field."
+}

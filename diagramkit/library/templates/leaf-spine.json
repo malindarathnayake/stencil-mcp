@@ -1,0 +1,204 @@
+{
+  "version": "1.0",
+  "title": "Leaf–spine topology",
+  "subtitle": "Each leaf connects to both spines. Server attachments and fabric links are shown without traffic arrows.",
+  "description": "Each leaf connects to both spines. Server attachments and fabric links are shown without traffic arrows.",
+  "width": 1480,
+  "height": 810,
+  "groups": [
+    {
+      "id": "fabric",
+      "x": 260,
+      "y": 135,
+      "w": 960,
+      "h": 454,
+      "title": "Routed fabric",
+      "caption": "Physical connectivity only; routing and traffic overlays can be added separately.",
+      "palette": "blue",
+      "style": "panel"
+    }
+  ],
+  "nodes": [
+    {
+      "id": "sp0",
+      "kind": "component",
+      "asset": "network/spine-switch",
+      "x": 473,
+      "y": 220,
+      "w": 180,
+      "h": 126,
+      "label": "Spine 1",
+      "palette": "blue"
+    },
+    {
+      "id": "sp1",
+      "kind": "component",
+      "asset": "network/spine-switch",
+      "x": 833,
+      "y": 220,
+      "w": 180,
+      "h": 126,
+      "label": "Spine 2",
+      "palette": "blue"
+    },
+    {
+      "id": "leaf0",
+      "kind": "component",
+      "asset": "network/leaf-switch",
+      "x": 310,
+      "y": 436,
+      "w": 180,
+      "h": 126,
+      "label": "Leaf 1",
+      "palette": "blue"
+    },
+    {
+      "id": "host0",
+      "kind": "component",
+      "asset": "compute/compute-cluster",
+      "x": 310,
+      "y": 635,
+      "w": 180,
+      "h": 142,
+      "label": "Host group 1",
+      "palette": "blue",
+      "detail": "Dual-homing not depicted"
+    },
+    {
+      "id": "leaf1",
+      "kind": "component",
+      "asset": "network/leaf-switch",
+      "x": 646,
+      "y": 436,
+      "w": 180,
+      "h": 126,
+      "label": "Leaf 2",
+      "palette": "blue"
+    },
+    {
+      "id": "host1",
+      "kind": "component",
+      "asset": "compute/compute-cluster",
+      "x": 646,
+      "y": 635,
+      "w": 180,
+      "h": 142,
+      "label": "Host group 2",
+      "palette": "blue",
+      "detail": "Dual-homing not depicted"
+    },
+    {
+      "id": "leaf2",
+      "kind": "component",
+      "asset": "network/leaf-switch",
+      "x": 980,
+      "y": 436,
+      "w": 180,
+      "h": 126,
+      "label": "Leaf 3",
+      "palette": "blue"
+    },
+    {
+      "id": "host2",
+      "kind": "component",
+      "asset": "compute/compute-cluster",
+      "x": 980,
+      "y": 635,
+      "w": 180,
+      "h": 142,
+      "label": "Host group 3",
+      "palette": "blue",
+      "detail": "Dual-homing not depicted"
+    }
+  ],
+  "edges": [
+    {
+      "id": "e1",
+      "source": "sp0",
+      "target": "leaf0",
+      "kind": "physical",
+      "palette": "slate",
+      "source_port": "s",
+      "target_port": "n",
+      "route": "straight"
+    },
+    {
+      "id": "e2",
+      "source": "sp1",
+      "target": "leaf0",
+      "kind": "physical",
+      "palette": "slate",
+      "source_port": "s",
+      "target_port": "n",
+      "route": "straight"
+    },
+    {
+      "id": "e3",
+      "source": "leaf0",
+      "target": "host0",
+      "kind": "physical",
+      "palette": "teal",
+      "source_port": "s",
+      "target_port": "n"
+    },
+    {
+      "id": "e4",
+      "source": "sp0",
+      "target": "leaf1",
+      "kind": "physical",
+      "palette": "slate",
+      "source_port": "s",
+      "target_port": "n",
+      "route": "straight"
+    },
+    {
+      "id": "e5",
+      "source": "sp1",
+      "target": "leaf1",
+      "kind": "physical",
+      "palette": "slate",
+      "source_port": "s",
+      "target_port": "n",
+      "route": "straight"
+    },
+    {
+      "id": "e6",
+      "source": "leaf1",
+      "target": "host1",
+      "kind": "physical",
+      "palette": "teal",
+      "source_port": "s",
+      "target_port": "n"
+    },
+    {
+      "id": "e7",
+      "source": "sp0",
+      "target": "leaf2",
+      "kind": "physical",
+      "palette": "slate",
+      "source_port": "s",
+      "target_port": "n",
+      "route": "straight"
+    },
+    {
+      "id": "e8",
+      "source": "sp1",
+      "target": "leaf2",
+      "kind": "physical",
+      "palette": "slate",
+      "source_port": "s",
+      "target_port": "n",
+      "route": "straight"
+    },
+    {
+      "id": "e9",
+      "source": "leaf2",
+      "target": "host2",
+      "kind": "physical",
+      "palette": "teal",
+      "source_port": "s",
+      "target_port": "n"
+    }
+  ],
+  "footer": "Illustrative architecture. Labels describe roles; generic symbols do not assert product compatibility."
+}

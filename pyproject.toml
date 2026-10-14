@@ -1,0 +1,38 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "stencil-mcp"
+version = "0.2.1"
+description = "Original SVG architecture assets, deterministic compositor, and local MCP server"
+requires-python = ">=3.10"
+license = "Apache-2.0"
+license-files = ["LICENSE"]
+dependencies = []
+readme = "README.md"
+authors = [{name = "Malinda Rathnayake"}]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Operating System :: OS Independent",
+    "Topic :: Multimedia :: Graphics :: Editors :: Vector-Based",
+]
+
+[project.urls]
+Homepage = "https://github.com/malindarathnayake/stencil-mcp"
+Changelog = "https://github.com/malindarathnayake/stencil-mcp/blob/main/CHANGELOG.md"
+
+[project.optional-dependencies]
+preview = ["cairosvg>=2.7,<3"]
+test = ["jsonschema>=4.18,<5"]
+
+[project.scripts]
+stencil-mcp = "diagramkit.server:main"
+stencil-diagram = "diagramkit.cli:main"
+
+[tool.setuptools]
+packages = ["diagramkit"]
+include-package-data = true
+
+[tool.setuptools.package-data]
+diagramkit = ["library/*.json", "library/*.md", "library/assets/*/*.svg", "library/templates/*.json"]
