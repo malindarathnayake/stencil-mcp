@@ -78,6 +78,9 @@ verification) before any change was made.
 - Added `SECURITY.md` and `docs/SECURITY_POSTURE.md`.
 - `build_schema.py` and `build_brand.py` write LF bytes; the schema had been written
   with CRLF on Windows.
+- Text-width estimates use `math.fsum`. Python 3.12 changed float `sum()` to
+  compensated summation, so one label rendered 0.01 px differently on 3.10 and 3.11.
+  Renders are now byte-identical on 3.10 through 3.13.
 
 ### Not changed
 

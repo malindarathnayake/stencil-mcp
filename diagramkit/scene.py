@@ -61,7 +61,9 @@ def box(n: dict) -> tuple[float,float,float,float]:
 
 def width_text(txt: str, size: float) -> float:
     # Conservative font-width estimate for Arial / Helvetica. Browser preview remains required.
-    return sum(.29 if ch in 'ilI.,:;!|\' ' else .88 if ch in 'MW@%#' else .57 if ch.isupper() else .53 for ch in txt)*size
+    # math.fsum, not sum: Python 3.12 changed float sum() to compensated summation, so
+    # sum() gives different last-bit results on 3.10/3.11 and renders are not byte-stable.
+    return math.fsum(.29 if ch in 'ilI.,:;!|\' ' else .88 if ch in 'MW@%#' else .57 if ch.isupper() else .53 for ch in txt)*size
 
 def wrap(txt: str, width: float, size: float) -> list[str]:
     lines=[]

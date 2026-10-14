@@ -70,6 +70,6 @@ test_valid_scene (test_kit.ValidationTests.test_valid_scene) ... ok
 test_waypoints (test_kit.ValidationTests.test_waypoints) ... ok
 
 ----------------------------------------------------------------------
-Ran 70 tests in 2.318s
+Ran 70 tests in 1.938s
 
 OK (skipped=1)
