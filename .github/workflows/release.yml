@@ -1,14 +1,16 @@
-# Publishes a GitHub Release when a vX.Y.Z tag is pushed.
+# Publishes a GitHub Release, then PyPI, when a vX.Y.Z tag is pushed.
 #
 # A tag push can bypass a PR, so this workflow does not trust that ci.yml or
 # security.yml ran on the tagged commit: it repeats tests, the locked reproducible
 # build, the wheel smoke test and the vulnerability gate before anything is published.
 #
-# Two jobs, split by privilege. `build` runs the code under test with a read-only
-# token. `publish` never runs project code: it receives the built files, signs a SLSA
-# build-provenance attestation for them, and creates the release. Only `publish` holds
-# write scopes, and it runs in the `release` environment, which should require a
-# reviewer and only allow v* tags (see docs/SECURITY_POSTURE.md).
+# Three jobs, split by privilege. `build` runs the code under test with a read-only
+# token. `publish` and `pypi` never run project code: they receive the built files.
+# `publish` signs a SLSA build-provenance attestation and creates the GitHub Release
+# in the `release` environment. `pypi` uploads the same files with PyPI Trusted
+# Publishing (OIDC, no stored token) in the `pypi` environment. It runs last because a
+# PyPI version can never be re-uploaded. Both environments should require a reviewer
+# and only allow v* tags (see docs/SECURITY_POSTURE.md).
 name: Release
 
 on:
@@ -122,3 +124,31 @@ jobs:
         run: |
           gh release create "$TAG" dist/* --repo "$REPO" --verify-tag \
             --title "Stencil $TAG" --generate-notes
+
+  pypi:
+    name: Publish to PyPI
+    needs: publish
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    environment:
+      name: pypi
+      url: https://pypi.org/project/stencil-mcp/
+    permissions:
+      id-token: write  # OIDC token for PyPI Trusted Publishing and PEP 740 attestations
+    steps:
+      - uses: actions/download-artifact@3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c # v8.0.1
+        with:
+          name: release-dist
+          path: release
+      # The upload action publishes every file in packages-dir, so pass only the wheel
+      # and sdist, not the SBOMs and checksum lists that go to the GitHub Release.
+      - name: Select distributions
+        run: |
+          mkdir pypi-dist
+          cp release/*.whl release/*.tar.gz pypi-dist/
+          ls -l pypi-dist
+      # Trusted publisher on PyPI: owner malindarathnayake, repository stencil-mcp,
+      # workflow release.yml, environment pypi. Signs PEP 740 attestations by default.
+      - uses: pypa/gh-action-pypi-publish@dc37677b2e1c63e2034f94d8a5b11f265b73ba33 # v1.14.2
+        with:
+          packages-dir: pypi-dist/

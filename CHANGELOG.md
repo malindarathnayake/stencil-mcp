@@ -73,6 +73,8 @@ verification) before any change was made.
 - The renderer's active-content check now compares attribute local names, so a
   namespaced `xlink:href` in a catalog asset is rejected. A regression test covers
   scripts, event handlers, `href`, `style`, `url()` and unsupported elements.
+- Releases also publish to PyPI with Trusted Publishing (OIDC, no stored token) from a
+  separate `pypi` environment, after the GitHub Release succeeds.
 - Added `SECURITY.md` and `docs/SECURITY_POSTURE.md`.
 - `build_schema.py` and `build_brand.py` write LF bytes; the schema had been written
   with CRLF on Windows.

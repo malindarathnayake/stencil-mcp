@@ -96,7 +96,7 @@ Workflows: `ci.yml` (tests, drift, locked build), `security.yml` (scans), `relea
 | --- | --- |
 | Every action pinned to a full commit SHA with a `# vX.Y.Z` comment | Tags are mutable. In March 2026 attackers force-pushed 76 of 77 `aquasecurity/trivy-action` tags to credential-stealing code ([GHSA-69fq-xp46-6x23](https://github.com/aquasecurity/trivy/security/advisories/GHSA-69fq-xp46-6x23)). A SHA cannot be re-pointed. [CWE-829] |
 | Dependabot `github-actions` updates with a 7-day cooldown (14 for majors) | Pins without an updater rot. The cooldown keeps a just-published release out of the queue. |
-| Only first-party actions (`actions/*`, `github/codeql-action`) | Third-party scanners run as checksum-pinned binaries instead (section 5). |
+| First-party actions only (`actions/*`, `github/codeql-action`), plus PyPA's official `pypa/gh-action-pypi-publish` | Third-party scanners run as checksum-pinned binaries instead (section 5). |
 | Workflow-level `permissions: contents: read` (release: `{}`) and per-job grants | Least privilege for `GITHUB_TOKEN`. Every write scope carries a comment. |
 | `persist-credentials: false` on every checkout | The token is not left in `.git/config` for later steps to read. |
 | Event data reaches shell only through `env:` | No `${{ }}` inside `run:`, so a crafted branch name or tag cannot inject commands. [CWE-78] |
@@ -149,6 +149,10 @@ Pushing a `vX.Y.Z` tag runs `release.yml`:
 2. **publish** (`release` environment): an SLSA build-provenance attestation, signed
    through Sigstore with the workflow's OIDC identity, for the wheel and sdist → GitHub
    Release with the wheel, sdist, both SBOMs, `MANIFEST.sha256` and `SHA256SUMS`.
+3. **pypi** (`pypi` environment): uploads the same wheel and sdist to PyPI with Trusted
+   Publishing. The job's OIDC token is exchanged for a short-lived upload token, so no
+   PyPI API token exists anywhere. The upload carries PEP 740 attestations. This job
+   runs last because a PyPI version can never be replaced once uploaded.
 
 Users verify before installing:
 
@@ -168,8 +172,10 @@ Some controls live in GitHub settings, not in files. Until they are enabled, the
 | Setting | Value |
 | --- | --- |
 | Actions → General → Workflow permissions | Read repository contents; do not allow Actions to create or approve pull requests |
-| Actions → General → Actions permissions | Allow only GitHub-owned actions; enable **require actions to be pinned to a full-length commit SHA** where the plan offers it (confirmed in organization settings) |
+| Actions → General → Actions permissions | Allow GitHub-owned actions plus `pypa/gh-action-pypi-publish@*` only; enable **require actions to be pinned to a full-length commit SHA** where the plan offers it (confirmed in organization settings) |
 | Environments → `release` | Required reviewer: the maintainer. Deployment branches and tags: `v*` tags only |
+| Environments → `pypi` | Same as `release` |
+| PyPI → Publishing | Trusted publisher: owner `malindarathnayake`, repository `stencil-mcp`, workflow `release.yml`, environment `pypi`. Enable 2FA on the PyPI account |
 | Rules → Ruleset for `main` | Require a pull request and passing `CI` and `Security` checks; block force pushes and deletion |
 | Rules → Ruleset for tags `v*` | Restrict creation, update and deletion to the maintainer; block force pushes |
 | Code security | Private vulnerability reporting, Dependabot alerts, secret scanning with push protection, CodeQL code scanning: all on |
@@ -186,6 +192,7 @@ Pinned 2026-10-13. All versions were at least 14 days old at pin time.
 | `actions/download-artifact` | v8.0.1 | `3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c` |
 | `github/codeql-action` | v4.38.2 | `2892aa5e19bbd11bc0cff5427e3b750a04d9e3c2` |
 | `actions/attest-build-provenance` | v4.2.2 | `4d101475d8b20a2381f78447822ac1eab6504dd8` |
+| `pypa/gh-action-pypi-publish` | v1.14.2 | `dc37677b2e1c63e2034f94d8a5b11f265b73ba33` |
 | gitleaks `linux_x64.tar.gz` | 8.30.1 | sha256 `551f6fc83ea457d62a0d98237cbad105af8d557003051f41f3e7ca7b3f2470eb` |
 | zizmor `x86_64-unknown-linux-gnu.tar.gz` | 1.30.1 | sha256 `e65324f4430c2717591937edcec90ccbefaf14c174f8ec9415e03ca875b46e1a` |
 | syft `linux_amd64.tar.gz` | 1.52.0 | sha256 `caeedb81fb0491615f1ebd1761e4145d41ee86dd2cc7bf80669f9f5ad9d6133d` |
@@ -215,8 +222,10 @@ together. For a manual bump, take hashes from PyPI's JSON API for the exact whee
 - **Grype's vulnerability database** is downloaded at scan time. It is data, not code,
   and Grype checks the downloaded database's checksum, but its contents are not pinned. A missing advisory means
   a missed finding, not code execution.
-- **No PyPI publishing.** Releases go to GitHub only. If PyPI is added, use Trusted
-  Publishing (OIDC) and never a stored API token.
+- **PyPI name before the first release.** A pending trusted publisher does not reserve
+  `stencil-mcp`; anyone can register the name until the first upload creates it.
+- **PyPI is append-only.** A bad upload can be yanked but its version can never be
+  reused. The `pypi` job runs only after every gate and the GitHub Release succeed.
 - **Local machine.** A compromised workstation or another local process running as the
   same user is outside the MCP server's isolation model (see `docs/MCP.md`).
 - **Semantic correctness.** Validation checks structure and layout. It cannot tell

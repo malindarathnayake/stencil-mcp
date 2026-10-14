@@ -1,11 +1,11 @@
 <div align="center">
 
-<img src="branding/banners/stencil-readme-banner.png" alt="Stencil" width="800" />
+<img src="https://raw.githubusercontent.com/malindarathnayake/stencil-mcp/main/branding/banners/stencil-readme-banner.png" alt="Stencil" width="800" />
 
 # Stencil
 
 <p align="center">
-  <a href="LICENSE"><img src="https://img.shields.io/badge/License-Apache_2.0-blue.svg" alt="License: Apache 2.0" /></a>
+  <a href="https://github.com/malindarathnayake/stencil-mcp/blob/main/LICENSE"><img src="https://img.shields.io/badge/License-Apache_2.0-blue.svg" alt="License: Apache 2.0" /></a>
   <a href="https://www.python.org/"><img src="https://img.shields.io/badge/python-%3E%3D3.10-brightgreen.svg" alt="Python >= 3.10" /></a>
   <img src="https://img.shields.io/badge/MCP-2025--06--18%20stdio-6b4fbb.svg" alt="MCP 2025-06-18 stdio" />
   <img src="https://img.shields.io/badge/dependencies-none-success.svg" alt="No runtime dependencies" />
@@ -20,18 +20,19 @@ It covers infrastructure, networking, security, Kubernetes, data, AI/agent syste
 **324 SVG assets · 20 categories · 24 diagram templates · 12 MCP tools · Python standard library only**
 
 <p align="center">
-  <img src="examples/fleet-video-event-coaching.png" alt="Fleet: dashcam event to driver coaching" width="49%" />
-  <img src="examples/mrc-loss-recovery.png" alt="How MRC uses multiple paths" width="49%" />
+  <img src="https://raw.githubusercontent.com/malindarathnayake/stencil-mcp/main/examples/fleet-video-event-coaching.png" alt="Fleet: dashcam event to driver coaching" width="49%" />
+  <img src="https://raw.githubusercontent.com/malindarathnayake/stencil-mcp/main/examples/mrc-loss-recovery.png" alt="How MRC uses multiple paths" width="49%" />
 </p>
 
 ## Install
 
-Python 3.10 or newer. Stencil has no runtime dependencies. Install the wheel from the [latest release](https://github.com/malindarathnayake/stencil-mcp/releases/latest) as a tool, so it gets its own environment and the `stencil-mcp` command lands on your PATH:
+Python 3.10 or newer. Stencil has no runtime dependencies. Install it from [PyPI](https://pypi.org/project/stencil-mcp/) as a tool, so it gets its own environment and the `stencil-mcp` command lands on your PATH:
 
 ```bash
-uv tool install https://github.com/malindarathnayake/stencil-mcp/releases/download/v0.2.0/stencil_mcp-0.2.0-py3-none-any.whl
-# or: pipx install <same URL>
-# or straight from the tag: pipx install git+https://github.com/malindarathnayake/stencil-mcp.git@v0.2.0
+uv tool install stencil-mcp
+# or: pipx install stencil-mcp
+# or the wheel from a GitHub release:
+# uv tool install https://github.com/malindarathnayake/stencil-mcp/releases/download/v0.2.0/stencil_mcp-0.2.0-py3-none-any.whl
 ```
 
 Register it with Claude Code, then confirm the host sees it:
@@ -49,7 +50,7 @@ for a ransomware alert on a file server. Keep the lanes, validate, render, look
 at the result, and export it as ransomware-ir.
 ```
 
-The host starts `stencil-mcp` as a child process; there is no daemon to run. Upgrade by installing a newer wheel (`uv tool install --force <URL>`). Without installing anything, `uvx --from <wheel URL> stencil-mcp` also works as the server command.
+The host starts `stencil-mcp` as a child process; there is no daemon to run. Upgrade with `uv tool upgrade stencil-mcp`. Without installing anything, `uvx stencil-mcp` also works as the server command.
 
 <details>
 <summary><b>Codex, Claude Desktop, Windows, and the export folder</b></summary>
@@ -126,7 +127,7 @@ Search returns compact metadata, so the model never loads all 324 SVG bodies; th
 }
 ```
 
-Node kinds: `component` (symbol in a labelled card), `symbol` (bare symbol, optional `caption`), `packet`, `memory`, `text`, `marker`. Edge kinds carry meaning: `data`, `control`, `physical`, `feedback`, `dependency`, `tunnel`, `replication`. Groups draw panels, trust boundaries and swimlanes. Full reference: [docs/SCENE_FORMAT.md](docs/SCENE_FORMAT.md).
+Node kinds: `component` (symbol in a labelled card), `symbol` (bare symbol, optional `caption`), `packet`, `memory`, `text`, `marker`. Edge kinds carry meaning: `data`, `control`, `physical`, `feedback`, `dependency`, `tunnel`, `replication`. Groups draw panels, trust boundaries and swimlanes. Full reference: [docs/SCENE_FORMAT.md](https://github.com/malindarathnayake/stencil-mcp/blob/main/docs/SCENE_FORMAT.md).
 
 </details>
 
@@ -157,36 +158,36 @@ Do not draw the dropped original reaching the receiver.
 
 ## Examples
 
-Every template ships as scene JSON in [`diagramkit/library/templates/`](diagramkit/library/templates/) and as SVG + PNG in [`examples/`](examples/). Open [`gallery.html`](gallery.html) for an offline, searchable view of every symbol and template.
+Every template ships as scene JSON in [`diagramkit/library/templates/`](https://github.com/malindarathnayake/stencil-mcp/tree/main/diagramkit/library/templates/) and as SVG + PNG in [`examples/`](https://github.com/malindarathnayake/stencil-mcp/tree/main/examples/). Open [`gallery.html`](https://github.com/malindarathnayake/stencil-mcp/blob/main/gallery.html) for an offline, searchable view of every symbol and template.
 
 **Department processes** (swimlanes; lanes are roles, time runs left to right)
 
 | Department | Template | Shows |
 | --- | --- | --- |
-| Engineering | [`eng-platform-delivery`](examples/eng-platform-delivery.png) | Pull request → review loop → CI → release gate → deploy, with rollback |
-| Security | [`sec-incident-response`](examples/sec-incident-response.png) | Triage, declare, then contain, preserve evidence and notify in parallel |
-| IT | [`it-onboarding-access`](examples/it-onboarding-access.png) | New-hire ticket → account → laptop → privileged approval → MFA |
-| Finance | [`fin-procurement-approval`](examples/fin-procurement-approval.png) | Spend threshold, purchase order, three-way match, dispute, payment |
-| HR | [`hr-employee-onboarding`](examples/hr-employee-onboarding.png) | Contract, parallel preparation by HR, manager and IT, 30-day check-in |
-| Sales | [`sales-lead-to-cash`](examples/sales-lead-to-cash.png) | Qualify, quote, negotiate, order, invoice, revenue |
-| Fleet operations | [`fleet-video-event-coaching`](examples/fleet-video-event-coaching.png) | Dashcam event → AI triage → dispatcher alert or safety review → coaching |
-| Customer support | [`support-escalation`](examples/support-escalation.png) | L1 → L2 under an 8-hour SLA → engineering fix → customer confirmation |
+| Engineering | [`eng-platform-delivery`](https://github.com/malindarathnayake/stencil-mcp/blob/main/examples/eng-platform-delivery.png) | Pull request → review loop → CI → release gate → deploy, with rollback |
+| Security | [`sec-incident-response`](https://github.com/malindarathnayake/stencil-mcp/blob/main/examples/sec-incident-response.png) | Triage, declare, then contain, preserve evidence and notify in parallel |
+| IT | [`it-onboarding-access`](https://github.com/malindarathnayake/stencil-mcp/blob/main/examples/it-onboarding-access.png) | New-hire ticket → account → laptop → privileged approval → MFA |
+| Finance | [`fin-procurement-approval`](https://github.com/malindarathnayake/stencil-mcp/blob/main/examples/fin-procurement-approval.png) | Spend threshold, purchase order, three-way match, dispute, payment |
+| HR | [`hr-employee-onboarding`](https://github.com/malindarathnayake/stencil-mcp/blob/main/examples/hr-employee-onboarding.png) | Contract, parallel preparation by HR, manager and IT, 30-day check-in |
+| Sales | [`sales-lead-to-cash`](https://github.com/malindarathnayake/stencil-mcp/blob/main/examples/sales-lead-to-cash.png) | Qualify, quote, negotiate, order, invoice, revenue |
+| Fleet operations | [`fleet-video-event-coaching`](https://github.com/malindarathnayake/stencil-mcp/blob/main/examples/fleet-video-event-coaching.png) | Dashcam event → AI triage → dispatcher alert or safety review → coaching |
+| Customer support | [`support-escalation`](https://github.com/malindarathnayake/stencil-mcp/blob/main/examples/support-escalation.png) | L1 → L2 under an 8-hour SLA → engineering fix → customer confirmation |
 
 **Architecture and protocols**
 
 | Template | Shows |
 | --- | --- |
-| [`mrc-loss-recovery`](examples/mrc-loss-recovery.png) | Packet spraying across ECMP paths, one loss, SACK, retransmit only the missing packet |
-| [`ecmp-flow-hashing`](examples/ecmp-flow-hashing.png) | Two flows hashing onto the same equal-cost path |
-| [`leaf-spine`](examples/leaf-spine.png), [`segmented-network`](examples/segmented-network.png), [`hybrid-cloud`](examples/hybrid-cloud.png) | Network topology and placement |
-| [`zero-trust-access`](examples/zero-trust-access.png), [`threat-model-dfd`](examples/threat-model-dfd.png), [`secure-ci-cd`](examples/secure-ci-cd.png) | Security controls and trust boundaries |
-| [`kubernetes-ingress`](examples/kubernetes-ingress.png), [`event-driven`](examples/event-driven.png), [`software-overview`](examples/software-overview.png), [`sequence-request`](examples/sequence-request.png) | Application architecture |
-| [`agent-mcp-tools`](examples/agent-mcp-tools.png), [`disaggregated-inference`](examples/disaggregated-inference.png) | AI agents and inference |
-| [`observability-pipeline`](examples/observability-pipeline.png), [`backup-dr`](examples/backup-dr.png) | Operations |
+| [`mrc-loss-recovery`](https://github.com/malindarathnayake/stencil-mcp/blob/main/examples/mrc-loss-recovery.png) | Packet spraying across ECMP paths, one loss, SACK, retransmit only the missing packet |
+| [`ecmp-flow-hashing`](https://github.com/malindarathnayake/stencil-mcp/blob/main/examples/ecmp-flow-hashing.png) | Two flows hashing onto the same equal-cost path |
+| [`leaf-spine`](https://github.com/malindarathnayake/stencil-mcp/blob/main/examples/leaf-spine.png), [`segmented-network`](https://github.com/malindarathnayake/stencil-mcp/blob/main/examples/segmented-network.png), [`hybrid-cloud`](https://github.com/malindarathnayake/stencil-mcp/blob/main/examples/hybrid-cloud.png) | Network topology and placement |
+| [`zero-trust-access`](https://github.com/malindarathnayake/stencil-mcp/blob/main/examples/zero-trust-access.png), [`threat-model-dfd`](https://github.com/malindarathnayake/stencil-mcp/blob/main/examples/threat-model-dfd.png), [`secure-ci-cd`](https://github.com/malindarathnayake/stencil-mcp/blob/main/examples/secure-ci-cd.png) | Security controls and trust boundaries |
+| [`kubernetes-ingress`](https://github.com/malindarathnayake/stencil-mcp/blob/main/examples/kubernetes-ingress.png), [`event-driven`](https://github.com/malindarathnayake/stencil-mcp/blob/main/examples/event-driven.png), [`software-overview`](https://github.com/malindarathnayake/stencil-mcp/blob/main/examples/software-overview.png), [`sequence-request`](https://github.com/malindarathnayake/stencil-mcp/blob/main/examples/sequence-request.png) | Application architecture |
+| [`agent-mcp-tools`](https://github.com/malindarathnayake/stencil-mcp/blob/main/examples/agent-mcp-tools.png), [`disaggregated-inference`](https://github.com/malindarathnayake/stencil-mcp/blob/main/examples/disaggregated-inference.png) | AI agents and inference |
+| [`observability-pipeline`](https://github.com/malindarathnayake/stencil-mcp/blob/main/examples/observability-pipeline.png), [`backup-dr`](https://github.com/malindarathnayake/stencil-mcp/blob/main/examples/backup-dr.png) | Operations |
 
 <p align="center">
-  <img src="examples/sec-incident-response.png" alt="Security: incident response" width="49%" />
-  <img src="examples/fin-procurement-approval.png" alt="Finance: procure to pay" width="49%" />
+  <img src="https://raw.githubusercontent.com/malindarathnayake/stencil-mcp/main/examples/sec-incident-response.png" alt="Security: incident response" width="49%" />
+  <img src="https://raw.githubusercontent.com/malindarathnayake/stencil-mcp/main/examples/fin-procurement-approval.png" alt="Finance: procure to pay" width="49%" />
 </p>
 
 <details>
@@ -205,7 +206,7 @@ Every template ships as scene JSON in [`diagramkit/library/templates/`](diagramk
 | Kubernetes & containers | 21 | | Fleet telematics | 9 |
 | Software & integration | 19 | | Data systems | 14 |
 
-Many entries are role variants of a shared glyph with a badge (128 base shapes). All symbols are original generic drawings: no vendor logos, fonts or raster images. Search aliases such as Proxmox, Rancher or NVIDIA find the matching generic symbol; they are not compatibility claims. Contact sheets for each collection are in [`previews/`](previews/).
+Many entries are role variants of a shared glyph with a badge (128 base shapes). All symbols are original generic drawings: no vendor logos, fonts or raster images. Search aliases such as Proxmox, Rancher or NVIDIA find the matching generic symbol; they are not compatibility claims. Contact sheets for each collection are in [`previews/`](https://github.com/malindarathnayake/stencil-mcp/tree/main/previews/).
 
 </details>
 
@@ -233,9 +234,9 @@ python -m diagramkit.cli render diagramkit/library/templates/support-escalation.
 - **Checked assets.** The renderer verifies each symbol's SHA-256 against the catalog and rejects active SVG content.
 - **Verifiable releases.** Each release wheel carries a signed build-provenance attestation and SBOMs. Check it before installing: `gh attestation verify <wheel> --repo malindarathnayake/stencil-mcp`.
 
-The full threat model, which maps these controls to the OWASP LLM and Agentic Top 10, is in [docs/SECURITY_POSTURE.md](docs/SECURITY_POSTURE.md). Report vulnerabilities privately; see [SECURITY.md](SECURITY.md).
+The full threat model, which maps these controls to the OWASP LLM and Agentic Top 10, is in [docs/SECURITY_POSTURE.md](https://github.com/malindarathnayake/stencil-mcp/blob/main/docs/SECURITY_POSTURE.md). Report vulnerabilities privately; see [SECURITY.md](https://github.com/malindarathnayake/stencil-mcp/blob/main/SECURITY.md).
 
-Validation checks structure and layout: ids, bounds, overlaps, text fit, edges crossing nodes. It cannot tell you that an architecture is secure, a protocol is drawn correctly, or a product supports a feature. Look at the rendered output. The layout helper is a first pass, not an obstacle-avoiding router; set ports and waypoints for clean edges. A shared HTTP deployment needs the official MCP SDK plus authentication and isolated storage; see [docs/MCP.md](docs/MCP.md).
+Validation checks structure and layout: ids, bounds, overlaps, text fit, edges crossing nodes. It cannot tell you that an architecture is secure, a protocol is drawn correctly, or a product supports a feature. Look at the rendered output. The layout helper is a first pass, not an obstacle-avoiding router; set ports and waypoints for clean edges. A shared HTTP deployment needs the official MCP SDK plus authentication and isolated storage; see [docs/MCP.md](https://github.com/malindarathnayake/stencil-mcp/blob/main/docs/MCP.md).
 
 </details>
 
@@ -252,9 +253,9 @@ python -m pip install --require-hashes --only-binary=:all: -r requirements-build
 python -m build --no-isolation           # the release wheel and sdist, into dist/
 ```
 
-The release wheel is built from a hash-locked toolchain (`requirements-build.txt`) with `python -m build --no-isolation`, and is byte-reproducible with `SOURCE_DATE_EPOCH` set. CI runs the tests on Linux, Windows and macOS, fails if a rebuild changes any committed generated file, and builds the wheel twice to prove it is reproducible. `security.yml` runs CodeQL, gitleaks, zizmor and a Syft/Grype SBOM scan. Pushing a `vX.Y.Z` tag publishes an attested release. Every action is pinned to a commit SHA and every scanner to a verified checksum; see [docs/SECURITY_POSTURE.md](docs/SECURITY_POSTURE.md).
+The release wheel is built from a hash-locked toolchain (`requirements-build.txt`) with `python -m build --no-isolation`, and is byte-reproducible with `SOURCE_DATE_EPOCH` set. CI runs the tests on Linux, Windows and macOS, fails if a rebuild changes any committed generated file, and builds the wheel twice to prove it is reproducible. `security.yml` runs CodeQL, gitleaks, zizmor and a Syft/Grype SBOM scan. Pushing a `vX.Y.Z` tag publishes an attested release. Every action is pinned to a commit SHA and every scanner to a verified checksum; see [docs/SECURITY_POSTURE.md](https://github.com/malindarathnayake/stencil-mcp/blob/main/docs/SECURITY_POSTURE.md).
 
-Builds are deterministic and write LF line endings on every OS, so a rebuild without source changes is byte-identical. Asset ids are public API: the original 300 symbols are pinned byte-for-byte by `tests/fixtures/legacy_sha256.json`, and new symbols are additive. Adding roles, shapes or a separately licensed vendor pack: [docs/EXTENDING.md](docs/EXTENDING.md).
+Builds are deterministic and write LF line endings on every OS, so a rebuild without source changes is byte-identical. Asset ids are public API: the original 300 symbols are pinned byte-for-byte by `tests/fixtures/legacy_sha256.json`, and new symbols are additive. Adding roles, shapes or a separately licensed vendor pack: [docs/EXTENDING.md](https://github.com/malindarathnayake/stencil-mcp/blob/main/docs/EXTENDING.md).
 
 </details>
 
@@ -262,17 +263,17 @@ Builds are deterministic and write LF line endings on every OS, so a rebuild wit
 
 | Document | Covers |
 | --- | --- |
-| [docs/DESIGN_SYSTEM.md](docs/DESIGN_SYSTEM.md) | Composition rules, connector meanings, process-diagram notation |
-| [docs/SCENE_FORMAT.md](docs/SCENE_FORMAT.md) | Scene JSON reference |
-| [docs/MCP.md](docs/MCP.md) | Tools, resources, transport and export policy |
-| [docs/EXTENDING.md](docs/EXTENDING.md) | Adding symbols, templates and packs |
-| [docs/PACK_COVERAGE.md](docs/PACK_COVERAGE.md) | What each pack covers and what is not implemented |
-| [docs/SECURITY_POSTURE.md](docs/SECURITY_POSTURE.md) | Threat model, build integrity, CI/CD hardening, scanning and release verification |
-| [SECURITY.md](SECURITY.md) | Reporting a vulnerability |
-| [CHANGELOG.md](CHANGELOG.md) | Release notes |
-| [branding/BRAND_GUIDE.md](branding/BRAND_GUIDE.md) | Logo and repository graphics |
-| [AGENTS.md](AGENTS.md) | Rules for coding agents working in this repo |
+| [docs/DESIGN_SYSTEM.md](https://github.com/malindarathnayake/stencil-mcp/blob/main/docs/DESIGN_SYSTEM.md) | Composition rules, connector meanings, process-diagram notation |
+| [docs/SCENE_FORMAT.md](https://github.com/malindarathnayake/stencil-mcp/blob/main/docs/SCENE_FORMAT.md) | Scene JSON reference |
+| [docs/MCP.md](https://github.com/malindarathnayake/stencil-mcp/blob/main/docs/MCP.md) | Tools, resources, transport and export policy |
+| [docs/EXTENDING.md](https://github.com/malindarathnayake/stencil-mcp/blob/main/docs/EXTENDING.md) | Adding symbols, templates and packs |
+| [docs/PACK_COVERAGE.md](https://github.com/malindarathnayake/stencil-mcp/blob/main/docs/PACK_COVERAGE.md) | What each pack covers and what is not implemented |
+| [docs/SECURITY_POSTURE.md](https://github.com/malindarathnayake/stencil-mcp/blob/main/docs/SECURITY_POSTURE.md) | Threat model, build integrity, CI/CD hardening, scanning and release verification |
+| [SECURITY.md](https://github.com/malindarathnayake/stencil-mcp/blob/main/SECURITY.md) | Reporting a vulnerability |
+| [CHANGELOG.md](https://github.com/malindarathnayake/stencil-mcp/blob/main/CHANGELOG.md) | Release notes |
+| [branding/BRAND_GUIDE.md](https://github.com/malindarathnayake/stencil-mcp/blob/main/branding/BRAND_GUIDE.md) | Logo and repository graphics |
+| [AGENTS.md](https://github.com/malindarathnayake/stencil-mcp/blob/main/AGENTS.md) | Rules for coding agents working in this repo |
 
 ## License
 
-Apache License 2.0. See [LICENSE](LICENSE).
+Apache License 2.0. See [LICENSE](https://github.com/malindarathnayake/stencil-mcp/blob/main/LICENSE).
